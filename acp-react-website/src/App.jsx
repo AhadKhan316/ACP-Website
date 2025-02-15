@@ -4,6 +4,8 @@ import Footer from './components/Footer'
 import Hero from './components/Hero'
 import UpcomingEvents from './components/UpcomingEvents'
 import About from './components/About'
+import PresidentMessage from './components/PresidentMessage'
+import StayUpdated from './components/StayUpdated'
 
 const App = () => {
   return (
@@ -14,6 +16,8 @@ const App = () => {
         <Hero />
         <UpcomingEvents />
         <About />
+        <PresidentMessage />
+        <StayUpdated />
         <Footer />
       </>
     </div>

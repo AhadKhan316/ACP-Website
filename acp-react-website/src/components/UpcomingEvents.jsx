@@ -29,12 +29,12 @@ const UpcomingEvents = () => {
   }, []);
 
   return (
-    <section className="py-8 p-10 bg-[#111827] text-center">
-      <div className="container mx-auto py-12 bg-[#1F2937] rounded-lg">
-        <div className="grid grid-cols-3 gap-8 max-w-8xl py-4 px-2">
-          <div className="col-span-4 md:col-span-1 bg-[#111827] ms-8 p-10 rounded-lg text-[#F5F1E1]">
+    <section className="py-10 bg-[#111827] text-center">
+      <div className="mx-15 py-8 bg-[#1F2937] rounded-lg">
+        <div className="grid grid-cols-3 gap-8 max-w-8xl py-4 px-2 ms-10">
+          <div className="col-span-4 md:col-span-1 bg-[#111827] p-20 rounded-lg text-[#F5F1E1]">
             <h2 className="text-4xl font-bold mb-4">Upcoming Events</h2>
-            <p className="text-gray-400">
+            <p className="text-gray-400 text-lg">
               Stay updated with our latest events. Participate in workshops,
               enjoy cultural festivals, and more. Be part of our vibrant
               community!
@@ -68,17 +68,18 @@ const UpcomingEvents = () => {
                   <strong>Venue:</strong> {event.venue}
                 </p>
                 <button
-                  className={`w-full py-2 rounded-lg ${event.eventType === "Free"
+                  className={`w-full py-2 rounded-lg ${
+                    event.eventType === "Free"
                       ? "bg-green-600 text-[#F5F1E1] hover:bg-green-700"
                       : "bg-red-600 text-[#F5F1E1] hover:bg-red-700"
-                    } transition`}
+                  } transition`}
                 >
                   {event.eventType === "Free" ? "Register Now" : "Buy Ticket"}
                 </button>
               </div>
             ))
           ) : (
-            <div className="col-span-4 text-[#F5F1E1]">
+            <div className="col-span-4 text-[#F5F1E1] text-lg">
               <p>No upcoming events available.</p>
             </div>
           )}
