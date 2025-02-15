@@ -6,11 +6,13 @@ const Hero = () => {
       {/* Video Background */}
       <video
         className="absolute top-0 left-0 w-full h-full object-cover"
-        src="/src/videos/hero-drone.mp4"
         autoPlay
         loop
         muted
-      ></video>
+      >
+        <source src="/src/videos/hero-drone.mp4" type="video/mp4"/>
+        <source src="movie.ogg" type="video/ogg" />
+      </video>
 
       {/* Overlay Content */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center h-full text-white bg-opacity-0 ">

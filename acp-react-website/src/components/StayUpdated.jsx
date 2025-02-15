@@ -38,10 +38,10 @@ const CTASection = () => {
   return (
     <section className="py-10 bg-[#111827] text-center">
       <div className="mx-15 py-8 bg-[#1F2937] rounded-lg">
-        <h2 className="text-3xl font-bold text-[#F5F1E1] mb-4">
+        <h2 className="text-4xl font-bold text-[#F5F1E1] mb-4">
           Stay Updated with Our Promotions
         </h2>
-        <p className="text-[#F5F1E1] mb-8">
+        <p className="text-[#F5F1E1] mb-8 text-lg">
           Sign up with your email to receive the latest updates and offers.
         </p>
         <form
@@ -51,15 +51,15 @@ const CTASection = () => {
           <input
             type="email"
             name="email"
-            placeholder="Enter your email"
+            placeholder="Enter your Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="p-3 rounded-lg border border-gray-300 w-full md:w-auto"
-          />
+            className="p-3 rounded-lg border text-amber-100 text-xl border-gray-300 w-full md:w-auto"
+          />  
           <button
             type="submit"
-            className="bg-[#B30B00] text-white font-semibold py-3 px-6 rounded-lg hover:bg-[#2C6E4D] transition duration-300"
+            className="bg-[#B30B00] text-white text-xl font-semibold py-3 px-6 rounded-lg hover:bg-[#2C6E4D] transition duration-300"
           >
             Subscribe
           </button>
