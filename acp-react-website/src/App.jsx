@@ -6,18 +6,24 @@ import UpcomingEvents from './components/UpcomingEvents'
 import About from './components/About'
 import PresidentMessage from './components/PresidentMessage'
 import StayUpdated from './components/StayUpdated'
+import Academy from './components/Academy'
+import CommunityFeedback from './components/CommunityFeedback'
+import Production from './components/Production'
 
 const App = () => {
   return (
     <div>
       <>
-        <h1 className='container bg-red-500 text-white mx-auto'>Hello Tailwind CSS</h1>
+        <h1 className='bg-red-500 text-white mx-auto'>Hello Tailwind CSS</h1>
         <Navbar />
         <Hero />
         <UpcomingEvents />
         <About />
         <PresidentMessage />
         <StayUpdated />
+        <Academy />
+        <CommunityFeedback />
+        <Production />
         <Footer />
       </>
     </div>

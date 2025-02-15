@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 
 const PresidentMessage = () => {
   return (
-    <section id="president-message" className="py-8 bg-cover bg-[#111827]">
-      <div className="mx-15 py-8 flex flex-col md:flex-row items-center px-6 bg-[#1F2937] rounded-lg">
+    <section id="president-message" className="py-10 bg-cover bg-[#111827]">
+      <div className="mx-15 py-8 flex flex-col md:flex-row items-center px-8 bg-[#1F2937] rounded-lg">
         {/* Animated Text Content */}
         <motion.div
           className="md:w-1/2 mb-8 md:mb-0 md:pr-12"
@@ -14,7 +14,7 @@ const PresidentMessage = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h2 className="text-4xl font-bold mb-4 text-[#F5F1E1]">
-            Mohammad Ahmed Shah (HI , SI)
+            Mohammad Ahmed Shah (HI, SI)
           </h2>
           <p className="text-[#F5F1E1] mb-6 leading-relaxed text-lg">
             "The Arts Council of Pakistan endeavors to uphold and champion the
