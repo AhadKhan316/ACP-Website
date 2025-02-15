@@ -1,17 +1,18 @@
 import React from 'react'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
 import Footer from './components/Footer'
-import './App.css'
+import Hero from './components/Hero'
 
-function App() {
-
+const App = () => {
   return (
-    <>
-    <Navbar />
-    <Hero />
-    <Footer />
-    </>
+    <div>
+      <>
+        <h1 className='container bg-red-500 text-white mx-auto'>Hello Tailwind CSS</h1>
+        <Navbar />
+        <Hero/>
+        <Footer />
+      </>
+    </div>
   )
 }
 
