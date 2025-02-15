@@ -2,19 +2,19 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section id="hero" className="relative w-full h-screen overflow-hidden bg-black">
+    <section id="hero" className="relative w-full h-screen overflow-hidden ">
       {/* Video Background */}
       <video
         className="absolute top-0 left-0 w-full h-full object-cover"
-        src="https://acpkhi.com/drone%202.mp4"
+        src="/public/videos/hero-drone.mp4"
         autoPlay
         loop
         muted
       ></video>
 
       {/* Overlay Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center h-full text-white bg-black bg-opacity-0">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-black bg-opacity-50 p-3 rounded-lg">
+      <div className="relative z-10 flex flex-col items-center justify-center text-center h-full text-white bg-opacity-0 ">
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-opacity-50 p-3 rounded-lg">
           Hub of Art & Culture
         </h1>
         <p className="text-lg md:text-xl mb-6">
