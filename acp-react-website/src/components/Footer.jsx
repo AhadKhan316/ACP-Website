@@ -7,7 +7,7 @@ function Footer() {
       <div className="container mx-auto px-40 grid grid-cols-1 md:grid-cols-3">
         {/* Column 1: Logo and Text */}
         <div className="flex flex-col items-center md:items-start">
-          <img src="" alt="Arts Council Logo" className="w-24 h-24 mb-4" style={{ filter: 'invert(1)' }} />
+          <img src="https://acpkhi.com/logo.png" alt="Arts Council Logo" className="w-24 h-24 mb-4" style={{ filter: 'invert(1)' }} />
           <p className="text-sm text-center md:text-left">
             We are a Non-Profit Organization <br /> for the promotion of Art & Culture.
           </p>

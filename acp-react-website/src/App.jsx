@@ -9,6 +9,7 @@ import StayUpdated from './components/StayUpdated'
 import Academy from './components/Academy'
 import CommunityFeedback from './components/CommunityFeedback'
 import Production from './components/Production'
+import OurSocial from './components/OurSocial'
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         <Academy />
         <CommunityFeedback />
         <Production />
+        <OurSocial />
         <Footer />
       </>
     </div>

@@ -6,22 +6,20 @@ const Hero = () => {
       {/* Video Background */}
       <video
         className="absolute top-0 left-0 w-full h-full object-cover"
+        src="/videos/hero-drone.mp4"
         autoPlay
         loop
         muted
-      >
-        <source src="/src/videos/hero-drone.mp4" type="video/mp4"/>
-        <source src="movie.ogg" type="video/ogg" />
-      </video>
+      ></video>
 
       {/* Overlay Content */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center h-full text-white bg-opacity-0 ">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-opacity-50 p-3 rounded-lg">
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-opacity-50 p-3 text-black rounded-lg">
           Hub of Art & Culture
         </h1>
-        <p className="text-lg md:text-xl mb-6">
+        <h3 className="text-4xl text-black md:text-xl mb-6 bg-white bg-opacity-50 p-3 rounded-lg">
           Committed to the promotion, education and preservation of art and culture since 1954
-        </p>
+        </h3>
         <button className="bg-[#EEF5E7] py-3 px-8 rounded-lg text-black font-semibold hover:bg-[#EEE7F5] transition-all">
           Learn More
         </button>

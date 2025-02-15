@@ -94,7 +94,7 @@ const Navbar = () => {
 
     return (
         <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
-            <nav className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3" ref={menuRef}>
+            <nav className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-5" ref={menuRef}>
                 <Link to="/" className="flex items-center space-x-3">
                     <img src="https://acpkhi.com/logo.png" alt="Arts Council Logo" className="w-12 h-12 rounded-full" />
                     <span className="self-center text-xl font-semibold whitespace-nowrap">ACP KHI</span>
