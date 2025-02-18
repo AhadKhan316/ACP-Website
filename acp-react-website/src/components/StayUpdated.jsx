@@ -42,7 +42,7 @@ const StayUpdated = () => {
 
   return (
     <section className="py-10 bg-gray-900">
-      <div className="mx-15 px-4 sm:px-6 lg:px-8">
+      <div className="mx-4 px-4 sm:px-6 lg:px-8">
         <motion.div
           className="bg-gray-800 rounded-lg shadow-xl overflow-hidden"
           initial={{ opacity: 0, y: 50 }}

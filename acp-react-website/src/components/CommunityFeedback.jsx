@@ -3,7 +3,7 @@ import React from "react";
 const Feedback = () => {
   return (
     <section id="user-feedback" className="py-10 bg-[#111827]">
-      <div className="mx-15 px-4 sm:px-6 lg:px-8 py-6 text-center bg-[#1F2937] rounded-lg">
+      <div className="mx-8 px-4 sm:px-6 py-6 text-center bg-[#1F2937] rounded-lg">
         <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-[#F5F1E1]">
           What Our Community Says
         </h2>

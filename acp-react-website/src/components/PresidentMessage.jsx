@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const PresidentMessage = () => {
   return (
     <section id="president-message" className="py-10 bg-gray-900">
-      <div className="mx-15 px-4 sm:px-6 lg:px-6">
+      <div className="mx-4 px-4 sm:px-6 lg:px-6">
         <div className="bg-gray-800 rounded-lg shadow-xl overflow-hidden">
           <div className="p-6 sm:p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row items-center">
             {/* Animated Text Content */}
