@@ -72,7 +72,7 @@ function Footer() {
               </ul>
             </div>
           </div>
-          <div className="mt-4 w-full md:w-auto">
+          <div className="mt-4 md:w-auto">
             <form className="flex items-center">
               <input type="email" placeholder="Email" className="bg-white text-black px-4 py-2 rounded-l-md focus:outline-none" />
               <button type="submit" className="bg-red-600 text-white px-4 py-2 rounded-r-md hover:bg-red-700 transition duration-300">Send</button>

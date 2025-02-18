@@ -31,8 +31,8 @@ const UpcomingEvents = () => {
   }, [])
 
   return (
-    <section className="py-10 sm:py-12 lg:py-16 bg-[#111827]">
-      <div className="mx-15 py-6 px-4 sm:px-6 lg:px-8">
+    <section className="py-8 sm:py-12 lg:py-16 bg-[#111827]">
+      <div className="mx-8 py-6 px-4 sm:px-6 lg:px-8">
         <div className="bg-[#1F2937] rounded-2xl shadow-xl overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-6 sm:p-8 lg:p-10">
             {/* Header Section */}

@@ -1,5 +1,4 @@
 // Fully Responsive Hero.jsx Components 
-
 import React from "react";
 import { ArrowRight } from 'lucide-react';
 
