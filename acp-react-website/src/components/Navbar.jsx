@@ -1,58 +1,57 @@
-
-import { useState, useEffect, useRef } from "react"
-import { Link, useLocation } from "react-router-dom"
-import { FaBars, FaTimes, FaChevronDown, FaChevronRight } from "react-icons/fa"
+import { useState, useEffect, useRef } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { FaBars, FaTimes, FaChevronDown, FaChevronRight } from "react-icons/fa";
 
 const Navbar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
-    const [isSubMenuOpen, setIsSubMenuOpen] = useState({})
-    const [isSubSubMenuOpen, setIsSubSubMenuOpen] = useState({})
-    const location = useLocation()
-    const menuRef = useRef(null)
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isSubMenuOpen, setIsSubMenuOpen] = useState({});
+    const [isSubSubMenuOpen, setIsSubSubMenuOpen] = useState({});
+    const location = useLocation();
+    const menuRef = useRef(null);
 
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (menuRef.current && !menuRef.current.contains(event.target)) {
-                setIsMenuOpen(false)
-                setIsSubMenuOpen({})
-                setIsSubSubMenuOpen({})
+                setIsMenuOpen(false);
+                setIsSubMenuOpen({});
+                setIsSubSubMenuOpen({});
             }
-        }
+        };
 
-        document.addEventListener("mousedown", handleClickOutside)
+        document.addEventListener("mousedown", handleClickOutside);
         return () => {
-            document.removeEventListener("mousedown", handleClickOutside)
-        }
-    }, [])
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
 
     // Close menus when route changes
     useEffect(() => {
-        setIsMenuOpen(false)
-        setIsSubMenuOpen({})
-        setIsSubSubMenuOpen({})
-    }, []) //Fixed: Removed unnecessary dependency 'location'
+        setIsMenuOpen(false);
+        setIsSubMenuOpen({});
+        setIsSubSubMenuOpen({});
+    }, [location]); // Corrected: Added 'location' as a dependency
 
-    const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
+    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
     const toggleSubMenu = (menu, event) => {
-        event.preventDefault()
+        event.preventDefault();
         setIsSubMenuOpen((prev) => ({
             ...Object.fromEntries(Object.keys(prev).map((key) => [key, false])),
             [menu]: !prev[menu],
-        }))
-        setIsSubSubMenuOpen({})
-    }
+        }));
+        setIsSubSubMenuOpen({});
+    };
 
     const toggleSubSubMenu = (submenu, event) => {
-        event.preventDefault()
-        event.stopPropagation()
+        event.preventDefault();
+        event.stopPropagation();
         setIsSubSubMenuOpen((prev) => ({
             ...Object.fromEntries(Object.keys(prev).map((key) => [key, false])),
             [submenu]: !prev[submenu],
-        }))
-    }
+        }));
+    };
 
-    const isActiveLink = (path) => location.pathname === path
+    const isActiveLink = (path) => location.pathname === path;
 
     const NavLink = ({ to, children }) => (
         <Link
@@ -62,7 +61,7 @@ const Navbar = () => {
         >
             {children}
         </Link>
-    )
+    );
 
     const DropdownButton = ({ children, onClick, isOpen }) => (
         <button
@@ -76,7 +75,7 @@ const Navbar = () => {
                     }`}
             />
         </button>
-    )
+    );
 
     const SubSubMenuButton = ({ children, onClick, isOpen }) => (
         <button
@@ -90,7 +89,7 @@ const Navbar = () => {
                     }`}
             />
         </button>
-    )
+    );
 
     return (
         <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
@@ -189,14 +188,13 @@ const Navbar = () => {
                         </li>
 
                         <li>
-                            <NavLink to="#contact">Contact</NavLink>
+                            <NavLink to="/contact">Contact</NavLink> {/* Changed to="/contact" */}
                         </li>
                     </ul>
                 </div>
             </nav>
         </header>
-    )
-}
+    );
+};
 
-export default Navbar
-
+export default Navbar;
