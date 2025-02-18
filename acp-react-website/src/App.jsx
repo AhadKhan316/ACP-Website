@@ -15,7 +15,7 @@ const App = () => {
   return (
     <div>
       <>
-        <h1 className='bg-red-500 text-white'>Hello Tailwind CSS</h1>
+        <h1 className='bg-red-500 text-white mx-auto'>Hello Tailwind CSS</h1>
         <Navbar />
         <Hero />
         <UpcomingEvents />

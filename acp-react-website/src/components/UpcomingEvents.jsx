@@ -31,14 +31,14 @@ const UpcomingEvents = () => {
   }, [])
 
   return (
-    <section className="py-8 sm:py-12 lg:py-16 bg-[#111827]">
-      <div className="mx-8 py-6 px-4 sm:px-6 lg:px-8">
+    <section className="py-10 bg-[#111827]">
+      <div className="mx-15 px-4 sm:px-6 lg:px-8">
         <div className="bg-[#1F2937] rounded-2xl shadow-xl overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-6 sm:p-8 lg:p-10">
             {/* Header Section */}
             <div className="lg:col-span-1">
               <div className="h-full bg-[#111827] rounded-xl p-6 sm:p-8 flex flex-col justify-center">
-                <h2 className="text-3xl sm:text-4xl font-bold text-[#F5F1E1] mb-4">
+                <h2 className="lg-text-3xl sm:text-3xl font-bold text-[#F5F1E1] mb-4">
                   Upcoming Events
                 </h2>
                 <p className="text-gray-400 text-base sm:text-lg">
