@@ -123,7 +123,7 @@ const Navbar = () => {
                                 Production
                             </DropdownButton>
                             {isSubMenuOpen["production"] && (
-                                <div className="md:absolute left-0 top-full mt-2 w-56 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                <div className="md:absolute left-0 top-full mt-2 w-56 rounded-lg bg-white shadow-lg focus:outline-none">
                                     <div className="p-2 space-y-1">
                                         <div className="relative">
                                             <SubSubMenuButton
@@ -133,7 +133,7 @@ const Navbar = () => {
                                                 Festival
                                             </SubSubMenuButton>
                                             {isSubSubMenuOpen["festival"] && (
-                                                <div className="md:absolute left-full top-0 mt-0 ml-2 w-48 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+                                                <div className="md:absolute left-full top-0 mt-0 ml-2 w-48 rounded-lg bg-white shadow-lg ">
                                                     <div className="p-2 space-y-1">
                                                         <NavLink to="/festival/music">Music</NavLink>
                                                         <NavLink to="/festival/film">Film</NavLink>
@@ -163,7 +163,7 @@ const Navbar = () => {
                                 About Us
                             </DropdownButton>
                             {isSubMenuOpen["about"] && (
-                                <div className="md:absolute right-0 top-full mt-2 w-56 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+                                <div className="md:absolute right-0 top-full mt-2 w-56 rounded-lg bg-white shadow-lg ">
                                     <div className="p-2 space-y-1">
                                         <NavLink to="/about">About</NavLink>
                                         <div className="relative">
@@ -174,7 +174,7 @@ const Navbar = () => {
                                                 Governing Body
                                             </SubSubMenuButton>
                                             {isSubSubMenuOpen["governingBody"] && (
-                                                <div className="md:absolute left-full top-0 mt-0 ml-2 w-48 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+                                                <div className="md:absolute left-full top-0 mt-0 ml-2 w-48 rounded-lg bg-white shadow-lg">
                                                     <div className="p-2 space-y-1">
                                                         <NavLink to="/GoverningBody/members">Members</NavLink>
                                                         <NavLink to="/GoverningBody/roles">Roles</NavLink>
