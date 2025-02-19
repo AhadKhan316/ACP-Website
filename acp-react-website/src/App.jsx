@@ -18,6 +18,7 @@ import OurSocial from './components/OurSocial';
 import AcademiesPage from './Pages/AcademyPage';
 import VenuesPage from './Pages/VenuePage';
 import AboutUs from './Pages/AboutUs'
+import GoverningBody from './Pages/GoverningBody';
 
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
         <Route path="/AcademiesPage" element={<AcademiesPage />} />
         <Route path="/VenuesPage" element={<VenuesPage />} />
         <Route path="/about" element={<AboutUs />} />
+        <Route path="/GoverningBody/members" element={<GoverningBody />} />
 
         {/* Components - Wrap these in a Route with a path */}
         <Route path="/" element={

@@ -26,7 +26,7 @@ const AcademiesPage = () => {
     <div className="py-10 min-h-screen bg-[#111827] text-white">
       <div className="mx-4 px-4 sm:px-6 lg:px-8"> 
         {/* Slider Section */}
-        <div className="mb-12 flex flex-col lg:flex-row items-center bg-gray-800 p-6 rounded-lg">
+        <div className="mb-12 flex flex-col lg:flex-row items-center bg-gray-800 px-15 p-7 rounded-lg">
           {/* Text Box (60% on large screens) */}
           <div className="lg:w-3/5 lg:pr-6 mb-6 lg:mb-0">
             <h2 className="text-3xl font-bold mb-4">XYZ Heading Here</h2>

@@ -159,7 +159,7 @@ const Navbar = () => {
                         {/* About Us Dropdown */}
                         <li className="relative">
                             <DropdownButton onClick={(e) => toggleSubMenu("about", e)} isOpen={isSubMenuOpen["about"]}>
-                                About Us
+                                Resources
                             </DropdownButton>
                             {isSubMenuOpen["about"] && (
                                 <div className="md:absolute right-0 top-full mt-2 w-56 rounded-lg bg-white shadow-lg ">

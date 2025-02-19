@@ -149,17 +149,17 @@ const VenuesPage = () => {
 
 
         {/* Slider Section */}
-        <div className="mb-12 flex flex-col lg:flex-row items-center">
+        <div className="mb-12 flex flex-col lg:flex-row items-center bg-gray-800 p-6 rounded-lg">
           {/* Text Box (60% on large screens) */}
           <div className="lg:w-3/5 lg:pr-6 mb-6 lg:mb-0">
-            <h2 className="text-3xl font-bold mb-4 text-white">Venues</h2> {/* Added text-white */}
+            <h2 className="text-3xl font-bold mb-4 text-white">XYZ Venues</h2> {/* Added text-white */}
             <p className="text-gray-300">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium nam, ducimus illo laudantium consequatur eveniet deserunt minus facilis amet ea est itaque eligendi maxime doloribus ullam nihil error iure officia commodi unde. Quisquam laborum accusamus in sapiente tempore vero. Optio, tempora velit. Architecto officia, error excepturi blanditiis a dolores assumenda nulla at laudantium pariatur impedit maiores exercitationem dolor saepe odit, molestias suscipit modi ex mollitia. Laboriosam quibusdam natus eligendi reiciendis corrupti voluptates aut sint aliquam, non et explicabo voluptatibus quod?
             </p>
           </div>
 
           {/* Slider (40% on large screens) */}
-          <div className="lg:w-2/5 w-full">
+          <div className="lg:w-2/4 w-full">
             <Swiper
               spaceBetween={30}
               slidesPerView={1}

@@ -6,29 +6,29 @@ const UpcomingEvents = () => {
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
 
-  useEffect(() => {
-    const fetchEvents = async () => {
-      try {
-        const response = await fetch("http://10.10.10.231:5000/get_events")
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`)
-        }
-        const data = await response.json()
-        setEvents(data)
-        setError(null)
-      } catch (error) {
-        setError("Failed to fetch events. Please try again later.")
-        console.error("Error fetching events:", error)
-      } finally {
-        setIsLoading(false)
-      }
-    }
+  // useEffect(() => {
+  //   const fetchEvents = async () => {
+  //     try {
+  //       const response = await fetch("http://10.10.10.231:5000/get_events")
+  //       if (!response.ok) {
+  //         throw new Error(`HTTP error! Status: ${response.status}`)
+  //       }
+  //       const data = await response.json()
+  //       setEvents(data)
+  //       setError(null)
+  //     } catch (error) {
+  //       setError("Failed to fetch events. Please try again later.")
+  //       console.error("Error fetching events:", error)
+  //     } finally {
+  //       setIsLoading(false)
+  //     }
+  //   }
 
-    const intervalId = setInterval(fetchEvents, 10000)
-    fetchEvents()
+  //   const intervalId = setInterval(fetchEvents, 10000)
+  //   fetchEvents()
 
-    return () => clearInterval(intervalId)
-  }, [])
+  //   return () => clearInterval(intervalId)
+  // }, [])
 
   return (
     <section className="py-10 bg-[#111827]">
@@ -100,8 +100,8 @@ const UpcomingEvents = () => {
                       </div>
                       <button
                         className={`w-full py-3 rounded-lg font-medium transition-colors ${event.eventType === "Free"
-                            ? "bg-green-600 hover:bg-green-700 text-[#F5F1E1]"
-                            : "bg-red-600 hover:bg-red-700 text-[#F5F1E1]"
+                          ? "bg-green-600 hover:bg-green-700 text-[#F5F1E1]"
+                          : "bg-red-600 hover:bg-red-700 text-[#F5F1E1]"
                           }`}
                       >
                         {event.eventType === "Free" ? "Register Now" : "Buy Ticket"}
