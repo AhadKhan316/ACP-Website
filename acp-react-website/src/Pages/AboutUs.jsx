@@ -16,8 +16,8 @@ const AboutUs = () => {
           <div className="flex flex-col lg:flex-row items-center mb-16 gap-8 bg-gray-800 p-6 rounded-lg mt-20"> 
             <div className="mb-6 lg:mb-0 lg:w-1/2"> 
               <div className="">
-                <h2 className="text-3xl font-semibold text-white mb-4">Our History</h2> 
-                <p className="text-white text-lg leading-relaxed max-w-3xl">
+                <h2 className="text-3xl font-semibold text-white mb-4 text-center">Our History</h2> 
+                <p className="text-white text-lg leading-relaxed max-w-3xl text-center">
                   Founded in 1980, the Arts Council of Pakistan has been a beacon for cultural
                   preservation, talent development, and a place of collaboration for artists from
                   all corners of Pakistan. We take pride in fostering artistic growth and supporting
@@ -49,7 +49,7 @@ const AboutUs = () => {
         return (
           <div className="mb-16 bg-gray-800 p-6 rounded-lg mt-20">
             <h2 className="text-3xl font-semibold text-white mb-4 text-center">Our Vision</h2>
-            <p className="text-white text-lg leading-relaxed max-w-3xl mx-auto">
+            <p className="text-white text-lg leading-relaxed max-w-3xl mx-auto text-center">
               Our vision is to create a world where art unites people, transcending borders
               and creating a global dialogue through artistic expression. We aim to support artists
               and bring attention to the diverse, rich culture of Pakistan while influencing global
@@ -61,7 +61,7 @@ const AboutUs = () => {
         return (
           <div className="mb-16 bg-gray-800 p-6 rounded-lg mt-20">
             <h2 className="text-3xl font-semibold text-white-400 mb-4 text-center">Our Mission</h2>
-            <p className="text-white text-lg leading-relaxed max-w-3xl mx-auto">
+            <p className="text-white text-lg leading-relaxed max-w-3xl mx-auto text-center">
               Our mission is to serve as the premier institution supporting the development
               of artistic talents, fostering a rich cultural dialogue, and promoting the cultural
               heritage of Pakistan. We aim to provide a platform for artists, both emerging and

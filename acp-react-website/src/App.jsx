@@ -19,6 +19,7 @@ import AcademiesPage from './Pages/AcademyPage';
 import VenuesPage from './Pages/VenuePage';
 import AboutUs from './Pages/AboutUs'
 import GoverningBody from './Pages/GoverningBody';
+import TeamMembers from './Pages/TeamMember';
 
 
 const App = () => {
@@ -31,12 +32,14 @@ const App = () => {
         <Route path="/AcademiesPage" element={<AcademiesPage />} />
         <Route path="/VenuesPage" element={<VenuesPage />} />
         <Route path="/about" element={<AboutUs />} />
-        <Route path="/GoverningBody/members" element={<GoverningBody />} />
+        <Route path="/GoverningBody" element={<GoverningBody />} />
+        <Route path="/TeamMembers" element={<TeamMembers />} />
 
         {/* Components - Wrap these in a Route with a path */}
         <Route path="/" element={
           <>
             <Hero />
+            {/* <Cards /> */}
             <UpcomingEvents />
             <About />
             <PresidentMessage />
@@ -48,8 +51,8 @@ const App = () => {
           </>
         } />
       </Routes>
-      <Footer /> {/* Moved Footer inside the Router, but outside Routes */}
-    </Router>
+      <Footer /> {/* Moved Footer inside the Router, but outside Routes */ }
+    </Router >
   );
 };
 

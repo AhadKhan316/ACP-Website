@@ -15,10 +15,10 @@ const ProductionMessage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-[#F5F1E1]">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-[#F5F1E1] text-center">
                 Productions
               </h2>
-              <p className="text-[#F5F1E1] mb-6 leading-relaxed text-base sm:text-lg">
+              <p className="text-[#F5F1E1] mb-6 leading-relaxed text-base sm:text-lg text-center">
                 We believe in the transformative power of the arts, uniting talents
                 from Pakistan and beyond, and fostering artistic expression and
                 exchange while making culture accessible to all through our digital

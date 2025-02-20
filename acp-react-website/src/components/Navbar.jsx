@@ -166,20 +166,20 @@ const Navbar = () => {
                                     <div className="p-2 space-y-1">
                                         <NavLink to="/about">About</NavLink>
                                         <div className="relative">
-                                            <SubSubMenuButton
+                                            {/* <SubSubMenuButton
                                                 onClick={(e) => toggleSubSubMenu("governingBody", e)}
                                                 isOpen={isSubSubMenuOpen["governingBody"]}
-                                            >
-                                                Governing Body
-                                            </SubSubMenuButton>
-                                            {isSubSubMenuOpen["governingBody"] && (
+                                            > */}
+                                                <NavLink to="/GoverningBody">Governing Body</NavLink>
+                                            {/* </SubSubMenuButton> */}
+                                            {/* {isSubSubMenuOpen["governingBody"] && (
                                                 <div className="md:absolute left-full top-0 mt-0 ml-2 w-48 rounded-lg bg-white shadow-lg">
                                                     <div className="p-2 space-y-1">
                                                         <NavLink to="/GoverningBody/members">Members</NavLink>
                                                         <NavLink to="/GoverningBody/roles">Roles</NavLink>
                                                     </div>
                                                 </div>
-                                            )}
+                                            )} */}
                                         </div>
                                         <NavLink to="/TeamMembers">Team</NavLink>
                                     </div>

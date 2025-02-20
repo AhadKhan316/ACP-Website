@@ -63,25 +63,25 @@ const GoverningBody = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#111827] text-white py-10">
-      <div className="mx-4 px-4 py-8 pt-[120px]">
+    <div className="bg-[#111827] text-white py-10">
+      <div className="mx-4 px-4 sm:px-6 lg:px-8">
         {/* President's Message */}
         <div className="bg-gray-800 p-8 rounded-lg shadow-md mb-8 flex flex-col lg:flex-row items-center lg:items-start text-white">
           {/* President Image */}
           <div className="w-full lg:w-1/2 mb-4 lg:mb-0 flex justify-center items-center">
-            <div className="w-[480px] h-[480px] bg-[#F5F1E1] overflow-hidden shadow-lg">
+            <div className="w-[500px] h-[460px] overflow-hidden shadow-lg rounded">
               <img
                 src={presidentImg}
                 alt="President"
-                className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                className="w-full h-full object-cover hover:scale-110 transition-transform duration-300 cursor-pointer"
               />
             </div>
           </div>
 
           {/* Text Section */}
-          <div className="w-full lg:w-1/2 flex flex-col justify-center items-center text-center py-12 ">
+          <div className="w-full lg:w-1/2 flex flex-col justify-center items-center text-center">
             <h2 className="text-4xl font-bold mb-4">President’s Message</h2>
-            <p className="text-lg leading-relaxed">
+            <p className="text-lg leading-relaxed ">
               The Arts Council of Pakistan endeavors to uphold and champion the rich tapestry of Pakistani arts and culture on the world stage. Our aspiration is to provide a nurturing and inspirational environment that fosters talent, connections, and collaboration among communities not only within Pakistan but across the globe.
             </p>
           </div>

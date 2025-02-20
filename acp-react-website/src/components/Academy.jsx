@@ -34,10 +34,10 @@ const PresidentMessage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <h2 className="text-4xl font-bold mb-4 text-[#F5F1E1]">
+              <h2 className="text-4xl font-bold mb-4 text-[#F5F1E1] text-center">
                 Academies
               </h2>
-              <p className="text-[#F5F1E1] text-lg mb-6 leading-relaxed">
+              <p className="text-[#F5F1E1] text-lg mb-6 leading-relaxed text-center">
                 ACPKHI houses multiple arts academies. Our core belief is nurturing young talents to become creative, accomplished individuals, bringing pride to our nation. With academies catering to those passionate about theatre, singing, music, dance and fine arts, textile design, communication design we train hundreds of students yearly and have continued to do so with expert instructors since 1954.
               </p>
               <p className="text-gray-700 font-semibold">

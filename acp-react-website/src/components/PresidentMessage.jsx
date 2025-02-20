@@ -15,10 +15,10 @@ const PresidentMessage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-amber-100">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-amber-100 text-center">
                 Mohammad Ahmed Shah (HI, SI)
               </h2>
-              <p className="text-amber-100 mb-6 leading-relaxed text-base sm:text-lg">
+              <p className="text-amber-100 mb-6 leading-relaxed text-base sm:text-lg text-center">
                 "The Arts Council of Pakistan endeavors to uphold and champion the
                 rich tapestry of Pakistani arts and culture on the world stage. Our
                 aspiration is to provide a nurturing and inspirational environment
