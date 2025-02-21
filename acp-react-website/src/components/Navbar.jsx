@@ -116,6 +116,37 @@ const Navbar = () => {
                             <NavLink to="/">Home</NavLink>
                         </li>
 
+                        {/* About Us Dropdown */}
+                        <li className="relative">
+                            <DropdownButton onClick={(e) => toggleSubMenu("about", e)} isOpen={isSubMenuOpen["about"]}>
+                                About
+                            </DropdownButton>
+                            {isSubMenuOpen["about"] && (
+                                <div className="md:absolute top-full mt-2 w-50 rounded-lg bg-white shadow-lg ">
+                                    <div className="p-2 space-y-1">
+                                        <NavLink to="/about">About Us</NavLink>
+                                        <div className="relative">
+                                            {/* <SubSubMenuButton
+                                                onClick={(e) => toggleSubSubMenu("governingBody", e)}
+                                                isOpen={isSubSubMenuOpen["governingBody"]}
+                                            > */}
+                                                <NavLink to="/GoverningBody">Governing Body</NavLink>
+                                            {/* </SubSubMenuButton> */}
+                                            {/* {isSubSubMenuOpen["governingBody"] && (
+                                                <div className="md:absolute left-full top-0 mt-0 ml-2 w-48 rounded-lg bg-white shadow-lg">
+                                                    <div className="p-2 space-y-1">
+                                                        <NavLink to="/GoverningBody/members">Members</NavLink>
+                                                        <NavLink to="/GoverningBody/roles">Roles</NavLink>
+                                                    </div>
+                                                </div>
+                                            )} */}
+                                        </div>
+                                        <NavLink to="/TeamMembers">Team</NavLink>
+                                    </div>
+                                </div>
+                            )}
+                        </li>
+
                         {/* Production Dropdown */}
                         <li className="relative">
                             <DropdownButton onClick={(e) => toggleSubMenu("production", e)} isOpen={isSubMenuOpen["production"]}>
@@ -156,21 +187,22 @@ const Navbar = () => {
                             <NavLink to="/cafeteria">Cafeteria</NavLink>
                         </li>
 
-                        {/* About Us Dropdown */}
+
+                        {/* Resources Drop Down*/}
                         <li className="relative">
-                            <DropdownButton onClick={(e) => toggleSubMenu("about", e)} isOpen={isSubMenuOpen["about"]}>
+                            <DropdownButton onClick={(e) => toggleSubMenu("resources", e)} isOpen={isSubMenuOpen["resources"]}>
                                 Resources
                             </DropdownButton>
-                            {isSubMenuOpen["about"] && (
-                                <div className="md:absolute right-0 top-full mt-2 w-56 rounded-lg bg-white shadow-lg ">
+                            {isSubMenuOpen["resources"] && (
+                                <div className="md:absolute top-full mt-2 w-60 rounded-lg bg-white shadow-lg ">
                                     <div className="p-2 space-y-1">
-                                        <NavLink to="/about">About</NavLink>
+                                        <NavLink to="/membersVerification">Membership Verification</NavLink>
                                         <div className="relative">
                                             {/* <SubSubMenuButton
                                                 onClick={(e) => toggleSubSubMenu("governingBody", e)}
                                                 isOpen={isSubSubMenuOpen["governingBody"]}
                                             > */}
-                                                <NavLink to="/GoverningBody">Governing Body</NavLink>
+                                                <NavLink to="/career">Career</NavLink>
                                             {/* </SubSubMenuButton> */}
                                             {/* {isSubSubMenuOpen["governingBody"] && (
                                                 <div className="md:absolute left-full top-0 mt-0 ml-2 w-48 rounded-lg bg-white shadow-lg">
@@ -181,7 +213,7 @@ const Navbar = () => {
                                                 </div>
                                             )} */}
                                         </div>
-                                        <NavLink to="/TeamMembers">Team</NavLink>
+                                        <NavLink to="/tenders">Tenders</NavLink>
                                     </div>
                                 </div>
                             )}

@@ -6,11 +6,11 @@ import 'swiper/css/navigation';
 import 'swiper/css/autoplay'; // Import Autoplay styles
 import Cards from "../components/Cards";
 
-import departmentImg1 from "../assets/academies/Communication Design.webp";
-import departmentImg2 from "../assets/academies/textile-design.webp";
-import departmentImg3 from "../assets/academies/textile-design.webp";
-import sliderImg1 from "../assets/academies/ACP Drone 2023.webp";
-import sliderImg2 from "../assets/academies/Music.webp";
+import departmentImg1 from "../assets/academies/communication-design.png";
+import departmentImg2 from "../assets/academies/textile-design.png";
+import departmentImg3 from "../assets/academies/textile-design.png";
+import sliderImg1 from "../assets/academies/acp-drone-2023.png";
+import sliderImg2 from "../assets/academies/music.png";
 // import academicImg from "../assets/academies/dance.webp";
 
 const AcademiesPage = () => {

@@ -1,187 +1,111 @@
 import React from "react";
+import { motion } from "framer-motion";
+import Cards from "../components/Cards";
 
 // Importing images
-import execDirectorImg from "../assets/team/daniyal.webp";
-import director1 from "../assets/team/Shakil Khan.webp";
-import director2 from "../assets/team/Shakil Rizvi.webp";
-import director3 from "../assets/team/Bashir Saddozai.webp";
-import director4 from "../assets/team/Arman.webp";
-
-import img1 from "../assets/team/jahanzaib.webp";
-import img2 from "../assets/team/khalid ahmed.webp";
-import img3 from "../assets/team/Ahsan Bari.webp";
-import img4 from "../assets/team/Syed Darain.webp";
-import img5 from "../assets/team/HURMAT.webp";
-import img6 from "../assets/team/Sharjeel.webp";
-import img7 from "../assets/team/m junaid bhai.webp";
-import img8 from "../assets/team/Rohail.webp";
-import img9 from "../assets/team/sheela.webp";
-import img10 from "../assets/team/Raza.webp";
-import img11 from "../assets/team/Manzoor.webp";
-import img12 from "../assets/team/khurrum bhai.webp";
-import img13 from "../assets/team/muhammad ali.webp";
-import img14 from "../assets/team/muhammad zeeshan.webp";
-import img15 from "../assets/team/shahida.webp";
-import img16 from "../assets/team/asghar ali.webp";
-import img17 from "../assets/team/imad ur rehman.webp";
-import img18 from "../assets/team/128353.webp";
-import img19 from "../assets/team/anees fatima.webp";
-import img20 from "../assets/team/umesh.webp";
-import img21 from "../assets/team/azaib.webp";
-import img22 from "../assets/team/mustafa jan.webp";
-import img23 from "../assets/team/asim.webp";
-import img24 from "../assets/team/hamna khalid.webp";
-
+import execDirectorImg from "../assets/team/daniyal.png";
+import director1 from "../assets/team/shakil-khan.png";
+import director2 from "../assets/team/shakil-rizvi.png";
+import director3 from "../assets/team/bashir-saddozai.png";
+import director4 from "../assets/team/arman.png";
+import img1 from "../assets/team/jahanzaib.png";
+import img2 from "../assets/team/khalid-ahmed.png";
+import img3 from "../assets/team/ahsan-bari.png";
+import img4 from "../assets/team/syed-darain.png";
+import img5 from "../assets/team/hurmat.png";
+import img6 from "../assets/team/sharjeel.png";
+import img7 from "../assets/team/mjunaid-bhai.png";
+import img8 from "../assets/team/rohail.png";
+import img9 from "../assets/team/sheela.png";
+import img10 from "../assets/team/raza.png";
+import img11 from "../assets/team/manzoor.png";
+import img12 from "../assets/team/khurrum-bhai.png";
+import img13 from "../assets/team/muhammad-ali.png";
+import img14 from "../assets/team/muhammad-zeeshan.png";
+import img15 from "../assets/team/shahida.png";
+import img16 from "../assets/team/asghar-ali.png";
+import img17 from "../assets/team/imad-ur-rehman.png";
+import img18 from "../assets/team/128353.png";
+import img19 from "../assets/team/anees-fatima.png";
+import img20 from "../assets/team/umesh.png";
+import img21 from "../assets/team/azaib.png";
+import img22 from "../assets/team/mustafajan.png";
+import img23 from "../assets/team/asim.png";
+import img24 from "../assets/team/hamna-khalid.png";
 
 const TeamMembers = () => {
   const directors = [
-    { id: 1, name: "Shakil Khan", title: "DIRECTOR ADMINISTRATION", image: director1 },
-    { id: 2, name: "Shakil Haider Jafri", title: "DIRECTOR FOOD & BEVERAGES", image: director2 },
-    { id: 3, name: "M Bashir Khan", title: "RESIDENT DIRECTOR - DISTIRCT CENTRAL", image: director3 },
-    { id: 3, name: "Arman Rahim", title: "DIRECTOR ACADEMIES", image: director4 },
+    { id: 1, name: "Shakil Khan", description: "Director Administration", image: director1, buttonText: "Learn More" },
+    { id: 2, name: "Shakil Haider Jafri", description: "Director Food & Beverages", image: director2, buttonText: "Learn More" },
+    { id: 3, name: "M Bashir Khan", description: "Resident Director - District Central", image: director3, buttonText: "Learn More" },
+    { id: 4, name: "Arman Rahim", description: "Director Academies", image: director4, buttonText: "Learn More" },
   ];
 
   const managers = [
-    { id: 1, name: "Jahanzeb Ali Shah", title: "HEAD OF INTERNATIONAL COLLABORATION", image: img1 },
-    { id: 2, name: "Khalid Ahmed", title: "HEAD OF THEATRE", image: img2 },
-    { id: 3, name: "Ahsan Bari", title: "DIRECTOR SPECIAL PROGRAMS MUSIC & HOD MUSIC", image: img3 },
-    { id: 4, name: "Syed Ali Darain", title: "HEAD OF FINANCE DEPARTMENT", image: img4 },
-    { id: 5, name: "Hurmat Majid", title: "EXECUTIVE CORRESPONDENT & CONTENT STRATEGIST", image: img5 },
-    { id: 6, name: "M. Sharjeel Shaikh", title: "HEAD OF PROGRAMING & OPERATIONS", image: img6 },
-    { id: 7, name: "Muhammad Junaid", title: "HEAD OF EDITING & ANIMATION", image: img7 },
-    { id: 8, name: "Rohail Khan", title: "MANAGER - SOCIAL MEDIA & CONTENT", image: img8 },
-    { id: 9, name: "Shahla Mehmood", title: "MANAGER - PRESS/MEDIA", image: img9 },
-    { id: 10, name: "Yousuf Raza", title: "HEAD OF DESIGN & COMMUNICATION", image: img10 },
-    { id: 11, name: "Manzoor Hussain", title: "MANAGER - PROJECTS & MAINTENANCE", image: img11 },
-    { id: 12, name: "Khurram Shehzad", title: "DIRECTOR OF CINEMATOGRAPHY", image: img12 },
-    { id: 13, name: "Muhamamd ali", title: "HEAD OF COMMUNICATION DESIGN", image: img13 },
-    { id: 14, name: "Muhammad Zeeshan", title: "HEAD OF FINE ARTS & TEXTILE DESIGN", image: img14 },
-    { id: 15, name: "Shahida Israr", title: "PROGRAMMER MANAGER", image: img15 },
-    { id: 16, name: "Asghar Ali", title: "MANAGER - PROCUREMENT", image: img16 },
-    { id: 17, name: "Imad ur Rehman", title: "HEAD OF AUDIO PRODUCTION", image: img17 },
-    { id: 18, name: "Yawer Shahzad ", title: "Manager - Implement & Vigilance", image: img18 },
-    { id: 19, name: "S. Anees Fatima", title: "CHIEF ORG LIBRARY", image: img19 },
-    { id: 20, name: "Umesh Ladhani", title: "DEPUTY DIRECTOR ARTS & CRAFT", image: img20 },
-    { id: 21, name: "Alam Zaib Khan ", title: "DEPUTY DIRECTOR PERFORMING ARTS", image: img21 },
-    { id: 22, name: "Mustafa Jan", title: "OPERATION MANAGER ACADEMIES", image: img22 },
-    { id: 24, name: "Hamna Khalid", title: "MEMBER LIAISON OFFICER", image: img24 },
-    { id: 23, name: "Asim Naqvi", title: "ACADEMIC MANAGER", image: img23 },
+    { id: 1, name: "Jahanzeb Ali Shah", description: "Head of International Collaboration", image: img1, buttonText: "Learn More" },
+    { id: 2, name: "Khalid Ahmed", description: "Head of Theatre", image: img2, buttonText: "Learn More" },
+    { id: 3, name: "Ahsan Bari", description: "Director Special Programs Music & HOD Music", image: img3, buttonText: "Learn More" },
+    { id: 4, name: "Syed Ali Darain", description: "Head of Finance Department", image: img4, buttonText: "Learn More" },
+    { id: 5, name: "Hurmat Majid", description: "Executive Correspondent & Content Strategist", image: img5, buttonText: "Learn More" },
+    { id: 6, name: "M. Sharjeel Shaikh", description: "Head of Programming & Operations", image: img6, buttonText: "Learn More" },
+    { id: 7, name: "Muhammad Junaid", description: "Head of Editing & Animation", image: img7, buttonText: "Learn More" },
+    { id: 8, name: "Rohail Khan", description: "Manager - Social Media & Content", image: img8, buttonText: "Learn More" },
+    { id: 9, name: "Shahla Mehmood", description: "Manager - Press/Media", image: img9, buttonText: "Learn More" },
+    { id: 10, name: "Yousuf Raza", description: "Head of Design & Communication", image: img10, buttonText: "Learn More" },
+    { id: 11, name: "Manzoor Hussain", description: "Manager - Projects & Maintenance", image: img11, buttonText: "Learn More" },
+    { id: 12, name: "Khurram Shehzad", description: "Director of Cinematography", image: img12, buttonText: "Learn More" },
+    { id: 13, name: "Muhammad Ali", description: "Head of Communication Design", image: img13, buttonText: "Learn More" },
+    { id: 14, name: "Muhammad Zeeshan", description: "Head of Fine Arts & Textile Design", image: img14, buttonText: "Learn More" },
+    { id: 15, name: "Shahida Israr", description: "Programmer Manager", image: img15, buttonText: "Learn More" },
+    { id: 16, name: "Asghar Ali", description: "Manager - Procurement", image: img16, buttonText: "Learn More" },
+    { id: 17, name: "Imad ur Rehman", description: "Head of Audio Production", image: img17, buttonText: "Learn More" },
+    { id: 18, name: "Yawer Shahzad", description: "Manager - Implement & Vigilance", image: img18, buttonText: "Learn More" },
+    { id: 19, name: "S. Anees Fatima", description: "Chief Org Library", image: img19, buttonText: "Learn More" },
+    { id: 20, name: "Umesh Ladhani", description: "Deputy Director Arts & Craft", image: img20, buttonText: "Learn More" },
+    { id: 21, name: "Alam Zaib Khan", description: "Deputy Director Performing Arts", image: img21, buttonText: "Learn More" },
+    { id: 22, name: "Mustafa Jan", description: "Operation Manager Academies", image: img22, buttonText: "Learn More" },
+    { id: 23, name: "Asim Naqvi", description: "Academic Manager", image: img23, buttonText: "Learn More" },
+    { id: 24, name: "Hamna Khalid", description: "Member Liaison Officer", image: img24, buttonText: "Learn More" },
   ];
 
-  // const employees = [
-  //   // { id: 1, name: "Employee One", title: "Team Member", image: employee1 },
-  //   // { id: 2, name: "Employee Two", title: "Team Member", image: employee2 },
-  // ];
   return (
-    <div className="bg-[#111827] text-white py-10">
+    <div className="bg-[#111827] text-white py-12 sm:px-6 lg:px-8">
       {/* Container */}
-      <div className="mx-6 sm:px-6 lg:px-6">
-        {/* President's Message */}
-        <div className="bg-gray-800 p-8 rounded-lg shadow-md mb-8 flex flex-col lg:flex-row items-center lg:items-start text-gray-800">
-          {/* President Image */}
-          <div className="w-full lg:w-1/2 mb-4 lg:mb-0 flex justify-center items-center">
-            <div className="w-[400px] h-[400px] bg-[#F5F1E1] overflow-hidden shadow-lg">
+      <div className="mx-4">
+        {/* Executive Director Section */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="bg-[#1E293B] p-6 sm:p-8 rounded-xl shadow-lg mb-12 flex flex-col lg:flex-row items-center gap-6"
+        >
+          <div className="w-full lg:w-1/3 flex justify-center">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-xl border-4 border-[#F5F1E1]">
               <img
                 src={execDirectorImg}
-                alt="President"
-                className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                alt="Muhammad Daniyal Umer"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                loading="lazy"
               />
             </div>
           </div>
-
-          {/* Text Section */}
-          <div className="w-full lg:w-1/2 flex flex-col justify-center items-center text-center py-12 ">
-            <h2 className="text-4xl font-bold mb-4 text-white">Executive Director</h2>
-            <p className="text-lg leading-relaxed text-white">
-              As the world's youngest Executive Director of an arts organization, leading the Arts Council of Pakistan, Karachi (ACPKHI), is a distinct honour and privilege. Our mission transcends borders, seeking to enrich global culture, art, and literature.  Over the past decade, working alongside President ACPKHI, Mohammad Ahmed Shah (HI)(SI), my dedication to nurturing youth creativity has grown exponentially. Together we have built a dedicated team committed to making a difference in their respective fields.  With ACPKHI thriving as a vibrant cultural hub, I envision integrating modern technology into our initiatives. I'm confident that with our continued dedication, ACPKHI will flourish as a premier cultural institution, enriching the lives of talented individuals worldwide.
+          <div className="w-full lg:w-2/3 text-center lg:text-left">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#F5F1E1]">Executive Director</h2>
+            <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-4">
+              As the world's youngest Executive Director of an arts organization, leading the Arts Council of Pakistan, Karachi (ACPKHI), is a distinct honour and privilege. Our mission transcends borders, seeking to enrich global culture, art, and literature. Over the past decade, working alongside President ACPKHI, Mohammad Ahmed Shah (HI)(SI), my dedication to nurturing youth creativity has grown exponentially.
             </p>
-            <p>Thank you.</p>
-            <h3 className="text-2xl font-bold mb-3"> Muhammad Daniyal Umer</h3>
+            <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-4">
+              Together we have built a dedicated team committed to making a difference in their respective fields. With ACPKHI thriving as a vibrant cultural hub, I envision integrating modern technology into our initiatives. I'm confident that with our continued dedication, ACPKHI will flourish as a premier cultural institution, enriching the lives of talented individuals worldwide. Thank you.
+            </p>
+            <h3 className="text-xl sm:text-2xl font-semibold text-[#F5F1E1]">Muhammad Daniyal Umer</h3>
           </div>
-
-        </div>
+        </motion.section>
 
         {/* Directors Section */}
-        <section className="mb-8">
-          <h2 className="text-3xl font-bold mb-6 text-center">Directors</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {directors.map((member) => (
-              <div
-                key={member.id}
-                className="bg-[#F5F1E1] p-4 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300 text-gray-800"
-              >
-                {/* Image Container */}
-                <div className="w-[full] h-[400px] bg-gray-200 overflow-hidden mb-4 shadow-md">
-                  <img
-                    src={member.image}
-                    alt={member.name}
+        <Cards title="Directors" items={directors} />
 
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                  />
-                </div>
-
-                {/* Member Details */}
-                <h3 className="text-xl font-semibold">{member.name}</h3>
-                <p className="text-gray-600">{member.title}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Department Heads / Managers Section */}
-        <section className="mb-8">
-          <h2 className="text-3xl font-bold mb-6 text-center">
-            HOD / Managers
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {managers.map((member) => (
-              <div
-                key={member.id}
-                className="bg-white p-4 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300 text-gray-800"
-              >
-                {/* Image Container */}
-                <div className="w-[full] h-[400px] bg-gray-200 overflow-hidden mb-4 shadow-md">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                  />
-                </div>
-
-                {/* Member Details */}
-                <h3 className="text-xl font-semibold">{member.name}</h3>
-                <p className="text-gray-600">{member.title}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Employees Section 
-    *  <section>
-          <h2 className="text-3xl font-bold mb-6 text-center">Other Employees</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {employees.map((member) => (
-              <div
-                key={member.id}
-                className="bg-white p-4 rounded-lg shadow-lg text-center hover:shadow-xl transition-shadow duration-300 text-gray-800"
-              >
-                {/* Image Container 
-                <div className="w-[full] h-[400px] bg-gray-200 overflow-hidden mb-4 shadow-md">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                  />
-                </div>
-
-                {/* Member Details 
-                <h3 className="text-xl font-semibold">{member.name}</h3>
-                <p className="text-gray-600">{member.title}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-        */}
+        {/* Managers Section */}
+        <Cards title="HOD / Managers" items={managers} />
       </div>
     </div>
   );

@@ -125,7 +125,7 @@ const UpcomingEvents = () => {
               {/* Main Event Image (Full Width) */}
               <div className="md:col-span-2 rounded-xl overflow-hidden relative flex justify-center">
                 <img
-                  src="./src/assets/post-img/sukkur-chapter-2.png"
+                  src="./src/assets/poster-images/sukkur-chapter-2.png"
                   alt="Main Event Image"
                   className="w-full h-full max-w-[1000px] object-cover rounded-lg"
                 />
@@ -139,7 +139,7 @@ const UpcomingEvents = () => {
                 {/* Image 1 */}
                 <div className="rounded-xl overflow-hidden relative">
                   <img
-                    src="./src/assets/post-img/sukkur-chapter-2.png"
+                    src="./src/assets/poster-images/sukkur-chapter-2.png"
                     alt="Event Image 1"
                     className="w-full h-full object-cover rounded-lg"
                   />
@@ -151,7 +151,7 @@ const UpcomingEvents = () => {
                 {/* Image 2 */}
                 <div className="rounded-xl overflow-hidden relative">
                   <img
-                    src="./src/assets/post-img/sukkur-chapter-2.png"
+                    src="./src/assets/poster-images/sukkur-chapter-2.png"
                     alt="Event Image 2"
                     className="w-full h-full object-cover rounded-lg"
                   />

@@ -20,6 +20,9 @@ import VenuesPage from './Pages/VenuePage';
 import AboutUs from './Pages/AboutUs'
 import GoverningBody from './Pages/GoverningBody';
 import TeamMembers from './Pages/TeamMember';
+import MembersVerification from './Pages/MembersVerification';
+import Career from './Pages/Careers';
+import Tenders from './Pages/Tenders';
 
 
 const App = () => {
@@ -34,6 +37,9 @@ const App = () => {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/GoverningBody" element={<GoverningBody />} />
         <Route path="/TeamMembers" element={<TeamMembers />} />
+        <Route path="/MembersVerification" element={<MembersVerification />} />
+        <Route path="/Career" element={<Career />} />
+        <Route path="/Tenders" element={<Tenders />} />
 
         {/* Components - Wrap these in a Route with a path */}
         <Route path="/" element={
