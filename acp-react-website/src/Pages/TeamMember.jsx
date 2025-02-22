@@ -17,7 +17,7 @@ import img6 from "../assets/team/sharjeel.png";
 import img7 from "../assets/team/mjunaid-bhai.png";
 import img8 from "../assets/team/rohail.png";
 import img9 from "../assets/team/sheela.png";
-import img10 from "../assets/team/raza.png";
+import img10 from "../assets/team/Raza.png";
 import img11 from "../assets/team/manzoor.png";
 import img12 from "../assets/team/khurrum-bhai.png";
 import img13 from "../assets/team/muhammad-ali.png";
