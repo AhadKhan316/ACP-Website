@@ -7,7 +7,7 @@ import presidentImg from "../assets/governing-body-new/ahmed-shah.png";
 import img1 from "../assets/governing-body-new/munawar-saeed.png";
 import img2 from "../assets/governing-body-new/ejaz-farooqi.png";
 import img3 from "../assets/governing-body-new/noorul-huda-shah.png";
-import img4 from "../assets/governing-body-new/qudsia-Akbar.png";
+// import img4 from "../assets/governing-body-new/qudsia-Akbar.png";
 import img5 from "../assets/governing-body-new/huma-mir.png";
 import img6 from "../assets/governing-body-new/s-m-qaiser-sajjad.png";
 import img7 from "../assets/governing-body-new/syed-asjad-hussain-bukhari.png";
@@ -35,7 +35,7 @@ const GoverningBody = () => {
       { id: 1, name: "Munawar Saeed", description: "Vice President", image: img1, buttonText: "Learn More" },
       { id: 2, name: "Ejaz Farooqi", description: "Secretary", image: img2, buttonText: "Learn More" },
       { id: 3, name: "Noor Ul Huda Shah", description: "Joint Secretary", image: img3, buttonText: "Learn More" },
-      { id: 4, name: "Qudsia Akbar", description: "Treasurer", image: img4, buttonText: "Learn More" },
+      // { id: 4, name: "Qudsia Akbar", description: "Treasurer", image: img4, buttonText: "Learn More" },
     ],
     "Governing Body": [
       { id: 1, name: "Huma Mir", description: "Member", image: img5, buttonText: "Learn More" },
