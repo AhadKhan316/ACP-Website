@@ -21,7 +21,7 @@ import img14 from "../assets/governing-body-new/Abdullah-Sultan.webp";
 import img15 from "../assets/governing-body-new/amjad-hussain-shah.png";
 import img16 from "../assets/governing-body-new/syed-sajid-hassan.png";
 import img17 from "../assets/governing-body-new/muhammad-iqbal-lateef.png";
-import img18 from "../assets/governing-body-new/Amjad-siraj-memon.png";
+import img18 from "../assets/governing-body-new/amjad-siraj-memon.png";
 
 const GoverningBody = () => {
   const [activeTab, setActiveTab] = useState("Office Bearers");
