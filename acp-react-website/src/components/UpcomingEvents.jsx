@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 
+import posterImg from "../assets/poster-images/sukkur-chapter-2.png";
+
+
 // Component to display upcoming events
 const UpcomingEvents = () => {
   const [events, setEvents] = useState([]);
@@ -125,7 +128,7 @@ const UpcomingEvents = () => {
               {/* Main Event Image (Full Width) */}
               <div className="md:col-span-2 rounded-xl overflow-hidden relative flex justify-center">
                 <img
-                  src="./src/assets/poster-images/sukkur-chapter-2.png"
+                  src={posterImg}
                   alt="Main Event Image"
                   className="w-full h-full max-w-[1000px] object-cover rounded-lg"
                 />
@@ -139,7 +142,7 @@ const UpcomingEvents = () => {
                 {/* Image 1 */}
                 <div className="rounded-xl overflow-hidden relative">
                   <img
-                    src="./src/assets/poster-images/sukkur-chapter-2.png"
+                    src={posterImg}
                     alt="Event Image 1"
                     className="w-full h-full object-cover rounded-lg"
                   />
@@ -151,7 +154,7 @@ const UpcomingEvents = () => {
                 {/* Image 2 */}
                 <div className="rounded-xl overflow-hidden relative">
                   <img
-                    src="./src/assets/poster-images/sukkur-chapter-2.png"
+                    src={posterImg}
                     alt="Event Image 2"
                     className="w-full h-full object-cover rounded-lg"
                   />
