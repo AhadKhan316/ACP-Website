@@ -2,8 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 // Components
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import Layout from './components/Layout'; // Import the Layout component
 import Hero from './components/Hero';
 import UpcomingEvents from './components/UpcomingEvents';
 import About from './components/About';
@@ -13,52 +12,63 @@ import Academy from './components/Academy';
 import CommunityFeedback from './components/CommunityFeedback';
 import Production from './components/Production';
 import OurSocial from './components/OurSocial';
+import ContactUs from './components/ContactUs';
 
 // Pages
 import AcademiesPage from './Pages/AcademyPage';
 import VenuesPage from './Pages/VenuePage';
-import AboutUs from './Pages/AboutUs'
+import AboutUs from './Pages/AboutUs';
 import GoverningBody from './Pages/GoverningBody';
 import TeamMembers from './Pages/TeamMember';
 import MembersVerification from './Pages/MembersVerification';
 import Career from './Pages/Careers';
 import Tenders from './Pages/Tenders';
 
+// WCF Page
+import WorldCultureFestival from './Pages/WorldCulturalFestival';
+
+// PLF Page
+import PakistanLiteratureFestival from './Pages/WorldCulturalFestival';
+
 
 const App = () => {
   return (
     <Router>
-      <div className='bg-red-500 text-white mx-auto'>Hello Tailwind CSS</div> {/* Changed h1 to div */}
-      <Navbar />
       <Routes>
-        {/* Pages Path */}
-        <Route path="/AcademiesPage" element={<AcademiesPage />} />
-        <Route path="/VenuesPage" element={<VenuesPage />} />
-        <Route path="/about" element={<AboutUs />} />
-        <Route path="/GoverningBody" element={<GoverningBody />} />
-        <Route path="/TeamMembers" element={<TeamMembers />} />
-        <Route path="/MembersVerification" element={<MembersVerification />} />
-        <Route path="/Career" element={<Career />} />
-        <Route path="/Tenders" element={<Tenders />} />
+        {/* Routes with Navbar and Footer */}
+        <Route element={<Layout />}>
+          <Route path="/" element={
+            <>
+              <Hero />
+              <UpcomingEvents />
+              <About />
+              <PresidentMessage />
+              <StayUpdated />
+              <Academy />
+              <CommunityFeedback />
+              <Production />
+              <OurSocial />
+            </>
+          } />
+          <Route path="/AcademiesPage" element={<AcademiesPage />} />
+          <Route path="/VenuesPage" element={<VenuesPage />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/GoverningBody" element={<GoverningBody />} />
+          <Route path="/TeamMembers" element={<TeamMembers />} />
+          <Route path="/MembersVerification" element={<MembersVerification />} />
+          <Route path="/Career" element={<Career />} />
+          <Route path="/Tenders" element={<Tenders />} />
+          <Route path="/ContactUs" element={<ContactUs />} />
+        </Route>
 
-        {/* Components - Wrap these in a Route with a path */}
-        <Route path="/" element={
-          <>
-            <Hero />
-            {/* <Cards /> */}
-            <UpcomingEvents />
-            <About />
-            <PresidentMessage />
-            <StayUpdated />
-            <Academy />
-            <CommunityFeedback />
-            <Production />
-            <OurSocial />
-          </>
-        } />
+        {/* Routes without Navbar and Footer */}
+        {/* WCF */}
+        <Route path="/festival/wcf/*" element={<WorldCultureFestival />} />
+
+        {/* PLF */}
+        <Route path="/festival/plf/*" element={<PakistanLiteratureFestival />} />
       </Routes>
-      <Footer /> {/* Moved Footer inside the Router, but outside Routes */ }
-    </Router >
+    </Router>
   );
 };
 

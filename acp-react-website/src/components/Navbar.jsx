@@ -119,7 +119,7 @@ const Navbar = () => {
                         {/* About Us Dropdown */}
                         <li className="relative">
                             <DropdownButton onClick={(e) => toggleSubMenu("about", e)} isOpen={isSubMenuOpen["about"]}>
-                                About
+                                About Us
                             </DropdownButton>
                             {isSubMenuOpen["about"] && (
                                 <div className="md:absolute top-full mt-2 w-50 rounded-lg bg-white shadow-lg ">
@@ -163,15 +163,43 @@ const Navbar = () => {
                                                 Festival
                                             </SubSubMenuButton>
                                             {isSubSubMenuOpen["festival"] && (
-                                                <div className="md:absolute left-full top-0 mt-0 ml-2 w-48 rounded-lg bg-white shadow-lg ">
+                                                <div className="md:absolute left-full top-0 mt-0 ml-2 w-68 rounded-lg bg-white shadow-lg ">
                                                     <div className="p-2 space-y-1">
-                                                        <NavLink to="/festival/music">Music</NavLink>
-                                                        <NavLink to="/festival/film">Film</NavLink>
+                                                        <NavLink to="/festival/wcf">World Culture Festival Karachi</NavLink>
+                                                        <NavLink to="/festival/auc">Aalmi Urdu Conference</NavLink>
+                                                        <NavLink to="/festival/plf">Pakistan Literature Festival</NavLink>
+                                                        <NavLink to="/festival/ptf">Pakistan Theatre Festival</NavLink>
+                                                        <NavLink to="/festival/pyf">Pakistan Youth Festival</NavLink>
+                                                        <NavLink to="/festival/wc">Women Conference</NavLink>
                                                     </div>
                                                 </div>
                                             )}
                                         </div>
-                                        <NavLink to="/production/events">Events</NavLink>
+                                        {/* <NavLink to="/production/events">Events</NavLink> */}
+                                    </div>
+                                    <div className="p-2 space-y-1">
+                                        <div className="relative">
+                                            <SubSubMenuButton
+                                                onClick={(e) => toggleSubSubMenu("events", e)}
+                                                isOpen={isSubSubMenuOpen["events"]}
+                                            >
+                                                Events
+                                            </SubSubMenuButton>
+                                            {isSubSubMenuOpen["events"] && (
+                                                <div className="md:absolute left-full top-0 mt-0 ml-2 w-68 rounded-lg bg-white shadow-lg ">
+                                                    <div className="p-2 space-y-1">
+                                                        <NavLink to="/events/acpMusic">ACP Musics</NavLink>
+                                                        <NavLink to="/events/dance">Dance</NavLink>
+                                                        <NavLink to="/events/bookLaunches">Book Launches</NavLink>
+                                                        <NavLink to="/events/musicalEvening">Musical Evenning</NavLink>
+                                                        <NavLink to="/events/exhibition">Exhibition</NavLink>
+                                                        <NavLink to="/events/internationalCollaboration">International Collaboration</NavLink>
+                                                        <NavLink to="/events/acpTalks">ACP Talks</NavLink>
+                                                    </div>
+                                                </div>
+                                            )}
+                                        </div>
+                                        {/* <NavLink to="/production/events">Events</NavLink> */}
                                     </div>
                                 </div>
                             )}
@@ -220,7 +248,7 @@ const Navbar = () => {
                         </li>
 
                         <li>
-                            <NavLink to="/contact">Contact</NavLink> {/* Changed to="/contact" */}
+                            <NavLink to="/ContactUs">Contact Us</NavLink> {/* Changed to="/contact" */}
                         </li>
                     </ul>
                 </div>
