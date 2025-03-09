@@ -32,19 +32,19 @@ const VenuesPage = () => {
       id: 1,
       name: "Auditorium 1",
       image: venueImg1,
-      description: "The Arts Council of Pakistan Karachi offers a luxury and beautifully designed Air Conditioned auditorium with a seating capacity of 436 persons based on a 1,215 sq. ft. stage. With modern pieces of equipment such as the latest theatrical lighting system, audio/video systems for live streaming, and impeccable acoustics.",
+      description: "The Arts Council of Pakistan Karachi offers a luxurious, air-conditioned auditorium with 436 seats and a 1,215 sq. ft. stage, featuring modern theatrical lighting, live-streaming audio/video systems, and impeccable acoustics.",
     },
     {
       id: 2,
       name: "Auditorium 2",
       image: venueImg2,
-      description: "The Arts Council of Pakistan Karachi offers a luxury and beautifully designed Air Conditioned auditorium with a seating capacity of 272 persons based on a 779 sq. ft. stage. Auditorium 2 is equipped with state-of-the-art amenities which people provide comfort and relaxation to the event organizers as well as attendees.",
+      description: "The Arts Council of Pakistan Karachi’s Auditorium 2 features a luxurious, air-conditioned space with 272 seats and a 779 sq. ft. stage, offering state-of-the-art amenities for maximum comfort and convenience.",
     },
     {
       id: 3,
       name: "Studio 1",
       image: venueImg3,
-      description: "Studio 1 is located on the 4th floor of the Ahmed Shah Building. It is a versatile 4,725 sq. ft. flexible space with enough room for sets, props, and crew to customize the experience according to the specific requirements in a controlled atmosphere.",
+      description: "Studio 1, located on the 4th floor of the Ahmed Shah Building, is a 4,725 sq. ft. versatile space designed for flexible setups, accommodating sets, props, and crew in a controlled environment.",
     },
 
 
@@ -52,7 +52,7 @@ const VenuesPage = () => {
       id: 4,
       name: "Studio 2",
       image: venueImg4,
-      description: "Studio 2 is located on the 3rd floor of the Ahmed Shah Building. Studio 2 is a versatile 5,032 sq. ft. film and video production studio with a 56ft wide stage area. Studio 2 is a flexible space with enough room for sets, props, and crew.",
+      description: "Studio 2, located on the 3rd floor of the Ahmed Shah Building, is a 5,032 sq. ft. versatile film and video production studio featuring a 56ft wide stage area, offering ample space for sets, props, and crew.",
     },
 
     {
@@ -80,7 +80,7 @@ const VenuesPage = () => {
       id: 8,
       name: "Café D' Art",
       image: venueImg8,
-      description: "Café D' Art is a magnificent coffee house located on the premises of ACPKHI. It serves as an excellent destination for dining and relaxation. Offers setting for social gatherings, open mic ceremonies, music performances, stand-up comedy shows, and exploration of various delectable cuisines.",
+      description: "Café D' Art, located at ACPKHI, is a vibrant coffee house perfect for dining and relaxation. It hosts social gatherings, open mic events, music performances, stand-up comedy, and a variety of delicious cuisines.",
     },
 
     {
@@ -94,7 +94,7 @@ const VenuesPage = () => {
       id: 10,
       name: "Josh Malihabadi Library",
       image: venueImg10,
-      description: "Josh Malihabadi Library is located on the 2nd floor of the Ahmed Shah Building and is dedicated to the Pakistani legendary play writer and screenwriter. A place where you can find books from various genres and different fields of knowledge, having over 25,000 books, and also serves as a location for recording live events.",
+      description: "The Josh Malihabadi Library, on the 2nd floor of the Ahmed Shah Building, honors the legendary Pakistani playwright and screenwriter. With over 25,000 books across various genres, it also serves as a venue for recording live events.",
     },
 
     {
@@ -108,7 +108,7 @@ const VenuesPage = () => {
       id: 12,
       name: "Lobby Area",
       image: venueImg12,
-      description: "The lobby area of Arts Council of Pakistan Karachi is converted into a diverse functional space. The Lobby is 4136 sq. ft. of space which is the perfect exhibit expansion space for tradeshows, networking, or a space where people can attend meetings, seminars, camps, workshops, literary functions, ghazal performances, etc.",
+      description: "The 4,136 sq. ft. lobby of the Arts Council of Pakistan Karachi serves as a versatile space for exhibitions, trade shows, networking, meetings, seminars, workshops, literary events, and ghazal performances.",
     },
 
     {

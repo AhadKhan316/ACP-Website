@@ -20,36 +20,40 @@ const ContactUs = () => {
       {/* Contact Information */}
       <div className="w-full mx-4 rounded-3xl p-6 sm:p-8 mb-12 overflow-hidden relative">
         <div className="mx-4 text-center">
-          <h2 className="text-2xl font-semibold mb-6">Contact Us</h2>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+          {/* <h2 className="text-2xl font-semibold mb-6">Contact Us</h2> */}
+          <p className="text-white mb-8 max-w-2xl mx-auto">
             Get in touch with us regarding any questions, queries, and bookings. We would love to hear from you.
           </p>
           <div className="grid md:grid-cols-2 gap-8">
             {/* For Query */}
-            <div className="p-6 bg-gray-50 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-              <h3 className="text-lg font-semibold mb-4">For Query</h3>
+            <div className="p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+              <h3 className="text-4xl font-semibold mb-4">For Query</h3>
               <p className="mb-2">
-                <a href="tel:+923000802391" className="text-blue-600 hover:text-blue-800 underline">
-                  Call: +92-300-0802391
+                <h1 className='text-2xl'>Call:</h1>
+                <a href="tel:+923000802391" className="text-white text-2xl hover:text-red-600">
+                  +92-300-0802391
                 </a>
               </p>
               <p>
-                <a href="mailto:info@acpkhi.com" className="text-blue-600 hover:text-blue-800 underline">
-                  Email: info@acpkhi.com
+                <h1 className='text-2xl'>Email:</h1>
+                <a href="mailto:info@acpkhi.com" className="text-white text-2xl hover:text-red-600">
+                  info@acpkhi.com
                 </a>
               </p>
             </div>
             {/* For Venues Bookings */}
-            <div className="p-6 bg-gray-50 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-              <h3 className="text-lg font-semibold mb-4">For Venues Bookings</h3>
+            <div className="p-6 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+              <h3 className="text-4xl font-semibold mb-4">For Venues Bookings</h3>
               <p className="mb-2">
-                <a href="tel:+923000802392" className="text-blue-600 hover:text-blue-800 underline">
-                  Call: +92-300-0802392
+                <h1 className='text-2xl'>Call:</h1>
+                <a href="tel:+923000802392" className="text-white text-2xl hover:text-red-600">
+                  +92-300-0802392
                 </a>
               </p>
               <p>
-                <a href="mailto:booking@acpkhi.com" className="text-blue-600 hover:text-blue-800 underline">
-                  Email: booking@acpkhi.com
+                <h1 className='text-2xl'>Email:</h1>
+                <a href="mailto:booking@acpkhi.com" className="text-white text-2xl hover:text-red-600">
+                  booking@acpkhi.com
                 </a>
               </p>
             </div>
@@ -60,8 +64,8 @@ const ContactUs = () => {
       {/* Find Us Section with Iframe Map */}
       <div className="w-full mx-4 rounded-3xl p-6 sm:p-8 mb-12 overflow-hidden relative">
         <div className="mx-4 text-center">
-          <h2 className="text-2xl font-semibold mb-6">Find Us</h2>
-          <p className="text-gray-600 mb-8">
+          <h2 className="text-4xl font-semibold mb-6">Find Us</h2>
+          <p className="text-white mb-8">
             Arts Council of Pakistan Karachi,<br />
             M.R Kiyani Road, Saddar Karachi,<br />
             Pakistan.

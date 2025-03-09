@@ -126,7 +126,7 @@ const AboutUs = () => {
               key={section}
               onClick={() => handleSectionChange(section)}
               className={`py-2 px-4 sm:px-6 rounded-xl font-semibold text-sm sm:text-base ${activeSection === section
-                ? "bg-[#1E293B] text-green-400 border border-[#F5F1E1] shadow-md"
+                ? "bg-[#1E293B] text-white border border-[#F5F1E1] shadow-md"
                 : "bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-[#F5F1E1] cursor-pointer"
                 }`}
               whileHover={{ scale: 1.05 }}
@@ -155,7 +155,7 @@ const AboutUs = () => {
           <div className="text-center">
             <a
               href="#cta"
-              className="inline-block bg-[#F5F1E1] text-[#1E293B] font-semibold py-2 sm:py-3 px-6 sm:px-8 rounded-xl hover:bg-[#E5E1D1] transition duration-300"
+              className="inline-block bg-red-700 text-white font-semibold py-2 sm:py-3 px-6 sm:px-8 rounded-xl hover:bg-red-600 transition duration-300"
               aria-label="Get Involved"
             >
               Get Involved

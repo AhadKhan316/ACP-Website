@@ -8,7 +8,7 @@ const Tenders = () => {
   };
 
   return (
-    <div className="bg-gradient-to-b from-[#1E293B] to-[#111827] text-gray-800 flex flex-col items-center justify-center py-10 px-4 sm:px-6 lg:px-8">
+    <div className="bg-gray-900 text-white flex flex-col items-center justify-center py-10 px-4 sm:px-6 lg:px-8">
       {/* Header Section */}
       <div className="w-full max-w-3xl text-center mb-12">
         <h1 className="text-3xl sm:text-4xl font-bold text-[#F5F1E1] mb-6">
@@ -30,27 +30,27 @@ const Tenders = () => {
             id="filterDate"
             value={filterDate}
             onChange={handleFilterChange}
-            className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 text-black"
+            className="px-12 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition duration-200 text-white"
             aria-label="Filter tenders by date"
           />
         </div>
       </div>
 
       {/* Tender Card */}
-      <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-6 sm:p-8 mb-12">
-        <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4">
+      <div className="w-full max-w-md bg-gray-800 rounded-2xl shadow-xl p-6 sm:p-8 mb-12">
+        <h2 className="text-xl sm:text-2xl font-semibold text-white mb-4">
           Pre-Qualification Notice
         </h2>
-        <p className="text-gray-600 text-base sm:text-lg mb-4">
+        <p className="text-white text-base sm:text-lg mb-4">
           for PLF Sukkur Chapter 2
         </p>
-        <p className="text-gray-500 text-sm sm:text-base mb-4">
+        <p className="text-white text-sm sm:text-base mb-4">
           Start Date: 12th February 2025
         </p>
-        <p className="text-gray-500 text-sm sm:text-base mb-4">
+        <p className="text-white text-sm sm:text-base mb-4">
           End Date: 17th February 2025
         </p>
-        <p className="text-gray-500 text-sm sm:text-base mb-4">
+        <p className="text-white text-sm sm:text-base mb-4">
           Tender ID: TD-ACPKHI-0002
         </p>
         <div className="flex flex-col sm:flex-row gap-4">

@@ -80,7 +80,7 @@ const TeamMembers = () => {
           className="bg-[#1E293B] p-6 sm:p-8 rounded-xl shadow-lg mb-12 flex flex-col lg:flex-row items-center gap-6"
         >
           <div className="w-full lg:w-1/3 flex justify-center">
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-xl border-4 border-[#F5F1E1]">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-b-2xl overflow-hidden shadow-xl border-4 border-[#F5F1E1]">
               <img
                 src={execDirectorImg}
                 alt="Muhammad Daniyal Umer"

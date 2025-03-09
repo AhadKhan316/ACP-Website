@@ -14,7 +14,7 @@ const VoterVerification = () => {
   };
 
   return (
-    <div className="py-10 bg-[#0F172A] text-white flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
+    <div className="py-10 bg-gray-900 text-white flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
       {/* Hero Section */}
       <div className="w-full mx-4 bg-gray-800 rounded-3xl shadow-2xl p-6 sm:p-8 mb-12 overflow-hidden">
         <img
@@ -32,12 +32,12 @@ const VoterVerification = () => {
       </div>
 
       {/* Verification Form */}
-      <div className="w-full max-w-[800px] bg-white text-gray-800 rounded-2xl shadow-xl p-6 sm:p-8 mb-12">
+      <div className="w-full max-w-[800px] bg-gray-800 text-white rounded-2xl shadow-xl p-6 sm:p-8 mb-12">
         <form onSubmit={handleVerify} className="space-y-6">
           <div>
             <label
               htmlFor="membershipInput"
-              className="block text-lg font-medium text-gray-700 mb-2"
+              className="block text-lg font-medium text-white mb-2"
             >
               Enter Membership No., CNIC, or Name:
             </label>
@@ -53,7 +53,7 @@ const VoterVerification = () => {
           </div>
           <button
             type="submit"
-            className="w-full bg-green-500 text-white font-semibold py-3 px-6 rounded-lg hover:bg-green-600 transition duration-200"
+            className="w-full bg-red-700 text-white font-semibold py-3 px-6 rounded-lg hover:bg-red-600 transition duration-200"
           >
             Verify Membership
           </button>
