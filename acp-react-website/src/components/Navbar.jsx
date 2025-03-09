@@ -56,7 +56,7 @@ const Navbar = () => {
     const NavLink = ({ to, children }) => (
         <Link
             to={to}
-            className={`block py-2.5 px-4 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md transition-colors duration-200 ${isActiveLink(to) ? "text-blue-600 font-semibold bg-blue-50/50" : "font-medium"
+            className={`block py-2.5 px-4 text-black hover:text-red-600 hover:bg-gray-50 rounded-md transition-colors duration-200 ${isActiveLink(to) ? "text-black font-semibold bg-blue-50/50" : "font-medium"
                 }`}
         >
             {children}
@@ -66,12 +66,12 @@ const Navbar = () => {
     const DropdownButton = ({ children, onClick, isOpen }) => (
         <button
             onClick={onClick}
-            className={`flex items-center justify-between w-full py-2.5 px-4 text-gray-700 hover:text-blue-600 font-medium rounded-md group transition-colors duration-200 ${isOpen ? "text-blue-600 bg-blue-50/50" : ""
+            className={`flex items-center justify-between w-full py-2.5 px-4 text-black hover:text-red-600 font-medium rounded-md group transition-colors duration-200 ${isOpen ? "text-black bg-blue-50/50" : ""
                 }`}
         >
             <span>{children}</span>
             <FaChevronDown
-                className={`ml-1 w-4 h-4 transition-transform duration-200 ${isOpen ? "rotate-180 text-blue-600" : "text-gray-400 group-hover:text-blue-600"
+                className={`ml-1 w-4 h-4 transition-transform duration-200 ${isOpen ? "rotate-180 text-black" : "text-gray-400 group-hover:text-red-600"
                     }`}
             />
         </button>
@@ -80,12 +80,12 @@ const Navbar = () => {
     const SubSubMenuButton = ({ children, onClick, isOpen }) => (
         <button
             onClick={onClick}
-            className={`flex items-center justify-between w-full py-2.5 px-4 text-gray-700 hover:text-blue-600 font-medium rounded-md group transition-colors duration-200 ${isOpen ? "text-blue-600 bg-blue-50/50" : ""
+            className={`flex items-center justify-between w-full py-2.5 px-4 text-gray-700 hover:text-red-600 font-medium rounded-md group transition-colors duration-200 ${isOpen ? "text-black bg-blue-50/50" : ""
                 }`}
         >
             <span>{children}</span>
             <FaChevronRight
-                className={`ml-1 w-4 h-4 transition-transform duration-200 ${isOpen ? "rotate-90 text-blue-600" : "text-gray-400 group-hover:text-blue-600"
+                className={`ml-1 w-4 h-4 transition-transform duration-200 ${isOpen ? "rotate-90 text-black" : "text-gray-400 group-hover:text-red-600"
                     }`}
             />
         </button>
