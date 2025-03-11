@@ -1,12 +1,12 @@
 import React from 'react';
-import Card from '../WcfReusableCard'; // Import the reusable Card component
+import Card from '../../components/wcfReusableComponents/WcfReusableCard'; // Import the reusable Card component
 
 const WcfArtists = () => {
   const artists = [
     {
       id: 1,
       name: 'Aashir Wajahat',
-      image: '/placeholder-artist1.jpg', 
+      image: '/placeholder-artist1.jpg',
       country: 'Pakistan',
     },
     {

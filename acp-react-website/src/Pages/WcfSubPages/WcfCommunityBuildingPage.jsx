@@ -1,4 +1,4 @@
-import WcfReusableSlider from '../WcfReusableSlider';
+import WcfReusableSlider from '../../components/wcfReusableComponents/WcfReusableSlider';
 
 const CommunityBuilding = () => {
   // Sample slide data based on your screenshot

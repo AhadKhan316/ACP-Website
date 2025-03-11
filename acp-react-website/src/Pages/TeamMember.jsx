@@ -79,16 +79,27 @@ const TeamMembers = () => {
           transition={{ duration: 0.8 }}
           className="bg-[#1E293B] p-6 sm:p-8 rounded-xl shadow-lg mb-12 flex flex-col lg:flex-row items-center gap-6"
         >
-          <div className="w-full lg:w-1/3 flex justify-center">
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-b-2xl overflow-hidden shadow-xl border-4 border-[#F5F1E1]">
+          {/* Image with Card Styling */}
+          <motion.div
+            className="relative rounded-xl shadow-lg overflow-hidden w-full lg:w-1/3"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            whileHover={{ scale: 1.05 }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <div className="relative w-full h-[400px] lg:h-[500px] overflow-hidden">
               <img
                 src={execDirectorImg}
-                alt="Muhammad Daniyal Umer"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                alt="Executive Director"
+                className="w-full h-full object-contain transition-transform duration-300"
                 loading="lazy"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-black/30 to-transparent"></div>
             </div>
-          </div>
+          </motion.div>
+
+          {/* Text Content - Keep It Intact */}
           <div className="w-full lg:w-2/3 text-center lg:text-left">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#F5F1E1]">Executive Director</h2>
             <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-4">

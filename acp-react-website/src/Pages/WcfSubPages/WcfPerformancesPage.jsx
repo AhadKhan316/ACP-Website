@@ -1,6 +1,6 @@
 // src/components/Performances.jsx
 import React from 'react';
-import Card from '../WcfReusableCard'; // Import the Card component
+import Card from '../../components/wcfReusableComponents/WcfReusableCard'; // Import the Card component
 
 const WcfPerformances = () => {
   const performances = [

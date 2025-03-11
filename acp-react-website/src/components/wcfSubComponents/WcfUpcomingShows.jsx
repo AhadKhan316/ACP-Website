@@ -1,122 +1,98 @@
-import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
 function WcfUpcomingShows() {
-  const shows = [
+  const steps = [
     {
-      title: "Shakespeare's Fool",
-      // date: "23rd October | 8:00 PM",
-      image: "/path/to/shakespeares-fool.jpg",
+      id: 1,
+      title: "Discover Shows",
+      description: "Pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies porta nibh",
+      image: "/path/to/discover-shows.jpg", // Replace with actual image path
     },
     {
-      title: "Berlin Nach Lahore",
-      // date: "23 October 2024",
-      image: "/path/to/berlin-nach-lahore.jpg",
+      id: 2,
+      title: "Choose Your Event",
+      description: "Amet venenatis urna cursus eget nunc scelerisque viverra mauris inali quam sem",
+      image: "/path/to/choose-event.jpg", // Replace with actual image path
     },
     {
-      title: "The Three Gifts of the North Wind",
-      // date: "12:00 noon 24th October 2024",
-      image: "/path/to/three-gifts.jpg",
+      id: 3,
+      title: "Book Tickets",
+      description: "Mauris inali quam sem amet venenatis urna cursus eget nunc scelerisque viverra",
+      image: "/path/to/book-tickets.jpg", // Replace with actual image path
     },
-    {
-      title: "Inspiritus",
-      // date: "8:00 PM | 25 OCTOBER 2024",
-      image: "/path/to/inspiritus.jpg",
-    },
-    // Add more shows if needed
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const getCardsPerSlide = () => {
-    if (window.innerWidth >= 1024) return 3; 
-    if (window.innerWidth >= 768) return 2; 
-    return 1; 
+  // Animation variants for the steps
+  const stepVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
   };
 
-  const [cardsPerSlide, setCardsPerSlide] = useState(getCardsPerSlide());
-
-  useEffect(() => {
-    const handleResize = () => {
-      setCardsPerSlide(getCardsPerSlide());
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % (shows.length - cardsPerSlide + 1));
-    }, 5000); 
-
-    return () => clearInterval(interval);
-  }, [shows.length, cardsPerSlide]);
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
 
   return (
-    <section className="py-10 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gray-900">
-      
+    <section className="py-10 px-4 sm:px-6 lg:px-8 bg-gray-900 overflow-hidden">
+      {/* Section Header */}
       <motion.h2
-        className="text-3xl md:text-4xl font-bold text-white text-center relative mb-10"
+        className="text-3xl md:text-4xl font-bold text-white text-center mb-12"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.5 }}
       >
-        Upcoming Shows
+        Upcoming Events
       </motion.h2>
 
-      {/* Carousel Container */}
-      <div className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] flex items-center justify-center overflow-hidden bg-gray-800 p-6 rounded-lg shadow-lg">
-        <AnimatePresence mode="wait">
+      {/* Steps Container */}
+      <motion.div
+        className="mx-4 flex flex-col lg:flex-row items-center justify-between gap-8"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        {steps.map((step, index) => (
           <motion.div
-            key={currentIndex}
-            className="absolute w-full max-w-4xl flex items-center justify-center gap-8"
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
-            transition={{ duration: 0.8, ease: 'easeInOut' }}
+            key={step.id}
+            className="flex-1 flex flex-col items-center text-center"
+            variants={stepVariants}
           >
-            {shows.slice(currentIndex, currentIndex + cardsPerSlide).map((show, index) => (
-              <motion.div
-                key={index}
-                className="w-72 sm:w-80 md:w-96 bg-white rounded-lg shadow-lg overflow-hidden group transform hover:scale-105 transition-transform duration-300"
-                whileHover={{ scale: 1.02 }}
-              >
-                
-                <div className="relative w-full h-66 overflow-hidden">
-                  <img
-                    src={show.image}
-                    alt={show.title}
-                    className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                    {/* <span className="text-white text-lg font-semibold">🎭 Book Now</span> */}
-                  </div>
-                </div>
+            {/* Image */}
+            <div className="w-full max-w-100 h-64 bg-white rounded-2xl overflow-hidden mb-6 shadow-md">
+              <img
+                src={step.image}
+                alt={step.title}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
 
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-primary mb-2">
-                    {show.title}
-                  </h3>
-                  <p className="text-gray-600">{show.date}</p>
-                </div>
-              </motion.div>
-            ))}
+            {/* Step Indicator */}
+            <div className="flex items-center justify-center mb-4">
+              <span className="w-10 h-10 bg-gradient-to-r from-red-700 to-red-500 text-white rounded-full flex items-center justify-center text-lg font-semibold">
+                {step.id}
+              </span>
+              {/* Connecting Line (hidden on the last step) */}
+              {/* {index < steps.length - 1 && (
+                <div className=""></div>
+              )} */}
+            </div>
+
+            {/* Step Title and Description */}
+            <h3 className="text-xl font-bold text-gray-900 mb-2">{step.title}</h3>
+            <p className="text-white text-lg max-w-xs">{step.description}</p>
           </motion.div>
-        </AnimatePresence>
-      </div>
-
-      <div className="flex justify-center mt-6 space-x-2">
-        {Array.from({ length: shows.length - cardsPerSlide + 1 }).map((_, index) => (
-          <button
-            key={index}
-            className={`w-3 h-3 rounded-full ${currentIndex === index ? 'bg-primary' : 'bg-gray-300'
-              }`}
-            onClick={() => setCurrentIndex(index)}
-          />
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

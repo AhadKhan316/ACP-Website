@@ -1,7 +1,7 @@
 // src/components/Cards.jsx
 import React from "react";
 import { motion } from "framer-motion";
-import Card from "./ReusableCard";
+import Card from "../reusableComponents/ReusableCard";
 
 const Cards = ({ title, items }) => {
   return (

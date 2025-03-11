@@ -1,11 +1,6 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion"; // For animations
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay, FreeMode } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/autoplay";
+import { motion } from "framer-motion";
+import SectionWithSwiper from "../reusableComponents/ReusableCarousel";
 
 const AboutUs = () => {
   const [activeSection, setActiveSection] = useState("history");
@@ -18,58 +13,24 @@ const AboutUs = () => {
     switch (activeSection) {
       case "history":
         return (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="flex flex-col lg:flex-row items-center gap-8 bg-gray-800 p-6 sm:p-8 rounded-xl shadow-lg mb-16 mt-20"
-          >
-            <div className="w-full lg:w-1/2 mb-6 lg:mb-0">
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#F5F1E1] mb-6 text-center lg:text-left">
-                Our History
-              </h2>
-              <p className="text-gray-300 text-base sm:text-lg leading-relaxed max-w-3xl text-center lg:text-left">
-                Founded in 1980, the Arts Council of Pakistan has been a beacon for cultural preservation, talent development, and a place of collaboration for artists from all corners of Pakistan. We take pride in fostering artistic growth and supporting a creative ecosystem that spans from traditional to contemporary forms.
-              </p>
-            </div>
-            <div className="w-full lg:w-1/2">
-              <Swiper
-                className="rounded-xl shadow-md overflow-hidden"
-                modules={[Navigation, Pagination, Autoplay, FreeMode]}
-                spaceBetween={30}
-                slidesPerView={1}
-                navigation
-                pagination={{ clickable: true }}
-                autoplay={{ delay: 2500, disableOnInteraction: false }}
-                lazy={true} // Enable lazy loading for images
-              >
-                <SwiperSlide>
-                  <img
-                    src="https://acpkhi.com/studio%20I/1.jpg"
-                    alt="Historical 1"
-                    className="w-full h-auto object-cover rounded-xl"
-                    loading="lazy"
-                  />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img
-                    src="https://acpkhi.com/studio%20I/2.jpg"
-                    alt="Historical 2"
-                    className="w-full h-auto object-cover rounded-xl"
-                    loading="lazy"
-                  />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img
-                    src="https://acpkhi.com/imgs/ACP%20Drone%202023.webp"
-                    alt="Historical 3"
-                    className="w-full h-auto object-cover rounded-xl"
-                    loading="lazy"
-                  />
-                </SwiperSlide>
-              </Swiper>
-            </div>
-          </motion.div>
+          <SectionWithSwiper
+            title="Our History"
+            description="Founded in 1980, the Arts Council of Pakistan has been a beacon for cultural preservation, talent development, and a place of collaboration for artists from all corners of Pakistan. We take pride in fostering artistic growth and supporting a creative ecosystem that spans from traditional to contemporary forms."
+            images={[
+              {
+                src: "https://acpkhi.com/studio%20I/1.jpg",
+                alt: "Historical 1",
+              },
+              {
+                src: "https://acpkhi.com/studio%20I/2.jpg",
+                alt: "Historical 2",
+              },
+              {
+                src: "https://acpkhi.com/imgs/ACP%20Drone%202023.webp",
+                alt: "Historical 3",
+              },
+            ]}
+          />
         );
       case "vision":
         return (
@@ -126,8 +87,8 @@ const AboutUs = () => {
               key={section}
               onClick={() => handleSectionChange(section)}
               className={`py-2 px-4 sm:px-6 rounded-xl font-semibold text-sm sm:text-base ${activeSection === section
-                ? "bg-[#1E293B] text-white border border-[#F5F1E1] shadow-md"
-                : "bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-[#F5F1E1] cursor-pointer"
+                ? "bg-[#1E293B] text-white border border-red-700 shadow-md"
+                : "bg-gray-800 text-white hover:bg-gray-700 hover:text-red-700 cursor-pointer"
                 }`}
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}

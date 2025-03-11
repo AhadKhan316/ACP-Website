@@ -195,7 +195,7 @@ const Navbar = () => {
                             <NavLink to="/VenuesPage">Venue</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/cafeteria">Cafeteria</NavLink>
+                            <NavLink to="/events">Events</NavLink>
                         </li>
 
                         {/* Resources Dropdown */}

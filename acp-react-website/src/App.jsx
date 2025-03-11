@@ -6,7 +6,7 @@ import Layout from './components/Layout'; // Import the Layout component
 import Hero from './components/Hero';
 import UpcomingEvents from './components/UpcomingEvents';
 import About from './components/About';
-import PresidentMessage from './components/PresidentMessage';
+// import PresidentMessage from './components/PresidentMessage';
 import StayUpdated from './components/StayUpdated';
 import Academy from './components/Academy';
 import CommunityFeedback from './components/CommunityFeedback';
@@ -42,7 +42,7 @@ const App = () => {
               <Hero />
               <UpcomingEvents />
               <About />
-              <PresidentMessage />
+              {/* <PresidentMessage /> */}
               <StayUpdated />
               <Academy />
               <CommunityFeedback />

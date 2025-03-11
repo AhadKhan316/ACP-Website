@@ -1,4 +1,4 @@
-import WcfReusableSlider from '../WcfReusableSlider';
+import WcfReusableSlider from '../../components/wcfReusableComponents/WcfReusableSlider';
 
 const WcfArtistEngagement = () => {
   // Sample slide data for Artist Engagement page
