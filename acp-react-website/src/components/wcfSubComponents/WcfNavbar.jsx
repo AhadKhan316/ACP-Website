@@ -50,11 +50,13 @@ function WcfNavbar() {
             {[
               { to: "/festival/wcf", label: "Home" },
               { to: "/festival/wcf/about", label: "About" },
-              { to: "/festival/wcf/performances", label: "Performances" },
-              { to: "/festival/wcf/workshops", label: "Workshops" },
-              { to: "/festival/wcf/communityBuilding", label: "Community Building" },
+              // { to: "/festival/wcf/performances", label: "Performances" },
+              // { to: "/festival/wcf/workshops", label: "Workshops" },
+              // { to: "/festival/wcf/communityBuilding", label: "Community Building" },
               { to: "/festival/wcf/artist", label: "Artists" },
               { to: "/festival/wcf/artistEngagement", label: "Artist Engagements" },
+              { to: "/festival/wcf/mediaCoverage", label: "Media Courage" },
+              { to: "/festival/wcf/contactUs", label: "Contact Us" },
             ].map((item) => (
               <li key={item.to}>
                 <Link
