@@ -28,7 +28,7 @@ import Tenders from './Pages/Tenders';
 import WorldCultureFestival from './Pages/WorldCulturalFestival';
 
 // PLF Page
-import PakistanLiteratureFestival from './Pages/WorldCulturalFestival';
+import PakistanLiteratureFestival from './Pages/PakistanLiteratureFestival';
 
 
 const App = () => {
