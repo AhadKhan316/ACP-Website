@@ -51,7 +51,7 @@ const PlfNavbar = () => {
             <div className="flex-shrink-0">
               <Link to="/festival/plf" className="flex items-center">
                 <img
-                  src="../src/assets/wcf-assets/plf-logo.png" // Replace with your logo
+                  src="../src/assets/plf-assets/plf-logo.png" // Replace with your logo
                   alt="PLF Logo"
                   className="h-20 w-17 mr-2 transform hover:scale-110 transition duration-300"
                 />
@@ -69,7 +69,7 @@ const PlfNavbar = () => {
                 <Link
                   key={item.to}
                   to={item.to}
-                  className={`hover:text-green-900  transition duration-300 font-bold ${location.pathname === item.to ? "text-green-900" : ""
+                  className={`hover:text-green-400  transition duration-300 font-bold ${location.pathname === item.to ? "text-green-400" : ""
                     }`}
                 >
                   {item.label}
@@ -80,7 +80,7 @@ const PlfNavbar = () => {
               <div className="relative">
                 <button
                   onClick={toggleDropdown}
-                  className="hover:text-green-900 transition duration-300 font-bold flex items-center"
+                  className="hover:text-green-400 transition duration-300 font-bold flex items-center"
                 >
                   Chapters
                   <svg
@@ -108,7 +108,7 @@ const PlfNavbar = () => {
                       <Link
                         key={item.to}
                         to={item.to}
-                        className="block px-4 py-2 hover:bg-green-900 transition duration-300"
+                        className="block px-4 py-2 hover:bg-green-400 transition duration-300"
                         onClick={toggleMenu}
                       >
                         {item.label}
@@ -120,7 +120,7 @@ const PlfNavbar = () => {
 
               <Link
                 to="/contact"
-                className={`hover:text-green-900 transition duration-300 font-bold ${location.pathname === "/contact" ? "text-green-900" : ""
+                className={`hover:text-green-400 transition duration-300 font-bold ${location.pathname === "/contact" ? "text-green-400" : ""
                   }`}
               >
                 Contact
@@ -152,7 +152,7 @@ const PlfNavbar = () => {
                 <Link
                   key={item.to}
                   to={item.to}
-                  className={`block px-3 py-2 text-white hover:bg-green-900 rounded-md ${location.pathname === item.to ? "bg-teal-700" : ""
+                  className={`block px-3 py-2 text-white hover:bg-green-400 rounded-md ${location.pathname === item.to ? "bg-teal-700" : ""
                     }`}
                   onClick={toggleMenu}
                 >
@@ -193,7 +193,7 @@ const PlfNavbar = () => {
                       <Link
                         key={item.to}
                         to={item.to}
-                        className={`block px-3 py-2 text-white hover:bg-green-900 rounded-md ${location.pathname === item.to ? "bg-green-900" : ""
+                        className={`block px-3 py-2 text-white hover:bg-green-400 rounded-md ${location.pathname === item.to ? "bg-green-400" : ""
                           }`}
                         onClick={toggleMenu}
                       >
@@ -206,7 +206,7 @@ const PlfNavbar = () => {
 
               <Link
                 to="/contact"
-                className={`block px-3 py-2 text-white hover:bg-green-900 rounded-md ${location.pathname === "/contact" ? "bg-teal-700" : ""
+                className={`block px-3 py-2 text-white hover:bg-green-400 rounded-md ${location.pathname === "/contact" ? "bg-green-400" : ""
                   }`}
                 onClick={toggleMenu}
               >
@@ -240,7 +240,7 @@ const PlfNavbar = () => {
                   <a
                     key={item.alt}
                     href={item.href}
-                    className="text-white hover:text-green-900 transition duration-300"
+                    className="text-white hover:text-green-400 transition duration-300"
                     aria-label={item.alt}
                   >
                     {item.icon}
@@ -281,7 +281,7 @@ const PlfNavbar = () => {
               <a
                 key={item.alt}
                 href={item.href}
-                className="block text-white hover:text-green-900 transition duration-900"
+                className="block text-white hover:text-green-400 transition duration-900"
                 aria-label={item.alt}
               >
                 {item.icon}

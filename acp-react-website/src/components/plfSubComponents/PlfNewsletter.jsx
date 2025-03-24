@@ -1,16 +1,18 @@
+import { motion } from "framer-motion";
+
 const PlfNewsletter = () => {
   return (
-    <section className="py-16 px-4 md:px-8 bg-navy-800 text-ivory-100 relative overflow-hidden">
+    <section className="py-40 px-4 md:px-8 bg-navy-800 text-ivory-100 relative overflow-hidden">
       <div className="absolute inset-0">
         <svg
-          className="w-full h-full opacity-20"
+          className="w-full h-full"
           viewBox="0 0 1440 320"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            fill="#F4A261"
-            fillOpacity="0.3"
+            fill="#05DF72" // Changed to a vibrant green (Tailwind's green-500)
+            fillOpacity="1.9"
             d="M0,224L48,213.3C96,203,192,181,288,176C384,171,480,181,576,192C672,203,768,213,864,213.3C960,213,1056,203,1152,192C1248,181,1344,171,1392,165.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
           >
             <animate
@@ -36,11 +38,11 @@ const PlfNewsletter = () => {
           <input
             type="email"
             placeholder="Enter your email"
-            className="w-full sm:w-64 p-3 rounded-lg bg-navy-800/50 backdrop-blur-md text-ivory-100 border border-navy-700 focus:outline-none focus:ring-2 focus:ring-amber-500 transition duration-300"
+            className="w-full sm:w-64 p-3 rounded-lg bg-navy-800/50 backdrop-blur-md text-ivory-100 border border-navy-700 focus:outline-none focus:ring-2 focus:ring-green-900 transition duration-300"
           />
           <button
             type="submit"
-            className="bg-amber-500 text-navy-900 font-sans font-semibold py-3 px-6 rounded-lg hover:bg-amber-400 transition duration-300"
+            className="bg-green-900 text-white font-sans font-semibold py-3 px-6 rounded-lg hover:bg-green-800 transition duration-300"
           >
             Subscribe
           </button>
