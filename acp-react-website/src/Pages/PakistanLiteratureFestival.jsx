@@ -11,7 +11,7 @@ import NewsletterSection from "../components/plfSubComponents/PlfNewsletter";
 import FooterSection from "../components/plfSubComponents/PlfFooter";
 
 // Delegates Images 201 by 251
-import johnDoeImg from "/src/assets/plf-assets/delegate2.jpeg"; 
+import johnDoeImg from "/src/assets/plf-assets/delegate2.jpeg";
 
 const PlfMainPage = () => {
   const sessions = [
@@ -27,13 +27,13 @@ const PlfMainPage = () => {
       name: "John Doe",
       role: "Author",
       bio: "Renowned Author & Poet",
-      image: johnDoeImg 
+      image: johnDoeImg
     },
     {
       name: "Jane Smith",
       role: "Critic",
       bio: "Literary Critic",
-      image: "../src/assets/plf-assets/delegate1.jpeg" 
+      image: "../src/assets/plf-assets/delegate1.jpeg"
     },
     {
       name: "Ali Khan",

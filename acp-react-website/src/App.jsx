@@ -30,6 +30,9 @@ import WorldCultureFestival from './Pages/WorldCulturalFestival';
 // PLF Page
 import PakistanLiteratureFestival from './Pages/PakistanLiteratureFestival';
 
+// AUC Page
+import AalmiUrduConference from './Pages/AalmiUrduConference';
+
 
 const App = () => {
   return (
@@ -67,6 +70,9 @@ const App = () => {
 
         {/* PLF */}
         <Route path="/festival/plf/*" element={<PakistanLiteratureFestival />} />
+
+        {/* AUC */}
+        <Route path="/festival/auc/*" element={<AalmiUrduConference />} />
       </Routes>
     </Router>
   );
