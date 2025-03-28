@@ -14,7 +14,7 @@ const NextArrow = (props) => {
       <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
         <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
       </svg>
-    </div>
+    </div>  
   );
 };
 
@@ -40,6 +40,8 @@ const PlfSpeakerCard = ({ speakers, title = "Speakers" }) => {
     speed: 600,
     slidesToShow: 4,
     slidesToScroll: 1,
+    autoplay: true, // Enable auto-sliding
+    autoplaySpeed: 3000, // Slide every 3 seconds (3000ms)
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     responsive: [
@@ -77,7 +79,7 @@ const PlfSpeakerCard = ({ speakers, title = "Speakers" }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-center mb-16 text-white tracking-tight"
+          className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-center mb-16 text-white"
         >
           {title}
         </motion.h2>
@@ -126,8 +128,8 @@ const PlfSpeakerCard = ({ speakers, title = "Speakers" }) => {
                   {/* Subtle Accent */}
                   <motion.div
                     className="absolute bottom-2 right-2 w-3 h-3 bg-green-800 rounded-full"
-                    // animate={{ opacity: [0.5, 1, 0.5] }}
-                    // transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  // animate={{ opacity: [0.5, 1, 0.5] }}
+                  // transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                   />
                 </motion.div>
               </div>

@@ -1,77 +1,224 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { FaClock, FaChevronDown, FaChevronUp } from "react-icons/fa";
+import React from "react";
+import { motion } from "framer-motion";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-const PlfSession = ({ sessions, title = "Event Sessions" }) => {
-  const [expandedIndex, setExpandedIndex] = useState(null);
+const upcomingChapters = [
+  {
+    time: "10:00 AM",
+    event: "Literary Symposium",
+    day: "20th June 2025",
+    description: "A discussion on modern Pakistani literature.",
+  },
+  {
+    time: "2:00 PM",
+    event: "Poetry Workshop",
+    day: "22nd June 2025",
+    description: "Interactive session with renowned poets.",
+  },
+  {
+    time: "11:00 AM",
+    event: "Cultural Exchange",
+    day: "25th June 2025",
+    description: "Celebrating diversity in Pakistani culture.",
+  },
+  {
+    time: "1:00 PM",
+    event: "Book Launch",
+    day: "28th June 2025",
+    description: "Launching new works by local authors.",
+  },
+];
 
-  const toggleSession = (index) => {
-    setExpandedIndex(expandedIndex === index ? null : index);
+const previousChapter = [
+  { time: "9:00 AM", event: "Opening Ceremony", day: "25th Feb" },
+  { time: "11:00 AM", event: "Poetry Recitation", day: "25th Feb" },
+  { time: "2:00 PM", event: "Panel Discussion", day: "25th Feb" },
+  { time: "10:00 AM", event: "Literary Talks", day: "26th Feb" },
+  { time: "1:00 PM", event: "Cultural Performance", day: "26th Feb" },
+];
+
+// Custom Next Arrow
+const NextArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={`${className} text-green-700 hover:text-green-800 transition duration-300 sm:w-12 sm:h-12 w-8 h-8 custom-arrow`}
+      style={{ ...style, display: "block", right: "15px" }}
+      onClick={onClick}
+    >
+      <svg className="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+      </svg>
+    </div>
+  );
+};
+
+// Custom Previous Arrow
+const PrevArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={`${className} text-green-700 hover:text-green-800 transition duration-300 sm:w-12 sm:h-12 w-8 h-8 custom-arrow`}
+      style={{ ...style, display: "block", left: "15px", zIndex: 1 }}
+      onClick={onClick}
+    >
+      <svg className="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z" />
+      </svg>
+    </div>
+  );
+};
+
+const PlfSession = () => {
+  // Placeholder image for sessions (replace with actual images if available)
+  const placeholderImage = "../src/assets/auc-assets/auc-chapter-sukkur.jpg";
+
+  // Slider settings
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 600,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
-    <section className="py-16 px-4 md:px-8 bg-ivory-100 text-navy-900">
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-serif font-bold text-center mb-12">
-          {title}
+    <section className="py-12">
+      <div className="mx-8 px-4 sm:px-6 lg:px-8">
+        {/* Upcoming Chapters (Plural) */}
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-700 text-center mt-12 mb-8">
+          Upcoming Chapters
         </h2>
         <div className="relative">
-          {/* Timeline Connector Line */}
-          <div className="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-1 bg-amber-500 h-full"></div>
+          {/* Ribbon Background */}
+          <motion.div
+            className="absolute inset-0 h-1 rounded-full z-0"
+            initial={{ width: "0%" }}
+            animate={{ width: "100%" }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+          />
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2 }}
+            className="relative z-10 max-w-[1280px] mx-auto"
+          >
+            <Slider {...settings}>
+              {upcomingChapters.map((session, index) => (
+                <div key={index} className="px-2">
+                  <motion.div
+                    className="relative w-full max-w-[450px] sm:max-w-[400px] md:max-w-[380px] lg:max-w-[370px] bg-white rounded-lg shadow-lg overflow-hidden flex flex-col sm:flex-row mx-auto"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    whileHover={{ scale: 1.03, boxShadow: "0 8px 16px rgba(0, 0, 0, 0.1)" }}
+                  >
+                    {/* Image Section (50%) */}
+                    <div className="w-full sm:w-1/2 h-48 sm:h-auto">
+                      <img
+                        src={placeholderImage}
+                        alt={session.event}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
 
-          {/* Session Cards */}
-          {sessions.map((session, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative mb-8"
-            >
-              {/* Timeline Dot */}
-              <div className="absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-5 h-5 bg-amber-500 rounded-full border-4 border-ivory-100 z-10"></div>
-
-              {/* Session Card */}
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                className={`relative bg-navy-700 text-ivory-100 rounded-lg shadow-lg p-6 mx-12 md:mx-0 md:w-3/4 lg:w-1/2 ${index % 2 === 0 ? "md:ml-auto" : "md:mr-auto"
-                  } cursor-pointer transition-all duration-300 hover:shadow-amber-500/50 hover:shadow-xl`}
-                onClick={() => toggleSession(index)}
-              >
-                <div className="flex justify-between items-center">
-                  <div className="flex items-center space-x-3">
-                    <FaClock className="text-amber-500" />
-                    <h3 className="text-xl font-sans font-semibold">
-                      {session.time} - {session.event}
-                    </h3>
-                  </div>
-                  {expandedIndex === index ? (
-                    <FaChevronUp className="text-amber-500" />
-                  ) : (
-                    <FaChevronDown className="text-amber-500" />
-                  )}
-                </div>
-
-                {/* Expanded Content */}
-                <AnimatePresence>
-                  {expandedIndex === index && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="mt-4"
-                    >
-                      <p className="text-sm font-sans">{session.day}</p>
-                      <p className="text-sm font-sans mt-2">
-                        Join us for this exciting session as we explore the rich literary heritage of Pakistan. This event will feature renowned speakers and interactive discussions.
+                    {/* Content Section (50%) */}
+                    <div className="w-full sm:w-1/2 p-4 flex flex-col justify-center">
+                      <h3 className="text-lg font-bold text-[#1F2A44] mb-1">
+                        {session.event}
+                      </h3>
+                      <p className="text-sm text-gray-500 mb-1">
+                        {session.time} | {session.day}
                       </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-            </motion.div>
-          ))}
+                      <p className="text-sm text-gray-600">
+                        {session.description || "A key event from the upcoming chapters of PLF."}
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+              ))}
+            </Slider>
+          </motion.div>
+        </div>
+
+        {/* Previous Chapter */}
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-700 text-center mt-12 mb-8">
+          Previous Chapter
+        </h2>
+        <div className="relative">
+          {/* Ribbon Background */}
+          <motion.div
+            className="absolute inset-0 h-1 rounded-full z-0"
+            initial={{ width: "0%" }}
+            animate={{ width: "100%" }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+          />
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2 }}
+            className="relative z-10 max-w-[1280px] mx-auto"
+          >
+            <Slider {...settings}>
+              {previousChapter.map((session, index) => (
+                <div key={index} className="px-2">
+                  <motion.div
+                    className="relative w-full max-w-[450px] sm:max-w-[400px] md:max-w-[380px] lg:max-w-[370px] bg-white rounded-lg shadow-lg overflow-hidden flex flex-col sm:flex-row mx-auto"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    whileHover={{ scale: 1.03, boxShadow: "0 8px 16px rgba(0, 0, 0, 0.1)" }}
+                  >
+                    {/* Image Section (50%) */}
+                    <div className="w-full sm:w-1/2 h-48 sm:h-auto">
+                      <img
+                        src={placeholderImage}
+                        alt={session.event}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+
+                    {/* Content Section (50%) */}
+                    <div className="w-full sm:w-1/2 p-4 flex flex-col justify-center">
+                      <h3 className="text-lg font-bold text-[#1F2A44] mb-1">
+                        {session.event}
+                      </h3>
+                      <p className="text-sm text-gray-500 mb-1">
+                        {session.time} | {session.day}
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        {session.description || "A key event from the previous chapter of PLF."}
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
+              ))}
+            </Slider>
+          </motion.div>
         </div>
       </div>
     </section>

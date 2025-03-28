@@ -4,7 +4,7 @@ import AucHero from "../components/aucSubComponents/aucHero";
 import AucAbout from "../components/aucSubComponents/aucAbout";
 import AucPromoVideo from "../components/aucSubComponents/aucPromoVideo";
 import AucDelegates from "../components/aucSubComponents/aucCard";
-import AucChapters from "../components/aucSubComponents/aucChapters";
+import AucHighlightedSessions from "../components/aucSubComponents/aucHighlitedSessions";
 import AucNewsletter from "../components/aucSubComponents/aucNewsletter";
 import AucFooter from "../components/aucSubComponents/aucFooter";
 
@@ -16,7 +16,7 @@ function AalmiUrduConference() {
       <AucAbout />
       <AucPromoVideo />
       <AucDelegates />
-      <AucChapters />
+      <AucHighlightedSessions />
       <AucNewsletter />
       <AucFooter />
     </div>

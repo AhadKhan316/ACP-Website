@@ -1,126 +1,129 @@
 import { useState } from "react";
 import { FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const PlfAbout = () => {
-  const [activeTab, setActiveTab] = useState("plf"); // Default to "About PLF"
+  const [activeTab, setActiveTab] = useState("plf"); // Default tab: About PLF
+
+  const tabs = [
+    {
+      id: "plf",
+      title: "About PLF",
+      content: (
+        <div className="p-6 sm:p-8 text-center">
+          <h3 className="text-2xl sm:text-3xl font-bold text-green-900 mb-4">
+            Pakistan Literature Festival
+          </h3>
+          <p className="text-gray-800 leading-relaxed text-sm sm:text-base max-w-3xl mx-auto">
+            The Pakistan Literature Festival is a first-of-its-kind mega event in the country. The festival will celebrate and honor our culture, languages, literature, and art on a global scale in a way that has never been done before.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-4 justify-center">
+            <a
+              href="#"
+              className="flex items-center text-gray-800 hover:text-green-800 transition duration-300 text-sm sm:text-base"
+            >
+              <FaCalendarAlt className="mr-2" /> 25th & 26th Feb
+            </a>
+            <a
+              href="#"
+              className="flex items-center text-gray-800 hover:text-green-800 transition duration-300 text-sm sm:text-base"
+            >
+              <FaMapMarkerAlt className="mr-2" /> Sukkur IBA University
+            </a>
+          </div>
+        </div>
+      ),
+    },
+    {
+      id: "acp",
+      title: "About ACP",
+      content: (
+        <div className="p-6 sm:p-8 text-center">
+          <h3 className="text-2xl sm:text-3xl font-bold text-green-900 mb-4">
+            Arts Council of Pakistan
+          </h3>
+          <p className="text-gray-800 leading-relaxed text-sm sm:text-base max-w-3xl mx-auto">
+            The Arts Council of Pakistan, Karachi, is a leading cultural institution dedicated to promoting art, literature, and cultural heritage across Pakistan. Established in 1954, it has been a beacon for artists and intellectuals, hosting events like the Pakistan Literature Festival to foster creativity and cultural exchange.
+          </p>
+        </div>
+      ),
+    },
+  ];
+
+  // Framer Motion Variants
+  const panelVariants = {
+    hidden: { x: "100%", opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+    exit: {
+      x: "-100%",
+      opacity: 0,
+      transition: { duration: 0.5, ease: "easeIn" },
+    },
+  };
+
+  const buttonVariants = {
+    inactive: { scale: 1, backgroundColor: "#000" }, // Deep blue for inactive
+    active: {
+      scale: 1.05,
+      backgroundColor: "#026931",
+      transition: { duration: 0.3 },
+    },
+    hover: { scale: 1.1, backgroundColor: "#026931", transition: { duration: 0.2 } }, // Gray on hover (for inactive tabs)
+  };
 
   return (
-    <section className="py-10 sm:px-6 md:px-8 bg-green-800 text-ivory-100">
-      {/* Tab Navigation */}
-      <div className="mx-4 px-4 sm:px-0">
-        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-          <button
-            onClick={() => setActiveTab("plf")}
-            className={`px-4 py-2 sm:px-6 sm:py-3 rounded-lg font-sans text-base sm:text-lg font-semibold transition duration-300 ${activeTab === "plf"
-                ? "bg-gray-900 text-white"
-                : "bg-green-900 text-gray-100 hover:bg-green-700"
-              }`}
-          >
-            About PLF
-          </button>
-          <button
-            onClick={() => setActiveTab("acp")}
-            className={`px-4 py-2 sm:px-6 sm:py-3 rounded-lg font-sans text-base sm:text-lg font-semibold transition duration-300 ${activeTab === "acp"
-                ? "bg-gray-900 text-white"
-                : "bg-green-900 text-gray-100 hover:bg-green-700"
-              }`}
-          >
-            About ACP
-          </button>
+    <section className="w-full py-12 sm:py-16 bg-gradient-to-b from-teal-50 to-white overflow-hidden relative">
+      {/* Section Header */}
+      <motion.div
+        className="text-center mb-10 sm:mb-12"
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-900">
+          Our Legacy Unfolded
+        </h2>
+        <p className="mt-2 text-base sm:text-2xl text-gray-600 max-w-2xl mx-auto">
+          Discover the essence of PLF and ACP through a modern lens on tradition.
+        </p>
+      </motion.div>
+
+      {/* Tabs and Content */}
+      <div className="mx-4 px-4 sm:px-6 lg:px-8">
+        {/* Tab Buttons */}
+        <div className="flex justify-center space-x-4 sm:space-x-6 mb-8">
+          {tabs.map((tab) => (
+            <motion.button
+              key={tab.id}
+              className="px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold text-white shadow-md"
+              variants={buttonVariants}
+              initial="inactive"
+              animate={activeTab === tab.id ? "active" : "inactive"}
+              whileHover={activeTab === tab.id ? {} : "hover"} // Only apply hover effect to inactive tabs
+              onClick={() => setActiveTab(tab.id)}
+            >
+              {tab.title}
+            </motion.button>
+          ))}
         </div>
+
+        {/* Scroll Panel */}
+        <motion.div
+          key={activeTab} // Ensures animation retriggers on tab change
+          className="relative bg-white/90 rounded-lg shadow-xl border-t-4 border-green-800 max-w-full sm:max-w-4xl mx-auto"
+          variants={panelVariants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+        >
+          {tabs.find((tab) => tab.id === activeTab)?.content}
+        </motion.div>
       </div>
-
-      {/* Tab Content */}
-      <AnimatePresence mode="wait">
-        {activeTab === "plf" && (
-          <motion.div
-            key="plf"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
-            className="mx-4 flex flex-col lg:flex-row items-center gap-6"
-          >
-            {/* About PLF Text Section.ConcurrentMode */}
-            <motion.div
-              initial={{ opacity: 0, y: -50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
-              className="w-full lg:w-1/2 p-4 sm:p-6"
-            >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mb-4 sm:mb-6 text-white">
-                About Pakistan Literature Festival
-              </h2>
-              <p className="text-base sm:text-lg lg:text-xl font-sans mb-6 sm:mb-8 text-gray-100">
-                The Pakistan Literature Festival is a first-of-its-kind mega event in the country. The festival will celebrate and honor our culture, languages, literature, and art on a global scale in a way that has never been done before.
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 sm:gap-6">
-                <a
-                  href="#"
-                  className="flex items-center text-gray-100 hover:text-gray-200 transition duration-300 text-base sm:text-lg"
-                >
-                  <FaCalendarAlt className="mr-2" /> 25th & 26th Feb
-                </a>
-                <a
-                  href="#"
-                  className="flex items-center text-gray-100 hover:text-gray-200 transition duration-300 text-base sm:text-lg"
-                >
-                  <FaMapMarkerAlt className="mr-2" /> Sukkur IBA University
-                </a>
-              </div>
-            </motion.div>
-
-            {/* About PLF Video Section */}
-            <motion.div
-              initial={{ opacity: 0, y: -50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="w-full lg:w-1/2 p-4 sm:p-6"
-            >
-              <div className="relative w-full aspect-video rounded-lg overflow-hidden">
-                <iframe
-                  src="https://www.youtube.com/embed/5UavsFzUT0Q?si=kWMBDRwoNFXNJRfA&autoplay=1&loop=1&mute=1&playlist=5UavsFzUT0Q"
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                  className="absolute inset-0 w-full h-full"
-                />
-                <div className="absolute inset-0 bg-navy-900/50 rounded-lg pointer-events-none"></div>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-
-        {activeTab === "acp" && (
-          <motion.div
-            key="acp"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
-            className="mx-4 p-4 sm:p-6 text-center"
-          >
-            <motion.div
-              initial={{ opacity: 0, y: -50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mb-4 sm:mb-6 text-white">
-                About Arts Council of Pakistan
-              </h2>
-              <p className="text-base sm:text-lg lg:text-xl font-sans mb-6 sm:mb-8 text-gray-100">
-                The Arts Council of Pakistan, Karachi, is a leading cultural institution dedicated to promoting art, literature, and cultural heritage across Pakistan. Established in 1954, it has been a beacon for artists and intellectuals, hosting events like the Pakistan Literature Festival to foster creativity and cultural exchange.
-              </p>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 };

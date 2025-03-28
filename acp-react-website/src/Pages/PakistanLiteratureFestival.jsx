@@ -13,14 +13,15 @@ import FooterSection from "../components/plfSubComponents/PlfFooter";
 // Delegates Images 201 by 251
 import johnDoeImg from "/src/assets/plf-assets/delegate2.jpeg";
 
+// const PlfMainPage = () => {
+//   const sessions = [
+//     { time: "9:00 AM", event: "Opening Ceremony", day: "25th Feb" },
+//     { time: "11:00 AM", event: "Poetry Recitation", day: "25th Feb" },
+//     { time: "2:00 PM", event: "Panel Discussion", day: "25th Feb" },
+//     { time: "10:00 AM", event: "Literary Talks", day: "26th Feb" },
+//     { time: "1:00 PM", event: "Cultural Performance", day: "26th Feb" },
+//   ];
 const PlfMainPage = () => {
-  const sessions = [
-    { time: "9:00 AM", event: "Opening Ceremony", day: "25th Feb" },
-    { time: "11:00 AM", event: "Poetry Recitation", day: "25th Feb" },
-    { time: "2:00 PM", event: "Panel Discussion", day: "25th Feb" },
-    { time: "10:00 AM", event: "Literary Talks", day: "26th Feb" },
-    { time: "1:00 PM", event: "Cultural Performance", day: "26th Feb" },
-  ];
 
   const speakers = [
     {
@@ -42,7 +43,6 @@ const PlfMainPage = () => {
       image: "../src/assets/plf-assets/delegate1.jpeg"
     },
   ];
-
   return (
     <>
       <PlfNavbar />
@@ -52,10 +52,10 @@ const PlfMainPage = () => {
           element={
             <>
               <HeroSection />
-              <VideoSection />
               <AboutSection />
-              <SessionsSection sessions={sessions} title="Previous Chapter" />
+              <VideoSection />
               <PlfSpeakerCard speakers={speakers} title="Delegates" />
+              <SessionsSection />
               <NewsletterSection />
             </>
           }
