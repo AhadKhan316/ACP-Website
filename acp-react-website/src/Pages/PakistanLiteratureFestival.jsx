@@ -10,8 +10,13 @@ import PlfSpeakerCard from "../components/plfReusableComponents/plfSpeaker";
 import NewsletterSection from "../components/plfSubComponents/PlfNewsletter";
 import FooterSection from "../components/plfSubComponents/PlfFooter";
 
+// PLF Sub Pages
+import PlfAboutPage from "./PlfSubPages/plfAboutPage";
+import PlfDelegatePage from "./PlfSubPages/plfDelegates";
+import PlfContactPage from "./PlfSubPages/plfContactPage";
+
 // Delegates Images 201 by 251
-import johnDoeImg from "/src/assets/plf-assets/delegate2.jpeg";
+import umairNajmi from "/src/assets/plf-assets/plf-delegate1.jpeg";
 
 // const PlfMainPage = () => {
 //   const sessions = [
@@ -25,22 +30,34 @@ const PlfMainPage = () => {
 
   const speakers = [
     {
-      name: "John Doe",
-      role: "Author",
-      bio: "Renowned Author & Poet",
-      image: johnDoeImg
+      name: "Umair Najmi",
+      // role: "Author",
+      // bio: "Renowned Author & Poet",
+      image: umairNajmi
     },
     {
-      name: "Jane Smith",
-      role: "Critic",
-      bio: "Literary Critic",
-      image: "../src/assets/plf-assets/delegate1.jpeg"
+      name: "Rehman Faris",
+      // role: "Critic",
+      // bio: "Literary Critic",
+      image: "../src/assets/plf-assets/plf-delegate2.jpeg"
     },
     {
-      name: "Ali Khan",
-      role: "Historian",
-      bio: "Cultural Historian",
-      image: "../src/assets/plf-assets/delegate1.jpeg"
+      name: "Amar Sindhu",
+      // role: "Historian",
+      // bio: "Cultural Historian",
+      image: "../src/assets/plf-assets/plf-delegate3.jpeg"
+    },
+    {
+      name: "Paras Masroor",
+      // role: "Historian",
+      // bio: "Cultural Historian",
+      image: "../src/assets/plf-assets/plf-delegate4.jpeg"
+    },
+    {
+      name: "Mustafa Qureshi",
+      // role: "Historian",
+      // bio: "Cultural Historian",
+      image: "../src/assets/plf-assets/plf-delegate5.jpeg"
     },
   ];
   return (
@@ -60,6 +77,10 @@ const PlfMainPage = () => {
             </>
           }
         />
+
+        <Route path="about" element={<PlfAboutPage />} />
+        <Route path="delegates" element={<PlfDelegatePage />} />
+        <Route path="contactUs" element={<PlfContactPage />} />
       </Routes>
       <FooterSection />
     </>

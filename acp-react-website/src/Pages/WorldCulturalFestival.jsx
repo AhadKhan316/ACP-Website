@@ -1,6 +1,6 @@
 // src/pages/WorldCultureFestival.jsx
 import React from "react";
-import { Route, Routes } from "react-router-dom"; // Import only Route and Routes
+import { Route, Routes } from "react-router-dom"; 
 
 import WcfNavbar from "../components/wcfSubComponents/WcfNavbar";
 import WcfHeroSection from "../components/wcfSubComponents/WcfHero";

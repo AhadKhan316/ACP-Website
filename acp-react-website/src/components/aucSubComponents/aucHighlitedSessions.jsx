@@ -1,44 +1,72 @@
 import React, { useRef } from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-// Sample session data with images (replace with your actual data)
+// Sample session data
 const sessions = [
   {
-    title: "Urdu in the Digital Age",
-    date: "April 15, 2025",
-    description: "Exploring the impact of technology on Urdu literature.",
-    isHighlighted: true,
-    image: "../src/assets/auc-assets/auc-session.jpeg", // Replace with actual image URL
-  },
-  {
-    title: "Global Urdu Voices",
-    date: "June 20, 2025",
-    description: "A showcase of Urdu writers from around the world.",
-    isHighlighted: true,
-    image: "https://placehold.co/201x251", // Replace with actual image URL
-  },
-  {
-    title: "Origins of Urdu",
-    date: "March 10, 2023",
-    description: "A deep dive into the historical roots of Urdu.",
+    title: "Mein Hun Karachi",
+    venue: "IBA Sukkur University",
     isHighlighted: false,
-    image: "https://placehold.co/201x251", // Replace with actual image URL
+    image: "../src/assets/auc-assets/auc-session1.jpg",
   },
   {
-    title: "Modern Urdu Poetry",
-    date: "October 5, 2024",
-    description: "Celebrating contemporary Urdu poets.",
+    title: "Karachi Ka Hissa",
+    venue: "IBA Sukkur University",
     isHighlighted: false,
-    image: "https://placehold.co/201x251", // Replace with actual image URL
+    image: "../src/assets/auc-assets/auc-session2.jpg",
+  },
+  {
+    title: "Roshan Chiragh",
+    venue: "IBA Sukkur University",
+    isHighlighted: false,
+    image: "../src/assets/auc-assets/auc-session3.jpg",
+  },
+  {
+    title: "Dunya Badalti Khwateen",
+    venue: "IBA Sukkur University",
+    isHighlighted: false,
+    image: "../src/assets/auc-assets/auc-session4.jpg",
+  },
+  {
+    title: "Mein Hun Karachi",
+    venue: "IBA Sukkur University",
+    isHighlighted: false,
+    image: "../src/assets/auc-assets/auc-session5.jpg",
   },
 ];
 
-const SessionCard = ({ title, date, description, isHighlighted, image }) => {
+// Custom arrow components
+const NextArrow = ({ className, style, onClick }) => (
+  <div
+    className={`${className} rounded-full transition duration-300 w-8 h-8 sm:w-12 sm:h-12 z-10`}
+    style={{ ...style, display: "block", right: "35px", backgroundColor: 'red' }}
+    onClick={onClick}
+  >
+    <svg className="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+    </svg>
+  </div>
+);
+
+const PrevArrow = ({ className, style, onClick }) => (
+  <div
+    className={`${className} rounded-full transition duration-300 w-8 h-8 sm:w-12 sm:h-12 z-10`}
+    style={{ ...style, display: "block", left: "35px", backgroundColor: 'red' }}
+    onClick={onClick}
+  >
+    <svg className="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z" />
+    </svg>
+  </div>
+);
+
+const SessionCard = ({ title, venue, isHighlighted, image }) => {
   const ref = useRef(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-
-  // Transform mouse position into tilt angles
   const rotateX = useTransform(y, [-0.5, 0.5], [5, -5]);
   const rotateY = useTransform(x, [-0.5, 0.5], [-5, 5]);
 
@@ -62,14 +90,10 @@ const SessionCard = ({ title, date, description, isHighlighted, image }) => {
   return (
     <motion.div
       ref={ref}
-      className={`relative w-full max-w-[400px] bg-white rounded-xl shadow-lg overflow-hidden ${isHighlighted
-        ? "bg-gradient-to-br from-red-50 to-white border-2 border-red-700"
+      className={`relative w-full max-w-[400px] bg-white rounded-xl  overflow-hidden mx-auto ${isHighlighted
+        ? "bg-gradient-to-br from-red-50 to-white border-none"
         : "border-2 border-gray-200"
         } transition-all duration-300 flex flex-col`}
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
       whileHover={{
         scale: 1.05,
         boxShadow: isHighlighted
@@ -84,7 +108,6 @@ const SessionCard = ({ title, date, description, isHighlighted, image }) => {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Image Container */}
       <div className="relative w-full aspect-[201/251] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
         <img
@@ -95,14 +118,11 @@ const SessionCard = ({ title, date, description, isHighlighted, image }) => {
         />
       </div>
 
-      {/* Card Content */}
       <div className="p-4 sm:p-6 flex-1 flex flex-col">
         <h3 className="text-base sm:text-lg font-semibold text-[#1F2A44] mb-2 truncate">{title}</h3>
-        <p className="text-xs sm:text-sm text-[#6B7280] mb-2">{date}</p>
-        <p className="text-xs sm:text-sm text-[#6B7280] line-clamp-3 flex-1">{description}</p>
+        <p className="text-xs sm:text-sm text-[#6B7280] mb-2">{venue}</p>
       </div>
 
-      {/* Highlight Indicator */}
       {isHighlighted && (
         <div className="absolute top-2 right-2 w-4 h-4 bg-red-700 rounded-full animate-pulse" />
       )}
@@ -111,31 +131,73 @@ const SessionCard = ({ title, date, description, isHighlighted, image }) => {
 };
 
 const AucHighlightedSessions = () => {
+  const settings = {
+    // dots: true,
+    infinite: true,
+    speed: 600,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
-    <section className="py-12 bg-[#F9FAFB]">
+    <section className="py-12 bg-gradient-to-b from-white to-teal-50">
       <div className="mx-4 px-4">
         <motion.h2
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-red-700 text-center mb-12"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12 md:mb-16 text-red-800 tracking-tight"
         >
           Highlighted Sessions
         </motion.h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
-          {sessions.map((session, index) => (
-            <SessionCard
-              key={index}
-              title={session.title}
-              date={session.date}
-              description={session.description}
-              isHighlighted={session.isHighlighted}
-              image={session.image}
-            />
-          ))}
-        </div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.2 }}
+        >
+          <Slider {...settings}>
+            {sessions.map((session, index) => (
+              <div key={index} className="px-2 sm:px-4">
+                <SessionCard
+                  title={session.title}
+                  venue={session.venue}
+                  isHighlighted={session.isHighlighted}
+                  image={session.image}
+                />
+              </div>
+            ))}
+          </Slider>
+        </motion.div>
       </div>
     </section>
   );

@@ -6,220 +6,310 @@ import "slick-carousel/slick/slick-theme.css";
 
 const upcomingChapters = [
   {
-    time: "10:00 AM",
-    event: "Literary Symposium",
-    day: "20th June 2025",
-    description: "A discussion on modern Pakistani literature.",
+    event: "Pakistan Literature Festival",
+    day: "TBA",
+    venue: "TBA",
+    image: "../src/assets/plf-assets/lahore-chapter.jpg",
   },
   {
-    time: "2:00 PM",
-    event: "Poetry Workshop",
-    day: "22nd June 2025",
-    description: "Interactive session with renowned poets.",
+    event: "Pakistan Literature Festival",
+    day: "TBA",
+    venue: "TBA",
+    image: "../src/assets/plf-assets/muzaffarabad-chapter.jpg",
   },
   {
-    time: "11:00 AM",
-    event: "Cultural Exchange",
-    day: "25th June 2025",
-    description: "Celebrating diversity in Pakistani culture.",
+    event: "Pakistan Literature Festival",
+    day: "TBA",
+    venue: "TBA",
+    image: "../src/assets/plf-assets/lahore-chapter.jpg",
   },
   {
-    time: "1:00 PM",
-    event: "Book Launch",
-    day: "28th June 2025",
-    description: "Launching new works by local authors.",
+    event: "Pakistan Literature Festival",
+    day: "TBA",
+    venue: "TBA",
+    image: "../src/assets/plf-assets/sukkur-chapter.jpg",
   },
 ];
 
 const previousChapter = [
-  { time: "9:00 AM", event: "Opening Ceremony", day: "25th Feb" },
-  { time: "11:00 AM", event: "Poetry Recitation", day: "25th Feb" },
-  { time: "2:00 PM", event: "Panel Discussion", day: "25th Feb" },
-  { time: "10:00 AM", event: "Literary Talks", day: "26th Feb" },
-  { time: "1:00 PM", event: "Cultural Performance", day: "26th Feb" },
+  {
+    event: "Pakistan Literature Festival",
+    day: "10th to 12th FEB-2023",
+    venue: "ALHAMRA ARTS COUNCIL",
+    image: "../src/assets/plf-assets/lahore-chapter.jpg",
+  },
+  {
+    event: "Pakistan Literature Festival",
+    day: "3rd to 4th JUNE-2023",
+    venue: "CONFERENCE: PEARL CONTINENTAL HOTEL",
+    image: "../src/assets/plf-assets/muzaffarabad-chapter.jpg",
+  },
+  {
+    event: "Pakistan Literature Festival",
+    day: "28th to 29th OCT-2023",
+    venue: "IBA SUKKUR",
+    image: "../src/assets/plf-assets/sukkur-chapter.jpg",
+  },
+  {
+    event: "Pakistan Literature Festival",
+    day: "15th to 16th MAY-2024",
+    venue: "BUITEMS, BALLELI",
+    image: "../src/assets/plf-assets/quetta-chapter.jpg",
+  },
+  {
+    event: "Pakistan Literature Festival",
+    day: "25th to 26th Feb-2025",
+    venue: "IBA Sukkur University",
+    image: "../src/assets/plf-assets/sukkur-chapter.jpg",
+  },
 ];
 
-// Custom Next Arrow
-const NextArrow = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={`${className} text-green-700 hover:text-green-800 transition duration-300 sm:w-12 sm:h-12 w-8 h-8 custom-arrow`}
-      style={{ ...style, display: "block", right: "15px" }}
-      onClick={onClick}
-    >
-      <svg className="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
-      </svg>
-    </div>
-  );
-};
+// Custom Arrows
+const NextArrow = ({ className, style, onClick }) => (
+  <div
+    className={`${className} text-green-700 hover:text-green-900 rounded-full transition-all duration-300 sm:w-14 sm:h-14 w-10 h-10 shadow-md hover:shadow-lg`}
+    style={{
+      ...style,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      right: "-12px",
+      backgroundColor: "green",
+      zIndex: 2,
+    }}
+    onClick={onClick}
+  >
+    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+    </svg>
+  </div>
+);
 
-// Custom Previous Arrow
-const PrevArrow = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={`${className} text-green-700 hover:text-green-800 transition duration-300 sm:w-12 sm:h-12 w-8 h-8 custom-arrow`}
-      style={{ ...style, display: "block", left: "15px", zIndex: 1 }}
-      onClick={onClick}
-    >
-      <svg className="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z" />
-      </svg>
-    </div>
-  );
-};
+const PrevArrow = ({ className, style, onClick }) => (
+  <div
+    className={`${className} text-green-700 hover:text-green-900 rounded-full transition-all duration-300 sm:w-14 sm:h-14 w-10 h-10 shadow-md hover:shadow-lg`}
+    style={{
+      ...style,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      left: "-10px",
+      backgroundColor: "green",
+      zIndex: 2,
+    }}
+    onClick={onClick}
+  >
+    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z" />
+    </svg>
+  </div>
+);
 
 const PlfSession = () => {
-  // Placeholder image for sessions (replace with actual images if available)
-  const placeholderImage = "../src/assets/auc-assets/auc-chapter-sukkur.jpg";
-
-  // Slider settings
   const settings = {
-    dots: true,
     infinite: true,
     speed: 600,
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 4000,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    centerMode: true,
+    centerPadding: "0px",
+    dots: true,
+    customPaging: () => (
+      <div className="w-2 h-2 bg-green-500 rounded-full mt-6 transition-all duration-300 hover:bg-green-700" />
+    ),
     responsive: [
       {
-        breakpoint: 1280,
+        breakpoint: 1536, // 2xl
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
+          centerPadding: "0px",
         },
       },
       {
-        breakpoint: 768,
+        breakpoint: 1280, // xl
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          centerPadding: "20px",
+        },
+      },
+      {
+        breakpoint: 1024, // lg
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          centerPadding: "20px",
+        },
+      },
+      {
+        breakpoint: 768, // md
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          centerPadding: "40px",
+        },
+      },
+      {
+        breakpoint: 640, // sm
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerPadding: "20px",
         },
       },
     ],
   };
 
-  return (
-    <section className="py-12">
-      <div className="mx-8 px-4 sm:px-6 lg:px-8">
-        {/* Upcoming Chapters (Plural) */}
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-700 text-center mt-12 mb-8">
-          Upcoming Chapters
-        </h2>
-        <div className="relative">
-          {/* Ribbon Background */}
-          <motion.div
-            className="absolute inset-0 h-1 rounded-full z-0"
-            initial={{ width: "0%" }}
-            animate={{ width: "100%" }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-          />
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2 }}
-            className="relative z-10 max-w-[1280px] mx-auto"
-          >
-            <Slider {...settings}>
-              {upcomingChapters.map((session, index) => (
-                <div key={index} className="px-2">
-                  <motion.div
-                    className="relative w-full max-w-[450px] sm:max-w-[400px] md:max-w-[380px] lg:max-w-[370px] bg-white rounded-lg shadow-lg overflow-hidden flex flex-col sm:flex-row mx-auto"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    whileHover={{ scale: 1.03, boxShadow: "0 8px 16px rgba(0, 0, 0, 0.1)" }}
-                  >
-                    {/* Image Section (50%) */}
-                    <div className="w-full sm:w-1/2 h-48 sm:h-auto">
-                      <img
-                        src={placeholderImage}
-                        alt={session.event}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
+  const fallbackImage = "https://placehold.co/400x300";
 
-                    {/* Content Section (50%) */}
-                    <div className="w-full sm:w-1/2 p-4 flex flex-col justify-center">
-                      <h3 className="text-lg font-bold text-[#1F2A44] mb-1">
-                        {session.event}
-                      </h3>
-                      <p className="text-sm text-gray-500 mb-1">
-                        {session.time} | {session.day}
+  return (
+    <section className="py-16 bg-gradient-to-br from-gray-50 via-green-50 to-white relative overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
+        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M0,0 Q50,50 100,0 T200,0 V100 H0 Z" fill="url(#wave)" />
+          <defs>
+            <linearGradient id="wave" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" style={{ stopColor: "#10b981" }} /> {/* Green-600 */}
+              <stop offset="100%" style={{ stopColor: "transparent" }} />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Upcoming Chapters */}
+        <motion.h2
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 text-green-800 tracking-tight"
+        >
+          Upcoming Chapters
+        </motion.h2>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+        >
+          <Slider {...settings}>
+            {upcomingChapters.map((session, index) => (
+              <div key={index} className="px-3">
+                <motion.div
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: "0 15px 30px rgba(0, 0, 0, 0.15)",
+                    y: -5,
+                  }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  className="relative bg-white rounded-xl overflow-hidden shadow-lg max-w-[400px] mx-auto h-[480px] flex flex-col group border border-green-100"
+                >
+                  {/* Image */}
+                  <div className="relative w-full h-56 bg-gray-100 rounded-t-xl overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-t from-green-900/40 to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-90" />
+                    <img
+                      src={session.image || fallbackImage}
+                      alt={session.event}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1 p-6 flex flex-col justify-between bg-gradient-to-b from-white to-green-50">
+                    <div>
+                      <h3 className="text-xl font-semibold text-green-900 mb-2 truncate">{session.event}</h3>
+                      <p className="text-sm text-green-700 font-medium mb-2">
+                       VENUE: {session.venue}
                       </p>
-                      <p className="text-sm text-gray-600">
-                        {session.description || "A key event from the upcoming chapters of PLF."}
+                      <p className="text-sm text-gray-600 line-clamp-3">
+                        {session.day}
+                        {/* <p className="text-sm text-gray-600 line-clamp-3">{session.description}</p> */}
                       </p>
                     </div>
-                  </motion.div>
-                </div>
-              ))}
-            </Slider>
-          </motion.div>
-        </div>
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="mt-4 px-4 py-2 bg-green-600 text-white rounded-lg text-sm font-medium hover:bg-green-700 transition-colors duration-300 self-start"
+                    >
+                      Learn More
+                    </motion.button>
+                  </div>
+                </motion.div>
+              </div>
+            ))}
+          </Slider>
+        </motion.div>
 
         {/* Previous Chapter */}
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-700 text-center mt-12 mb-8">
+        <motion.h2
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mt-16 mb-12 text-green-800 tracking-tight"
+        >
           Previous Chapter
-        </h2>
-        <div className="relative">
-          {/* Ribbon Background */}
-          <motion.div
-            className="absolute inset-0 h-1 rounded-full z-0"
-            initial={{ width: "0%" }}
-            animate={{ width: "100%" }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-          />
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2 }}
-            className="relative z-10 max-w-[1280px] mx-auto"
-          >
-            <Slider {...settings}>
-              {previousChapter.map((session, index) => (
-                <div key={index} className="px-2">
-                  <motion.div
-                    className="relative w-full max-w-[450px] sm:max-w-[400px] md:max-w-[380px] lg:max-w-[370px] bg-white rounded-lg shadow-lg overflow-hidden flex flex-col sm:flex-row mx-auto"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    whileHover={{ scale: 1.03, boxShadow: "0 8px 16px rgba(0, 0, 0, 0.1)" }}
-                  >
-                    {/* Image Section (50%) */}
-                    <div className="w-full sm:w-1/2 h-48 sm:h-auto">
-                      <img
-                        src={placeholderImage}
-                        alt={session.event}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
+        </motion.h2>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+        >
+          <Slider {...settings}>
+            {previousChapter.map((session, index) => (
+              <div key={index} className="px-3">
+                <motion.div
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: "0 15px 30px rgba(0, 0, 0, 0.15)",
+                    y: -5,
+                  }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  className="relative bg-white rounded-xl overflow-hidden shadow-lg max-w-[400px] mx-auto h-[480px] flex flex-col group border border-green-100"
+                >
+                  {/* Image */}
+                  <div className="relative w-full h-56 bg-gray-100 rounded-t-xl overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-t from-green-900/40 to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-90" />
+                    <img
+                      src={session.image || fallbackImage}
+                      alt={session.event}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
 
-                    {/* Content Section (50%) */}
-                    <div className="w-full sm:w-1/2 p-4 flex flex-col justify-center">
-                      <h3 className="text-lg font-bold text-[#1F2A44] mb-1">
-                        {session.event}
-                      </h3>
-                      <p className="text-sm text-gray-500 mb-1">
-                        {session.time} | {session.day}
+                  {/* Content */}
+                  <div className="flex-1 p-6 flex flex-col justify-between bg-gradient-to-b from-white to-green-50">
+                    <div>
+                      <h3 className="text-xl font-semibold text-green-900 mb-2 truncate">{session.event}</h3>
+                      <p className="text-sm text-green-700 font-medium mb-2">
+                        VENUE: {session.venue}
                       </p>
-                      <p className="text-sm text-gray-600">
-                        {session.description || "A key event from the previous chapter of PLF."}
+                      <p className="text-sm text-gray-600 line-clamp-3">
+                        {session.day}
+                        {/* {session.description || "A memorable moment from our past events."} */}
                       </p>
                     </div>
-                  </motion.div>
-                </div>
-              ))}
-            </Slider>
-          </motion.div>
-        </div>
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="mt-4 px-4 py-2 bg-green-600 text-white rounded-lg text-sm font-medium hover:bg-green-700 transition-colors duration-300 self-start"
+                    >
+                      View Highlights
+                    </motion.button>
+                  </div>
+                </motion.div>
+              </div>
+            ))}
+          </Slider>
+        </motion.div>
       </div>
     </section>
   );

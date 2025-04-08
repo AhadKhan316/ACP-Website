@@ -70,7 +70,7 @@ const AboutSection = () => {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-red-700">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12 md:mb-16 text-red-800 tracking-tight">
           Our Legacy Unfolded
         </h2>
         <p className="mt-2 text-base sm:text-2xl text-gray-600 max-w-2xl mx-auto">

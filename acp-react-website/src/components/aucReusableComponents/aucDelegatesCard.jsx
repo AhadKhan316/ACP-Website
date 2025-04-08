@@ -3,39 +3,48 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const NextArrow = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={`${className} text-red-800 hover:text-red-900 transition duration-300 sm:w-12 sm:h-12 w-8 h-8 custom-arrow`}
-      style={{ ...style, display: "block", right: "15px" }}
-      onClick={onClick}
-    >
-      <svg className="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
-      </svg>
-    </div>
-  );
-};
+const NextArrow = ({ className, style, onClick }) => (
+  <div
+    className={`${className} text-red-700 hover:text-red-900 rounded-full transition-all duration-300 sm:w-14 sm:h-14 w-10 h-10 shadow-md hover:shadow-lg`}
+    style={{
+      ...style,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      right: "30px",
+      backgroundColor: "red",
+      zIndex: 2,
+    }}
+    onClick={onClick}
+  >
+    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+    </svg>
+  </div>
+);
 
-const PrevArrow = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={`${className} text-red-800 hover:text-red-900 transition duration-300 sm:w-12 sm:h-12 w-8 h-8 custom-arrow`}
-      style={{ ...style, display: "block", left: "15px", zIndex: 1 }}
-      onClick={onClick}
-    >
-      <svg className="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z" />
-      </svg>
-    </div>
-  );
-};
+const PrevArrow = ({ className, style, onClick }) => (
+  <div
+    className={`${className} text-red-700 hover:text-red-900 rounded-full transition-all duration-300 sm:w-14 sm:h-14 w-10 h-10 shadow-md hover:shadow-lg`}
+    style={{
+      ...style,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      left: "30px",
+      backgroundColor: "red",
+      zIndex: 2,
+    }}
+    onClick={onClick}
+  >
+    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z" />
+    </svg>
+  </div>
+);
 
 const AucDelegateCard = ({ delegates, title = "Delegates" }) => {
   const settings = {
-    dots: true,
     infinite: true,
     speed: 600,
     slidesToShow: 4,
@@ -44,26 +53,56 @@ const AucDelegateCard = ({ delegates, title = "Delegates" }) => {
     autoplaySpeed: 3000,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    centerMode: true,
+    centerPadding: "0px",
+    dots: true,
+    customPaging: () => (
+      <div className="w-2 h-2 bg-red-400 rounded-full mt-4 transition-all duration-300 hover:bg-red-600" />
+    ),
     responsive: [
       {
-        breakpoint: 1240,
+        breakpoint: 1536, // 2xl
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 4,
           slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: "0px",
         },
       },
       {
-        breakpoint: 1430,
+        breakpoint: 1280,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: "0px",
         },
       },
       {
-        breakpoint: 740,
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: "20px",
+        },
+      },
+      {
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: "40px",
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: "20px",
         },
       },
     ],
@@ -72,62 +111,78 @@ const AucDelegateCard = ({ delegates, title = "Delegates" }) => {
   const fallbackImage = "https://placehold.co/150x150";
 
   return (
-    <section className="py-12 sm:px-6 md:px-8 bg-gradient-to-b from-teal-50 to-white text-red-900 relative overflow-hidden">
+    <section className="py-16 px-4 sm:px-6 md:px-8 text-gray-900 relative overflow-hidden">
+      {/* Decorative Background Element */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
+        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <circle cx="50" cy="50" r="40" fill="url(#grad)" />
+          <defs>
+            <radialGradient id="grad" cx="0.5" cy="0.5" r="0.5">
+              <stop offset="0%" style={{ stopColor: "#ef4444" }} />
+              <stop offset="100%" style={{ stopColor: "transparent" }} />
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+
       <div className="mx-4 relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}  
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-center mb-16 text-red-800"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12 md:mb-16 text-red-800 tracking-tight"
         >
           {title}
         </motion.h2>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 1.2 }}
+          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
         >
           <Slider {...settings}>
             {delegates.map((delegate, index) => (
-              <div key={index} className="px-4">
+              <div key={index} className="px-3 sm:px-4">
                 <motion.div
-                  whileHover={{ scale: 1.03, boxShadow: "0 10px 20px rgba(0, 0, 0, 0.4)" }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
-                  className="relative bg-white rounded-lg overflow-hidden shadow-md p-3 mx-auto max-w-sm group"
+
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: "0 14px 35px rgba(0, 0, 0, 0.1)",
+                    y: -10,
+                  }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  className="relative bg-white rounded-xl overflow-hidden mx-auto max-w-[320px] h-[460px] flex flex-col group border border-gray-100"
                 >
                   {/* Image Container */}
-                  <div className="relative w-70 h-70 sm:w-78 sm:h-78 mx-auto mb-6 bg-green-50 rounded-md overflow-hidden">
-                    {/* Subtle Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-red-800/20 to-transparent opacity-50" />
+                  <div className="relative w-full aspect-[4/5] bg-gray-100 overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-t from-red-900/30 via-transparent to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-90" />
                     <img
                       src={delegate.image || fallbackImage}
                       alt={delegate.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       onError={(e) => (e.target.src = fallbackImage)}
                     />
-                    {/* Decorative Frame */}
-                    <div className="absolute inset-0 border-2 border-red-400/30 rounded-md m-2 group-hover:border-red-400/50 transition-colors duration-300" />
+                    <div className="absolute inset-0 border-2 border-red-700/70 rounded-t-xl m-2 transition-colors duration-300 group-hover:border-red-800/90" />
                   </div>
 
                   {/* Delegate Info */}
-                  <div className="relative text-center text-red-900 flex-1 overflow-hidden">
-                    <h3 className="text-xl sm:text-2xl font-serif font-bold mb-2 truncate">
-                      {delegate.name}
-                    </h3>
-                    <p className="text-sm sm:text-base text-red-700 truncate">
-                      {delegate.title || "Delegate"}
-                    </p>
-                    <p className="text-sm text-gray-600 mt-2 line-clamp-2">
-                      {delegate.bio || "Expert in their field"}
-                    </p>
+                  <div className="flex-1 p-5 sm:p-6 flex flex-col items-center justify-center text-center bg-gradient-to-b from-white to-white">
+                    <h3 className="text-xl sm:text-2xl font-semibold text-red-900 mb-2 truncate">{delegate.name}</h3>
+                    {/* {delegate.title && (
+                      <p className="text-sm sm:text-base text-red-700 font-medium truncate">{delegate.title}</p>
+                    )}
+                    {delegate.bio && (
+                      <p className="text-xs sm:text-sm text-gray-600 mt-2 line-clamp-2">{delegate.bio}</p>
+                    )} */}
                   </div>
 
                   {/* Subtle Accent */}
                   <motion.div
-                    className="absolute bottom-2 right-2 w-3 h-3 bg-red-800 rounded-full"
+                    className="absolute bottom-3 right-3 w-4 h-4 bg-red-700 rounded-full"
+                    animate={{ scale: [1, 1.2, 1] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                   />
                 </motion.div>
               </div>

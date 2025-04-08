@@ -46,7 +46,7 @@ const PlfFooter = () => {
 
           {/* Info Section */}
           <div>
-            <h3 className="text-lg sm:text-xl font-serif font-bold text-green-400 mb-4">
+            <h3 className="text-lg sm:text-xl font-bold text-green-400 mb-4">
               Info
             </h3>
             <p className="text-sm sm:text-base text-gray-300 mb-2">
@@ -59,7 +59,7 @@ const PlfFooter = () => {
 
           {/* Chapters Section */}
           <div>
-            <h3 className="text-lg sm:text-xl font-serif font-bold text-green-400 mb-4">
+            <h3 className="text-lg sm:text-xl font-bold text-green-400 mb-4">
               Chapters
             </h3>
             <ul className="space-y-2">
@@ -80,7 +80,7 @@ const PlfFooter = () => {
 
           {/* Socials Section */}
           <div>
-            <h3 className="text-lg sm:text-xl font-serif font-bold text-green-400 mb-4">
+            <h3 className="text-lg sm:text-xl font-bold text-green-400 mb-4">
               Socials
             </h3>
             <div className="flex justify-center sm:justify-start space-x-4">

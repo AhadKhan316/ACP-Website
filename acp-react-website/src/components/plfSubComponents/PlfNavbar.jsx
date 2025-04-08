@@ -51,7 +51,7 @@ const PlfNavbar = () => {
             <div className="flex-shrink-0">
               <Link to="/festival/plf" className="flex items-center">
                 <img
-                  src="../src/assets/plf-assets/plf-logo.png" // Replace with your logo
+                  src="../src/assets/plf-assets/plf-logo.png"
                   alt="PLF Logo"
                   className="h-20 w-17 mr-2 transform hover:scale-110 transition duration-300"
                 />
@@ -62,9 +62,9 @@ const PlfNavbar = () => {
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8 items-center">
               {[
-                { to: "/", label: "Home" },
-                { to: "/about", label: "About" },
-                { to: "/speakers", label: "Speakers" },
+                { to: "/festival/plf", label: "Home" },
+                { to: "/festival/plf/about", label: "About" },
+                { to: "/festival/plf/delegates", label: "Speakers" },
               ].map((item) => (
                 <Link
                   key={item.to}
@@ -119,7 +119,7 @@ const PlfNavbar = () => {
               </div>
 
               <Link
-                to="/contact"
+                to="/festival/plf/contactUs"
                 className={`hover:text-green-400 transition duration-300 font-bold ${location.pathname === "/contact" ? "text-green-400" : ""
                   }`}
               >

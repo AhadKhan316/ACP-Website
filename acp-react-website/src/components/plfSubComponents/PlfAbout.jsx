@@ -85,7 +85,7 @@ const PlfAbout = () => {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-900">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-green-800 text-center mt-12 mb-8">
           Our Legacy Unfolded
         </h2>
         <p className="mt-2 text-base sm:text-2xl text-gray-600 max-w-2xl mx-auto">

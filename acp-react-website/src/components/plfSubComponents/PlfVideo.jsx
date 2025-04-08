@@ -30,7 +30,7 @@ const PlfVideo = () => {
         variants={textVariants}
         viewport={{ once: true }}
       >
-        <h2 className="text-3xl md:text-5xl font-bold">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-green-800 text-center mt-12 mb-8">
           PLF Sukkur Chapter 2 Highlights
         </h2>
         <p className="mt-2 text-base sm:text-lg max-w-2xl mx-auto text-gray-600">

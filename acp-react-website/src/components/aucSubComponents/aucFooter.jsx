@@ -40,7 +40,7 @@ const AucFooter = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-serif font-semibold text-red-700 mb-4">
+            <h3 className="text-2xl font-semibold text-red-700 mb-4">
               Info
             </h3>
             <p className="text-sm text-[#D1D5DB] flex items-center mb-3">
@@ -110,7 +110,7 @@ const AucFooter = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-serif font-semibold text-red-700 mb-4">
+            <h3 className="text-2xl font-semibold text-red-700 mb-4">
               Shows
             </h3>
             <ul className="text-base space-y-3">
@@ -157,7 +157,7 @@ const AucFooter = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-serif font-semibold text-red-700 mb-4">
+            <h3 className="text-2xl font-semibold text-red-700 mb-4">
               Social
             </h3>
             <div className="flex space-x-6">

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const PlfNewsletter = () => {
   return (
-    <section className="py-40 px-4 md:px-8 bg-navy-800 text-ivory-100 relative overflow-hidden">
+    <section className="py-24 px-4 md:px-8 bg-navy-800 text-ivory-100 relative overflow-hidden">
       <div className="absolute inset-0">
         <svg
           className="w-full h-full"
@@ -11,8 +11,8 @@ const PlfNewsletter = () => {
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            fill="#05DF72" // Changed to a vibrant green (Tailwind's green-500)
-            fillOpacity="1.9"
+            fill="#05DF72"
+            fillOpacity="0.9"
             d="M0,224L48,213.3C96,203,192,181,288,176C384,171,480,181,576,192C672,203,768,213,864,213.3C960,213,1056,203,1152,192C1248,181,1344,171,1392,165.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
           >
             <animate
@@ -28,7 +28,7 @@ const PlfNewsletter = () => {
         </svg>
       </div>
       <div className="max-w-5xl mx-auto text-center relative z-10">
-        <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-green-800 text-center">
           Subscribe to Our Newsletter
         </h2>
         <p className="text-lg md:text-xl font-sans mb-8">
