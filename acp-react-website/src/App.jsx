@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 // Components
-import Layout from './components/Layout'; // Import the Layout component
+import Layout from './components/Layout'; 
 import Hero from './components/Hero';
 import UpcomingEvents from './components/UpcomingEvents';
 import About from './components/About';
