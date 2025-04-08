@@ -72,7 +72,7 @@ const AucNavbar = () => {
             <div className="flex-shrink-0">
               <Link to="/festival/auc" className="flex items-center">
                 <img
-                  src="../src/assets/auc-assets/auclogo.png"
+                  src="../src/assets/auclogo.png"
                   alt="AUC Logo"
                   className="w-24 h-18 transform hover:scale-110 transition duration-300"
                 />
