@@ -11,14 +11,22 @@ import PyfNewsletter from '../components/pyfSubComponents/pyfNewsletter'
 import PyfSponsors from '../components/pyfSubComponents/pyfSponsors'
 import PyfFooter from '../components/pyfSubComponents/pyfFooter'
 
+// Card Image
+import pyfDelegateCard1 from "/src/assets/pyf-assets/pyf-delegate1.jpg"
+import pyfDelegateCard2 from "/src/assets/pyf-assets/pyf-delegate2.jpg"
+import pyfDelegateCard3 from "/src/assets/pyf-assets/pyf-delegate3.jpg"
+import pyfDelegateCard4 from "/src/assets/pyf-assets/pyf-delegate4.jpg"
+import pyfDelegateCard5 from "/src/assets/pyf-assets/pyf-delegate5.jpg"
+import pyfDelegateCard6 from "/src/assets/pyf-assets/pyf-delegate6.jpg"
+
 
 const speakers = [
-  { name: "Afaq Adnan", image: "/src/assets/pyf-assets/pyf-delegate1.jpg" },
-  { name: "Ali Azmat", image: "/src/assets/pyf-assets/pyf-delegate2.jpg" },
-  { name: "Asim Azhar", image: "/src/assets/pyf-assets/pyf-delegate3.jpg" },
-  { name: "Arman Rahim", image: "/src/assets/pyf-assets/pyf-delegate4.jpg" },
-  { name: "Kashmir Band", image: "/src/assets/pyf-assets/pyf-delegate5.jpg" },
-  { name: "Natasha Baig", image: "/src/assets/pyf-assets/pyf-delegate6.jpg" },
+  { name: "Afaq Adnan", image: pyfDelegateCard1 },
+  { name: "Ali Azmat", image: pyfDelegateCard2 },
+  { name: "Asim Azhar", image: pyfDelegateCard3 },
+  { name: "Arman Rahim", image: pyfDelegateCard4 },
+  { name: "Kashmir Band", image: pyfDelegateCard5 },
+  { name: "Natasha Baig", image: pyfDelegateCard6 },
 ];
 
 function PakistanYouthFestival() {

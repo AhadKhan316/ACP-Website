@@ -1,52 +1,55 @@
 import React from "react";
-import EngagementCarousel from "../../components/wcfReusableComponents/WcfArtistEngagementCarousel"; // Adjust the import path as needed
+import EngagementCarousel from "../../components/wcfReusableComponents/WcfArtistEngagementCarousel";
+
+import artistsEngagement1 from '/src/assets/wcf-assets/artist-engagement1.png'
+
 
 const WcfArtistEngagement = () => {
-  // Data for Artist Collaborations section
+
   const collaborationSlides = [
     {
-      image: { src: '/src/assets/wcf-assets/artist-engagement1.png', alt: 'Artist 1' },
+      image: { src: artistsEngagement1, alt: 'Artist 1' },
       caption: 'LOCAL ARTISTS COLLABORATING ON A MURAL PROJECT IN KARACHI.',
-      link: '#', // Placeholder link, replace with actual link or modal trigger
+      link: '#',
     },
     {
-      image: { src: 'https://via.placeholder.com/2048x1366?text=Artist+2', alt: 'Artist 2' },
+      image: { src: artistsEngagement1, alt: 'Artist 2' },
       caption: 'INTERNATIONAL ARTISTS SHARING THEIR WORK AT A GALLERY EVENT.',
-      link: '#', // Placeholder link, replace with actual link or modal trigger
+      link: '#',
     },
     {
-      image: { src: 'https://via.placeholder.com/2048x1366?text=Artist+3', alt: 'Artist 3' },
+      image: { src: artistsEngagement1, alt: 'Artist 3' },
       caption: 'AN ARTIST CONDUCTING A LIVE PAINTING SESSION AT THE FESTIVAL.',
-      link: '#', // Placeholder link, replace with actual link or modal trigger
+      link: '#',
     },
     {
-      image: { src: 'https://via.placeholder.com/2048x1366?text=Artist+3', alt: 'Artist 3' },
+      image: { src: artistsEngagement1, alt: 'Artist 3' },
       caption: 'AN ARTIST CONDUCTING A LIVE PAINTING SESSION AT THE FESTIVAL.',
-      link: '#', // Placeholder link, replace with actual link or modal trigger
+      link: '#',
     },
   ];
 
   // Data for Artist Workshops section (example)
   const workshopSlides = [
     {
-      image: { src: '/src/assets/wcf-assets/artist-engagement1.png', alt: 'Workshop 1' },
+      image: { src: artistsEngagement1, alt: 'Workshop 1' },
       caption: 'WORKSHOP ON TRADITIONAL PAINTING TECHNIQUES IN KARACHI.',
-      link: '#', // Placeholder link, replace with actual link or modal trigger
+      link: '#',
     },
     {
-      image: { src: 'https://via.placeholder.com/2048x1366?text=Workshop+2', alt: 'Workshop 2' },
+      image: { src: artistsEngagement1, alt: 'Workshop 2' },
       caption: 'INTERACTIVE SESSION ON MODERN SCULPTURE AT THE FESTIVAL.',
-      link: '#', // Placeholder link, replace with actual link or modal trigger
+      link: '#',
     },
     {
-      image: { src: 'https://via.placeholder.com/2048x1366?text=Workshop+3', alt: 'Workshop 3' },
+      image: { src: artistsEngagement1, alt: 'Workshop 3' },
       caption: 'ARTISTS TEACHING DIGITAL ART TO YOUNG STUDENTS.',
-      link: '#', // Placeholder link, replace with actual link or modal trigger
+      link: '#',
     },
     {
-      image: { src: 'https://via.placeholder.com/2048x1366?text=Workshop+3', alt: 'Workshop 3' },
+      image: { src: artistsEngagement1, alt: 'Workshop 3' },
       caption: 'ARTISTS TEACHING DIGITAL ART TO YOUNG STUDENTS.',
-      link: '#', // Placeholder link, replace with actual link or modal trigger
+      link: '#',
     },
   ];
 
@@ -68,8 +71,8 @@ const WcfArtistEngagement = () => {
           sectionClassName="mb-6 md:mb-10"
           cardClassName="max-w-sm mx-auto"
           titleClassName="text-xl md:text-2xl text-white"
-          imageAspectRatio="4/3" // Updated for 2048x1366 images
-          maxImageHeight="400px" // Adjust as needed
+          imageAspectRatio="4/3"
+          maxImageHeight="400px"
         />
 
         {/* Artist Workshops Section */}
@@ -79,8 +82,8 @@ const WcfArtistEngagement = () => {
           sectionClassName="mb-6 md:mb-10"
           cardClassName="max-w-sm mx-auto"
           titleClassName="text-xl md:text-2xl text-white"
-          imageAspectRatio="4/3" // Updated for 2048x1366 images
-          maxImageHeight="400px" // Adjust as needed
+          imageAspectRatio="4/3"
+          maxImageHeight="400px"
         />
       </main>
     </div>

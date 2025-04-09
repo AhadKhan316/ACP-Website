@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube, FaBars, FaTimes } from "react-icons/fa";
 
+import AucLogo from "/src/assets/auc-assets/auc-logo.png"
+
 const AucNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isEventsOpen, setIsEventsOpen] = useState(false);
@@ -72,7 +74,7 @@ const AucNavbar = () => {
             <div className="flex-shrink-0">
               <Link to="/festival/auc" className="flex items-center">
                 <img
-                  src="../src/assets/auclogo.png"
+                  src={AucLogo}
                   alt="AUC Logo"
                   className="w-24 h-18 transform hover:scale-110 transition duration-300"
                 />

@@ -1,60 +1,69 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+import AucDelegatePageCard1 from "/src/assets/auc-assets/page-delegate1.jpg"
+import AucDelegatePageCard2 from "/src/assets/auc-assets/page-delegate2.jpg"
+import AucDelegatePageCard3 from "/src/assets/auc-assets/page-delegate3.jpg"
+import AucDelegatePageCard4 from "/src/assets/auc-assets/page-delegate4.jpg"
+import AucDelegatePageCard5 from "/src/assets/auc-assets/page-delegate5.jpg"
+import AucDelegatePageCard6 from "/src/assets/auc-assets/page-delegate6.jpg"
+import AucDelegatePageCard7 from "/src/assets/auc-assets/page-delegate7.jpg"
+import AucDelegatePageCard8 from "/src/assets/auc-assets/page-delegate8.jpg"
+
 const delegates = [
   {
     name: "Adnan Siddiqui",
     title: "Actor",
     bio: "Renowned Pakistani actor and television personality.",
-    image: "/src/assets/auc-assets/page-delegate1.jpg",
+    image: AucDelegatePageCard1,
   },
   {
     name: "Iftikhar Arif",
     title: "Poet",
     bio: "Celebrated Urdu poet and scholar.",
-    image: "/src/assets/auc-assets/page-delegate2.jpg",
+    image: AucDelegatePageCard2,
   },
   {
     name: "Saba Qamar",
     title: "Actress",
     bio: "Award-winning actress known for her versatility.",
-    image: "/src/assets/auc-assets/page-delegate3.jpg",
+    image: AucDelegatePageCard3,
   },
   {
     name: "Anwar Maqsood",
     title: "Writer",
     bio: "Iconic playwright and satirist.",
-    image: "/src/assets/auc-assets/page-delegate4.jpg",
+    image: AucDelegatePageCard4,
   },
   {
     name: "Zeba Bakhtiar",
     title: "Actress & Director",
     bio: "Veteran actress and film director.",
-    image: "/src/assets/auc-assets/page-delegate5.jpg",
+    image: AucDelegatePageCard5,
   },
   {
     name: "Mustafa Qureshi",
     title: "Actor",
     bio: "Legendary figure in Pakistani cinema.",
-    image: "/src/assets/auc-assets/page-delegate6.jpg",
+    image: AucDelegatePageCard6,
   },
   {
     name: "Nida Yasir",
     title: "TV Host",
     bio: "Popular television host and actress.",
-    image: "/src/assets/auc-assets/page-delegate7.jpg",
+    image: AucDelegatePageCard7,
   },
   {
     name: "Bushra Ansari",
     title: "Actress & Comedian",
     bio: "Renowned actress and comedian.",
-    image: "/src/assets/auc-assets/page-delegate8.jpg",
+    image: AucDelegatePageCard8,
   },
   {
     name: "Shahid Afridi",
     title: "Cricketer",
     bio: "Former Pakistani cricketer and philanthropist.",
-    image: "/src/assets/auc-assets/page-delegate1.jpg",
+    image: AucDelegatePageCard1,
   }
 
 ];

@@ -1,6 +1,10 @@
 import React from 'react';
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa';
 
+
+import WcfLogo from '/src/assets/wcf-assets/wcf-logo.png';
+
+
 function Footer() {
   return (
     <footer className="bg-black py-16 px-4 sm:px-6 lg:px-8 text-white">
@@ -8,7 +12,7 @@ function Footer() {
         {/* Logo & Copyright */}
         <div className="flex flex-col items-center md:items-start">
           <img
-            src="../src/assets/wcf-assets/wcf-logo.png"
+            src={WcfLogo}
             alt="WCFK Footer Logo"
             className="h-32 mb-6"
           />
@@ -78,7 +82,7 @@ function Footer() {
       {/* Divider */}
       <div className="container mx-auto border-t border-gray-800 mt-10 pt-8 text-center text-gray-400">
         <p className="text-sm">
-        ACPKHI © 2025. All rights reserved.
+          ACPKHI © 2025. All rights reserved.
         </p>
       </div>
     </footer>

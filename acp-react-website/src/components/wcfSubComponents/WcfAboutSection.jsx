@@ -86,7 +86,7 @@ function WcfAboutSection() {
 
           {/* Image Section */}
           <motion.img
-            src={{ presImg }}
+            src={presImg}
             alt="Ahmed Shah (H.I, S.I)"
             className="w-36 h-36 md:w-52 md:h-52 rounded-full object-cover shadow-lg border-4 border-gray-700"
             variants={fadeInVariants}

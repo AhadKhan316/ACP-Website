@@ -1,31 +1,34 @@
 import React from "react";
-import ExhibitionGrid from "../wcfReusableComponents/WcfLandingPageExhibitionCard"; 
+import ExhibitionGrid from "../wcfReusableComponents/WcfLandingPageExhibitionCard";
+
+import exhbition1 from "/src/assets/wcf-assets/Wcf-Exhibition.jpeg"
+import exhbition2 from "/src/assets/venues/Audi1/1.jpg"
 
 // Exhibition Data
 const exhibitions = [
   {
     title: "Sindh Artists Exhibition",
-    image: "../src/assets/wcf-assets/Wcf-Exhibition.jpeg",
+    image: exhbition1,
   },
   {
     title: "Art Exhibition Masters' & Contemporary Art",
-    image: "../src/assets/venues/Audi1/1.jpg",
+    image: exhbition2,
   },
   {
     title: "Candy Forest",
-    image: "../src/assets/wcf-assets/Wcf_Art_Exhibition.jpeg",
+    image: exhbition1,
   },
   {
     title: "Candy Forest",
-    image: "../src/assets/venues/Audi1/1.jpg",
+    image: exhbition2,
   },
   {
     title: "Candy Forest",
-    image: "../src/assets/venues/Audi1/1.jpg",
+    image: exhbition2,
   },
   {
     title: "Candy Forest",
-    image: "../src/assets/venues/Audi1/1.jpg",
+    image: exhbition2,
   },
 ];
 

@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 
+import AucFooterLogo from "/src/assets/auc-assets/auc-logo.png"
+
 const AucFooter = () => {
   return (
     <footer className="bg-gray-900 text-white py-16 px-4 md:px-8 relative overflow-hidden">
@@ -26,7 +28,7 @@ const AucFooter = () => {
             viewport={{ once: true }}
           >
             <img
-              src="../src/assets/auc-assets/auc-logo.png"
+              src={AucFooterLogo}
               alt="Arts Council Logo"
               className="w-36 h-30" // Slightly adjusted size for better proportion
             />

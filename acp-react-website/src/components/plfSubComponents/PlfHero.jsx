@@ -3,14 +3,17 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FaFeatherAlt } from "react-icons/fa";
 
+import PlfHeroImg1 from "/src/assets/plf-assets/plf-hero-img1.jpg"
+import PlfHeroImg2 from "/src/assets/plf-assets/plf-hero-img2.jpg"
+import PlfHeroImg3 from "/src/assets/plf-assets/plf-hero-img3.jpg"
+
 const PlfHero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Array of background images (replace with your actual image paths)
   const slides = [
-    "../src/assets/plf-assets/plf-hero-img1.jpg",
-    "../src/assets/plf-assets/plf-hero-img2.jpg",
-    "../src/assets/plf-assets/plf-hero-img3.jpg",
+    PlfHeroImg1,
+    PlfHeroImg2,
+    PlfHeroImg3,
     // "../src/assets/plf-assets/hero-image4.png",
   ];
 
@@ -18,7 +21,7 @@ const PlfHero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-    }, 5000); // Change slide every 5 seconds
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [slides.length]);

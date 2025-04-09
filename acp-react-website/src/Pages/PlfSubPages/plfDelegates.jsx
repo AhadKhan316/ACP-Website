@@ -1,43 +1,49 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-// Sample delegate data (replace with actual PLF delegate data)
+import PlfDelegateCard1 from "/src/assets/plf-assets/page-delegate1.jpg";
+import PlfDelegateCard2 from "/src/assets/plf-assets/page-delegate2.jpg";
+import PlfDelegateCard3 from "/src/assets/plf-assets/page-delegate3.jpg";
+import PlfDelegateCard4 from "/src/assets/plf-assets/page-delegate4.jpg";
+import PlfDelegateCard5 from "/src/assets/plf-assets/page-delegate5.jpg";
+import PlfDelegateCard6 from "/src/assets/plf-assets/page-delegate6.jpg";
+
 const delegates = [
   {
     name: "Ahsan Bari",
     title: "Singer",
     bio: "Internationally acclaimed Pakistani novelist.",
-    image: "/src/assets/plf-assets/page-delegate1.jpg",
+    image: PlfDelegateCard1,
   },
   {
     name: "Ajmal Siraj",
     title: "Writer",
     bio: "Renowned author and political commentator.",
-    image: "/src/assets/plf-assets/page-delegate2.jpg",
+    image: PlfDelegateCard2,
   },
   {
     name: "Ali Mengan",
     title: "Novelist",
     bio: "Award-winning Pakistani-British writer.",
-    image: "/src/assets/plf-assets/page-delegate3.jpg",
+    image: PlfDelegateCard3,
   },
   {
     name: "Ali Murtaza Solangi",
     title: "Poet",
     bio: "Celebrated Urdu poet known for his revolutionary verse.",
-    image: "/src/assets/plf-assets/page-delegate4.jpg",
+    image: PlfDelegateCard4,
   },
   {
     name: "Amar Sindhu",
     title: "Author",
     bio: "Pioneering Pakistani novelist and essayist.",
-    image: "/src/assets/plf-assets/page-delegate5.jpg",
+    image: PlfDelegateCard5,
   },
   {
     name: "Amar Iqbal",
     title: "Poet",
     bio: "Influential Urdu poet of the 20th century.",
-    image: "/src/assets/plf-assets/page-delegate6.jpg",
+    image: PlfDelegateCard6,
   },
 ];
 

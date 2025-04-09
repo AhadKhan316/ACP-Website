@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube, FaBars, FaTimes } from "react-icons/fa";
 
+import PyfLogo from "/src/assets/pyf-assets/pyf-logo.png"
+
 const PyfNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isEventsOpen, setIsEventsOpen] = useState(false);
@@ -58,7 +60,7 @@ const PyfNavbar = () => {
             <div className="flex-shrink-0">
               <Link to="/pyf" className="flex items-center">
                 <img
-                  src="../src/assets/pyf-assets/pyf-logo.png"
+                  src={PyfLogo}
                   alt="PYF Logo"
                   className="w-30 h-25 transform hover:scale-110 transition duration-300"
                 />

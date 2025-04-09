@@ -16,8 +16,12 @@ import PlfAboutPage from "./PlfSubPages/plfAboutPage";
 import PlfDelegatePage from "./PlfSubPages/plfDelegates";
 import PlfContactPage from "./PlfSubPages/plfContactPage";
 
-// Delegates Images 201 by 251
-import umairNajmi from "/src/assets/plf-assets/plf-delegate1.jpeg";
+// Delegates Images
+import AucDelegate1 from "/src/assets/plf-assets/plf-delegate1.jpeg";
+import AucDelegate2 from "/src/assets/plf-assets/plf-delegate2.jpeg";
+import AucDelegate3 from "/src/assets/plf-assets/plf-delegate3.jpeg";
+import AucDelegate4 from "/src/assets/plf-assets/plf-delegate4.jpeg";
+import AucDelegate5 from "/src/assets/plf-assets/plf-delegate5.jpeg";
 
 // const PlfMainPage = () => {
 //   const sessions = [
@@ -34,31 +38,31 @@ const PlfMainPage = () => {
       name: "Umair Najmi",
       // role: "Author",
       // bio: "Renowned Author & Poet",
-      image: umairNajmi
+      image: AucDelegate1
     },
     {
       name: "Rehman Faris",
       // role: "Critic",
       // bio: "Literary Critic",
-      image: "../src/assets/plf-assets/plf-delegate2.jpeg"
+      image: AucDelegate2
     },
     {
       name: "Amar Sindhu",
       // role: "Historian",
       // bio: "Cultural Historian",
-      image: "../src/assets/plf-assets/plf-delegate3.jpeg"
+      image: AucDelegate3
     },
     {
       name: "Paras Masroor",
       // role: "Historian",
       // bio: "Cultural Historian",
-      image: "../src/assets/plf-assets/plf-delegate4.jpeg"
+      image: AucDelegate4
     },
     {
       name: "Mustafa Qureshi",
       // role: "Historian",
       // bio: "Cultural Historian",
-      image: "../src/assets/plf-assets/plf-delegate5.jpeg"
+      image: AucDelegate5
     },
   ];
   return (

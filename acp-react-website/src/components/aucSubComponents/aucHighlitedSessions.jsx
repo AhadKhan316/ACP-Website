@@ -4,37 +4,43 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import AucHighlightedSession1 from "/src/assets/auc-assets/auc-session1.jpg";
+import AucHighlightedSession2 from "/src/assets/auc-assets/auc-session2.jpg";
+import AucHighlightedSession3 from "/src/assets/auc-assets/auc-session3.jpg";
+import AucHighlightedSession4 from "/src/assets/auc-assets/auc-session4.jpg";
+import AucHighlightedSession5 from "/src/assets/auc-assets/auc-session5.jpg";
+
 // Sample session data
 const sessions = [
   {
     title: "Mein Hun Karachi",
     venue: "IBA Sukkur University",
     isHighlighted: false,
-    image: "../src/assets/auc-assets/auc-session1.jpg",
+    image: AucHighlightedSession1,
   },
   {
     title: "Karachi Ka Hissa",
     venue: "IBA Sukkur University",
     isHighlighted: false,
-    image: "../src/assets/auc-assets/auc-session2.jpg",
+    image: AucHighlightedSession2,
   },
   {
     title: "Roshan Chiragh",
     venue: "IBA Sukkur University",
     isHighlighted: false,
-    image: "../src/assets/auc-assets/auc-session3.jpg",
+    image: AucHighlightedSession3,
   },
   {
     title: "Dunya Badalti Khwateen",
     venue: "IBA Sukkur University",
     isHighlighted: false,
-    image: "../src/assets/auc-assets/auc-session4.jpg",
+    image: AucHighlightedSession4,
   },
   {
     title: "Mein Hun Karachi",
     venue: "IBA Sukkur University",
     isHighlighted: false,
-    image: "../src/assets/auc-assets/auc-session5.jpg",
+    image: AucHighlightedSession5,
   },
 ];
 

@@ -2,6 +2,8 @@
 import { motion } from "framer-motion";
 import { FaFacebookF, FaYoutube, FaInstagram } from "react-icons/fa";
 
+import PyfFooterLogo from "/src/assets/pyf-assets/pyf-logo.png"
+
 const PyfFooter = () => {
   // Animation variants for sections
   const sectionVariants = {
@@ -38,7 +40,7 @@ const PyfFooter = () => {
           viewport={{ once: true }}
         >
           <img
-            src="../src/assets/pyf-assets/pyf-logo.png"
+            src={PyfFooterLogo}
             alt="PYF Logo"
             className="w-40 h-auto mb-4"
           />

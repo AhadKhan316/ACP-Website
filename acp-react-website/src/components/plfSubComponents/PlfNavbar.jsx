@@ -2,6 +2,9 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes, FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 
+import PlfLogo from "/src/assets/plf-assets/plf-logo.png"
+
+
 const PlfNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -51,7 +54,7 @@ const PlfNavbar = () => {
             <div className="flex-shrink-0">
               <Link to="/festival/plf" className="flex items-center">
                 <img
-                  src="../src/assets/plf-assets/plf-logo.png"
+                  src={PlfLogo}
                   alt="PLF Logo"
                   className="h-20 w-17 mr-2 transform hover:scale-110 transition duration-300"
                 />

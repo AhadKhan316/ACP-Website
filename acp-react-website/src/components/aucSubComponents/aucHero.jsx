@@ -1,16 +1,22 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
+import aucHeroImg1 from "/src/assets/auc-assets/auc-hero.jpg"
+import aucHeroImg2 from "/src/assets/auc-assets/auc-hero2.jpg"
+import aucHeroImg3 from "/src/assets/auc-assets/auc-hero3.jpg"
+import aucHeroImg4 from "/src/assets/auc-assets/auc-hero4.jpg"
+// import aucHeroImg5 from  "/src/assets/auc-assets/auc-hero5.jpg"
+
 const AucHero = () => {
   const canvasRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   // Array of background images
   const slides = [
-    "../src/assets/auc-assets/auc-hero.jpg",
-    "../src/assets/auc-assets/auc-hero2.jpg",
-    "../src/assets/auc-assets/auc-hero3.jpg",
-    "../src/assets/auc-assets/auc-hero5.jpg",
+    aucHeroImg1,
+    aucHeroImg2,
+    aucHeroImg3,
+    aucHeroImg4,
   ];
 
   // Auto-slider logic

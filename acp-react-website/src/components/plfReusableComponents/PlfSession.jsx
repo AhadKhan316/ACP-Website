@@ -4,30 +4,44 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+// Upcoming Chapter Images
+import PlfUpcomingChapters1 from "/src/assets/plf-assets/lahore-chapter.jpg"
+import PlfUpcomingChapters2 from "/src/assets/plf-assets/muzaffarabad-chapter.jpg";
+import PlfUpcomingChapters3 from "/src/assets/plf-assets/lahore-chapter.jpg";
+import PlfUpcomingChapters4 from "/src/assets/plf-assets/sukkur-chapter.jpg";
+
+// Previous Chapter Images
+import PlfPreviousChapters1 from "/src/assets/plf-assets/lahore-chapter.jpg";
+import PlfPreviousChapters2 from "/src/assets/plf-assets/muzaffarabad-chapter.jpg";
+import PlfPreviousChapters3 from "/src/assets/plf-assets/sukkur-chapter.jpg";
+import PlfPreviousChapters4 from "/src/assets/plf-assets/quetta-chapter.jpg";
+import PlfPreviousChapters5 from "/src/assets/plf-assets/sukkur-chapter.jpg";
+
+
 const upcomingChapters = [
   {
     event: "Pakistan Literature Festival",
     day: "TBA",
     venue: "TBA",
-    image: "../src/assets/plf-assets/lahore-chapter.jpg",
+    image: PlfUpcomingChapters1,
   },
   {
     event: "Pakistan Literature Festival",
     day: "TBA",
     venue: "TBA",
-    image: "../src/assets/plf-assets/muzaffarabad-chapter.jpg",
+    image: PlfUpcomingChapters2,
   },
   {
     event: "Pakistan Literature Festival",
     day: "TBA",
     venue: "TBA",
-    image: "../src/assets/plf-assets/lahore-chapter.jpg",
+    image: PlfUpcomingChapters3,
   },
   {
     event: "Pakistan Literature Festival",
     day: "TBA",
     venue: "TBA",
-    image: "../src/assets/plf-assets/sukkur-chapter.jpg",
+    image: PlfUpcomingChapters4,
   },
 ];
 
@@ -36,31 +50,31 @@ const previousChapter = [
     event: "Pakistan Literature Festival",
     day: "10th to 12th FEB-2023",
     venue: "ALHAMRA ARTS COUNCIL",
-    image: "../src/assets/plf-assets/lahore-chapter.jpg",
+    image: PlfPreviousChapters1,
   },
   {
     event: "Pakistan Literature Festival",
     day: "3rd to 4th JUNE-2023",
     venue: "CONFERENCE: PEARL CONTINENTAL HOTEL",
-    image: "../src/assets/plf-assets/muzaffarabad-chapter.jpg",
+    image: PlfPreviousChapters2,
   },
   {
     event: "Pakistan Literature Festival",
     day: "28th to 29th OCT-2023",
     venue: "IBA SUKKUR",
-    image: "../src/assets/plf-assets/sukkur-chapter.jpg",
+    image: PlfPreviousChapters3,
   },
   {
     event: "Pakistan Literature Festival",
     day: "15th to 16th MAY-2024",
     venue: "BUITEMS, BALLELI",
-    image: "../src/assets/plf-assets/quetta-chapter.jpg",
+    image: PlfPreviousChapters4,
   },
   {
     event: "Pakistan Literature Festival",
     day: "25th to 26th Feb-2025",
     venue: "IBA Sukkur University",
-    image: "../src/assets/plf-assets/sukkur-chapter.jpg",
+    image: PlfPreviousChapters5,
   },
 ];
 
@@ -226,7 +240,7 @@ const PlfSession = () => {
                     <div>
                       <h3 className="text-xl font-semibold text-green-900 mb-2 truncate">{session.event}</h3>
                       <p className="text-sm text-green-700 font-medium mb-2">
-                       VENUE: {session.venue}
+                        VENUE: {session.venue}
                       </p>
                       <p className="text-sm text-gray-600 line-clamp-3">
                         {session.day}

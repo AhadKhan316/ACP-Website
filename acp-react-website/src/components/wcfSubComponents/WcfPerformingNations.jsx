@@ -1,5 +1,11 @@
 import React from "react";
-import CardCarousel from "../wcfReusableComponents/WcfLandingPageCardCarousel"; // Adjust the import path as needed
+import CardCarousel from "../wcfReusableComponents/WcfLandingPageCardCarousel";
+
+import PerformmingNation1 from '/src/assets/wcf-assets/Generation_25.jpg'
+import PerformmingNation2 from '/src/assets/venues/Audi1/3.jpg'
+// import PerformmingNation2 from '/src/assets/venues/Audi1/3.jpg'
+// import PerformmingNation2 from '/src/assets/venues/Audi1/3.jpg'
+// import PerformmingNation2 from '/src/assets/venues/Audi1/3.jpg'
 
 // Card Data
 const cards = [
@@ -7,35 +13,35 @@ const cards = [
     id: 1,
     title: "Cultural Showcase",
     description: "Experience the rich heritage of global traditions in an unforgettable celebration.",
-    image: "../src/assets/wcf-assets/Generation_25.jpg",
+    image: PerformmingNation1,
     link: "#",
   },
   {
     id: 2,
     title: "Artistic Performances",
     description: "Witness world-class performances from renowned artists across continents.",
-    image: "../src/assets/venues/Audi1/3.jpg",
+    image: PerformmingNation2,
     link: "#",
   },
   {
     id: 3,
     title: "Global Harmony",
     description: "Join us in fostering peace and unity through cultural exchange.",
-    image: "../src/assets/venues/Audi1/3.jpg",
+    image: PerformmingNation2,
     link: "#",
   },
   {
     id: 4,
     title: "Global Harmony",
     description: "Join us in fostering peace and unity through cultural exchange.",
-    image: "../src/assets/venues/Audi1/3.jpg",
+    image: PerformmingNation2,
     link: "#",
   },
   {
     id: 5,
     title: "Global Harmony",
     description: "Join us in fostering peace and unity through cultural exchange.",
-    image: "../src/assets/venues/Audi1/3.jpg",
+    image: PerformmingNation2,
     link: "#",
   },
 ];

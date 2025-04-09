@@ -1,15 +1,19 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
+import HeroImg1 from "/src/assets/pyf-assets/pyf-hero-img1.jpg"
+import HeroImg2 from "/src/assets/pyf-assets/pyf-hero-img2.jpg"
+import HeroImg3 from "/src/assets/pyf-assets/pyf-hero-img3.jpg"
+
 const PyfHero = () => {
   const canvasRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   // Array of background images for PYF
   const slides = [
-    "../src/assets/pyf-assets/pyf-hero-img1.jpg",
-    "../src/assets/pyf-assets/pyf-hero-img1.jpg",
-    "../src/assets/pyf-assets/pyf-hero-img1.jpg",
+    HeroImg1,
+    HeroImg2,
+    HeroImg3,
     // "../src/assets/pyf-assets/pyf-hero4.jpg",
   ];
 

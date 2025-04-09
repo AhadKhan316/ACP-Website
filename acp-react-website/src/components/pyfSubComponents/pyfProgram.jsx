@@ -2,20 +2,21 @@
 import { motion } from "framer-motion";
 import PYFProgramCard from "../pyfReusableComponents/pyfProgramCard";
 
+import pyfProgram1 from "/src/assets/pyf-assets/pyf-program-img1.jpg"
+
 const PYFProgramSection = () => {
-  // Sample program data (replace with your actual data)
   const programs = [
     {
       title: "Youth Art Exhibition",
-      image: "../src/assets/pyf-assets/pyf-program-img1.jpg",
+      image: pyfProgram1,
     },
     {
       title: "Music Night",
-      image: "https://placehold.co/5472x3648",
+      image: pyfProgram1,
     },
     {
       title: "Innovation Hackathon",
-      image: "https://placehold.co/5472x3648",
+      image: pyfProgram1,
     },
   ];
 

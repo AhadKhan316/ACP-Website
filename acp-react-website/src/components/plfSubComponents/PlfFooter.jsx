@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaYoutube, FaInstagram } from "react-icons/fa";
 
+import PlfFooterLogo from "/src/assets/plf-assets/plf-logo.png";
+
 const PlfFooter = () => {
   return (
     <footer className="relative bg-gray-900 text-white py-12 overflow-hidden">
@@ -33,7 +35,7 @@ const PlfFooter = () => {
               <div>
                 <Link to="/festival/plf">
                   <img
-                    src="../src/assets/plf-assets/plf-logo.png" // Replace with your logo
+                    src={PlfFooterLogo}
                     alt="PLF Logo"
                     className="h-auto w-50 mr-2 transform hover:scale-110 transition duration-300"
                   />
