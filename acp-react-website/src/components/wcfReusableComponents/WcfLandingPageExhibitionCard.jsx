@@ -3,22 +3,22 @@ import { motion } from "framer-motion";
 
 // Reusable ExhibitionGrid Component
 const ExhibitionGrid = ({
-  exhibitions = [], // Array of exhibition data
-  title = "Default Title", // Section title
+  exhibitions = [],
+  title = "Default Title",
   gridCols = {
-    base: 1, // Default grid columns for base (mobile)
-    sm: 2, // Default grid columns for small screens
-    lg: 3, // Default grid columns for large screens
-  }, // Responsive grid columns
-  offsetRows = true, // Enable/disable offset rows for visual effect
-  sectionClassName = "", // Custom class for the section
-  gridClassName = "", // Custom class for the grid container
-  cardClassName = "", // Custom class for each card
-  titleClassName = "", // Custom class for the section title
-  cardTitleClassName = "", // Custom class for the card title
-  imageAspectRatio = "1/1", // Default aspect ratio for images (e.g., "4/3", "16/9", "1/1")
-  maxImageHeight = "400px", // Maximum height for images
-  useHexClip = true, // Enable/disable hexagonal clip path
+    base: 1,
+    sm: 2,
+    lg: 3,
+  },
+  offsetRows = true,
+  sectionClassName = "",
+  gridClassName = "",
+  cardClassName = "",
+  titleClassName = "",
+  cardTitleClassName = "",
+  imageAspectRatio = "1/1",
+  maxImageHeight = "400px",
+  useHexClip = true,
 }) => {
   // Animation variants
   const containerVariants = {
@@ -83,8 +83,8 @@ const ExhibitionGrid = ({
                 <div
                   className={`relative w-full overflow-hidden ${useHexClip ? "clip-hexagon" : ""}`}
                   style={{
-                    aspectRatio: imageAspectRatio, 
-                    maxHeight: maxImageHeight, 
+                    aspectRatio: imageAspectRatio,
+                    maxHeight: maxImageHeight,
                   }}
                 >
                   <img

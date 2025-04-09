@@ -8,6 +8,7 @@ import AboutSection from "../components/plfSubComponents/PlfAbout";
 import SessionsSection from "../components/plfReusableComponents/PlfSession";
 import PlfSpeakerCard from "../components/plfReusableComponents/plfSpeaker";
 import NewsletterSection from "../components/plfSubComponents/PlfNewsletter";
+import PlfSponsors from "../components/plfSubComponents/PlfSponsors";
 import FooterSection from "../components/plfSubComponents/PlfFooter";
 
 // PLF Sub Pages
@@ -74,6 +75,7 @@ const PlfMainPage = () => {
               <PlfSpeakerCard speakers={speakers} title="Delegates" />
               <SessionsSection />
               <NewsletterSection />
+              <PlfSponsors />
             </>
           }
         />

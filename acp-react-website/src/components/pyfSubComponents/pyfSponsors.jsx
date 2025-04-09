@@ -13,7 +13,7 @@ const sponsors = [
   { id: 5, name: 'PeakPulse', logo: sponsorImg2 },
 ];
 
-const WcfSponsors = () => {
+const PyfSponsors = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const sliderRef = useRef(null);
   const intervalRef = useRef(null);
@@ -61,8 +61,8 @@ const WcfSponsors = () => {
   };
 
   return (
-    <div className="mx-auto py-20 px-6 bg-gray-900">
-      <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12 relative z-10 tracking-tight">
+    <div className="mx-auto py-20 px-6 bg-gray-100">
+      <h2 className="text-4xl md:text-5xl font-bold text-green-900 text-center mb-12 relative z-10 tracking-tight">
         Our Sponsors
       </h2>
 
@@ -151,4 +151,4 @@ const WcfSponsors = () => {
   );
 };
 
-export default WcfSponsors;
+export default PyfSponsors;

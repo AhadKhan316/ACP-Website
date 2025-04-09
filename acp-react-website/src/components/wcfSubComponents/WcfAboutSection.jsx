@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
+
+// President Image
+import presImg from '/src/assets/governing-body-new/ahmed-shah.png'
+
 // Reusable Card Component
 const Card = ({ title, children }) => (
   <motion.div
@@ -82,7 +86,7 @@ function WcfAboutSection() {
 
           {/* Image Section */}
           <motion.img
-            src="../src/assets/governing-body-new/ahmed-shah.png"
+            src={{ presImg }}
             alt="Ahmed Shah (H.I, S.I)"
             className="w-36 h-36 md:w-52 md:h-52 rounded-full object-cover shadow-lg border-4 border-gray-700"
             variants={fadeInVariants}

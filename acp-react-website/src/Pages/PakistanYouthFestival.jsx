@@ -8,6 +8,7 @@ import PyfVideo from '../components/pyfSubComponents/pyfVideo'
 import PyfDelegateCard from '../components/pyfSubComponents/pyfDelegateCard'
 import PyfProgram from '../components/pyfSubComponents/pyfProgram'
 import PyfNewsletter from '../components/pyfSubComponents/pyfNewsletter'
+import PyfSponsors from '../components/pyfSubComponents/pyfSponsors'
 import PyfFooter from '../components/pyfSubComponents/pyfFooter'
 
 
@@ -33,7 +34,7 @@ function PakistanYouthFestival() {
             <PyfDelegateCard speakers={speakers} title="Our Delegates" />
             <PyfProgram />
             <PyfNewsletter />
-            {/* <WcfSponsors /> */}
+            <PyfSponsors />
           </>
         } />
         {/* <Route path="about" element={<WcfAboutPage />} /> */}
