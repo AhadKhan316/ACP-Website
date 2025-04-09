@@ -81,7 +81,7 @@ const PlfHero = () => {
       </div>
 
       {/* Linear Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-900/70 via-gray-900/80 to-gray-900/70 pointer-events-none z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 via-gray-900/80 to-gray-900/70 pointer-events-none z-10"></div>
 
       {/* Main Content */}
       <motion.div

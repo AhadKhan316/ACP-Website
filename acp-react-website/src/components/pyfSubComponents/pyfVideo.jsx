@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const PlfVideo = () => {
+const PyfVideo = () => {
   // Framer Motion Variants
   const frameVariants = {
     hidden: { opacity: 0, scale: 0.9 },
@@ -21,7 +21,7 @@ const PlfVideo = () => {
   };
 
   return (
-    <section className="w-full py-12 sm:py-16 text-green-900 overflow-hidden relative">
+    <section className="w-full py-12 sm:py-16 text-red-900 overflow-hidden relative">
       {/* Section Header */}
       <motion.div
         className="text-center mb-10 sm:mb-12"
@@ -31,10 +31,10 @@ const PlfVideo = () => {
         viewport={{ once: true }}
       >
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-green-800 text-center mt-12 mb-8">
-          PLF Sukkur Chapter 2 Highlights
+          PYF Promo Video Highlights
         </h2>
         <p className="mt-2 text-base sm:text-lg max-w-2xl mx-auto text-gray-600">
-          Watch our promo video to see the spirit of the Pakistan Literature Festival.
+          Watch our promo video to experience the vibrant spirit of the Pakistan Youth Festival.
         </p>
       </motion.div>
 
@@ -49,20 +49,20 @@ const PlfVideo = () => {
         >
           {/* Decorative Frame */}
           <div className="absolute inset-0 rounded-lg pointer-events-none z-10">
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-red-600/20 to-transparent animate-spotlight"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-600/10 to-transparent animate-spotlight"></div>
           </div>
 
           {/* Video Iframe */}
-          <div className="relative w-full pb-[56.25%] bg-gray-900">
+          <div className="relative w-full pb-[56.25%] bg-green-800">
             <iframe
-              src="https://www.youtube.com/embed/5UavsFzUT0Q?si=kWMBDRwoNFXNJRfA&autoplay=1&loop=1&mute=1&playlist=5UavsFzUT0Q"
-              title="YouTube video player"
+              className="absolute inset-0 w-full h-full"
+              src="https://www.youtube.com/embed/iaHo9AQkaPo?si=NAc-SScXdZ0ddHkG"
+              title="AUC Promo Video"
               frameBorder="0"
               allow="accelerometer; autoplay; loop; muted; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
-              className="absolute inset-0 w-full h-full"
-            />
+            ></iframe>
           </div>
         </motion.div>
 
@@ -74,11 +74,11 @@ const PlfVideo = () => {
           variants={textVariants}
           viewport={{ once: true }}
         >
-          Dive into the highlights of PLF Sukkur Chapter 2, featuring captivating performances, insightful discussions, and the celebration of Pakistan’s literary heritage.
+          Relive the energy of the Pakistan Youth Festival, featuring dynamic performances, inspiring moments, and the celebration of youth creativity across Pakistan.
         </motion.p>
       </div>
     </section>
   );
 };
 
-export default PlfVideo;
+export default PyfVideo;

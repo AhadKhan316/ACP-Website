@@ -2,48 +2,48 @@ import { useState } from "react";
 import { FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-const PlfAbout = () => {
-  const [activeTab, setActiveTab] = useState("plf"); // Default tab: About PLF
+const PyfAbout = () => {
+  const [activeTab, setActiveTab] = useState("pyf");
 
   const tabs = [
     {
-      id: "plf",
-      title: "About PLF",
+      id: "pyf",
+      title: "About PYF",
       content: (
         <div className="p-6 sm:p-8 text-center">
-          <h3 className="text-2xl sm:text-3xl font-bold text-green-900 mb-4">
-            Pakistan Literature Festival
+          <h3 className="text-2xl sm:text-3xl font-bold text-green-800 mb-4">
+            Pakistan Youth Festival
           </h3>
           <p className="text-gray-800 leading-relaxed text-sm sm:text-base max-w-3xl mx-auto">
-            The Pakistan Literature Festival is a first-of-its-kind mega event in the country. The festival will celebrate and honor our culture, languages, literature, and art on a global scale in a way that has never been done before.
+            The Pakistan Youth Festival is a groundbreaking celebration of youth talent, energy, and creativity across the nation. This festival aims to empower young individuals by showcasing their skills, fostering innovation, and uniting communities through art, culture, and sports.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-4 justify-center">
             <a
               href="#"
-              className="flex items-center text-gray-800 hover:text-green-800 transition duration-300 text-sm sm:text-base"
+              className="flex items-center text-gray-800 hover:text-green-400 transition duration-300 text-sm sm:text-base"
             >
-              <FaCalendarAlt className="mr-2" /> 25th & 26th Feb
+              <FaCalendarAlt className="mr-2" /> Coming Soon
             </a>
             <a
               href="#"
-              className="flex items-center text-gray-800 hover:text-green-800 transition duration-300 text-sm sm:text-base"
+              className="flex items-center text-gray-800 hover:text-green-400 transition duration-300 text-sm sm:text-base"
             >
-              <FaMapMarkerAlt className="mr-2" /> Sukkur IBA University
+              <FaMapMarkerAlt className="mr-2" /> Across Pakistan
             </a>
           </div>
         </div>
       ),
     },
     {
-      id: "acp",
-      title: "About ACP",
+      id: "organizers",
+      title: "About Organizers",
       content: (
         <div className="p-6 sm:p-8 text-center">
-          <h3 className="text-2xl sm:text-3xl font-bold text-green-900 mb-4">
-            Arts Council of Pakistan
+          <h3 className="text-2xl sm:text-3xl font-bold text-green-800 mb-4">
+            Arts Council Karachi
           </h3>
           <p className="text-gray-800 leading-relaxed text-sm sm:text-base max-w-3xl mx-auto">
-            The Arts Council of Pakistan, Karachi, is a leading cultural institution dedicated to promoting art, literature, and cultural heritage across Pakistan. Established in 1954, it has been a beacon for artists and intellectuals, hosting events like the Pakistan Literature Festival to foster creativity and cultural exchange.
+            The Pakistan Youth Festival is brought to life by a passionate team dedicated to uplifting the youth of Pakistan. Comprising cultural enthusiasts, educators, and community leaders, the organizers work tirelessly to create a platform that inspires and connects the next generation.
           </p>
         </div>
       ),
@@ -76,7 +76,7 @@ const PlfAbout = () => {
   };
 
   return (
-    <section className="w-full py-12 sm:py-16 bg-gradient-to-b from-teal-50 to-white overflow-hidden relative">
+    <section className="w-full py-12 sm:py-16 bg-gradient-to-b from-red-50 to-white overflow-hidden relative">
       {/* Section Header */}
       <motion.div
         className="text-center mb-10 sm:mb-12"
@@ -86,10 +86,10 @@ const PlfAbout = () => {
         viewport={{ once: true }}
       >
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-green-800 text-center mt-12 mb-8">
-          Our Legacy Unfolded
+          Our Journey Unfolded
         </h2>
         <p className="mt-2 text-base sm:text-2xl text-gray-600 max-w-2xl mx-auto">
-          Discover the essence of PLF and ACP through a modern lens on tradition.
+          Explore the heart of PYF and its vision through a modern take on youth empowerment.
         </p>
       </motion.div>
 
@@ -104,7 +104,7 @@ const PlfAbout = () => {
               variants={buttonVariants}
               initial="inactive"
               animate={activeTab === tab.id ? "active" : "inactive"}
-              whileHover={activeTab === tab.id ? {} : "hover"} // Only apply hover effect to inactive tabs
+              whileHover={activeTab === tab.id ? {} : "hover"}
               onClick={() => setActiveTab(tab.id)}
             >
               {tab.title}
@@ -114,10 +114,10 @@ const PlfAbout = () => {
 
         {/* Scroll Panel */}
         <motion.div
-          key={activeTab} 
+          key={activeTab}
           className="relative bg-white/90 rounded-lg shadow-xl border-t-4 border-green-800 max-w-full sm:max-w-4xl mx-auto"
           variants={panelVariants}
-          initial="hidden"
+          initial="hidden"  
           animate="visible"
           exit="exit"
         >
@@ -128,4 +128,4 @@ const PlfAbout = () => {
   );
 };
 
-export default PlfAbout;
+export default PyfAbout;

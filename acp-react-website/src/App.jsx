@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 // Components
-import Layout from './components/Layout'; 
+import Layout from './components/Layout';
 import Hero from './components/Hero';
 import UpcomingEvents from './components/UpcomingEvents';
 import About from './components/About';
@@ -32,6 +32,9 @@ import PakistanLiteratureFestival from './Pages/PakistanLiteratureFestival';
 
 // AUC Page
 import AalmiUrduConference from './Pages/AalmiUrduConference';
+
+// PYF Page
+import PakistanYouthFesival from './Pages/PakistanYouthFestival';
 
 
 const App = () => {
@@ -65,6 +68,7 @@ const App = () => {
         </Route>
 
         {/* Routes without Navbar and Footer */}
+        
         {/* WCF */}
         <Route path="/festival/wcf/*" element={<WorldCultureFestival />} />
 
@@ -73,7 +77,12 @@ const App = () => {
 
         {/* AUC */}
         <Route path="/festival/auc/*" element={<AalmiUrduConference />} />
+
+        {/* PYF */}
+        <Route path="/festival/pyf/*" element={<PakistanYouthFesival />} />
       </Routes>
+
+
     </Router>
   );
 };

@@ -139,21 +139,6 @@ function WcfHero() {
             >
               FOR REGISTRATION
             </motion.button>
-            {/* <motion.button
-              href="#"
-              className="bg-gradient-to-r from-red-700 to-red-600 hover:from-red-600 hover:to-red-600 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 shadow-lg"
-              whileHover="hover"
-              variants={floatVariants}
-            >
-              FOR TICKETS
-            </motion.button> */}
-            {/* <motion.a
-              href="#"
-              className="text-white text-xl hover:text-red-600 transition-all duration-300 underline underline-offset-4 hover:underline-offset-8"
-              whileHover={{ scale: 1.05 }}
-            >
-              DOWNLOAD SCHEDULE
-            </motion.a> */}
           </motion.div>
         </motion.div>
       </div>
