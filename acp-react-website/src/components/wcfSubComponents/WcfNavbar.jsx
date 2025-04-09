@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes, FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from 'react-icons/fa';
 
+// Logo
+import wcfLogo from '/src/assets/wcf-assets/wcf-logo.png'
+
 function WcfNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
@@ -35,7 +38,7 @@ function WcfNavbar() {
         {/* Logo and Hamburger (Combined for Mobile/Tablet) */}
         <div className="flex items-center justify-between w-full lg:w-auto">
           <Link to="/festival/wcf" className="flex items-center">
-            <img src="../src/assets/wcf-assets/wcf-logo.png" alt="Logo" className="h-10 md:h-12 mr-2 md:mr-4 hover:scale-105 transition-transform duration-200" />
+            <img src={wcfLogo} alt="Logo" className="h-10 md:h-12 mr-2 md:mr-4 hover:scale-105 transition-transform duration-200" />
           </Link>
           <button onClick={toggleMenu} className="lg:hidden text-primary focus:outline-none" aria-label="Toggle Menu">
             {isMenuOpen ? <FaTimes className="w-6 h-6" /> : <FaBars className="w-6 h-6" />}
