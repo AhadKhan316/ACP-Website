@@ -34,7 +34,7 @@ const About = () => {
           <div className="flex justify-center mb-6">
             <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden border-4 border-black shadow-lg">
               <img
-                src="../src/assets/governing-body-new/ahmed-shah.png"
+                src="../assets/governing-body-new/ahmed-shah.png"
                 alt="President Mohammad Ahmed Shah"
                 className="w-full h-full object-cover"
               />

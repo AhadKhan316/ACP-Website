@@ -6,22 +6,22 @@ import "swiper/css/autoplay";
 
 // Reusable CardDisplay Component
 const CardCarousel = ({
-  cards = [], // Array of card data
-  title = "Default Title", // Section title
-  useCarousel = true, // Toggle between carousel and grid layout
-  slidesPerView = 1, // Default slides per view (carousel only)
-  spaceBetween = 20, // Space between slides (carousel only)
-  autoplayDelay = 3000, // Autoplay delay in milliseconds (carousel only)
+  cards = [],
+  title = "Default Title",
+  useCarousel = true,
+  slidesPerView = 1,
+  spaceBetween = 20,
+  autoplayDelay = 3000,
   breakpoints = {
     640: { slidesPerView: 2 },
     1024: { slidesPerView: 3 },
-  }, // Responsive breakpoints (carousel only)
-  sectionClassName = "", // Custom class for the section
-  cardClassName = "", // Custom class for the card
-  titleClassName = "", // Custom class for the title
-  imageAspectRatio = "1/1", // Default aspect ratio for images (e.g., "4/3", "16/9", "1/1")
-  maxImageHeight = "500px", // Maximum height for images
-  gridGap = "1.5rem", // Gap between cards in grid layout (default: 1.5rem)
+  },
+  sectionClassName = "",
+  cardClassName = "",
+  titleClassName = "",
+  imageAspectRatio = "1/1",
+  maxImageHeight = "500px",
+  gridGap = "1.5rem",
 }) => {
   // Card rendering logic (shared between carousel and grid)
   const renderCard = (card) => (
