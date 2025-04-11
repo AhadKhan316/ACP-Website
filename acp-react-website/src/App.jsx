@@ -34,8 +34,13 @@ import PakistanLiteratureFestival from './Pages/PakistanLiteratureFestival';
 import AalmiUrduConference from './Pages/AalmiUrduConference';
 
 // PYF Page
-import PakistanYouthFesival from './Pages/PakistanYouthFestival';
+import PakistanYouthFestival from './Pages/PakistanYouthFestival';
 
+// Women Conference Page
+import WomenConference from './Pages/WomenConference'
+
+// PTF Pages
+import PakistanTheatreFestival from './Pages/PakistanTheatreFestival';
 
 const App = () => {
   return (
@@ -68,7 +73,7 @@ const App = () => {
         </Route>
 
         {/* Routes without Navbar and Footer */}
-        
+
         {/* WCF */}
         <Route path="/festival/wcf/*" element={<WorldCultureFestival />} />
 
@@ -79,10 +84,15 @@ const App = () => {
         <Route path="/festival/auc/*" element={<AalmiUrduConference />} />
 
         {/* PYF */}
-        <Route path="/festival/pyf/*" element={<PakistanYouthFesival />} />
+        <Route path="/festival/pyf/*" element={<PakistanYouthFestival />} />
+
+        {/* WC */}
+        <Route path="/festival/wc/*" element={<WomenConference />} />
+
+        {/* PTF */}
+        <Route path="/festival/ptf/*" element={<PakistanTheatreFestival />} />
+
       </Routes>
-
-
     </Router>
   );
 };
