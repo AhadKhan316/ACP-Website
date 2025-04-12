@@ -6,6 +6,11 @@ import PtfHero from "../components/ptfSubComponents/ptfHero";
 import PtfAbout from "../components/ptfSubComponents/ptfAbout";
 import PtfInternationalPlayers from "../components/ptfSubComponents/ptfPlays";
 import PtfPrimeShowsCard from "../components/ptfSubComponents/ptfPerformingShows";
+import PtfNewsletter from "../components/ptfSubComponents/ptfNewsletter";
+import PtfHighlightedTheatre from "../components/ptfSubComponents/ptfHighlights";
+import PtfOurPlaysSection from "../components/ptfSubComponents/ptfOurPlays";
+import PtfSponsors from "../components/ptfSubComponents/ptfSponsors";
+import PtfFooter from "../components/ptfSubComponents/ptfFooter";
 
 
 function AalmiUrduConference() {
@@ -19,9 +24,10 @@ function AalmiUrduConference() {
             <PtfAbout />
             <PtfInternationalPlayers />
             <PtfPrimeShowsCard />
-            {/* <AucHighlightedSessions /> */}
-            {/* <AucNewsletter /> */}
-            {/* <AucSponsors /> */}
+            <PtfHighlightedTheatre />
+            <PtfOurPlaysSection />
+            <PtfNewsletter />
+            <PtfSponsors />
           </>
         } />
 
@@ -30,7 +36,7 @@ function AalmiUrduConference() {
         {/* <Route path="contactUs" element={<AucContactPage />} /> */}
 
       </Routes>
-      {/* <AucFooter /> */}
+      <PtfFooter />
     </>
   );
 }

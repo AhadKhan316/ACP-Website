@@ -3,10 +3,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// import primeShow1 from "/src/assets/ptf-assets/prime-show1.jpg";
-// import primeShow2 from "/src/assets/ptf-assets/prime-show2.jpg";
-// import primeShow3 from "/src/assets/ptf-assets/prime-show3.jpg";
-// import primeShow4 from "/src/assets/ptf-assets/prime-show4.jpg";
+// Sample images
+import PerformingShows1 from "/src/assets/ptf-assets/ptf-performing-shows1.png";
+import PerformingShows2 from "/src/assets/ptf-assets/ptf-performing-shows2.png";
+import PerformingShows3 from "/src/assets/ptf-assets/ptf-performing-shows3.png";
+import PerformingShows4 from "/src/assets/ptf-assets/ptf-performing-shows4.png";
 
 // Custom Arrows for Slider
 const NextArrow = ({ className, style, onClick }) => (
@@ -18,12 +19,12 @@ const NextArrow = ({ className, style, onClick }) => (
       alignItems: "center",
       justifyContent: "center",
       right: "30px",
-      backgroundColor: "#b91c1c", 
+      // backgroundColor: "#b91c1c",
       zIndex: 2,
     }}
     onClick={onClick}
   >
-    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+    <svg className="w-1 h-3" fill="currentColor" viewBox="0 0 24 24">
       <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
     </svg>
   </div>
@@ -43,7 +44,7 @@ const PrevArrow = ({ className, style, onClick }) => (
     }}
     onClick={onClick}
   >
-    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+    <svg className="w-1 h-3" fill="currentColor" viewBox="0 0 24 24">
       <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z" />
     </svg>
   </div>
@@ -51,31 +52,31 @@ const PrevArrow = ({ className, style, onClick }) => (
 
 // Prime Shows Card Component
 const PtfPrimeShowsCard = ({ shows, title = "Prime Shows" }) => {
-  // Sample show data (replace with actual data)
+  // Sample show data
   const sampleShows = [
     {
       title: "The Silent Echo",
       date: "May 15, 2025",
       director: "Aisha Khan",
-      // image: primeShow1,
+      image: PerformingShows1,
     },
     {
       title: "Shadows of Lahore",
       date: "June 22, 2025",
       director: "Rahul Mehta",
-      // image: primeShow2,
+      image: PerformingShows2,
     },
     {
       title: "Whispers in the Wind",
       date: "July 10, 2025",
       director: "Fatima Syed",
-      // image: primeShow3,
+      image: PerformingShows3,
     },
     {
       title: "Tehran Nights",
       date: "August 5, 2025",
       director: "Amir Hossein",
-      // image: primeShow4,
+      image: PerformingShows4,
     },
   ];
 
@@ -187,16 +188,17 @@ const PtfPrimeShowsCard = ({ shows, title = "Prime Shows" }) => {
                     y: -5,
                   }}
                   transition={{ duration: 0.4, ease: "easeOut" }}
-                  className="relative bg-white rounded-xl overflow-hidden shadow-lg mx-auto max-w-[320px] h-[460px] flex flex-col group border border-gray-100"
+                  className="relative bg-white rounded-xl overflow-hidden shadow-lg mx-auto max-w-[320px] min-h-[460px] flex flex-col group border border-gray-100"
                 >
                   {/* Image Container */}
-                  <div className="relative w-full aspect-[4/5] bg-gray-100 rounded-t-xl overflow-hidden">
+                  <div className="relative w-full h-[431px] bg-gray-100 rounded-t-xl overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-t from-red-900/30 via-transparent to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-90" />
                     <img
                       src={show.image || fallbackImage}
                       alt={show.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-fill transition-transform duration-500 group-hover:scale-105"
                       onError={(e) => (e.target.src = fallbackImage)}
+                      loading="lazy"
                     />
                     <div className="absolute inset-0 border-2 border-red-700/70 rounded-t-xl m-2 transition-colors duration-300 group-hover:border-red-800/90" />
                   </div>
