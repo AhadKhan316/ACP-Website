@@ -1,96 +1,182 @@
 import React, { useEffect, useState } from "react";
-import posterImg from "../assets/poster-images/sukkur-chapter-2.png";
+import { motion } from "framer-motion";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import posterImg1 from "../assets/poster-images/sukkur-chapter-2.png";
+import posterImg2 from "../assets/poster-images/sukkur-chapter-2.png";
+import posterImg3 from "../assets/poster-images/sukkur-chapter-2.png";
 
 const UpcomingEvents = () => {
-  const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState([
+    {
+      id: 1,
+      title: "Sukkur Chapter 2",
+      date: "May 15, 2025",
+      description: "Join us for the second chapter of our cultural event in Sukkur, featuring workshops and performances.",
+      image: posterImg1,
+    },
+    {
+      id: 2,
+      title: "Cultural Festival 2025",
+      date: "June 10, 2025",
+      description: "A celebration of art and culture with performances, exhibitions, and more.",
+      image: posterImg2,
+    },
+    {
+      id: 3,
+      title: "Art Workshop Series",
+      date: "July 20, 2025",
+      description: "Learn from experts in our series of art workshops, open to all ages.",
+      image: posterImg3,
+    },
+  ]);
+
+  // Framer Motion variants for section animation
+  const sectionVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
+  // Framer Motion variants for cards
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, delay: i * 0.2, ease: "easeOut" },
+    }),
+    hover: {
+      scale: 1.05,
+      boxShadow: "0 10px 20px rgba(255, 255, 255, 0.1)",
+      transition: { duration: 0.3 },
+    },
+  };
+
+  // Slider settings
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    variableHeight: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+    arrows: false,
+    appendDots: (dots) => (
+      <div style={{ padding: "10px" }}>
+        <ul style={{ margin: "0px" }} className="flex justify-center space-x-2">
+          {dots.map((dot, index) => (
+            <li key={index} className={dot.props.className}>
+              <span
+                className={`block w-3 h-3 rounded-full ${dot.props.className.includes("slick-active")
+                  ? "bg-white"
+                  : "bg-gray-500"
+                  }`}
+              ></span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ),
+  };
 
   return (
-    <section className="py-10 bg-[#0F172A]">
+    <motion.section
+      className="py-12 sm:py-16 bg-white relative"
+      initial="hidden"
+      animate="visible"
+      variants={sectionVariants}
+    >
+      {/* Subtle Background Gradient */}
+      {/* <div className="absolute inset-0 bg-gradient-to-b from-gray-900/20 to-black pointer-events-none"></div> */}
+
       <div className="mx-4 px-4 sm:px-6 lg:px-8">
-        <div className="bg-[#1E293B] rounded-2xl shadow-2xl overflow-hidden py-12 px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Header Section */}
-            <div className="lg:col-span-1 flex flex-col justify-center">
-              <h2 className="text-3xl font-bold text-[#F5F1E1] mb-4 text-center lg:text-left">
-                Upcoming Events
-              </h2>
-              <p className="text-white text-base sm:text-lg leading-relaxed text-center lg:text-left">
-                Stay updated with our latest events. Participate in workshops,
-                enjoy cultural festivals, and more. Be part of our vibrant
-                community!
-              </p>
-            </div>
+        {/* Header Section */}
+        <div className="text-center mb-10 sm:mb-12">
+          <motion.h2
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-4 tracking-wide"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            Upcoming Events
+          </motion.h2>
+        </div>
 
-            {/* Image Section */}
-            <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Main Event Image (Full Width) */}
-              <div className="md:col-span-2 rounded-xl overflow-hidden relative group">
-                <img
-                  src={posterImg}
-                  alt="Main Event Image"
-                  className="w-full h-auto object-cover rounded-lg"
-                />
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+        {/* Event Slider */}
+        <Slider {...sliderSettings} className="pb-8">
+          {events.map((event, index) => (
+            <motion.div
+              key={event.id}
+              className="px-3"
+              custom={index}
+              variants={cardVariants}
+              whileHover="hover"
+            >
+              <div className="flex flex-col items-center">
+                {/* Event Image */}
+                <div className="w-full mb-4">
+                  <img
+                    src={event.image}
+                    alt={event.title}
+                    className="w-full h-auto object-contain rounded-lg"
+                  />
+                </div>
+
                 {/* Event Details */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 lg:opacity-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-
-                  {/* Button */}
-                  <button className="w-full py-2 rounded-lg bg-red-700 hover:bg-red-600 text-white font-semibold text-lg transition duration-300 shadow-md">
-                    Register
-                  </button>
+                <div className="text-center">
+                  <h3 className="text-lg sm:text-xl font-bold text-black mb-2">
+                    {event.title.toUpperCase()}
+                  </h3>
+                  <p className="text-black text-sm sm:text-base flex items-center justify-center">
+                    {event.date}
+                    <span className="inline-block w-1.5 h-1.5 bg-black rounded-full mx-2"></span>
+                    2025
+                  </p>
                 </div>
               </div>
+            </motion.div>
+          ))}
+        </Slider>
 
-              {/* Two Images Below the Main Image */}
-              <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Sub-Event 1 */}
-                <div className="rounded-xl overflow-hidden relative group">
-                  <img
-                    src={posterImg}
-                    alt="Event Image 1"
-                    className="w-full h-auto object-cover rounded-lg"
-                  />
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                  {/* Event Details */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4 lg:opacity-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-
-                    {/* Button */}
-                    <button className="w-full py-2 rounded-lg bg-red-700 hover:bg-red-600 text-white font-semibold text-lg transition duration-300 shadow-md">
-                      Register
-                    </button>
-                  </div>
-                </div>
-
-                {/* Sub-Event 2 */}
-                <div className="rounded-xl overflow-hidden relative group">
-                  <img
-                    src={posterImg}
-                    alt="Event Image 2"
-                    className="w-full h-auto object-cover rounded-lg"
-                  />
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                  {/* Event Details */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4 lg:opacity-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-
-                    {/* Button */}
-                    <button className="w-full py-2 rounded-lg bg-red-700 hover:bg-red-600 text-white font-semibold text-lg transition duration-300 shadow-md">
-                      Register
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        {/* View All Events Button */}
+        <div className="text-center mt-8">
+          <motion.button
+            className="px-6 py-2 rounded-lg bg-white text-black font-semibold text-sm sm:text-base hover:bg-gray-200 transition duration-300 shadow-md"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            View All Events
+          </motion.button>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
 export default UpcomingEvents;
+
 
 
 

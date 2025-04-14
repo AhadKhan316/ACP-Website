@@ -51,8 +51,8 @@ const App = () => {
           <Route path="/" element={
             <>
               <Hero />
-              <UpcomingEvents />
               <About />
+              <UpcomingEvents />
               {/* <PresidentMessage /> */}
               <StayUpdated />
               <Academy />

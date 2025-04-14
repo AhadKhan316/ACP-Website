@@ -1,209 +1,278 @@
-import React from 'react';
-import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa';
+import React from "react";
+import { motion } from "framer-motion";
+import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 
-function Footer() {
+import acpFooterLogo from '/src/assets/acp-logo-and-hero-img/acp-logo-fullName-white.png'
+
+const Footer = () => {
+  const quickLinks1 = [
+    { id: 1, text: "About ACP", href: "#" },
+    { id: 2, text: "Governing Body", href: "#" },
+    { id: 3, text: "Venues", href: "#" },
+    { id: 4, text: "Career", href: "#" },
+    { id: 5, text: "Contact Us", href: "#" },
+  ];
+
+  const quickLinks2 = [
+    { id: 1, text: "Aalmi Urdu Conference", href: "#" },
+    { id: 2, text: "Pakistan Literature Festival", href: "#" },
+    { id: 3, text: "Women Conference", href: "#" },
+    { id: 4, text: "Pakistan Youth Festival", href: "#" },
+  ];
+
+  const socialLinks = [
+    { id: 1, href: "#", icon: FaFacebookF },
+    { id: 2, href: "#", icon: FaInstagram },
+    { id: 3, href: "#", icon: FaTwitter },
+    { id: 4, href: "#", icon: FaYoutube },
+  ];
+
+  // Framer Motion variants for section animation
+  const sectionVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
+  // Framer Motion variants for child elements
+  const childVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, delay: i * 0.2, ease: "easeOut" },
+    }),
+  };
+
+  // Icon animation
+  const iconVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: (i) => ({
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.6, delay: i * 0.1, ease: "easeOut" },
+    }),
+    hover: {
+      scale: 1.2,
+      transition: { duration: 0.3 },
+    },
+  };
+
   return (
-    <footer className="bg-black text-white py-10">
-      <div className="mx-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {/* Column 1: Logo and Text */}
-        <div className="flex flex-col items-center md:items-start">
-          <img
-            src="https://acpkhi.com/logo.png"
-            alt="Arts Council Logo"
-            className="w-20 h-20 sm:w-24 sm:h-24 mb-4"  // Responsive image size
-            style={{ filter: 'invert(1)' }}
-          />
-          <p className="text-sm text-center md:text-left">
-            We are a Non-Profit Organization <br /> for the promotion of Art &
-            Culture.
-          </p>
-        </div>
+    <motion.footer
+      className="py-12 sm:py-16 bg-black relative text-white"
+      initial="hidden"
+      animate="visible"
+      variants={sectionVariants}
+    >
+      {/* Subtle Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-black pointer-events-none"></div>
 
-        {/* Column 2: Contact Info and Links */}
-        <div className="flex flex-col items-center md:items-start">
-          <div className="flex items-center mb-4">
-            <span className="mr-2 text-red-600">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 sm:h-6 sm:w-6" // Responsive icon size
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                />
-              </svg>
-            </span>
-            <div>
-              <p className="font-bold text-sm sm:text-base">Phone</p> {/* Responsive font size */}
-              <p className="text-sm sm:text-base">+92-300-0802391</p> {/* Responsive font size */}
-            </div>
-          </div>
-          <div className="flex items-center mb-4">
-            <span className="mr-2 text-red-600">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 sm:h-6 sm:w-6" // Responsive icon size
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                />
-              </svg>
-            </span>
-            <div>
-              <p className="font-bold text-sm sm:text-base">Email</p> {/* Responsive font size */}
-              <p className="text-sm sm:text-base">info@acpkhi.com</p> {/* Responsive font size */}
-            </div>
-          </div>
-          <div className="flex items-center">
-            <span className="mr-2 text-red-600">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 sm:h-6 sm:w-6" // Responsive icon size
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-              </svg>
-            </span>
-            <div>
-              <p className="font-bold text-sm sm:text-base">Location</p> {/* Responsive font size */}
-              <p className="text-sm sm:text-base">
-                M.R. Kiyani Road, Karachi, Pakistan.
-              </p> {/* Responsive font size */}
-            </div>
-          </div>
-        </div>
+      <div className="mx-4 px-4 sm:px-6 lg:px-8 relative border-t border-white/15 shadow-lg">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 relative mt-5">
+          {/* Vertical Dividers */}
+          <div className="absolute left-1/3 top-0 bottom-0 w-px bg-gray-700 hidden lg:block"></div>
+          <div className="absolute left-2/3 top-0 bottom-0 w-px bg-gray-700 hidden lg:block"></div>
 
-        {/* Column 3: Quick Links and Newsletter */}
-        <div className="flex flex-col items-center md:items-start">
-          <div className="grid grid-cols-2 gap-4 sm:gap-8"> {/* Responsive gap */}
-            <div>
-              <ul className="space-y-2">
-                <li>
-                  <a href="#" className="hover:text-red-600 transition duration-300 text-sm sm:text-base">
-                    About ACP
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-red-600 transition duration-300 text-sm sm:text-base">
-                    Governing Body
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-red-600 transition duration-300 text-sm sm:text-base">
-                    Venues
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-red-600 transition duration-300 text-sm sm:text-base">
-                    Career
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-red-600 transition duration-300 text-sm sm:text-base">
-                    Contact Us
-                  </a>
-                </li>
-              </ul>
+          {/* Column 1: Logo and Text */}
+          <motion.div
+            className="flex flex-col items-center lg:items-start text-center lg:text-left"
+            custom={0}
+            variants={childVariants}
+          >
+            <img
+              src={acpFooterLogo}
+              alt="Arts Council Logo"
+              className="h-35 sm:h-25 md:h-35 w-auto rounded-full mb-4"
+            />
+            <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+              We are a Non-Profit Organization for the promotion of Art & Culture.
+            </p>
+          </motion.div>
+
+          {/* Column 2: Contact Info */}
+          <motion.div
+            className="flex flex-col items-center lg:items-start text-center lg:text-left"
+            custom={1}
+            variants={childVariants}
+          >
+            <div className="space-y-4">
+              <div className="flex items-center">
+                <span className="mr-3 text-gray-400">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 sm:h-6 sm:w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                    />
+                  </svg>
+                </span>
+                <div>
+                  <p className="font-semibold text-sm sm:text-base text-white">Phone</p>
+                  <p className="text-gray-300 text-sm sm:text-base">+92-300-0802391</p>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <span className="mr-3 text-gray-400">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 sm:h-6 sm:w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                </span>
+                <div>
+                  <p className="font-semibold text-sm sm:text-base text-white">Email</p>
+                  <p className="text-gray-300 text-sm sm:text-base">info@acpkhi.com</p>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <span className="mr-3 text-gray-400">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 sm:h-6 sm:w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                </span>
+                <div>
+                  <p className="font-semibold text-sm sm:text-base text-white">Location</p>
+                  <p className="text-gray-300 text-sm sm:text-base">
+                    M.R. Kiyani Road, Karachi, Pakistan
+                  </p>
+                </div>
+              </div>
             </div>
-            <div>
-              <ul className="space-y-2">
-                <li>
-                  <a href="#" className="hover:text-red-600 transition duration-300 text-sm sm:text-base">
-                    Aalmi Urdu Conference
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-red-600 transition duration-300 text-sm sm:text-base">
-                    Pakistan Literature Festival
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-red-600 transition duration-300 text-sm sm:text-base">
-                    Women Conference
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-red-600 transition duration-300 text-sm sm:text-base">
-                    Pakistan Youth Festival
-                  </a>
-                </li>
-              </ul>
+          </motion.div>
+
+          {/* Column 3: Quick Links and Newsletter */}
+          <motion.div
+            className="flex flex-col items-center lg:items-start text-center lg:text-left"
+            custom={2}
+            variants={childVariants}
+          >
+            <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-6">
+              <div>
+                <ul className="space-y-2">
+                  {quickLinks1.map((link, index) => (
+                    <motion.li
+                      key={link.id}
+                      custom={3 + index}
+                      variants={childVariants}
+                    >
+                      <a
+                        href={link.href}
+                        className="text-gray-300 text-sm sm:text-base hover:text-white transition duration-300"
+                      >
+                        {link.text}
+                      </a>
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <ul className="space-y-2">
+                  {quickLinks2.map((link, index) => (
+                    <motion.li
+                      key={link.id}
+                      custom={8 + index}
+                      variants={childVariants}
+                    >
+                      <a
+                        href={link.href}
+                        className="text-gray-300 text-sm sm:text-base hover:text-white transition duration-300"
+                      >
+                        {link.text}
+                      </a>
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
-          <div className="mt-4 w-full md:w-auto"> {/* Full width on small screens */}
-            <form className="flex flex-col sm:flex-row items-center"> {/* Stacked on small, inline on larger */}
-              <input
-                type="email"
-                placeholder="Email"
-                className="bg-white text-black px-4 py-2 rounded-md sm:rounded-l-md sm:rounded-r-none focus:outline-none w-full sm:w-auto mb-2 sm:mb-0"
-              />
+            <motion.form
+              className="flex flex-col sm:flex-row items-center w-full"
+              custom={12}
+              variants={childVariants}
+            >
+              <div className="relative w-full sm:w-auto mb-2 sm:mb-0">
+                <input
+                  type="email"
+                  placeholder="Email"
+                  className="p-3 bg-transparent border-b-2 border-gray-600 text-white text-sm sm:text-base w-full sm:w-48 focus:outline-none focus:border-white transition-all duration-300 placeholder-gray-400"
+                />
+              </div>
               <button
                 type="submit"
-                className="bg-red-600 text-white px-4 py-2 rounded-md sm:rounded-r-md sm:rounded-l-none hover:bg-red-700 transition duration-300 w-full sm:w-auto"
+                className="w-full sm:w-auto bg-white text-black font-semibold py-3 px-4 sm:ml-2 rounded-lg hover:bg-gray-200 transition duration-300"
               >
                 Send
               </button>
-            </form>
-          </div>
+            </motion.form>
+          </motion.div>
         </div>
-      </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-        <p className="text-sm">Copyright © Arts Council of Pakistan Karachi.</p>
-        <div className="flex justify-center mt-4 space-x-4">
-          <a
-            href="#"
-            className="text-gray-400 hover:text-white transition duration-300"
-          >
-            <FaFacebookF className="h-4 w-4 sm:h-5 sm:w-5" /> {/* Responsive icon size */}
-          </a>
-          <a
-            href="#"
-            className="text-gray-400 hover:text-white transition duration-300"
-          >
-            <FaInstagram className="h-4 w-4 sm:h-5 sm:w-5" /> {/* Responsive icon size */}
-          </a>
-          <a
-            href="#"
-            className="text-gray-400 hover:text-white transition duration-300"
-          >
-            <FaTwitter className="h-4 w-4 sm:h-5 sm:w-5" />   {/* Responsive icon size */}
-          </a>
-          <a
-            href="#"
-            className="text-gray-400 hover:text-white transition duration-300"
-          >
-            <FaYoutube className="h-4 w-4 sm:h-5 sm:w-5" />   {/* Responsive icon size */}
-          </a>
-        </div>
+        {/* Bottom Bar */}
+        <motion.div
+          className="border-t border-gray-700 mt-10 pt-6 text-center"
+          custom={13}
+          variants={childVariants}
+        >
+          <p className="text-gray-400 text-sm sm:text-base">
+            Copyright © Arts Council of Pakistan Karachi.
+          </p>
+          <div className="flex justify-center mt-4 space-x-4">
+            {socialLinks.map((link, index) => (
+              <motion.a
+                key={link.id}
+                href={link.href}
+                className="group relative"
+                custom={14 + index}
+                variants={iconVariants}
+                whileHover="hover"
+              >
+                <div className="p-2 rounded-full bg-white shadow-md relative overflow-hidden">
+                  <link.icon className="h-4 w-4 sm:h-5 sm:w-5 text-black group-hover:text-gray-800 transition-colors duration-300" />
+                  {/* Ripple Effect */}
+                  <span className="absolute inset-0 bg-gray-200 rounded-full opacity-0 group-hover:opacity-30 group-hover:scale-150 transition-all duration-500"></span>
+                </div>
+              </motion.a>
+            ))}
+          </div>
+        </motion.div>
       </div>
-    </footer>
+    </motion.footer>
   );
-}
+};
 
 export default Footer;

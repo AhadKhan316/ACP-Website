@@ -40,49 +40,110 @@ const StayUpdated = () => {
     }
   };
 
+  // Framer Motion variants for section animation
+  const sectionVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
+  // Framer Motion variants for child elements
+  const childVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, delay: i * 0.2, ease: "easeOut" },
+    }),
+  };
+
+  // Button pulse animation
+  const buttonVariants = {
+    pulse: {
+      scale: [1, 1.02, 1],
+      transition: { duration: 1.5, repeat: Infinity, ease: "easeInOut" },
+    },
+  };
+
   return (
-    <section className="py-10 bg-gray-900">
-      <div className="mx-4 px-4 sm:px-6 lg:px-8">
+    <motion.section
+      className="py-12 sm:py-16 bg-white relative"
+      initial="hidden"
+      animate="visible"
+      variants={sectionVariants}
+    >
+      {/* Subtle Background Gradient */}
+      {/* <div className="absolute inset-0 bg-gradient-to-b from-black-900/20 to-black pointer-events-none"></div> */}
+
+      <div className="mx-4 px-4 sm:px-6 lg:px-8 relative">
         <motion.div
-          className="bg-gray-800 rounded-lg shadow-xl overflow-hidden"
-          initial={{ opacity: 0, y: 50 }}
+          className="bg-gradient-to-b from-black/25 to-gray rounded-xl shadow-xl overflow-hidden mx-auto group  transition-all duration-300"
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <div className="p-6 sm:p-8 md:p-12 lg:p-16 text-center">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-amber-100 mb-4">
-              Stay Updated with Our Promotions
-            </h2>
-            <p className="text-amber-100 mb-8 text-base sm:text-lg lg:text-xl">
-              Sign up with your email to receive the latest updates and offers.
-            </p>
-            <form
+            <motion.h2
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-2 sm:mb-3"
+              custom={0}
+              variants={childVariants}
+            >
+              Stay Updated
+            </motion.h2>
+            <motion.p
+              className="text-black italic text-sm sm:text-base mb-6 sm:mb-8"
+              custom={1}
+              variants={childVariants}
+            >
+              Get the Latest Updates and Offers
+            </motion.p>
+            <motion.div
+              className="h-1 w-30 bg-black mx-auto mb-8 sm:mb-10 rounded"
+              custom={2}
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+            ></motion.div>
+            <motion.form
               onSubmit={handleSubmit}
               className="flex flex-col sm:flex-row items-center justify-center gap-4"
+              custom={3}
+              variants={childVariants}
             >
-              <input
-                type="email"
-                name="email"
-                placeholder="Enter your Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="p-3 rounded-lg border border-gray-600 bg-gray-700 text-amber-100 text-base sm:text-lg w-full sm:w-auto focus:outline-none focus:ring-2 focus:ring-amber-500"
-              />
-              <button
+              <div className="relative w-full sm:w-auto">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter your Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="p-3 bg-transparent border-b-2 border-gray-600 text-white text-base sm:text-lg w-full sm:w-92 focus:outline-none focus:border-white transition-all duration-300 placeholder-gray-400"
+                />
+              </div>
+              <motion.button
                 type="submit"
                 disabled={isLoading}
-                className={`w-full sm:w-auto bg-red-700 text-white text-base sm:text-lg font-semibold py-3 px-6 rounded-lg transition duration-300 ${isLoading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-red-600'
+                className={`w-full sm:w-auto bg-black text-white font-semibold py-3 px-6 rounded-lg transition duration-300 ${isLoading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-700'
                   }`}
+                whileHover={isLoading ? {} : { scale: 1.05 }}
+                whileTap={isLoading ? {} : { scale: 0.95 }}
+                animate={isLoading ? {} : "pulse"}
+                variants={buttonVariants}
               >
                 {isLoading ? 'Subscribing...' : 'Subscribe'}
-              </button>
-            </form>
+              </motion.button>
+            </motion.form>
             {message.content && (
               <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className={`mt-4 text-sm ${message.type === 'success' ? 'text-green-400' : 'text-red-400'
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+                className={`mt-6 text-sm px-4 py-2 rounded-lg ${message.type === 'success'
+                  ? 'bg-gray-800 text-gray-300'
+                  : 'bg-gray-800 text-gray-400'
                   }`}
               >
                 {message.content}
@@ -91,7 +152,7 @@ const StayUpdated = () => {
           </div>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

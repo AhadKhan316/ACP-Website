@@ -1,127 +1,193 @@
-// src/components/PYFAbout.jsx
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-import presidentImg from '../assets/governing-body-new/ahmed-shah.png'
+import presidentImg from '../assets/governing-body-new/ahmed-shah.png';
 
 const About = () => {
-  const [activeTab, setActiveTab] = useState("about"); // Default tab: About
+  const [activeTab, setActiveTab] = useState("about");
 
   // Tab content data
   const tabs = [
     {
       id: "about",
       title: "About",
+      subtitle: "Our Mission and Vision",
       content: (
-        <div className="px-4 sm:p-10 md:p-12 lg:p-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl text-amber-100 font-bold text-center mb-4 sm:mb-6">
+        <div className="px-4 sm:p-10 md:p-12 lg:p-16 text-center">
+          <motion.h2
+            className="text-3xl sm:text-4xl lg:text-5xl text-black font-bold mb-2 sm:mb-3"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             About
-          </h2>
-          <p className="text-amber-100 text-center mx-auto leading-relaxed text-base sm:text-lg md:text-xl lg:max-w-3xl">
-            Arts Council supports cultural activities while educating youth in the field of arts.
-            It strives to promote literature, fine arts, and performing arts in Pakistan.
-          </p>
+          </motion.h2>
+          <motion.p
+            className="text-gray-400 italic text-sm sm:text-base mb-6 sm:mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+          >
+            {/* Our Mission and Vision */}
+          </motion.p>
+          <motion.div
+            className="h-1 w-20 bg-black mx-auto mb-6 sm:mb-8 rounded"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+          ></motion.div>
+          <motion.p
+            className="text-black mx-auto leading-relaxed text-base sm:text-lg md:text-xl lg:max-w-3xl"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+          >
+            Arts Council supports cultural activities while educating youth in the field of arts. It strives to promote literature, fine arts, and performing arts in Pakistan.
+          </motion.p>
         </div>
       ),
     },
     {
       id: "president",
       title: "President's Message",
+      subtitle: "A Word from Our Leader",
       content: (
-        <div className="px-4 sm:p-10 md:p-12 lg:p-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl text-amber-100 font-bold text-center mb-4 sm:mb-6">
+        <div className="px-4 sm:p-10 md:p-12 lg:p-16 text-center ">
+          <motion.h2
+            className="text-3xl sm:text-4xl lg:text-5xl text-black font-bold mb-2 sm:mb-3"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             President's Message
-          </h2>
+          </motion.h2>
+          <motion.p
+            className="text-black italic text-sm sm:text-base mb-6 sm:mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+          >
+            {/* A Word from Our Leader */}
+          </motion.p>
+          <motion.div
+            className="h-1 w-20 bg-black mx-auto mb-6 sm:mb-8 rounded"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+          ></motion.div>
           {/* President's Image */}
-          <div className="flex justify-center mb-6">
-            <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden border-4 border-black shadow-lg">
+          <motion.div
+            className="flex justify-center mb-8"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+          >
+            <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden border-4 border-gray-300 shadow-xl group">
               <img
                 src={presidentImg}
-                // ../assets/team/daniyal.png
                 alt="President Mohammad Ahmed Shah"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-all duration-300"
               />
+              <div className="absolute inset-0 border-4 border-transparent group-hover:border-gray-200 rounded-full transition-all duration-300"></div>
             </div>
-          </div>
-          <h4 className="text-2xl sm:text-3xl lg:text-4xl text-amber-100 font-bold text-center mb-4 sm:mb-6">
+          </motion.div>
+          <motion.h4
+            className="text-2xl sm:text-3xl lg:text-4xl text-black font-semibold mb-4 sm:mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+          >
             Mohammad Ahmed Shah (HI, SI)
-          </h4>
-          <p className="text-amber-100 text-center mx-auto leading-relaxed text-base sm:text-lg md:text-xl lg:max-w-3xl">
+          </motion.h4>
+          <motion.p
+            className="text-black mx-auto leading-relaxed text-base sm:text-lg md:text-xl lg:max-w-3xl"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
+          >
             The Arts Council of Pakistan endeavors to uphold and champion the rich tapestry of Pakistani arts and culture on the world stage. Our aspiration is to provide a nurturing and inspirational environment that fosters talent, connections, and collaboration among communities not only within Pakistan but across the globe.
-          </p>
+          </motion.p>
         </div>
       ),
     },
   ];
 
-  // Framer Motion variants for tab content animation
-  const contentVariants = {
-    hidden: { opacity: 0, x: 20 },
+  // Framer Motion variants for section animation
+  const sectionVariants = {
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      x: 0,
-      transition: { duration: 0.5, ease: "easeOut" },
-    },
-    exit: {
-      opacity: 0,
-      x: -20,
-      transition: { duration: 0.3, ease: "easeIn" },
+      transition: { duration: 0.8, ease: "easeOut" },
     },
   };
 
   // Framer Motion variants for tab buttons
   const buttonVariants = {
     active: {
-      backgroundColor: "#b91c1c", // Red-700 for active tab
-      scale: 1.05,
+      y: 0,
       transition: { duration: 0.3 },
     },
     inactive: {
-      backgroundColor: "#4b5563", // Gray-600 for inactive tab
-      scale: 1,
+      y: 0,
       transition: { duration: 0.3 },
     },
     hover: {
-      scale: 1.1,
-      backgroundColor: "#b91c1c", // Red-700 on hover
+      y: -3,
       transition: { duration: 0.2 },
     },
   };
 
   return (
-    <section id="about" className="py-10 bg-gray-900">
-      <div className="mx-4 px-4 sm:px-6 lg:px-8">
-        <div className="bg-gray-800 py-4 rounded-lg shadow-xl overflow-hidden">
+    <motion.section
+      id="about"
+      className="py-12 sm:py-16 bg-white relative"
+      initial="hidden"
+      animate="visible"
+      variants={sectionVariants}
+    >
+      {/* Subtle Background Gradient */}
+      {/* <div className="absolute inset-0 bg-gradient-to-b from-gray-900/20 to-black pointer-events-none"></div> */}
+
+      <div className="mx-4 px-4 sm:px-6 lg:px-8 relative">
+        <div className="bg-gradient-to-b from-black/25 to-gray py-8 sm:py-10 rounded-xl shadow-xl overflow-hidden ">
           {/* Tab Buttons */}
-          <div className="flex justify-center space-x-4 mb-6">
+          <div className="flex justify-center space-x-4 sm:space-x-6 mb-8 sm:mb-10">
             {tabs.map((tab) => (
               <motion.button
                 key={tab.id}
-                className="px-4 py-2 rounded-lg text-white font-semibold text-sm sm:text-base"
+                className={`relative px-4 sm:px-6 py-2 text-sm sm:text-base font-bold ${activeTab === tab.id ? "text-black" : "text-black"
+                  }`}
                 variants={buttonVariants}
                 initial="inactive"
                 animate={activeTab === tab.id ? "active" : "inactive"}
-                whileHover={activeTab === tab.id ? {} : "hover"}
+                whileHover="hover"
                 onClick={() => setActiveTab(tab.id)}
               >
                 {tab.title}
+                {activeTab === tab.id && (
+                  <motion.div
+                    className="absolute bottom-0 left-0 right-0 h-1 bg-black rounded-t"
+                    layoutId="underline"
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                  />
+                )}
               </motion.button>
             ))}
           </div>
 
           {/* Tab Content */}
           <motion.div
-            key={activeTab} // Ensures animation retriggers on tab change
-            variants={contentVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
+            key={activeTab}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           >
             {tabs.find((tab) => tab.id === activeTab)?.content}
           </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
