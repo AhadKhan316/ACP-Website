@@ -13,14 +13,14 @@ const About = () => {
       title: "About",
       subtitle: "Our Mission and Vision",
       content: (
-        <div className="px-4 sm:p-10 md:p-12 lg:p-16 text-center">
+        <div className="px-4 text-center">
           <motion.h2
             className="text-3xl sm:text-4xl lg:text-5xl text-black font-bold mb-2 sm:mb-3"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            About
+            {/* About */}
           </motion.h2>
           <motion.p
             className="text-gray-400 italic text-sm sm:text-base mb-6 sm:mb-8"
@@ -31,7 +31,7 @@ const About = () => {
             {/* Our Mission and Vision */}
           </motion.p>
           <motion.div
-            className="h-1 w-20 bg-black mx-auto mb-6 sm:mb-8 rounded"
+            // className="h-1 w-20 bg-black mx-auto mb-6 sm:mb-8 rounded"
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
@@ -52,17 +52,17 @@ const About = () => {
       title: "President's Message",
       subtitle: "A Word from Our Leader",
       content: (
-        <div className="px-4 sm:p-10 md:p-12 lg:p-16 text-center ">
+        <div className="px-4 text-center">
           <motion.h2
             className="text-3xl sm:text-4xl lg:text-5xl text-black font-bold mb-2 sm:mb-3"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            President's Message
+            {/* President's Message */}
           </motion.h2>
           <motion.p
-            className="text-black italic text-sm sm:text-base mb-6 sm:mb-8"
+            className="text-black italic text-2xl sm:text-5xl mb-6 sm:mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
@@ -70,7 +70,7 @@ const About = () => {
             {/* A Word from Our Leader */}
           </motion.p>
           <motion.div
-            className="h-1 w-20 bg-black mx-auto mb-6 sm:mb-8 rounded"
+            // className="h-1 w-20 bg-black mx-auto mb-6 sm:mb-8 rounded"
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
@@ -121,6 +121,7 @@ const About = () => {
     },
   };
 
+
   // Framer Motion variants for tab buttons
   const buttonVariants = {
     active: {
@@ -140,7 +141,7 @@ const About = () => {
   return (
     <motion.section
       id="about"
-      className="py-12 sm:py-16 bg-white relative"
+      className="py-6 sm:py-6 bg-white relative"
       initial="hidden"
       animate="visible"
       variants={sectionVariants}
@@ -149,13 +150,13 @@ const About = () => {
       {/* <div className="absolute inset-0 bg-gradient-to-b from-gray-900/20 to-black pointer-events-none"></div> */}
 
       <div className="mx-4 px-4 sm:px-6 lg:px-8 relative">
-        <div className="bg-gradient-to-b from-black/25 to-gray py-8 sm:py-10 rounded-xl shadow-xl overflow-hidden ">
+        <div className="py-8 sm:py-10 rounded-xl overflow-hidden">
           {/* Tab Buttons */}
           <div className="flex justify-center space-x-4 sm:space-x-6 mb-8 sm:mb-10">
             {tabs.map((tab) => (
               <motion.button
                 key={tab.id}
-                className={`relative px-4 sm:px-6 py-2 text-sm sm:text-base font-bold ${activeTab === tab.id ? "text-black" : "text-black"
+                className={`relative px-4 text-2xl sm:text-3xl lg:text-4xl font-bold text-black ${activeTab === tab.id ? "text-black" : "text-black"
                   }`}
                 variants={buttonVariants}
                 initial="inactive"
@@ -166,7 +167,7 @@ const About = () => {
                 {tab.title}
                 {activeTab === tab.id && (
                   <motion.div
-                    className="absolute bottom-0 left-0 right-0 h-1 bg-black rounded-t"
+                    className="absolute left-0 right-0 h-1 mt-2 bg-black rounded-t"
                     layoutId="underline"
                     transition={{ duration: 0.3, ease: "easeOut" }}
                   />

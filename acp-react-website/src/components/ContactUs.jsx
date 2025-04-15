@@ -1,5 +1,4 @@
 import React from 'react';
-// No need for a separate CSS file - we'll use Tailwind classes
 
 const ContactUs = () => {
   return (
@@ -7,7 +6,7 @@ const ContactUs = () => {
       {/* Hero Section */}
       <div className="w-full mx-4 bg-[#1E293B] rounded-3xl shadow-2xl p-6 sm:p-8 mb-12 overflow-hidden relative">
         <img
-          src="https://acpkhi.com/imgs/ACP%20Drone%202023.webp" // Use the provided image or a placeholder
+          src="https://acpkhi.com/imgs/ACP%20Drone%202023.webp" 
           alt="Arts Council of Pakistan Karachi"
           className="w-full h-64 sm:h-80 object-cover rounded-2xl mb-6"
           loading="lazy"

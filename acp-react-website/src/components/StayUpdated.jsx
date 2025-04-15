@@ -69,7 +69,7 @@ const StayUpdated = () => {
 
   return (
     <motion.section
-      className="py-12 sm:py-16 bg-white relative"
+      className="py-6 sm:py-6 bg-white relative"
       initial="hidden"
       animate="visible"
       variants={sectionVariants}
@@ -79,14 +79,14 @@ const StayUpdated = () => {
 
       <div className="mx-4 px-4 sm:px-6 lg:px-8 relative">
         <motion.div
-          className="bg-gradient-to-b from-black/25 to-gray rounded-xl shadow-xl overflow-hidden mx-auto group  transition-all duration-300"
+          className="bg-gradient-to-b from-white/25 to-gray rounded-xl overflow-hidden mx-auto group  transition-all duration-300"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <div className="p-6 sm:p-8 md:p-12 lg:p-16 text-center">
+          <div className="p-6 sm:p-8 md:p-6 lg:p-8 text-center">
             <motion.h2
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-2 sm:mb-3"
+              className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-2 sm:mb-3"
               custom={0}
               variants={childVariants}
             >
@@ -100,7 +100,7 @@ const StayUpdated = () => {
               Get the Latest Updates and Offers
             </motion.p>
             <motion.div
-              className="h-1 w-30 bg-black mx-auto mb-8 sm:mb-10 rounded"
+              // className="h-1 w-30 bg-black mx-auto mb-8 sm:mb-10 rounded"
               custom={2}
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}

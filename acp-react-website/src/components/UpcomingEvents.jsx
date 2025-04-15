@@ -7,6 +7,9 @@ import posterImg1 from "../assets/poster-images/sukkur-chapter-2.png";
 import posterImg2 from "../assets/poster-images/sukkur-chapter-2.png";
 import posterImg3 from "../assets/poster-images/sukkur-chapter-2.png";
 
+// Import arrow icons (you can replace these with your preferred icons)
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+
 const UpcomingEvents = () => {
   const [events, setEvents] = useState([
     {
@@ -50,11 +53,30 @@ const UpcomingEvents = () => {
       transition: { duration: 0.6, delay: i * 0.2, ease: "easeOut" },
     }),
     hover: {
-      scale: 1.05,
+      scale: 0.95,
       boxShadow: "0 10px 20px rgba(255, 255, 255, 0.1)",
       transition: { duration: 0.3 },
     },
   };
+
+  // Custom arrow components
+  const NextArrow = ({ onClick }) => (
+    <button
+      className="absolute right-0 top-1/3 -translate-y-1/2 z-10 bg-black/90 p-2 rounded-full hover:bg-black/70 transition-colors"
+      onClick={onClick}
+    >
+      <IoIosArrowForward className="text-white text-2xl" />
+    </button>
+  );
+
+  const PrevArrow = ({ onClick }) => (
+    <button
+      className="absolute left-0 top-1/3 -translate-y-1/2 z-10 bg-black/90 p-2 rounded-full hover:bg-black/70 transition-colors"
+      onClick={onClick}
+    >
+      <IoIosArrowBack className="text-white text-2xl" />
+    </button>
+  );
 
   // Slider settings
   const sliderSettings = {
@@ -66,6 +88,9 @@ const UpcomingEvents = () => {
     autoplay: true,
     autoplaySpeed: 3000,
     variableHeight: true,
+    arrows: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     responsive: [
       {
         breakpoint: 1024,
@@ -82,7 +107,6 @@ const UpcomingEvents = () => {
         },
       },
     ],
-    arrows: false,
     appendDots: (dots) => (
       <div style={{ padding: "10px" }}>
         <ul style={{ margin: "0px" }} className="flex justify-center space-x-2">
@@ -91,7 +115,7 @@ const UpcomingEvents = () => {
               <span
                 className={`block w-3 h-3 rounded-full ${dot.props.className.includes("slick-active")
                   ? "bg-white"
-                  : "bg-gray-500"
+                  : "bg-gray-800"
                   }`}
               ></span>
             </li>
@@ -103,19 +127,16 @@ const UpcomingEvents = () => {
 
   return (
     <motion.section
-      className="py-12 sm:py-16 bg-white relative"
+      className="py-6 sm:py-6 bg-white relative"
       initial="hidden"
       animate="visible"
       variants={sectionVariants}
     >
-      {/* Subtle Background Gradient */}
-      {/* <div className="absolute inset-0 bg-gradient-to-b from-gray-900/20 to-black pointer-events-none"></div> */}
-
       <div className="mx-4 px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div className="text-center mb-10 sm:mb-12">
           <motion.h2
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-4 tracking-wide"
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-4 "
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
@@ -134,7 +155,7 @@ const UpcomingEvents = () => {
               variants={cardVariants}
               whileHover="hover"
             >
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col">
                 {/* Event Image */}
                 <div className="w-full mb-4">
                   <img
@@ -149,11 +170,19 @@ const UpcomingEvents = () => {
                   <h3 className="text-lg sm:text-xl font-bold text-black mb-2">
                     {event.title.toUpperCase()}
                   </h3>
-                  <p className="text-black text-sm sm:text-base flex items-center justify-center">
+                  <p className="text-black text-sm sm:text-base flex items-center justify-center mb-4">
                     {event.date}
                     <span className="inline-block w-1.5 h-1.5 bg-black rounded-full mx-2"></span>
                     2025
                   </p>
+                  {/* Registration Button */}
+                  <motion.button
+                    className="px-4 py-2 rounded-lg bg-black text-white font-semibold text-sm hover:bg-gray-600 transition duration-300 shadow-md"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Register Now
+                  </motion.button>
                 </div>
               </div>
             </motion.div>

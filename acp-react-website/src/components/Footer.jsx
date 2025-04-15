@@ -62,45 +62,41 @@ const Footer = () => {
 
   return (
     <motion.footer
-      className="py-12 sm:py-16 bg-black relative text-white"
+      className="py-6 sm:py-8 bg-black relative text-white"
       initial="hidden"
       animate="visible"
       variants={sectionVariants}
     >
       {/* Subtle Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-black pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-gray-900/30 to-black pointer-events-none"></div>
 
-      <div className="mx-4 px-4 sm:px-6 lg:px-8 relative border-t border-white/15 shadow-lg">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 relative mt-5">
-          {/* Vertical Dividers */}
-          <div className="absolute left-1/3 top-0 bottom-0 w-px bg-gray-700 hidden lg:block"></div>
-          <div className="absolute left-2/3 top-0 bottom-0 w-px bg-gray-700 hidden lg:block"></div>
-
+      <div className="mx-4 px-4 sm:px-6 lg:px-8 relative border-t border-white/20 shadow-lg">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 ">
           {/* Column 1: Logo and Text */}
           <motion.div
-            className="flex flex-col items-center lg:items-start text-center lg:text-left"
+            className="flex flex-col items-center sm:items-start text-center sm:text-left"
             custom={0}
             variants={childVariants}
           >
             <img
               src={acpFooterLogo}
               alt="Arts Council Logo"
-              className="h-35 sm:h-25 md:h-35 w-auto rounded-full mb-4"
+              className="h-auto max-h-[300px] w-auto rounded-full mb-6 sm:mb-8"
             />
-            <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-              We are a Non-Profit Organization for the promotion of Art & Culture.
+            <p className="text-gray-200 text-sm sm:text-base leading-relaxed max-w-[280px] sm:max-w-xs">
+              We are a Non-Profit Organization dedicated to promoting Art & Culture.
             </p>
           </motion.div>
 
           {/* Column 2: Contact Info */}
           <motion.div
-            className="flex flex-col items-center lg:items-start text-center lg:text-left"
+            className="flex flex-col items-center sm:items-start text-center sm:text-left lg:pt-[100px]"
             custom={1}
             variants={childVariants}
           >
-            <div className="space-y-4">
-              <div className="flex items-center">
-                <span className="mr-3 text-gray-400">
+            <div className="space-y-4 sm:space-y-5 w-full max-w-sm">
+              <div className="flex items-start justify-center sm:justify-start">
+                <span className="mr-3 text-gray-300 flex-shrink-0 mt-0.5">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-5 w-5 sm:h-6 sm:w-6"
@@ -118,11 +114,11 @@ const Footer = () => {
                 </span>
                 <div>
                   <p className="font-semibold text-sm sm:text-base text-white">Phone</p>
-                  <p className="text-gray-300 text-sm sm:text-base">+92-300-0802391</p>
+                  <p className="text-gray-200 text-sm">+92-300-0802391</p>
                 </div>
               </div>
-              <div className="flex items-center">
-                <span className="mr-3 text-gray-400">
+              <div className="flex items-start justify-center sm:justify-start">
+                <span className="mr-3 text-gray-300 flex-shrink-0 mt-0.5">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-5 w-5 sm:h-6 sm:w-6"
@@ -140,11 +136,11 @@ const Footer = () => {
                 </span>
                 <div>
                   <p className="font-semibold text-sm sm:text-base text-white">Email</p>
-                  <p className="text-gray-300 text-sm sm:text-base">info@acpkhi.com</p>
+                  <p className="text-gray-200 text-sm">info@acpkhi.com</p>
                 </div>
               </div>
-              <div className="flex items-center">
-                <span className="mr-3 text-gray-400">
+              <div className="flex items-start justify-center sm:justify-start">
+                <span className="mr-3 text-gray-300 flex-shrink-0 mt-0.5">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-5 w-5 sm:h-6 sm:w-6"
@@ -168,7 +164,7 @@ const Footer = () => {
                 </span>
                 <div>
                   <p className="font-semibold text-sm sm:text-base text-white">Location</p>
-                  <p className="text-gray-300 text-sm sm:text-base">
+                  <p className="text-gray-200 text-sm max-w-[220px] sm:max-w-xs">
                     M.R. Kiyani Road, Karachi, Pakistan
                   </p>
                 </div>
@@ -178,13 +174,13 @@ const Footer = () => {
 
           {/* Column 3: Quick Links and Newsletter */}
           <motion.div
-            className="flex flex-col items-center lg:items-start text-center lg:text-left"
+            className="flex flex-col items-center sm:items-start text-center sm:text-left lg:pt-[100px]"
             custom={2}
             variants={childVariants}
           >
-            <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-6">
+            <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8 w-full max-w-sm">
               <div>
-                <ul className="space-y-2">
+                <ul className="space-y-2 sm:space-y-3">
                   {quickLinks1.map((link, index) => (
                     <motion.li
                       key={link.id}
@@ -193,7 +189,7 @@ const Footer = () => {
                     >
                       <a
                         href={link.href}
-                        className="text-gray-300 text-sm sm:text-base hover:text-white transition duration-300"
+                        className="text-gray-200 text-sm hover:text-white font-medium transition duration-300"
                       >
                         {link.text}
                       </a>
@@ -202,7 +198,7 @@ const Footer = () => {
                 </ul>
               </div>
               <div>
-                <ul className="space-y-2">
+                <ul className="space-y-2 sm:space-y-3">
                   {quickLinks2.map((link, index) => (
                     <motion.li
                       key={link.id}
@@ -211,7 +207,7 @@ const Footer = () => {
                     >
                       <a
                         href={link.href}
-                        className="text-gray-300 text-sm sm:text-base hover:text-white transition duration-300"
+                        className="text-gray-200 text-sm hover:text-white font-medium transition duration-300"
                       >
                         {link.text}
                       </a>
@@ -221,22 +217,22 @@ const Footer = () => {
               </div>
             </div>
             <motion.form
-              className="flex flex-col sm:flex-row items-center w-full"
+              className="flex flex-col sm:flex-row items-center w-full max-w-sm"
               custom={12}
               variants={childVariants}
             >
-              <div className="relative w-full sm:w-auto mb-2 sm:mb-0">
+              <div className="relative w-full mb-3 sm:mb-0">
                 <input
                   type="email"
-                  placeholder="Email"
-                  className="p-3 bg-transparent border-b-2 border-gray-600 text-white text-sm sm:text-base w-full sm:w-48 focus:outline-none focus:border-white transition-all duration-300 placeholder-gray-400"
+                  placeholder="Enter your email"
+                  className="p-2.5 sm:p-3 bg-transparent border-b-2 border-gray-500 text-white text-sm w-full focus:outline-none focus:border-white transition-all duration-300 placeholder-gray-400"
                 />
               </div>
               <button
                 type="submit"
-                className="w-full sm:w-auto bg-white text-black font-semibold py-3 px-4 sm:ml-2 rounded-lg hover:bg-gray-200 transition duration-300"
+                className="w-full sm:w-auto bg-white text-black font-semibold py-2.5 sm:py-3 px-5 sm:px-6 sm:ml-3 rounded-lg hover:bg-gray-100 transition duration-300 shadow-md"
               >
-                Send
+                Subscribe
               </button>
             </motion.form>
           </motion.div>
@@ -244,14 +240,14 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <motion.div
-          className="border-t border-gray-700 mt-10 pt-6 text-center"
+          className="border-t border-gray-600 mt-8 sm:mt-10 pt-5 sm:pt-6 text-center"
           custom={13}
           variants={childVariants}
         >
-          <p className="text-gray-400 text-sm sm:text-base">
-            Copyright © Arts Council of Pakistan Karachi.
+          <p className="text-gray-300 text-xs sm:text-sm">
+            Copyright © Arts Council of Pakistan Karachi. All Rights Reserved.
           </p>
-          <div className="flex justify-center mt-4 space-x-4">
+          <div className="flex justify-center mt-4 space-x-3 sm:space-x-4">
             {socialLinks.map((link, index) => (
               <motion.a
                 key={link.id}
@@ -261,7 +257,7 @@ const Footer = () => {
                 variants={iconVariants}
                 whileHover="hover"
               >
-                <div className="p-2 rounded-full bg-white shadow-md relative overflow-hidden">
+                <div className="p-2.5 sm:p-3 rounded-full bg-white shadow-lg relative overflow-hidden">
                   <link.icon className="h-4 w-4 sm:h-5 sm:w-5 text-black group-hover:text-gray-800 transition-colors duration-300" />
                   {/* Ripple Effect */}
                   <span className="absolute inset-0 bg-gray-200 rounded-full opacity-0 group-hover:opacity-30 group-hover:scale-150 transition-all duration-500"></span>

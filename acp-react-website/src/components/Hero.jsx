@@ -81,7 +81,7 @@ const Hero = () => {
       </div>
 
       {/* Linear Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70 pointer-events-none z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70 pointer-events-none z-10"></div>
 
       {/* Main Content */}
       <motion.div

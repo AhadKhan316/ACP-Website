@@ -38,8 +38,8 @@ const academies = () => {
 
   return (
     <motion.section
-      id="president-message"
-      className="py-12 sm:py-16 bg-white relative"
+      id="academies"
+      className="py-6 sm:py-6 bg-white relative"
       initial="hidden"
       animate="visible"
       variants={sectionVariants}
@@ -48,8 +48,8 @@ const academies = () => {
       {/* <div className="absolute inset-0 bg-gradient-to-b from-gray-900/20 to-black pointer-events-none"></div> */}
 
       <div className="mx-4 px-4 sm:px-6 lg:px-8 relative">
-        <div className="bg-gradient-to-b from-black/25 to-gray rounded-xl shadow-xl overflow-hidden px-4 py-4 ">
-          <div className="sm:p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row items-center gap-8 lg:gap-10">
+        <div className="bg-gradient-to-b from-white/25 to-gray rounded-xl overflow-hidden px-4 py-4 ">
+          <div className="sm:p-6 md:p-6 lg:p-6 flex flex-col lg:flex-row items-center gap-8 lg:gap-10">
             {/* Animated Image */}
             <motion.div
               className="lg:w-1/2 lg:-ml-16 mb-8 lg:mb-0 z-10"
@@ -78,7 +78,7 @@ const academies = () => {
               viewport={{ once: true }}
             >
               <motion.h2
-                className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-2 sm:mb-3"
+                className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-2 sm:mb-3"
                 custom={1}
                 variants={childVariants}
               >
@@ -92,7 +92,7 @@ const academies = () => {
                 Nurturing Creativity Since 1954
               </motion.p>
               <motion.div
-                className="h-1 w-20 bg-black mx-auto lg:mx-0 mb-6 sm:mb-8 rounded"
+                // className="h-1 w-20 bg-black mx-auto lg:mx-0 mb-6 sm:mb-8 rounded"
                 custom={3}
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}

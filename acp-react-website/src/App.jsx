@@ -11,7 +11,7 @@ import StayUpdated from './components/StayUpdated';
 import Academy from './components/Academy';
 import CommunityFeedback from './components/CommunityFeedback';
 import Production from './components/Production';
-import OurSocial from './components/OurSocial';
+// import OurSocial from './components/OurSocial';
 import ContactUs from './components/ContactUs';
 
 // Pages
@@ -54,11 +54,11 @@ const App = () => {
               <About />
               <UpcomingEvents />
               {/* <PresidentMessage /> */}
-              <StayUpdated />
               <Academy />
               <CommunityFeedback />
               <Production />
-              <OurSocial />
+              {/* <OurSocial /> */}
+              <StayUpdated />
             </>
           } />
           <Route path="/AcademiesPage" element={<AcademiesPage />} />

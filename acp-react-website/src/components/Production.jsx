@@ -39,7 +39,7 @@ const ProductionMessage = () => {
   return (
     <motion.section
       id="production-message"
-      className="py-12 sm:py-16 bg-white relative"
+      className="py-8 sm:py-8 bg-white relative"
       initial="hidden"
       animate="visible"
       variants={sectionVariants}
@@ -48,8 +48,8 @@ const ProductionMessage = () => {
       {/* <div className="absolute inset-0 bg-gradient-to-b from-gray-900/20 to-black pointer-events-none"></div> */}
 
       <div className="mx-4 px-4 sm:px-6 lg:px-8 relative">
-        <div className="bg-gradient-to-b from-black/25 to-gray rounded-xl shadow-xl overflow-hidden">
-          <div className="p-6 sm:p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row items-center relative">
+        <div className="bg-gradient-to-b from-white/25 to-gray rounded-xl overflow-hidden">
+          <div className="p-6 sm:p-8 md:p-6 lg:p-8 flex flex-col lg:flex-row items-center relative">
             {/* Vertical Divider */}
             {/* <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gray-600 transform -translate-x-1/2 hidden lg:block"></div> */}
 
@@ -61,7 +61,7 @@ const ProductionMessage = () => {
               viewport={{ once: true }}
             >
               <motion.h2
-                className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-2 sm:mb-3"
+                className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-2 sm:mb-3"
                 custom={0}
                 variants={childVariants}
               >
@@ -75,7 +75,7 @@ const ProductionMessage = () => {
                 Celebrating Artistic Expression
               </motion.p>
               <motion.div
-                className="h-1 w-20 bg-black mx-auto lg:mx-0 mb-6 sm:mb-8 rounded"
+                // className="h-1 w-20 bg-black mx-auto lg:mx-0 mb-6 sm:mb-8 rounded"
                 custom={2}
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
