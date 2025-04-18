@@ -56,43 +56,50 @@ const GoverningBody = () => {
   };
 
   return (
-    <div className="bg-white text-black py-6 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8 font-sans">
+    <div className="bg-white text-black py-6 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8">
       <div className="mx-4">
-        {/* President's Message */}
+        {/* President's Message Section */}
         <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="p-6 sm:p-8 lg:p-8 mb-6 sm:mb-8 lg:mb-8 flex flex-col md:flex-row items-center gap-6 sm:gap-8 lg:gap-16"
+          initial="hidden"
+          whileInView="visible"
+          // variants={fadeIn}
+          viewport={{ once: true, amount: 0.2 }}
+          className="mb-20"
         >
-          {/* Image with Card Styling */}
-          <motion.div
-            className="relative rounded-xl overflow-hidden w-full md:w-1/2 shadow-lg"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeInOut" }}
-            whileHover={{ scale: 1.03 }}
-            viewport={{ once: true, amount: 0.2 }}
-          >
-            <div className="relative w-full aspect-[4/5] max-h-72 sm:max-h-96 lg:max-h-[28rem] min-h-0 overflow-hidden">
-              <img
-                src={presidentImg}
-                alt="President"
-                className="w-full h-full object-contain transition-transform duration-500"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
-            </div>
-          </motion.div>
+          <div className="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100">
+            <div className="flex flex-col lg:flex-row">
+              {/* Image Section */}
+              <div className="lg:w-2/6 relative">
+                <div className="aspect-square lg:aspect-auto lg:h-full">
+                  <img
+                    src={presidentImg}
+                    alt="President"
+                    className="w-full h-full object-cover"
+                    loading="eager"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/10 to-transparent"></div>
+                </div>
+              </div>
 
-          {/* Text Content - Keep It Intact */}
-          <div className="w-full md:w-1/2 text-center md:text-left">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-4 text-gray-900 tracking-tight">
-              President’s Message
-            </h2>
-            <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto md:mx-0">
-              The Arts Council of Pakistan endeavors to uphold and champion the rich tapestry of Pakistani arts and culture on the world stage. Our aspiration is to provide a nurturing and inspirational environment that fosters talent, connections, and collaboration among communities not only within Pakistan but across the globe.
-            </p>
+              {/* Content Section */}
+              <div className="p-8 lg:p-12 lg:w-3/5">
+                <div className="mb-6">
+                  <span className="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
+                    President's Message
+                  </span>
+                </div>
+
+                <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
+                  Mohammad Ahmed Shah
+                </h2>
+
+                <div className="text-gray-600">
+                  <p>
+                    The Arts Council of Pakistan endeavors to uphold and champion the rich tapestry of Pakistani arts and culture on the world stage. Our aspiration is to provide a nurturing and inspirational environment that fosters talent, connections, and collaboration among communities not only within Pakistan but across the globe.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </motion.section>
 

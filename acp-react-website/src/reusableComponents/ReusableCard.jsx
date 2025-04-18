@@ -1,37 +1,69 @@
-// src/components/Card.jsx
 import React from "react";
 import { motion } from "framer-motion";
 
 const Card = ({ name, description, image, buttonText = "Learn More" }) => {
   return (
     <motion.div
-      className="relative rounded-xl shadow-lg overflow-hidden"
-      initial={{ opacity: 0, y: 50 }}
+      className="relative h-full rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-      whileHover={{ scale: 1.05 }}
-      viewport={{ once: true, amount: 0.2 }}
+      whileHover={{
+        y: -8,
+        boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 300,
+        damping: 15,
+        duration: 0.5
+      }}
+      viewport={{ once: true, margin: "0px 0px -50px 0px" }}
     >
-      <div className="relative w-full h-[400px] lg:h-[500px] overflow-hidden">
-        {/* Use object-contain to show the entire image, maintaining aspect ratio */}
-        <img
+      {/* Image container with aspect ratio */}
+      <div className="relative w-full aspect-[4/5] overflow-hidden">
+        <motion.img
           src={image}
           alt={name}
-          className="w-full h-full object-contain transition-transform duration-300"
+          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
           loading="lazy"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-black/30 to-transparent"></div>
-      </div>
-      <div className="absolute bottom-4 left-4 text-left">
-        <h3 className="text-2xl font-bold text-white">{name}</h3>
-        <p className="text-gray-300 text-sm">{description}</p>
-        <motion.button
-          className="mt-3 px-5 py-2 bg-red-700 hover:bg--red-600 text-white font-semibold rounded-md"
+          initial={{ scale: 1 }}
           whileHover={{ scale: 1.1 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.5 }}
+        />
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+      </div>
+
+      {/* Content overlay */}
+      <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+          viewport={{ once: true }}
         >
-          {buttonText}
-        </motion.button>
+          <h3 className="text-2xl font-bold mb-1 drop-shadow-md">{name}</h3>
+          <p className="text-gray-200 mb-4 text-sm sm:text-base drop-shadow-md">{description}</p>
+          <motion.button
+            className="self-stat px-5 py-2.5 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg shadow-sm transition-colors duration-300 flex items-center"
+            whileHover={{
+              scale: 1.05,
+              // backgroundColor: "#2563eb" 
+            }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ type: "spring", stiffness: 400 }}
+          >
+            {buttonText}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-4 w-4 ml-2"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+            </svg>
+          </motion.button>
+        </motion.div>
       </div>
     </motion.div>
   );

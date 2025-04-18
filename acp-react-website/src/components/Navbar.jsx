@@ -91,8 +91,9 @@ const Navbar = () => {
                     <img
                         src={acpLogo}
                         alt="Arts Council Logo"
-                        className="object-contain max-h-[120px] lg:max-h-[160px] w-auto logo-responsive"
+                        className="object-contain w-auto max-h-[150px] max-w-[200px] sm:max-h-[150px] lg:max-h-[150px]"
                     />
+
                 </Link>
 
                 {/* Hamburger Icon */}
@@ -101,7 +102,7 @@ const Navbar = () => {
                 </button>
 
                 {/* Desktop Nav */}
-                <ul className="hidden lg:flex space-x-4 items-center">
+                <ul className="hidden lg:flex space-x-0.5 items-center ms-2">
                     <li><NavLink to="/">Home</NavLink></li>
 
                     <li className="relative group">
@@ -145,7 +146,7 @@ const Navbar = () => {
                     <li className="relative group">
                         <DropdownButton onClick={(e) => toggleSubMenu("resources", e)} isOpen={isSubMenuOpen["resources"]}>Resources</DropdownButton>
                         {isSubMenuOpen["resources"] && (
-                            <div className="absolute top-full left-0 mt-2 w-64 bg-black rounded-md shadow-lg z-40">
+                            <div className="absolute top-full left-0 mt-2 w-54 bg-black rounded-md shadow-lg z-40">
                                 <NavLink to="/membersVerification">Membership Verification</NavLink>
                                 <NavLink to="/career">Career</NavLink>
                                 <NavLink to="/tenders">Tenders</NavLink>
