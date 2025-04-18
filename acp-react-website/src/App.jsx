@@ -12,7 +12,7 @@ import Academy from './components/Academy';
 import CommunityFeedback from './components/CommunityFeedback';
 import Production from './components/Production';
 // import OurSocial from './components/OurSocial';
-import ContactUs from './components/ContactUs';
+import ContactUs from './Pages/ContactUs';
 
 // Pages
 import AcademiesPage from './Pages/AcademyPage';

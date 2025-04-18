@@ -167,7 +167,7 @@ const About = () => {
                 {tab.title}
                 {activeTab === tab.id && (
                   <motion.div
-                    className="absolute left-0 right-0 h-1 mt-2 bg-black rounded-t"
+                    className="absolute left-0 right-0 h-1 mt-2 bg-[#B90602] rounded-t"
                     layoutId="underline"
                     transition={{ duration: 0.3, ease: "easeOut" }}
                   />

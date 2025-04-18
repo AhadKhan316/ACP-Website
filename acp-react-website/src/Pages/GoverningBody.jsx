@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import Cards from "../components/Cards"; // Reusable component for cards
+import Cards from "../components/Cards";
 
 // Importing images
 import presidentImg from "../assets/governing-body-new/ahmed-shah.png";
 import img1 from "../assets/governing-body-new/munawar-saeed.png";
 import img2 from "../assets/governing-body-new/ejaz-farooqi.png";
 import img3 from "../assets/governing-body-new/noorul-huda-shah.png";
-// import img4 from "../assets/governing-body-new/qudsia-Akbar.png";
 import img5 from "../assets/governing-body-new/huma-mir.png";
 import img6 from "../assets/governing-body-new/s-m-qaiser-sajjad.png";
 import img7 from "../assets/governing-body-new/syed-asjad-hussain-bukhari.png";
@@ -35,7 +34,6 @@ const GoverningBody = () => {
       { id: 1, name: "Munawar Saeed", description: "Vice President", image: img1, buttonText: "Learn More" },
       { id: 2, name: "Ejaz Farooqi", description: "Secretary", image: img2, buttonText: "Learn More" },
       { id: 3, name: "Noor Ul Huda Shah", description: "Joint Secretary", image: img3, buttonText: "Learn More" },
-      // { id: 4, name: "Qudsia Akbar", description: "Treasurer", image: img4, buttonText: "Learn More" },
     ],
     "Governing Body": [
       { id: 1, name: "Huma Mir", description: "Member", image: img5, buttonText: "Learn More" },
@@ -58,56 +56,56 @@ const GoverningBody = () => {
   };
 
   return (
-    <div className="bg-[#111827] text-white py-10 sm:px-6 lg:px-8">
+    <div className="bg-white text-black py-6 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8 font-sans">
       <div className="mx-4">
         {/* President's Message */}
         <motion.section
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="bg-[#1E293B] p-6 sm:p-8 rounded-xl shadow-lg mb-12 flex flex-col lg:flex-row items-center gap-6"
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+          className="p-6 sm:p-8 lg:p-8 mb-6 sm:mb-8 lg:mb-8 flex flex-col md:flex-row items-center gap-6 sm:gap-8 lg:gap-16"
         >
           {/* Image with Card Styling */}
           <motion.div
-            className="relative rounded-xl shadow-lg overflow-hidden w-full lg:w-1/3"
+            className="relative rounded-xl overflow-hidden w-full md:w-1/2 shadow-lg"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            whileHover={{ scale: 1.03 }}
             viewport={{ once: true, amount: 0.2 }}
           >
-            <div className="relative w-full h-[400px] lg:h-[500px] overflow-hidden">
+            <div className="relative w-full aspect-[4/5] max-h-72 sm:max-h-96 lg:max-h-[28rem] min-h-0 overflow-hidden">
               <img
                 src={presidentImg}
                 alt="President"
-                className="w-full h-full object-contain transition-transform duration-300"
+                className="w-full h-full object-contain transition-transform duration-500"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-black/30 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
             </div>
           </motion.div>
 
           {/* Text Content - Keep It Intact */}
-          <div className="w-full lg:w-2/3 text-center lg:text-left">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#F5F1E1]">
+          <div className="w-full md:w-1/2 text-center md:text-left">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-4 text-gray-900 tracking-tight">
               President’s Message
             </h2>
-            <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+            <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto md:mx-0">
               The Arts Council of Pakistan endeavors to uphold and champion the rich tapestry of Pakistani arts and culture on the world stage. Our aspiration is to provide a nurturing and inspirational environment that fosters talent, connections, and collaboration among communities not only within Pakistan but across the globe.
             </p>
           </div>
         </motion.section>
 
         {/* Tabs */}
-        <div className="mb-8">
-          <div className="flex flex-col sm:flex-row justify-center gap-4 border-b border-gray-700">
+        <div className="mb-8 sm:mb-6 lg:mb-8">
+          <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
             {["Office Bearers", "Governing Body", "Co-opted Members"].map((tab) => (
               <motion.button
                 key={tab}
                 onClick={() => handleTabChange(tab)}
-                className={`px-6 py-2 text-lg font-medium rounded-t-lg ${activeTab === tab
-                  ? "bg-[#1E293B] text-white border-b-2 border-red-700 shadow-md"
-                  : "text-white hover:text-red-600 hover:bg-gray-700"
+                className={`px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base lg:text-lg font-semibold rounded-lg transition-all duration-300 ${activeTab === tab
+                  ? "bg-[#B90602] text-white shadow-md cursor-pointer"
+                  : "bg-[#B90602] text-white curdor-pointer hover:bg-black/80 to-black/90 hover:shadow-lg cursor-pointer"
                   }`}
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}

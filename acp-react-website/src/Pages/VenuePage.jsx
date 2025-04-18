@@ -1,7 +1,7 @@
 // src/pages/VenuesPage.jsx
 import React, { Suspense, lazy } from "react";
 // import { Link } from "react-router-dom";
-import SectionWithSwiper from "../reusableComponents/ReusableCarousel"; // Import your reusable Swiper component
+import SectionWithSwiper from "../reusableComponents/ReusableCarouselOfAboutUs";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -143,7 +143,7 @@ const VenuesPage = () => {
   }));
 
   return (
-    <div className="bg-[#111827] text-white py-10 sm:px-6 lg:px-8">
+    <div className="bg-white text-black py-6 sm:px-6 lg:px-8">
       <div className="mx-4">
         {/* Slider Section using SectionWithSwiper */}
         <SectionWithSwiper

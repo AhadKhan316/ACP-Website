@@ -126,7 +126,7 @@ const StayUpdated = () => {
               <motion.button
                 type="submit"
                 disabled={isLoading}
-                className={`w-full sm:w-auto bg-black text-white font-semibold py-3 px-6 rounded-lg transition duration-300 ${isLoading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-700'
+                className={`w-full sm:w-auto bg-[#B90602] text-white font-semibold py-4 px-6 rounded-xl shadow-md hover:bg-black/80 to-black/90 hover:shadow-lg transition duration-300 cursor-pointer ${isLoading ? 'opacity-50 cursor-not-allowed' : ''
                   }`}
                 whileHover={isLoading ? {} : { scale: 1.05 }}
                 whileTap={isLoading ? {} : { scale: 0.95 }}

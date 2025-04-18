@@ -177,7 +177,7 @@ const UpcomingEvents = () => {
                   </p>
                   {/* Registration Button */}
                   <motion.button
-                    className="px-4 py-2 rounded-lg bg-black text-white font-semibold text-sm hover:bg-gray-600 transition duration-300 shadow-md"
+                    className="px-4 py-3 bg-[#B90602] text-white font-semibold text-sm rounded-xl shadow-md hover:bg-black/80 to-black/90 hover:shadow-lg transition duration-300 cursor-pointer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -192,9 +192,10 @@ const UpcomingEvents = () => {
         {/* View All Events Button */}
         <div className="text-center mt-8">
           <motion.button
-            className="px-6 py-2 rounded-lg bg-white text-black font-semibold text-sm sm:text-base hover:bg-gray-200 transition duration-300 shadow-md"
+            className="px-6 py-4 bg-[#B90602] text-white font-semibold text-sm sm:text-base rounded-xl shadow-md hover:bg-black/80 to-black/90 hover:shadow-lg transition duration-300 cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            aria-label="Get Involved"
           >
             View All Events
           </motion.button>

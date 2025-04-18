@@ -69,46 +69,49 @@ const TeamMembers = () => {
   ];
 
   return (
-    <div className="bg-[#111827] text-white py-12 sm:px-6 lg:px-8">
-      {/* Container */}
+    <div className="bg-white text-black py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 font-sans">
       <div className="mx-4">
         {/* Executive Director Section */}
         <motion.section
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="bg-[#1E293B] p-6 sm:p-8 rounded-xl shadow-lg mb-12 flex flex-col lg:flex-row items-center gap-6"
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+          className="p-6 sm:p-8 lg:p-16 mb-12 sm:mb-16 lg:mb-20 flex flex-col md:flex-row items-center gap-6 sm:gap-8 lg:gap-16"
         >
           {/* Image with Card Styling */}
           <motion.div
-            className="relative rounded-xl shadow-lg overflow-hidden w-full lg:w-1/3"
+            className="relative rounded-xl overflow-hidden w-full md:w-1/2 shadow-lg"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            whileHover={{ scale: 1.03 }}
             viewport={{ once: true, amount: 0.2 }}
           >
-            <div className="relative w-full h-[400px] lg:h-[500px] overflow-hidden">
+            <div className="relative w-full aspect-[4/5] max-h-72 sm:max-h-96 lg:max-h-[28rem] min-h-0 overflow-hidden">
               <img
                 src={execDirectorImg}
                 alt="Executive Director"
-                className="w-full h-full object-contain transition-transform duration-300"
+                className="w-full h-full object-contain transition-transform duration-500"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-black/30 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
             </div>
           </motion.div>
 
           {/* Text Content - Keep It Intact */}
-          <div className="w-full lg:w-2/3 text-center lg:text-left">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#F5F1E1]">Executive Director</h2>
-            <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-4">
+          <div className="w-full md:w-1/2 text-center md:text-left">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-4 text-gray-900 tracking-tight">
+              Executive Director
+            </h2>
+            <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed mb-4 max-w-2xl mx-auto md:mx-0">
               As the world's youngest Executive Director of an arts organization, leading the Arts Council of Pakistan, Karachi (ACPKHI), is a distinct honour and privilege. Our mission transcends borders, seeking to enrich global culture, art, and literature. Over the past decade, working alongside President ACPKHI, Mohammad Ahmed Shah (HI)(SI), my dedication to nurturing youth creativity has grown exponentially.
             </p>
-            <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-4">
+            <p className="text-gray-700 text-sm sm:text-base lg:text-lg leading-relaxed mb-4 max-w-2xl mx-auto md:mx-0">
               Together we have built a dedicated team committed to making a difference in their respective fields. With ACPKHI thriving as a vibrant cultural hub, I envision integrating modern technology into our initiatives. I'm confident that with our continued dedication, ACPKHI will flourish as a premier cultural institution, enriching the lives of talented individuals worldwide. Thank you.
             </p>
-            <h3 className="text-xl sm:text-2xl font-semibold text-[#F5F1E1]">Muhammad Daniyal Umer</h3>
+            <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-gray-900 tracking-tight">
+              Muhammad Daniyal Umer
+            </h3>
           </div>
         </motion.section>
 

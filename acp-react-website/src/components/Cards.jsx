@@ -1,23 +1,22 @@
-// src/components/Cards.jsx
 import React from "react";
 import { motion } from "framer-motion";
 import Card from "../reusableComponents/ReusableCard";
 
 const Cards = ({ title, items }) => {
   return (
-    <div className="bg-gray-800 py-10 px-4 sm:px-6 lg:px-8 rounded-xl shadow-xl overflow-hidden mb-12">
+    <div className="bg-white py-8 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8 mb-6 sm:mb-8 lg:mb-8">
       <div className="mx-4">
         <motion.h2
-          className="text-4xl font-bold text-center text-[#F5F1E1] mb-8"
+          className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-center text-gray-900 mb-8 sm:mb-6 lg:mb-6 tracking-tight"
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
         >
           {title}
         </motion.h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
           {items.map((item, index) => (
             <Card
               key={item.id}
@@ -25,6 +24,7 @@ const Cards = ({ title, items }) => {
               description={item.description}
               image={item.image}
               buttonText={item.buttonText}
+              index={index}
             />
           ))}
         </div>

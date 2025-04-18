@@ -1,6 +1,6 @@
 // src/pages/AcademiesPage.jsx
 import React from "react";
-import SectionWithSwiper from "../reusableComponents/ReusableCarousel";
+import SectionWithSwiper from "../reusableComponents/ReusableCarouselOfAboutUs";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -30,7 +30,7 @@ const AcademiesPage = () => {
   ];
 
   return (
-    <div className="py-10 min-h-screen bg-[#111827] text-white">
+    <div className="py-6 min-h-screen bg-white text-black">
       <div className="mx-4 px-4 sm:px-6 lg:px-8">
 
         <SectionWithSwiper

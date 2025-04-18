@@ -81,7 +81,7 @@ const Hero = () => {
       </div>
 
       {/* Linear Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70 pointer-events-none z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70 pointer-events-none z-10"></div>
 
       {/* Main Content */}
       <motion.div
@@ -103,9 +103,11 @@ const Hero = () => {
           Committed to the promotion, education and preservation of art and culture since 1954
         </motion.p>
         <motion.button
-          className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 border border-transparent text-sm sm:text-base font-medium rounded-md text-black bg-white hover:bg-gray-200 transition duration-150 ease-in-out"
+          className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 border border-transparent text-sm sm:text-base font-medium rounded-md text-white bg-[#B90602] hover:bg-red-600 transition duration-150 ease-in-out"
           variants={buttonVariants}
-          whileHover="hover"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          aria-label="Learn More"
         >
           Learn More
           <ArrowRight className="ml-2 -mr-1 h-4 sm:h-5 w-4 sm:w-5" aria-hidden="true" />
@@ -117,7 +119,7 @@ const Hero = () => {
         {slides.map((_, index) => (
           <span
             key={index}
-            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${index === currentSlide ? "bg-white" : "bg-gray-400"
+            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${index === currentSlide ? "bg-white" : "bg-red-700"
               }`}
           />
         ))}

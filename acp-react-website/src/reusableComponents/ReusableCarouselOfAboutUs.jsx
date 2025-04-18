@@ -25,14 +25,14 @@ const SectionWithSwiper = ({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className={`flex flex-col lg:flex-row items-center gap-8 bg-gray-800 p-6 sm:p-8 rounded-xl shadow-lg mb-16 mt-20 ${className}`}
+      className={`flex flex-col lg:flex-row items-center gap-8 p-6 sm:p-8 mb-16 mt-20 ${className}`}
     >
       {/* Centered Title and Description */}
       <div className="w-full lg:w-1/2 mb-6 lg:mb-0 flex flex-col justify-center items-center text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold text-[#F5F1E1] mb-6">
+        <h2 className="text-3xl sm:text-4xl font-bold text-black mb-6">
           {title}
         </h2>
-        <p className="text-gray-300 text-base sm:text-lg leading-relaxed max-w-3xl">
+        <p className="text-black text-base sm:text-lg md:text-xl lg:max-w-3xl leading-relaxed">
           {description}
         </p>
       </div>
@@ -40,7 +40,7 @@ const SectionWithSwiper = ({
       {/* Swiper Section */}
       <div className="w-full lg:w-1/2">
         <Swiper
-          className="rounded-xl shadow-md overflow-hidden"
+          className="rounded-xl overflow-hidden"
           modules={[Navigation, Autoplay, FreeMode]}
           spaceBetween={spaceBetween}
           slidesPerView={slidesPerView}

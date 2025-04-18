@@ -1,10 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 
-import acpFooterLogo from '/src/assets/acp-logo-and-hero-img/acp-logo-fullName-white.png'
+import acpFooterLogo from '/src/assets/acp-logo-and-hero-img/acp-logo-fullName-white.png';
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState({ type: "", content: "" });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setMessage({ type: "", content: "" });
+
+    try {
+      const response = await fetch("http://localhost/organization-website/backend/save_email.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({ email }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      if (data.status === "success") {
+        setMessage({ type: "success", content: data.message });
+        setEmail("");
+      } else {
+        setMessage({ type: "error", content: data.message });
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setMessage({ type: "error", content: "An error occurred. Please try again." });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const quickLinks1 = [
     { id: 1, text: "About ACP", href: "#" },
     { id: 2, text: "Governing Body", href: "#" },
@@ -32,7 +70,7 @@ const Footer = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { duration: 0.8, ease: "easeOut" },
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
 
@@ -42,8 +80,16 @@ const Footer = () => {
     visible: (i) => ({
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, delay: i * 0.2, ease: "easeOut" },
+      transition: { duration: 0.5, delay: i * 0.1, ease: "easeOut" },
     }),
+  };
+
+  // Button pulse animation
+  const buttonVariants = {
+    pulse: {
+      scale: [1, 1.02, 1],
+      transition: { duration: 1.5, repeat: Infinity, ease: "easeInOut" },
+    },
   };
 
   // Icon animation
@@ -52,7 +98,7 @@ const Footer = () => {
     visible: (i) => ({
       opacity: 1,
       scale: 1,
-      transition: { duration: 0.6, delay: i * 0.1, ease: "easeOut" },
+      transition: { duration: 0.5, delay: i * 0.1, ease: "easeOut" },
     }),
     hover: {
       scale: 1.2,
@@ -62,16 +108,16 @@ const Footer = () => {
 
   return (
     <motion.footer
-      className="py-6 sm:py-8 bg-black relative text-white"
+      className="py-6 sm:py-6 bg-black text-white"
       initial="hidden"
       animate="visible"
       variants={sectionVariants}
     >
       {/* Subtle Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-t from-gray-900/30 to-black pointer-events-none"></div>
+      {/* <div className="absolute inset-0 bg-gradient-to-t from-gray-900/30 to-black pointer-events-none"></div> */}
 
-      <div className="mx-4 px-4 sm:px-6 lg:px-8 relative border-t border-white/20 shadow-lg">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 ">
+      <div className="mx-4 px-4 sm:px-6 lg:px-8 relative border-t border-white/20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
           {/* Column 1: Logo and Text */}
           <motion.div
             className="flex flex-col items-center sm:items-start text-center sm:text-left"
@@ -81,25 +127,25 @@ const Footer = () => {
             <img
               src={acpFooterLogo}
               alt="Arts Council Logo"
-              className="h-auto max-h-[300px] w-auto rounded-full mb-6 sm:mb-8"
+              className="h-auto max-h-44 sm:max-h-42 lg:max-h-78 w-auto object-contain"
             />
-            <p className="text-gray-200 text-sm sm:text-base leading-relaxed max-w-[280px] sm:max-w-xs">
+            <p className="text-gray-200 text-xl sm:text-xl lg:text-xl leading-relaxed max-w-md">
               We are a Non-Profit Organization dedicated to promoting Art & Culture.
             </p>
           </motion.div>
 
           {/* Column 2: Contact Info */}
           <motion.div
-            className="flex flex-col items-center sm:items-start text-center sm:text-left lg:pt-[100px]"
+            className="flex flex-col items-center sm:items-start text-center sm:text-left mt-20"
             custom={1}
             variants={childVariants}
           >
-            <div className="space-y-4 sm:space-y-5 w-full max-w-sm">
+            <div className="space-y-3 sm:space-y-4 w-full">
               <div className="flex items-start justify-center sm:justify-start">
-                <span className="mr-3 text-gray-300 flex-shrink-0 mt-0.5">
+                <span className="mr-2 text-[#B90602] flex-shrink-0 mt-0.5">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 sm:h-6 sm:w-6"
+                    className="h-4 w-4 sm:h-5 sm:w-5"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -113,15 +159,15 @@ const Footer = () => {
                   </svg>
                 </span>
                 <div>
-                  <p className="font-semibold text-sm sm:text-base text-white">Phone</p>
-                  <p className="text-gray-200 text-sm">+92-300-0802391</p>
+                  <p className="font-bold text-xl sm:text-xl lg:text-xl text-white">Phone</p>
+                  <p className="text-gray-200 text-base sm:text-sm max-w-xs">+92-300-0802391</p>
                 </div>
               </div>
               <div className="flex items-start justify-center sm:justify-start">
-                <span className="mr-3 text-gray-300 flex-shrink-0 mt-0.5">
+                <span className="mr-2 text-[#B90602] flex-shrink-0 mt-0.5">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 sm:h-6 sm:w-6"
+                    className="h-4 w-4 sm:h-5 sm:w-5"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -135,15 +181,15 @@ const Footer = () => {
                   </svg>
                 </span>
                 <div>
-                  <p className="font-semibold text-sm sm:text-base text-white">Email</p>
-                  <p className="text-gray-200 text-sm">info@acpkhi.com</p>
+                  <p className="font-bold text-xl sm:text-xl lg:text-xl text-white">Email</p>
+                  <p className="text-gray-200 text-base sm:text-sm max-w-xs">info@acpkhi.com</p>
                 </div>
               </div>
               <div className="flex items-start justify-center sm:justify-start">
-                <span className="mr-3 text-gray-300 flex-shrink-0 mt-0.5">
+                <span className="mr-2 text-[#B90602] flex-shrink-0 mt-0.5">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 sm:h-6 sm:w-6"
+                    className="h-4 w-4 sm:h-5 sm:w-5"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -163,8 +209,8 @@ const Footer = () => {
                   </svg>
                 </span>
                 <div>
-                  <p className="font-semibold text-sm sm:text-base text-white">Location</p>
-                  <p className="text-gray-200 text-sm max-w-[220px] sm:max-w-xs">
+                  <p className="font-bold text-xl sm:text-xl lg:text-xl text-white">Location</p>
+                  <p className="text-gray-200 text-base sm:text-sm max-w-xs">
                     M.R. Kiyani Road, Karachi, Pakistan
                   </p>
                 </div>
@@ -174,22 +220,22 @@ const Footer = () => {
 
           {/* Column 3: Quick Links and Newsletter */}
           <motion.div
-            className="flex flex-col items-center sm:items-start text-center sm:text-left lg:pt-[100px]"
+            className="flex flex-col items-center sm:items-start text-center sm:text-left mt-20"
             custom={2}
             variants={childVariants}
           >
-            <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8 w-full max-w-sm">
+            <div className="grid grid-cols-2 gap-10 sm:gap-10 sm:mb-10 w-full max-w-sm">
               <div>
-                <ul className="space-y-2 sm:space-y-3">
+                <ul className="space-y-3">
                   {quickLinks1.map((link, index) => (
                     <motion.li
-                      key={link.id}
+                      key={link.id} x
                       custom={3 + index}
                       variants={childVariants}
                     >
                       <a
                         href={link.href}
-                        className="text-gray-200 text-sm hover:text-white font-medium transition duration-300"
+                        className="font-bold text-base sm:text-base lg:text-base hover:text-white transition duration-300"
                       >
                         {link.text}
                       </a>
@@ -198,7 +244,7 @@ const Footer = () => {
                 </ul>
               </div>
               <div>
-                <ul className="space-y-2 sm:space-y-3">
+                <ul className="space-y-2">
                   {quickLinks2.map((link, index) => (
                     <motion.li
                       key={link.id}
@@ -207,7 +253,7 @@ const Footer = () => {
                     >
                       <a
                         href={link.href}
-                        className="text-gray-200 text-sm hover:text-white font-medium transition duration-300"
+                        className="font-bold text-base sm:text-base lg:text-base hover:text-white transition duration-300"
                       >
                         {link.text}
                       </a>
@@ -217,51 +263,66 @@ const Footer = () => {
               </div>
             </div>
             <motion.form
-              className="flex flex-col sm:flex-row items-center w-full max-w-sm"
-              custom={12}
+              onSubmit={handleSubmit}
+              className="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-start gap-3 w-full max-w-sm mt-10"
+              custom={3}
               variants={childVariants}
             >
-              <div className="relative w-full mb-3 sm:mb-0">
+              <div className="relative w-full">
                 <input
                   type="email"
-                  placeholder="Enter your email"
-                  className="p-2.5 sm:p-3 bg-transparent border-b-2 border-gray-500 text-white text-sm w-full focus:outline-none focus:border-white transition-all duration-300 placeholder-gray-400"
+                  name="email"
+                  placeholder="Enter your Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="w-full p-3 bg-gray-800 border border-gray-600 rounded-md text-white text-xs sm:text-sm focus:outline-none focus:border-white transition-all duration-300 placeholder-gray-400"
                 />
+                {message.content && (
+                  <p
+                    className={`mt-2 text-xs sm:text-sm ${message.type === "success" ? "text-green-500" : "text-red-500"
+                      }`}
+                  >
+                    {message.content}
+                  </p>
+                )}
               </div>
-              <button
+              <motion.button
                 type="submit"
-                className="w-full sm:w-auto bg-white text-black font-semibold py-2.5 sm:py-3 px-5 sm:px-6 sm:ml-3 rounded-lg hover:bg-gray-100 transition duration-300 shadow-md"
+                disabled={isLoading}
+                className={`w-full sm:w-auto bg-[#B90602] text-white font-semibold py-3 px-6 rounded-md transition duration-300 ${isLoading ? "opacity-50 cursor-not-allowed" : "hover:bg-red-700"
+                  }`}
+                whileHover={isLoading ? {} : { scale: 1.05 }}
+                whileTap={isLoading ? {} : { scale: 0.95 }}
+                animate={isLoading ? {} : "pulse"}
+                variants={buttonVariants}
               >
-                Subscribe
-              </button>
+                {isLoading ? "Subscribing..." : "Subscribe"}
+              </motion.button>
             </motion.form>
           </motion.div>
         </div>
 
         {/* Bottom Bar */}
         <motion.div
-          className="border-t border-gray-600 mt-8 sm:mt-10 pt-5 sm:pt-6 text-center"
+          className="border-t border-gray-600 mt-6 sm:mt-8 pt-4 sm:pt-6 text-center"
           custom={13}
           variants={childVariants}
         >
-          <p className="text-gray-300 text-xs sm:text-sm">
+          <p className="text-gray-300 text-base sm:text-sm">
             Copyright © Arts Council of Pakistan Karachi. All Rights Reserved.
           </p>
-          <div className="flex justify-center mt-4 space-x-3 sm:space-x-4">
+          <div className="flex justify-center mt-3 space-x-3 sm:space-x-4">
             {socialLinks.map((link, index) => (
               <motion.a
                 key={link.id}
                 href={link.href}
-                className="group relative"
+                className="relative p-2 sm:p-2.5 rounded-full bg-white shadow-md hover:bg-gray-200 transition duration-300"
                 custom={14 + index}
                 variants={iconVariants}
                 whileHover="hover"
               >
-                <div className="p-2.5 sm:p-3 rounded-full bg-white shadow-lg relative overflow-hidden">
-                  <link.icon className="h-4 w-4 sm:h-5 sm:w-5 text-black group-hover:text-gray-800 transition-colors duration-300" />
-                  {/* Ripple Effect */}
-                  <span className="absolute inset-0 bg-gray-200 rounded-full opacity-0 group-hover:opacity-30 group-hover:scale-150 transition-all duration-500"></span>
-                </div>
+                <link.icon className="h-6 w-6 sm:h-6 sm:w-6 text-[#B90602] group-hover:text-red-700" />
               </motion.a>
             ))}
           </div>
