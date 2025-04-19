@@ -97,7 +97,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
           >
-            Mohammad Ahmed Shah (HI, SI)
+            M. Ahmed Shah (HI, SI)
           </motion.h4>
           <motion.p
             className="text-black mx-auto leading-relaxed text-base sm:text-lg md:text-xl lg:max-w-3xl"
