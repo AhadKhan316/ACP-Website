@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes, FaChevronDown, FaChevronRight } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 import acpLogo from '/src/assets/acp-logo-and-hero-img/acp-logo-fullName-white.png';
 
 const Navbar = () => {
@@ -218,6 +219,44 @@ const Navbar = () => {
                     </ul>
                 </div>
             </nav>
+            {/* Social Media Sidebar (Desktop Only) */}
+            <div className="hidden md:block fixed top-1/2 transform -translate-y-1/2 right-0 z-50">
+                <div className="bg-black text-white p-2 rounded-l-lg shadow-lg">
+                    <div className="space-y-4">
+                        {[
+                            {
+                                href: "#", // Replace with actual WC Instagram URL
+                                icon: <FaInstagram className="h-6 w-6" />,
+                                alt: "Instagram",
+                            },
+                            {
+                                href: "#", // Replace with actual WC Facebook URL
+                                icon: <FaFacebookF className="h-6 w-6" />,
+                                alt: "Facebook",
+                            },
+                            {
+                                href: "#", // Replace with actual WC TikTok URL
+                                icon: <FaTiktok className="h-6 w-6" />,
+                                alt: "TikTok",
+                            },
+                            {
+                                href: "#", // Replace with actual WC YouTube URL
+                                icon: <FaYoutube className="h-6 w-6" />,
+                                alt: "YouTube",
+                            },
+                        ].map((item) => (
+                            <a
+                                key={item.alt}
+                                href={item.href}
+                                className="block text-white hover:text-red-700 transition duration-300"
+                                aria-label={item.alt}
+                            >
+                                {item.icon}
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            </div>
         </header>
     );
 };

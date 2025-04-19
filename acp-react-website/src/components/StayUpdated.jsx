@@ -69,7 +69,7 @@ const StayUpdated = () => {
 
   return (
     <motion.section
-      className="py-6 sm:py-6 bg-white relative"
+      className=" bg-white relative"
       initial="hidden"
       animate="visible"
       variants={sectionVariants}

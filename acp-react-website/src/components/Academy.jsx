@@ -1,124 +1,178 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const academies = () => {
-  // Framer Motion variants for section animation
-  const sectionVariants = {
+const Academies = () => {
+  // Animation variants
+  const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { duration: 0.8, ease: "easeOut" },
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
+      },
     },
   };
 
-  // Framer Motion variants for child elements
-  const childVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i) => ({
-      opacity: 1,
+  const itemVariants = {
+    hidden: { y: 30, opacity: 0 },
+    visible: {
       y: 0,
-      transition: { duration: 0.6, delay: i * 0.2, ease: "easeOut" },
-    }),
+      opacity: 1,
+      transition: {
+        duration: 0.7,
+        ease: "easeOut",
+      },
+    },
   };
 
-  // Image animation
   const imageVariants = {
-    hidden: { opacity: 0, scale: 0.9, rotate: -5 },
+    hidden: { scale: 1.1, opacity: 0 },
     visible: {
-      opacity: 1,
       scale: 1,
-      rotate: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
+      opacity: 1,
+      transition: {
+        duration: 1.2,
+        ease: [0.6, 0.01, -0.05, 0.95],
+      },
     },
     hover: {
       scale: 1.05,
-      transition: { duration: 0.3 },
+      transition: { duration: 0.4 },
+    },
+  };
+
+  const parallaxVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+      },
     },
   };
 
   return (
     <motion.section
-      id="academies"
-      className="py-6 sm:py-6 bg-white relative"
+      className="min-h-screen bg-white py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8"
       initial="hidden"
       animate="visible"
-      variants={sectionVariants}
+      variants={containerVariants}
     >
-      {/* Subtle Background Gradient */}
-      {/* <div className="absolute inset-0 bg-gradient-to-b from-gray-900/20 to-black pointer-events-none"></div> */}
-
-      <div className="mx-4 px-4 sm:px-6 lg:px-8 relative">
-        <div className="bg-gradient-to-b from-white/25 to-gray rounded-xl overflow-hidden px-4 py-4 ">
-          <div className="sm:p-6 md:p-6 lg:p-6 flex flex-col lg:flex-row items-center gap-8 lg:gap-10">
-            {/* Animated Image */}
+      <div className="mx-4">
+        {/* Modern Image & Text Container */}
+        <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+            {/* Enhanced Image Section with Parallax Effect */}
             <motion.div
-              className="lg:w-1/2 lg:-ml-16 mb-8 lg:mb-0 z-10"
-              custom={0}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
+              className="relative h-80 sm:h-96 lg:h-[600px] overflow-hidden"
               variants={imageVariants}
               whileHover="hover"
             >
-              <div className="relative rounded-lg overflow-hidden shadow-xl group">
+              <motion.div
+                className="absolute inset-0"
+                variants={parallaxVariants}
+                whileInView={{
+                  y: ["0%", "-20%"],
+                  transition: {
+                    y: {
+                      repeat: Infinity,
+                      repeatType: "mirror",
+                      duration: 10,
+                      ease: "linear",
+                    },
+                  },
+                }}
+              >
                 <img
                   src="https://acpkhi.com/imgs/academies.webp"
-                  alt="President speaking"
-                  className="w-full h-auto object-covert transition-all duration-300"
+                  alt="ACP Academies"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
                 />
-                <div className="absolute inset-0 border-4 border-transparent group-hover:border-gray-200 rounded-lg transition-all duration-300"></div>
-              </div>
+              </motion.div>
+              {/* Gradient overlay with subtle texture */}
+              <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/20 to-transparent mix-blend-overlay"></div>
+
+              {/* Floating decorative element */}
+              <motion.div
+                className="absolute bottom-6 left-6 bg-white/90 px-4 py-2 rounded-lg shadow-lg"
+                variants={itemVariants}
+              >
+                <span className="text-sm font-medium text-gray-900">Creative Arts</span>
+              </motion.div>
             </motion.div>
 
-            {/* Animated Text Content */}
+            {/* Text Content */}
             <motion.div
-              className="lg:w-1/2 text-center lg:text-left"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
+              className="p-8 sm:p-12 lg:p-16 flex flex-col justify-center bg-gradient-to-b from-white to-gray-50"
+              variants={containerVariants}
             >
-              <motion.h2
-                className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black mb-2 sm:mb-3"
-                custom={1}
-                variants={childVariants}
+              <motion.div variants={itemVariants}>
+                <span className="inline-block bg-amber-100 text-amber-700 px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
+                  Artistic Excellence
+                </span>
+              </motion.div>
+
+              <motion.h1
+                className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-5 tracking-tight"
+                variants={itemVariants}
               >
                 Academies
-              </motion.h2>
+              </motion.h1>
+
               <motion.p
-                className="text-black italic text-sm sm:text-base mb-6 sm:mb-8"
-                custom={2}
-                variants={childVariants}
+                className="text-lg text-gray-600 mb-8 font-medium"
+                variants={itemVariants}
               >
-                Nurturing Creativity Since 1954
+                Shaping Creative Minds Since 1954
               </motion.p>
+
+              {/* <motion.div
+                className="h-1 w-20 bg-red-700 mb-8 rounded-full"
+                variants={itemVariants}
+              ></motion.div> */}
+
+              <motion.p
+                className="text-black text-base sm:text-lg leading-relaxed mb-6"
+                variants={itemVariants}
+              >
+                ACPKHI is a sanctuary for artistic growth, fostering young talents to become visionary creators who inspire and elevate our nation.
+              </motion.p>
+
+              <motion.p
+                className="text-black text-base sm:text-lg leading-relaxed mb-8"
+                variants={itemVariants}
+              >
+                From theatre and music to fine arts and design, our academies empower hundreds of students annually under the guidance of world-class instructors.
+              </motion.p>
+
               <motion.div
-                // className="h-1 w-20 bg-black mx-auto lg:mx-0 mb-6 sm:mb-8 rounded"
-                custom={3}
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
-              ></motion.div>
-              <motion.p
-                className="text-black text-base sm:text-lg md:text-xl leading-relaxed"
-                custom={4}
-                variants={childVariants}
+                className="mt-8"
+                variants={itemVariants}
               >
-                ACPKHI houses multiple arts academies. Our core belief is nurturing young talents to become creative, accomplished individuals, bringing pride to our nation. With academies catering to those passionate about theatre, singing, music, dance, fine arts, textile design, and communication design, we train hundreds of students yearly and have continued to do so with expert instructors since 1954.
-              </motion.p>
-              {/* Uncomment if you want to add the president's name */}
-              {/* <motion.p
-                className="text-gray-400 font-semibold mt-4"
-                custom={5}
-                variants={childVariants}
-              >
-                - President, Arts Council of Pakistan, Karachi
-              </motion.p> */}
+                <button className="px-8 py-3 bg-red-700 hover:bg-red-800 text-white font-semibold rounded-xl shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                  Discover Our Academies
+                </button>
+              </motion.div>
             </motion.div>
           </div>
+
+          {/* Floating badge */}
+          <motion.div
+            className="absolute top-6 right-6 bg-white/90 px-6 py-3 rounded-full shadow-xl z-10"
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.9 }}
+          >
+            <span className="text-base font-semibold text-gray-900">Est. 1954</span>
+          </motion.div>
         </div>
       </div>
     </motion.section>
   );
 };
 
-export default academies;
+export default Academies;
