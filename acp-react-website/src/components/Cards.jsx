@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Card from "../reusableComponents/ReusableCard";
+import ReusableCard from "../reusableComponents/ReusableCard";
 
-const Cards = ({ title, items }) => {
+const Cards = ({ title, items, showButton = false }) => {
   return (
     <div className="bg-white sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8 mb-6 sm:mb-8 lg:mb-8">
       <div className="mx-4">
@@ -16,14 +16,16 @@ const Cards = ({ title, items }) => {
         >
           {title}
         </motion.h2>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
           {items.map((item, index) => (
-            <Card
+            <ReusableCard
               key={item.id}
               name={item.name}
               description={item.description}
               image={item.image}
               buttonText={item.buttonText}
+              showButton={showButton}
               index={index}
             />
           ))}

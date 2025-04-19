@@ -16,12 +16,12 @@ import sliderImg2 from "../assets/academies/music.png";
 
 const AcademiesPage = () => {
   const academyData = [
-    { id: 1, name: "Graphic Design", description: "See More", image: departmentImg1, buttonText: "Learn More" },
-    { id: 2, name: "Dance", description: "See More", image: departmentImg2, buttonText: "Learn More" },
-    { id: 3, name: "Fine Arts", description: "See More", image: departmentImg3, buttonText: "Learn More" },
-    { id: 4, name: "Textile Design", description: "See More", image: departmentImg1, buttonText: "Learn More" },
-    { id: 5, name: "Theatre", description: "See More", image: departmentImg2, buttonText: "Learn More" },
-    { id: 6, name: "Music", description: "See More", image: departmentImg3, buttonText: "Learn More" },
+    { id: 1, name: "Graphic Design", image: departmentImg1 },
+    { id: 2, name: "Dance", image: departmentImg2 },
+    { id: 3, name: "Fine Arts", image: departmentImg3 },
+    { id: 4, name: "Textile Design", image: departmentImg1 },
+    { id: 5, name: "Theatre", image: departmentImg2 },
+    { id: 6, name: "Music", image: departmentImg3 },
   ];
 
   const swiperImages = [
@@ -30,12 +30,12 @@ const AcademiesPage = () => {
   ];
 
   return (
-    <div className="py-6 min-h-screen bg-white text-black cursor-pointer">
+    <div className="py-6 min-h-screen bg-white text-black">
       <div className="mx-4 px-4 sm:px-6 lg:px-8">
 
         <SectionWithSwiper
-          title="XYZ Heading Here"
-          description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt architecto voluptate reprehenderit similique magnam laborum modi ratione nihil fugit quam! Vel dolor explicabo iste? Inventore voluptate ipsa adipisci expedita quaerat, aliquid dolore sapiente optio assumenda? Tenetur ducimus aliquam fugit optio consectetur pariatur sint architecto maiores blanditiis modi, nemo quis doloribus soluta voluptate nostrum rerum laudantium. Voluptatum repellendus quis tenetur aliquid veritatis sed voluptate aspernatur debitis asperiores iste. Nobis accusamus possimus aut harum, animi, saepe quae sunt dolorum, aliquam illo debitis!"
+          title="Arts Council Academies Where Artists Thrive"
+          description="Since 1954, the Arts Council of Pakistan Academies have been the perfect place to nurture your creativity. Our Performing Arts Academy & Visual Arts Academy boast of highly qualified faculty in their respective disciplines. Join us to kickstart your artistic career."
           images={swiperImages}
           slidesPerView={1}
           spaceBetween={30}
@@ -46,7 +46,7 @@ const AcademiesPage = () => {
         />
 
         {/* Departments Section */}
-        <Cards title="Departments" items={academyData} />
+        <Cards title="Departments" items={academyData} showButton={true} />
       </div>
     </div>
   );

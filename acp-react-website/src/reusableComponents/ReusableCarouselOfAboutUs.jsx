@@ -66,7 +66,7 @@ const SectionWithSlider = ({
           {title}
         </h2>
         <p
-          className={`text-black text-lg sm:text-xl md:text-2xl lg:max-w-3xl leading-relaxed ${descriptionClassName}`}
+          className={`text-black text-base sm:text-lg md:text-xl lg:max-w-3xl leading-relaxed ${descriptionClassName}`}
         >
           {description}
         </p>
@@ -85,7 +85,7 @@ const SectionWithSlider = ({
                   src={image.src}
                   alt={image.alt}
                   className={`w-full h-auto object-cover rounded-xl ${imageClassName}`}
-                  loading="lazy"
+                // loading="lazy"
                 />
               </div>
             </div>
