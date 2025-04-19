@@ -53,17 +53,17 @@ const WcfContactUs = () => {
       />
       <div className="relative z-10 flex flex-col min-h-screen">
         {/* Hero Section */}
-        <section className="py-16 md:py-24 px-4 md:px-6 text-center bg-gradient-to-b from-gray-900/50 to-transparent">
+        <section className="py-8 md:py-8 px-4 md:px-6 text-center bg-gradient-to-b from-gray-900/50 to-transparent">
           <motion.h1
-            className="text-4xl md:text-6xl font-bold text-white mb-4"
+            className="text-2xl md:text-4xl font-bold text-black mb-4"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            CONTACT US
+            Contact Us
           </motion.h1>
           <motion.p
-            className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto"
+            className="text-lg md:text-xl text-black max-w-2xl mx-auto"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -77,9 +77,9 @@ const WcfContactUs = () => {
 
           {/* Contact Details */}
           <section className="mb-10 max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-center text-gray-800">
+            {/* <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-center text-gray-800">
               Contact Information
-            </h2>
+            </h2> */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 {
@@ -133,7 +133,7 @@ const WcfContactUs = () => {
 
           {/* Contact Form */}
           <section className="mb-10 max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-center text-gray-800">
+            <h2 className="text-2xl md:text-4xl font-bold mb-6 text-center text-black">
               Send Us a Message
             </h2>
             <div className="bg-white rounded-lg shadow-lg p-6">

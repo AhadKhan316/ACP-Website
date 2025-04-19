@@ -1,8 +1,8 @@
 import React from "react";
 import ExhibitionGrid from "../wcfReusableComponents/WcfLandingPageExhibitionCard";
 
-import exhbition1 from "/src/assets/wcf-assets/Wcf-Exhibition.jpeg"
-import exhbition2 from "/src/assets/venues/Audi1/1.jpg"
+import exhbition1 from "/src/assets/wcf-assets/Wcf-Exhibition.jpeg";
+import exhbition2 from "/src/assets/venues/Audi1/1.jpg";
 
 // Exhibition Data
 const exhibitions = [
@@ -24,7 +24,7 @@ const exhibitions = [
   },
   {
     title: "Candy Forest",
-    image: exhbition2,
+    image: exhbition1,
   },
   {
     title: "Candy Forest",
@@ -38,10 +38,9 @@ function WcfExhibitions() {
       exhibitions={exhibitions}
       title="Exhibitions"
       gridCols={{ base: 1, sm: 2, lg: 3 }}
-      offsetRows={true}
       imageAspectRatio="1/1"
-      maxImageHeight="560px"
-      useHexClip={true}
+      maxImageHeight="400px"
+      useHexClip={false}
     />
   );
 }

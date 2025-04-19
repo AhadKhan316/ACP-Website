@@ -3,7 +3,7 @@ import { FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const PlfAbout = () => {
-  const [activeTab, setActiveTab] = useState("plf"); // Default tab: About PLF
+  const [activeTab, setActiveTab] = useState("plf");
 
   const tabs = [
     {
@@ -104,7 +104,7 @@ const PlfAbout = () => {
               variants={buttonVariants}
               initial="inactive"
               animate={activeTab === tab.id ? "active" : "inactive"}
-              whileHover={activeTab === tab.id ? {} : "hover"} // Only apply hover effect to inactive tabs
+              whileHover={activeTab === tab.id ? {} : "hover"}
               onClick={() => setActiveTab(tab.id)}
             >
               {tab.title}
@@ -114,7 +114,7 @@ const PlfAbout = () => {
 
         {/* Scroll Panel */}
         <motion.div
-          key={activeTab} 
+          key={activeTab}
           className="relative bg-white/90 rounded-lg shadow-xl border-t-4 border-green-800 max-w-full sm:max-w-4xl mx-auto"
           variants={panelVariants}
           initial="hidden"

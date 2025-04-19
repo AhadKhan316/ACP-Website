@@ -68,29 +68,29 @@ const WcfArtists = () => {
   const cardData = artists.map((artist) => ({
     id: artist.id,
     title: artist.name,
-    description: `Country: ${artist.country}`, // Use country as description
+    description: `Country: ${artist.country}`,
     image: artist.image,
-    link: null, // No link provided, can be added if needed
+    link: null,
   }));
 
   // State to manage the number of visible cards
-  const [visibleCards, setVisibleCards] = useState(0); // Initially 0, will be set dynamically
-  const [initialCards, setInitialCards] = useState(0); // Store the initial number of cards for "See Less"
-  const [showAll, setShowAll] = useState(false); // Track if all cards are shown
+  const [visibleCards, setVisibleCards] = useState(0);
+  const [initialCards, setInitialCards] = useState(0);
+  const [showAll, setShowAll] = useState(false);
 
   // Function to calculate the number of columns based on screen size
   const getColumns = () => {
     const width = window.innerWidth;
-    if (width >= 1024) return 4; // lg:grid-cols-4
-    if (width >= 768) return 3; // md:grid-cols-3
-    if (width >= 640) return 2; // sm:grid-cols-2
-    return 1; // grid-cols-1
+    if (width >= 1024) return 4;
+    if (width >= 768) return 3;
+    if (width >= 640) return 2;
+    return 1;
   };
 
   // Function to calculate the number of cards in 5 rows
   const calculateInitialCards = () => {
     const columns = getColumns();
-    return columns * 5; // 5 rows of cards
+    return columns * 5;
   };
 
   // Set the initial number of cards on mount and on resize
@@ -132,17 +132,17 @@ const WcfArtists = () => {
   const hasMoreCards = visibleCards < cardData.length;
 
   return (
-    <div className="bg-gray-900 text-white py-6">
+    <div className="bg-white text-black py-6">
       <CardDisplay
-        cards={displayedCards} // Pass only the visible cards
+        cards={displayedCards}
         title="Artists"
-        useCarousel={false} // Disable carousel for Artists page (use grid)
-        sectionClassName="py-8 sm:py-12 lg:py-16" // Responsive padding
-        cardClassName="max-w-sm mx-4" // Limit card width and center
-        titleClassName="text-2xl sm:text-3xl md:text-4xl" // Responsive title size
-        imageAspectRatio="4/4" // Adjusted for artist images
-        maxImageHeight="800px" // Reduced max height for better fit
-        gridGap="2rem" // Add gap between cards in grid layout
+        useCarousel={false}
+        sectionClassName="py-8 sm:py-6 lg:py-8"
+        cardClassName="max-w-sm mx-4"
+        titleClassName="text-2xl sm:text-3xl md:text-4xl"
+        imageAspectRatio="4/4"
+        maxImageHeight="800px"
+        gridGap="2rem"
       />
 
       {/* See More / See Less Buttons */}
@@ -158,7 +158,7 @@ const WcfArtists = () => {
         {showAll && (
           <button
             onClick={handleSeeLess}
-            className="px-6 py-3 bg-gray-700 text-white text-lg font-medium rounded-lg hover:bg-gray-600 transition-colors duration-300"
+            className="px-6 py-3 bg-black text-white text-lg font-medium rounded-lg hover:bg-black transition-colors duration-300"
           >
             See Less
           </button>

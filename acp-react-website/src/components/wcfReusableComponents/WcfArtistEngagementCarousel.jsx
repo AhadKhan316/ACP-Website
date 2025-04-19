@@ -1,20 +1,22 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { motion } from "framer-motion"; // Import Framer Motion for animations
+import { motion } from "framer-motion";
 
 const EngagementCarousel = ({
-  slides = [], // Array of slide data
-  title = "Section Title", // Section title
-  sectionClassName = "", // Custom class for the section
-  cardClassName = "", // Custom class for the card
-  titleClassName = "", // Custom class for the title
-  imageAspectRatio = "3/2", // Aspect ratio for images (updated for 2048x1366)
-  maxImageHeight = "400px", // Maximum height for images (adjust as needed)
+  slides = [],
+  title = "Section Title",
+  sectionClassName = "",
+  cardClassName = "",
+  titleClassName = "",
+  imageAspectRatio = "3/2",
+  maxImageHeight = "400px",
 }) => {
+  const swiperRef = useRef(null);
+
   // Animation variants for Framer Motion
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -28,19 +30,45 @@ const EngagementCarousel = ({
   };
 
   return (
-    <section className={`py-8 md:py-12 ${sectionClassName}`}>
+    <section className={`py-8 md:py-12 relative ${sectionClassName}`}>
       <h2
-        className={`text-xl md:text-2xl font-semibold mb-8 text-center text-gray-800 ${titleClassName}`}
+        className={`text-xl md:text-2xl font-bold text-center text-gray-800 ${titleClassName}`}
       >
         {title}
       </h2>
+
+      {/* Custom Navigation Buttons */}
+      <div className="absolute top-1/2 left-0 right-0 z-10 flex justify-between w-full max-w-6xl mx-auto px-4">
+        <button
+          onClick={() => swiperRef.current?.slidePrev()}
+          className="hidden md:flex items-center justify-center w-12 h-12 bg-black rounded-full shadow-lg transition-colors duration-300 transform -translate-y-1"
+          aria-label="Previous slide"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button
+          onClick={() => swiperRef.current?.slideNext()}
+          className="hidden md:flex items-center justify-center w-12 h-12 bg-black rounded-full shadow-lgtransition-colors duration-300 transform -translate-y-1"
+          aria-label="Next slide"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+
       <Swiper
         modules={[Autoplay, Navigation, Pagination]}
         spaceBetween={20}
         slidesPerView={1}
         centeredSlides={true}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
-        navigation
+        navigation={{
+          prevEl: '.custom-prev-button',
+          nextEl: '.custom-next-button',
+        }}
         pagination={{ clickable: true }}
         loop={true}
         breakpoints={{
@@ -48,6 +76,9 @@ const EngagementCarousel = ({
           1024: { slidesPerView: 3 },
         }}
         className="w-full max-w-6xl mx-auto"
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+        }}
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
