@@ -7,6 +7,8 @@ import presidentImg from "../assets/governing-body-new/ahmed-shah.png";
 import img1 from "../assets/governing-body-new/munawar-saeed.png";
 import img2 from "../assets/governing-body-new/ejaz-farooqi.png";
 import img3 from "../assets/governing-body-new/noorul-huda-shah.png";
+
+// Governing Body
 import img5 from "../assets/governing-body-new/huma-mir.png";
 import img6 from "../assets/governing-body-new/s-m-qaiser-sajjad.png";
 import img7 from "../assets/governing-body-new/syed-asjad-hussain-bukhari.png";
@@ -19,8 +21,13 @@ import img13 from "../assets/governing-body-new/muhammad-ayoub-shaikh.png";
 import img14 from "../assets/governing-body-new/Abdullah-Sultan.webp";
 import img15 from "../assets/governing-body-new/amjad-hussain-shah.png";
 import img16 from "../assets/governing-body-new/syed-sajid-hassan.png";
-import img17 from "../assets/governing-body-new/muhammad-iqbal-lateef.png";
-import img18 from "../assets/governing-body-new/amjad-siraj-memon.png";
+
+// Co-Opted Members
+import img17 from "../assets/governing-body-new/co-opted-member1.png";
+import img18 from "../assets/governing-body-new/co-opted-member2.png";
+import img19 from "../assets/governing-body-new/co-opted-member3.png";
+import img20 from "../assets/governing-body-new/co-opted-member4.png";
+import img21 from "../assets/governing-body-new/co-opted-member5.png";
 
 const GoverningBody = () => {
   const [activeTab, setActiveTab] = useState("Office Bearers");
@@ -50,8 +57,11 @@ const GoverningBody = () => {
       { id: 12, name: "Syed Sajid Hassan", description: "Member", image: img16, buttonText: "Learn More" },
     ],
     "Co-opted Members": [
-      { id: 1, name: "Muhammad Iqbal Lateef", description: "Member", image: img17, buttonText: "Learn More" },
-      { id: 2, name: "Amjad Siraj Memon", description: "Member", image: img18, buttonText: "Learn More" },
+      { id: 1, name: "Mr. Waseem Badami", description: "Co-Opted Member", image: img17, buttonText: "Learn More" },
+      { id: 2, name: "Dr. Jaffer Ahmed", description: "Co-Opted Member", image: img18, buttonText: "Learn More" },
+      { id: 3, name: "Mr. Ghous Akbar", description: "Co-Opted Member", image: img19, buttonText: "Learn More" },
+      { id: 4, name: "Miss Chand Gul Shah", description: "Co-Opted Member", image: img21, buttonText: "Learn More" },
+      { id: 5, name: "Miss Aliya Iqbal Naqvi", description: "Co-Opted Member", image: img20, buttonText: "Learn More" },
     ],
   };
 
@@ -89,7 +99,7 @@ const GoverningBody = () => {
                   </span>
                 </div>
 
-                <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
+                <h2 className="text-xl md:text-4xl font-bold text-gray-900 mb-4">
                   Mohammad Ahmed Shah
                 </h2>
 

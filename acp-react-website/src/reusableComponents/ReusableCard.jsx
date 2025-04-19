@@ -43,12 +43,12 @@ const Card = ({ name, description, image, buttonText = "Learn More" }) => {
           viewport={{ once: true }}
         >
           <h3 className="text-2xl font-bold mb-1 drop-shadow-md">{name}</h3>
-          <p className="text-gray-200 mb-4 text-sm sm:text-base drop-shadow-md">{description}</p>
-          <motion.button
+          <p className="w-70 px-5 py-2.5 bg-red-600 hover:bg-red-700 font-medium rounded-lg shadow-sm transition-colors duration-300 flex items-center text-white mb-4 text-sm sm:text-base drop-shadow-md">{description}</p>
+          {/* <motion.button
             className="self-stat px-5 py-2.5 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg shadow-sm transition-colors duration-300 flex items-center"
             whileHover={{
               scale: 1.05,
-              // backgroundColor: "#2563eb" 
+              backgroundColor: "#2563eb" 
             }}
             whileTap={{ scale: 0.98 }}
             transition={{ type: "spring", stiffness: 400 }}
@@ -62,7 +62,7 @@ const Card = ({ name, description, image, buttonText = "Learn More" }) => {
             >
               <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
             </svg>
-          </motion.button>
+          </motion.button> */}
         </motion.div>
       </div>
     </motion.div>

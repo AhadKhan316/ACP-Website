@@ -167,9 +167,16 @@ const Navbar = () => {
                     </div>
                     <ul className="flex flex-col p-4 space-y-2 text-white">
                         <li><NavLink to="/">Home</NavLink></li>
-                        <li><NavLink to="/about">About Us</NavLink></li>
-                        <li><NavLink to="/GoverningBody">Governing Body</NavLink></li>
-                        <li><NavLink to="/TeamMembers">Team</NavLink></li>
+                        <li className="relative">
+                            <DropdownButton onClick={(e) => toggleSubMenu("about", e)} isOpen={isSubMenuOpen["about"]}>About</DropdownButton>
+                            {isSubMenuOpen["about"] && (
+                                <div className="relative top-full left-0 mt-2 w-64 bg-black rounded-md z-40">
+                                    <NavLink to="/about">About Us</NavLink>
+                                    <NavLink to="/GoverningBody">Governing Body</NavLink>
+                                    <NavLink to="/TeamMembers">Team</NavLink>
+                                </div>
+                            )}
+                        </li>
 
                         <li className="relative">
                             <DropdownButton onClick={(e) => toggleSubMenu("production", e)} isOpen={isSubMenuOpen["production"]}>
@@ -197,9 +204,16 @@ const Navbar = () => {
                         <li><NavLink to="/AcademiesPage">Academies</NavLink></li>
                         <li><NavLink to="/VenuesPage">Venues</NavLink></li>
                         <li><NavLink to="/events">Events</NavLink></li>
-                        <li><NavLink to="/membersVerification">Membership Verification</NavLink></li>
-                        <li><NavLink to="/career">Career</NavLink></li>
-                        <li><NavLink to="/tenders">Tenders</NavLink></li>
+                        <li className="relative group">
+                            <DropdownButton onClick={(e) => toggleSubMenu("resources", e)} isOpen={isSubMenuOpen["resources"]}>Resources</DropdownButton>
+                            {isSubMenuOpen["resources"] && (
+                                <div className="relative top-full left-0 mt-2 w-54 bg-black rounded-md shadow-lg z-40">
+                                    <NavLink to="/membersVerification">Membership Verification</NavLink>
+                                    <NavLink to="/career">Career</NavLink>
+                                    <NavLink to="/tenders">Tenders</NavLink>
+                                </div>
+                            )}
+                        </li>
                         <li><NavLink to="/ContactUs">Contact Us</NavLink></li>
                     </ul>
                 </div>

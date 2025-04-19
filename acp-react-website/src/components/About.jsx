@@ -156,7 +156,7 @@ const About = () => {
             {tabs.map((tab) => (
               <motion.button
                 key={tab.id}
-                className={`relative px-4 text-2xl sm:text-3xl lg:text-4xl font-bold text-black ${activeTab === tab.id ? "text-black" : "text-black"
+                className={`relative px-4 text-xl sm:text-2xl lg:text-3xl font-bold text-black ${activeTab === tab.id ? "text-black" : "text-black"
                   }`}
                 variants={buttonVariants}
                 initial="inactive"

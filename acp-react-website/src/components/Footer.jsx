@@ -136,7 +136,7 @@ const Footer = () => {
 
           {/* Column 2: Contact Info */}
           <motion.div
-            className="flex flex-col items-center sm:items-start text-center sm:text-left mt-20"
+            className="flex flex-col mt-20"
             custom={1}
             variants={childVariants}
           >

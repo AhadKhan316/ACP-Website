@@ -95,7 +95,7 @@ const TeamMembers = () => {
               </div>
 
               {/* Content Section */}
-              <div className="p-8 lg:p-12 lg:w-3/5">
+              <div className="p-8 lg:p-6 lg:w-3/5">
                 <div className="mb-6">
                   <span className="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
                     Executive Director
@@ -103,7 +103,7 @@ const TeamMembers = () => {
                 </div>
 
                 <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
-                  Muhammad Daniyal Umer
+                  M. Daniyal Umer
                 </h2>
 
                 <div className="prose prose-lg text-gray-600 mb-8">

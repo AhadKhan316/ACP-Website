@@ -30,7 +30,7 @@ const AcademiesPage = () => {
   ];
 
   return (
-    <div className="py-6 min-h-screen bg-white text-black">
+    <div className="py-6 min-h-screen bg-white text-black cursor-pointer">
       <div className="mx-4 px-4 sm:px-6 lg:px-8">
 
         <SectionWithSwiper

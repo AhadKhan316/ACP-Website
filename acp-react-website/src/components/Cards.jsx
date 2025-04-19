@@ -4,10 +4,10 @@ import Card from "../reusableComponents/ReusableCard";
 
 const Cards = ({ title, items }) => {
   return (
-    <div className="bg-white py-8 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8 mb-6 sm:mb-8 lg:mb-8">
+    <div className="bg-white sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8 mb-6 sm:mb-8 lg:mb-8">
       <div className="mx-4">
         <motion.h2
-          className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-center text-gray-900 mb-8 sm:mb-6 lg:mb-6 tracking-tight"
+          className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-8 sm:mb-6 lg:mb-6 tracking-tight"
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}

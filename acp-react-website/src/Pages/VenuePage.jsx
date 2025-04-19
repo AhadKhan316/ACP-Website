@@ -10,7 +10,7 @@ import "swiper/css/autoplay";
 // Lazy-load the Cards component
 const Cards = lazy(() => import("../components/Cards"));
 
-// Import images for the slider (use smaller thumbnails if possible)
+// Import images for the slider
 import venueImg1 from "../assets/venues/audi1.png";
 import venueImg2 from "../assets/venues/audi2.png";
 import venueImg3 from "../assets/venues/studio1.png";
@@ -148,7 +148,7 @@ const VenuesPage = () => {
         {/* Slider Section using SectionWithSwiper */}
         <SectionWithSwiper
           title="XYZ Venues"
-          description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium nam, ducimus illo laudantium consequatur eveniet deserunt minus facilis amet ea est itaque eligendi maxime doloribus ullam nihil error iure officia commodi unde."
+          // description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium nam, ducimus illo laudantium consequatur eveniet deserunt minus facilis amet ea est itaque eligendi maxime doloribus ullam nihil error iure officia commodi unde."
           images={swiperImages}
           slidesPerView={1}
           spaceBetween={30}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import SectionWithSwiper from "../reusableComponents/ReusableCarouselOfAboutUs";
+import SectionWithSlider from "../reusableComponents/ReusableCarouselOfAboutUs"; // Updated import
 
 const AboutUs = () => {
   const [activeSection, setActiveSection] = useState("history");
@@ -21,7 +21,7 @@ const AboutUs = () => {
             transition={{ duration: 0.6 }}
             className="my-12"
           >
-            <SectionWithSwiper
+            <SectionWithSlider
               title="Our History"
               description="Founded in 1980, the Arts Council of Pakistan has been a beacon for cultural preservation, talent development, and a place of collaboration for artists from all corners of Pakistan. We take pride in fostering artistic growth and supporting a creative ecosystem that spans from traditional to contemporary forms."
               images={[
@@ -88,7 +88,7 @@ const AboutUs = () => {
 
   return (
     <section className="bg-white text-black py-6 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="mx-4">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -133,7 +133,7 @@ const AboutUs = () => {
           </p>
           <div className="text-center">
             <motion.a
-              href="#cta"
+              href="https://www.youtube.com/c/ArtsCouncilofPakistanKarachi"
               className="inline-block bg-red-700 text-white font-semibold px-8 py-4 rounded-xl shadow-md hover:bg-black/80 to-black/90 hover:shadow-lg transition duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
