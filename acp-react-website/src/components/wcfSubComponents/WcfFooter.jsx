@@ -25,9 +25,9 @@ function Footer() {
         <div className="text-center md:text-left">
           <h4 className="font-bold text-lg mb-6">Get in Touch</h4>
           <p className="text-gray-400">
-            Arts Council of Pakistan, Karachi<br />
-            M.R. Kiyani Road, Karachi, Pakistan<br />
-            +92-300-0802391<br />
+            Arts Council of Pakistan, Karachi<br /><br />
+            M.R. Kiyani Road, Karachi, Pakistan<br /><br />
+            +92-300-0802391<br /><br />
             info@acpkhi.com
           </p>
         </div>
@@ -41,7 +41,7 @@ function Footer() {
               placeholder="Your Email"
               className="w-full sm:w-2/3 py-3 px-4 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-red-500"
             />
-            <button className="w-full sm:w-auto bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded transition duration-300">
+            <button className="w-full sm:w-auto bg-red-700 hover:bg-red-600 text-white font-bold py-3 px-6 rounded transition duration-300">
               SUBSCRIBE
             </button>
           </div>

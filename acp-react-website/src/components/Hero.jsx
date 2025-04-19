@@ -91,7 +91,7 @@ const Hero = () => {
         variants={contentVariants}
       >
         <motion.h1
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight drop-shadow-lg"
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4 tracking-tight drop-shadow-lg"
           variants={titleVariants}
         >
           Hub of Art & Culture

@@ -52,14 +52,14 @@ function WcfPerformances() {
       cards={cards}
       title="Performing Nations"
       slidesPerView={1}
-      spaceBetween={20}
+      spaceBetween={50}
       autoplayDelay={3000}
       breakpoints={{
         640: { slidesPerView: 2 },
         1024: { slidesPerView: 3 },
       }}
-      imageAspectRatio="1/1" // For square images (1500x1500)
-      maxImageHeight="600px" // Cap the height to avoid overly large images
+      imageAspectRatio="1/1"
+      maxImageHeight="600px"
     />
   );
 }

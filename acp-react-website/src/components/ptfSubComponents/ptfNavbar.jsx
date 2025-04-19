@@ -59,7 +59,7 @@ const PtfNavbar = () => {
                 <img
                   src={PtfLogo}
                   alt="PTF Logo"
-                  className="h-30 w-35 mr-2 transform hover:scale-110 transition duration-300"
+                  className="h-30 w-52 mr-2 transform hover:scale-110 transition duration-300"
                 />
               </Link>
             </div>

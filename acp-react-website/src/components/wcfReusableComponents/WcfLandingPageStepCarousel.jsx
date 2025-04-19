@@ -8,22 +8,22 @@ import "swiper/css/pagination";
 
 // Reusable StepCarousel Component
 const StepCarousel = ({
-  steps = [], // Array of step data
-  title = "Default Title", // Section title
-  slidesPerView = 1, // Default slides per view
-  spaceBetween = 20, // Space between slides
-  autoplayDelay = 3000, // Autoplay delay in milliseconds
+  steps = [],
+  title = "Default Title",
+  slidesPerView = 1,
+  spaceBetween = 20,
+  autoplayDelay = 3000,
   breakpoints = {
-    640: { slidesPerView: 2 },
-    1024: { slidesPerView: 3 },
-  }, // Responsive breakpoints
-  pagination = false, // Enable/disable pagination
-  sectionClassName = "", // Custom class for the section
-  stepClassName = "", // Custom class for each step
-  titleClassName = "", // Custom class for the title
-  stepIndicatorClassName = "", // Custom class for the step indicator
-  imageAspectRatio = "1/1", // Default aspect ratio for images (e.g., "4/3", "16/9", "1/1")
-  maxImageHeight = "400px", // Maximum height for images
+    640: { slidesPerView: 3 },
+    1024: { slidesPerView: 4 },
+  },
+  pagination = false,
+  sectionClassName = "",
+  stepClassName = "",
+  titleClassName = "",
+  stepIndicatorClassName = "",
+  imageAspectRatio = "1/1",
+  maxImageHeight = "600px",
 }) => {
   // Animation variants for the steps
   const stepVariants = {
@@ -43,11 +43,11 @@ const StepCarousel = ({
 
   return (
     <section
-      className={`py-12 sm:px-6 lg:px-8 bg-gray-900 overflow-hidden ${sectionClassName}`}
+      className={`py-22 sm:px-6 lg:px-8 bg-white overflow-hidden ${sectionClassName}`}
     >
       {/* Section Header */}
       <motion.h2
-        className={`text-3xl md:text-4xl font-bold text-white text-center mb-12 ${titleClassName}`}
+        className={`text-2xl md:text-4xl font-bold text-black text-center mb-12 ${titleClassName}`}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -58,7 +58,7 @@ const StepCarousel = ({
 
       {/* Swiper Carousel Container */}
       <motion.div
-        className="mx-4"
+        className="mx-2"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -85,8 +85,8 @@ const StepCarousel = ({
                 <div
                   className="w-full max-w-md rounded-2xl overflow-hidden mb-6 shadow-md"
                   style={{
-                    aspectRatio: imageAspectRatio, // Maintain aspect ratio
-                    maxHeight: maxImageHeight, // Cap the maximum height
+                    aspectRatio: imageAspectRatio,
+                    maxHeight: maxImageHeight,
                   }}
                 >
                   <img
@@ -107,8 +107,8 @@ const StepCarousel = ({
                 </div>
 
                 {/* Step Title and Description */}
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{step.title}</h3>
-                <p className="text-white text-lg max-w-xs">{step.description}</p>
+                <h3 className="text-xl font-bold text-black mb-2">{step.title}</h3>
+                <p className="text-black text-lg max-w-xs">{step.description}</p>
               </motion.div>
             </SwiperSlide>
           ))}

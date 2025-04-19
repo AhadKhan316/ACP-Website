@@ -1,167 +1,165 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { ArrowRight } from 'lucide-react';
 
-// Animation variants for text and buttons
-const fadeInUpVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-};
+// Import your WCF hero images
+import WcfHero1 from "/src/assets/wcf-assets/wcf-hero1.png";
+import WcfHero2 from "/src/assets/wcf-assets/wcf-hero2.jpg";
+import WcfHero3 from "/src/assets/wcf-assets/wcf-hero3.jpg";
 
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
+const WcfHero = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides = [
+    WcfHero1,
+    WcfHero2,
+    WcfHero3
+  ];
+
+  // Auto-slider logic
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [slides.length]);
+
+  // Framer Motion Variants
+  const contentVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1, ease: "easeOut" },
     },
-  },
-};
+  };
 
-const glowVariants = {
-  hidden: { textShadow: "0 0 0 rgba(255, 255, 255, 0)" },
-  visible: {
-    textShadow: [
-      "0 0 10px rgba(255, 255, 255, 0.5)",
-      "0 0 20px rgba(255, 255, 255, 0.8)",
-      "0 0 10px rgba(255, 255, 255, 0.5)",
-    ],
-    transition: { duration: 2, repeat: Infinity, ease: "easeInOut" },
-  },
-};
+  const titleVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, delay: 0.2, ease: "easeOut" },
+    },
+  };
 
-const floatVariants = {
-  hover: {
-    y: [0, -10, 0],
-    transition: { duration: 1.5, repeat: Infinity, ease: "easeInOut" },
-  },
-};
+  const subtitleVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 0.9,
+      y: 0,
+      transition: { duration: 0.8, delay: 0.4, ease: "easeOut" },
+    },
+  };
 
-function WcfHero() {
+  const buttonVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.6, delay: 0.6, ease: "easeOut" },
+    },
+    hover: {
+      scale: 1.05,
+      transition: { duration: 0.3 },
+    },
+  };
+
   return (
-    <section
-      className="relative min-h-screen flex items-center justify-center bg-cover bg-center overflow-hidden"
-      style={{ backgroundImage: `url('https://acpkhi.com/imgs/ACP%20Drone%202023.webp')` }}
-    >
-      {/* Gradient overlay to enhance contrast */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40"></div>
+    <section className="relative w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[95vh] text-white flex items-center justify-center overflow-hidden">
+      {/* Background Slider */}
+      <div className="absolute inset-0 w-full h-full">
+        {slides.map((slide, index) => (
+          <img
+            key={index}
+            src={slide}
+            alt={`WCF Hero Slide ${index + 1}`}
+            className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out ${index === currentSlide ? "opacity-100" : "opacity-0"
+              }`}
+          />
+        ))}
+      </div>
 
-      {/* Dynamic SVG Background Animation */}
-      <svg
-        className="absolute inset-0 w-full h-full opacity-20"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="xMidYMid slice"
+      {/* Linear Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70 pointer-events-none z-10"></div>
+
+      {/* Main Content */}
+      <motion.div
+        className="relative z-20 text-center px-4 sm:px-6 lg:px-8 py-4 sm:py-6 max-w-4xl mx-auto"
+        initial="hidden"
+        animate="visible"
+        variants={contentVariants}
       >
-        <defs>
-          <filter id="displacementFilter">
-            <feTurbulence
-              type="fractalNoise"
-              baseFrequency="0.01"
-              numOctaves="3"
-              result="noise"
-            />
-            <feDisplacementMap
-              in="SourceGraphic"
-              in2="noise"
-              scale="50"
-              xChannelSelector="R"
-              yChannelSelector="G"
-            />
-          </filter>
-        </defs>
-        <g filter="url(#displacementFilter)">
-          <circle
-            cx="10%"
-            cy="20%"
-            r="100"
-            fill="rgba(255, 255, 255, 0.1)"
-            className="animate-pulse"
-          />
-          <circle
-            cx="80%"
-            cy="30%"
-            r="150"
-            fill="rgba(255, 255, 255, 0.1)"
-            className="animate-pulse"
-          />
-          <circle
-            cx="50%"
-            cy="70%"
-            r="120"
-            fill="rgba(255, 255, 255, 0.1)"
-            className="animate-pulse"
-          />
-        </g>
-      </svg>
-
-      {/* Content Container */}
-      <div className="relative z-10 mx-4 px-4 sm:px-6 lg:px-8 text-center">
-        {/* Content with Framer Motion animations */}
-        <motion.div
-          className="space-y-6 lg:space-y-8"
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
+        <motion.h1
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-2 tracking-tight drop-shadow-lg"
+          variants={titleVariants}
         >
-          <motion.h1
-            className="text-4xl md:text-5xl lg:text-7xl font-bold text-white uppercase"
-            variants={fadeInUpVariants}
-            whileHover={glowVariants}
-          >
-            WHERE CULTURE <span className="text-red-600 underline">COMES ALIVE!</span>
-          </motion.h1>
+          WHERE CULTURE <span className="text-red-600">COMES ALIVE</span>
+        </motion.h1>
 
-          <motion.p
-            className="text-lg md:text-xl lg:text-2xl text-white/90"
-            variants={fadeInUpVariants}
-          >
-            35+ Countries - 250+ Artists - 100+ Performances
-            <br />
-            <span className="font-semibold">THEATRE - MUSIC - DANCE - FINEARTS</span>
-          </motion.p>
+        <motion.p
+          className="text-base sm:text-lg md:text-xl lg:text-2xl mb-2 opacity-90 drop-shadow"
+          variants={subtitleVariants}
+        >
+          35+ Countries - 250+ Artists - 100+ Performances
+        </motion.p>
 
-          <motion.p
-            className="text-xl md:text-2xl lg:text-3xl text-white/90"
-            variants={fadeInUpVariants}
-          >
-            26 SEP TO 02<sup>nd</sup> NOV AT ARTS COUNCIL KARACHI
-          </motion.p>
+        <motion.p
+          className="text-base sm:text-lg md:text-xl lg:text-2xl mb-2 opacity-90 drop-shadow font-semibold"
+          variants={subtitleVariants}
+        >
+          THEATRE - MUSIC - DANCE - FINEARTS
+        </motion.p>
 
-          <motion.div
-            className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6"
-            variants={fadeInUpVariants}
-          >
-            <motion.button
-              href="#"
-              className="bg-gradient-to-r from-red-700 to-red-600 hover:from-red-600 hover:to-red-600 text-white font-semibold py-3 px-8 rounded-2xl transition-all duration-300 shadow-lg"
-              whileHover="hover"
-              variants={floatVariants}
-            >
-              FOR REGISTRATION
-            </motion.button>
-          </motion.div>
-        </motion.div>
+        <motion.p
+          className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-6 opacity-90 drop-shadow"
+          variants={subtitleVariants}
+        >
+          26 SEP TO 02<sup>nd</sup> NOV AT ARTS COUNCIL KARACHI
+        </motion.p>
+
+        <motion.button
+          className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 border border-transparent text-sm sm:text-base font-medium rounded-md text-white bg-[#B90602] hover:bg-red-600 transition duration-150 ease-in-out"
+          variants={buttonVariants}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          aria-label="Register Now"
+        >
+          FOR REGISTRATION
+          <ArrowRight className="ml-2 -mr-1 h-4 sm:h-5 w-4 sm:w-5" aria-hidden="true" />
+        </motion.button>
+      </motion.div>
+
+      {/* Slide Indicators */}
+      <div className="absolute bottom-12 sm:bottom-16 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
+        {slides.map((_, index) => (
+          <span
+            key={index}
+            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${index === currentSlide ? "bg-white" : "bg-red-700"
+              }`}
+          />
+        ))}
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-8 w-8 text-white"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
+      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-30">
+        <div className="animate-bounce">
+          <svg
+            className="w-6 h-6 text-white"
+            fill="none"
             strokeLinecap="round"
             strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 14l-7 7m0 0l-7-7m7 7V3"
-          />
-        </svg>
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </div>
       </div>
     </section>
   );
-}
+};
 
 export default WcfHero;

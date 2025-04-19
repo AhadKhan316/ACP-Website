@@ -1,8 +1,9 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
+import "swiper/css/navigation";
 
 // Reusable CardDisplay Component
 const CardCarousel = ({
@@ -23,6 +24,7 @@ const CardCarousel = ({
   maxImageHeight = "500px",
   gridGap = "1.5rem",
 }) => {
+
   // Card rendering logic (shared between carousel and grid)
   const renderCard = (card) => (
     <div
@@ -66,36 +68,45 @@ const CardCarousel = ({
 
   return (
     <section
-      className={`py-12 sm:px-6 lg:px-8 bg-gray-900 overflow-hidden ${sectionClassName}`}
+      className={`sm:px-6 lg:px-8 bg-white overflow-hidden ${sectionClassName}`}
     >
-      <div className="mx-4">
+      <div className="mx-4 relative">
         {/* Section Header */}
         <h2
-          className={`text-3xl md:text-4xl font-bold text-white mb-12 text-center tracking-tight ${titleClassName}`}
+          className={`text-2xl md:text-4xl font-bold text-black mb-12 text-center tracking-tight ${titleClassName}`}
         >
           {title}
         </h2>
 
         {/* Render Carousel or Grid based on useCarousel prop */}
         {useCarousel ? (
-          <Swiper
-            modules={[Autoplay]}
-            spaceBetween={spaceBetween}
-            slidesPerView={slidesPerView}
-            centeredSlides={true}
-            autoplay={{ delay: autoplayDelay, disableOnInteraction: false }}
-            loop={true}
-            breakpoints={breakpoints}
-            className="w-full"
-          >
-            {cards.map((card) => (
-              <SwiperSlide key={card.id}>{renderCard(card)}</SwiperSlide>
-            ))}
-          </Swiper>
+          <div className="relative">
+            <Swiper
+              modules={[Autoplay, Navigation]}
+              spaceBetween={spaceBetween}
+              slidesPerView={slidesPerView}
+              centeredSlides={true}
+              autoplay={{ delay: autoplayDelay, disableOnInteraction: false }}
+              loop={true}
+              breakpoints={breakpoints}
+              navigation={{
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+              }}
+              className="w-full"
+            >
+              {cards.map((card) => (
+                <SwiperSlide key={card.id}>{renderCard(card)}</SwiperSlide>
+              ))}
+            </Swiper>
+
+            {/* Custom Navigation Buttons */}
+
+          </div>
         ) : (
           <div
             className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
-            style={{ gap: gridGap }} // Apply custom gap to grid
+            style={{ gap: gridGap }}
           >
             {cards.map((card) => renderCard(card))}
           </div>

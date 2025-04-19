@@ -39,9 +39,9 @@ function WcfExhibitions() {
       title="Exhibitions"
       gridCols={{ base: 1, sm: 2, lg: 3 }}
       offsetRows={true}
-      imageAspectRatio="1/1" // For square images (1600x1600)
-      maxImageHeight="560px" // Cap the height to avoid overly large images
-      useHexClip={true} // Enable hexagonal clip path (optional)
+      imageAspectRatio="1/1"
+      maxImageHeight="560px"
+      useHexClip={true}
     />
   );
 }
