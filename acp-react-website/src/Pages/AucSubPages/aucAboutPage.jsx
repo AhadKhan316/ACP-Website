@@ -8,7 +8,7 @@ const visionImage = "https://placehold.co/600x400";
 
 const AboutAuc = () => {
   return (
-    <div className="bg-gray-50 min-h-screen text-gray-900">
+    <div className="bg-white min-h-screen text-gray-900">
       {/* Hero Section with Video */}
       <section className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-br from-red-50 to-white">
         <div className="absolute inset-0 pointer-events-none">
@@ -24,7 +24,7 @@ const AboutAuc = () => {
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-4xl sm:text-5xl md:text-6xl font-bold text-center text-red-800 tracking-tight mb-6"
+            className="text-2xl sm:text-4xl md:text-4xl font-bold text-center text-red-800 tracking-tight mb-6"
           >
             About Us
           </motion.h1>
@@ -32,7 +32,7 @@ const AboutAuc = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="text-lg sm:text-xl md:text-2xl text-center text-gray-700 max-w-3xl mx-auto"
+            className="text-lg sm:text-xl md:text-2xl text-center text-black max-w-3xl mx-auto"
           >
             The All Urdu Conference (AUC) is a vibrant platform dedicated to celebrating and preserving the essence of Urdu language and culture.
           </motion.p>
@@ -67,7 +67,7 @@ const AboutAuc = () => {
       </section>
 
       {/* Our Mission Section with Angled Card */}
-      <section className="py-16 bg-white relative">
+      <section className="py-8 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -91,11 +91,11 @@ const AboutAuc = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="order-1 lg:order-2 flex flex-col justify-center"
             >
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-red-800 mb-6 relative">
+              <h2 className="text-2xl sm:text-4xl md:text-4xl font-bold text-red-800 mb-6 relative">
                 Our Mission
                 <span className="absolute -bottom-2 left-0 w-16 h-1 bg-red-600 rounded-full" />
               </h2>
-              <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+              <p className="text-base sm:text-lg text-black leading-relaxed">
                 To nurture and promote Urdu heritage by creating a dynamic community of artists, scholars, and enthusiasts through innovative events, educational programs, and cultural exchanges that resonate globally.
               </p>
               <motion.button
@@ -111,7 +111,7 @@ const AboutAuc = () => {
       </section>
 
       {/* Our Vision Section with Floating Card */}
-      <section className="py-16 bg-gradient-to-r from-red-50 to-white relative overflow-hidden">
+      <section className="py-8 bg-gradient-to-r from-red-50 to-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-red-200 rounded-full opacity-20 blur-3xl pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -122,11 +122,11 @@ const AboutAuc = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="flex flex-col justify-center"
             >
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-red-800 mb-6 relative">
+              <h2 className="text-2xl sm:text-4xl md:text-4xl font-bold text-red-800 mb-6 relative">
                 Our Vision
                 <span className="absolute -bottom-2 left-0 w-16 h-1 bg-red-600 rounded-full" />
               </h2>
-              <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+              <p className="text-base sm:text-lg text-black leading-relaxed">
                 To become a worldwide symbol of Urdu excellence, inspiring creativity, fostering unity, and connecting cultures across generations through the timeless beauty of the Urdu language.
               </p>
               <motion.button
@@ -156,14 +156,14 @@ const AboutAuc = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-white">
+      <section className="py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2
             initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-red-800 mb-12"
+            className="text-2xl sm:text-4xl md:text-4xl font-bold text-center text-red-800 mb-12"
           >
             Our Impact
           </motion.h2>
@@ -183,7 +183,7 @@ const AboutAuc = () => {
                 className="text-center p-6 bg-red-50 rounded-xl shadow-md"
               >
                 <h3 className="text-3xl sm:text-4xl font-bold text-red-700">{stat.value}</h3>
-                <p className="text-sm sm:text-base text-gray-600 mt-2">{stat.label}</p>
+                <p className="text-sm sm:text-base text-black mt-2">{stat.label}</p>
               </motion.div>
             ))}
           </div>

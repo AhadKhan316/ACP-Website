@@ -70,10 +70,10 @@ const AboutSection = () => {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12 md:mb-16 text-red-800 tracking-tight">
+        <h2 className="text-2xl sm:text-4xl md:text-4xl lg:text-4xl font-bold text-center mb-6 md:mb-8 text-red-800 tracking-tight">
           Our Legacy Unfolded
         </h2>
-        <p className="mt-2 text-base sm:text-2xl text-gray-600 max-w-2xl mx-auto">
+        <p className="mt-2 text-base sm:text-xl text-black max-w-3xl mx-auto">
           Explore the essence of AUC and ACP through a modern lens on tradition.
         </p>
       </motion.div>

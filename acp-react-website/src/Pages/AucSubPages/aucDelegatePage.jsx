@@ -70,9 +70,9 @@ const delegates = [
 
 const AucDelegates = () => {
   return (
-    <div className="bg-gradient-to-br from-gray-50 via-red-50 to-white min-h-screen text-gray-900 pb-16">
+    <div className="bg-gradient-to-br from-gray-50 via-red-50 to-white min-h-screen text-gray-900 ">
       {/* Hero Section with Diagonal Overlay */}
-      <section className="relative overflow-hidden py-16 md:py-24">
+      <section className="relative overflow-hidden py-8 md:py-24">
         <div className="absolute inset-0 opacity-5 pointer-events-none">
           <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
             <polygon points="0,0 100,0 70,100 0,100" fill="url(#diagonal)" />
@@ -89,7 +89,7 @@ const AucDelegates = () => {
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-4xl sm:text-5xl md:text-6xl font-bold text-red-800 tracking-tight mb-6"
+            className="text-2xl sm:text-4xl md:text-4xl font-bold text-red-800 tracking-tight mb-6"
           >
             Our Esteemed Delegates
           </motion.h1>
@@ -97,7 +97,7 @@ const AucDelegates = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto"
+            className="text-lg sm:text-xl text-black max-w-3xl mx-auto"
           >
             Discover the luminaries driving the legacy of Urdu culture forward.
           </motion.p>
@@ -105,7 +105,7 @@ const AucDelegates = () => {
       </section>
 
       {/* Delegates Grid */}
-      <section className="py-16">
+      <section className="py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0 }}
@@ -168,14 +168,14 @@ const AucDelegates = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-gradient-to-t from-red-100 to-white text-center">
+      <section className="py-8 bg-gradient-to-t from-red-100 to-white text-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2
             initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-3xl sm:text-4xl font-bold text-red-800 mb-6"
+            className="text-2xl sm:text-4xl font-bold text-red-800 mb-6"
           >
             Be Part of AUC
           </motion.h2>
@@ -184,7 +184,7 @@ const AucDelegates = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto"
+            className="text-lg text-black mb-8 max-w-2xl mx-auto"
           >
             Engage with our delegates and celebrate the richness of Urdu heritage.
           </motion.p>

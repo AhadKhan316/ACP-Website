@@ -111,7 +111,7 @@ const AucDelegateCard = ({ delegates, title = "Delegates" }) => {
   const fallbackImage = "https://placehold.co/150x150";
 
   return (
-    <section className="py-16 px-4 sm:px-6 md:px-8 text-gray-900 relative overflow-hidden">
+    <section className="py-8 px-4 sm:px-6 md:px-8 text-black relative overflow-hidden">
       {/* Decorative Background Element */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -131,7 +131,7 @@ const AucDelegateCard = ({ delegates, title = "Delegates" }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12 md:mb-16 text-red-800 tracking-tight"
+          className="text-2xl sm:text-4xl md:text-4xl lg:text-4xl font-bold text-center mb-12 md:mb-16 text-red-800 tracking-tight"
         >
           {title}
         </motion.h2>
@@ -146,17 +146,16 @@ const AucDelegateCard = ({ delegates, title = "Delegates" }) => {
             {delegates.map((delegate, index) => (
               <div key={index} className="px-3 sm:px-4">
                 <motion.div
-
                   whileHover={{
-                    scale: 1.05,
+                    scale: 0.9,
                     boxShadow: "0 14px 35px rgba(0, 0, 0, 0.1)",
                     y: -10,
                   }}
                   transition={{ duration: 0.4, ease: "easeOut" }}
-                  className="relative bg-white rounded-xl overflow-hidden mx-auto max-w-[320px] h-[460px] flex flex-col group border border-gray-100"
+                  className="relative bg-white rounded-xl overflow-hidden mx-auto max-w-[320px] h-[380px] sm:h-[400px] md:h-[420px] flex flex-col group border border-gray-100"
                 >
                   {/* Image Container */}
-                  <div className="relative w-full aspect-[4/5] bg-gray-100 overflow-hidden">
+                  <div className="relative w-full aspect-[3/4] bg-white overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-t from-red-900/30 via-transparent to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-90" />
                     <img
                       src={delegate.image || fallbackImage}
@@ -168,14 +167,8 @@ const AucDelegateCard = ({ delegates, title = "Delegates" }) => {
                   </div>
 
                   {/* Delegate Info */}
-                  <div className="flex-1 p-5 sm:p-6 flex flex-col items-center justify-center text-center bg-gradient-to-b from-white to-white">
-                    <h3 className="text-xl sm:text-2xl font-semibold text-red-900 mb-2 truncate">{delegate.name}</h3>
-                    {/* {delegate.title && (
-                      <p className="text-sm sm:text-base text-red-700 font-medium truncate">{delegate.title}</p>
-                    )}
-                    {delegate.bio && (
-                      <p className="text-xs sm:text-sm text-gray-600 mt-2 line-clamp-2">{delegate.bio}</p>
-                    )} */}
+                  <div className="flex-1 p-4 sm:p-5 flex flex-col items-center justify-center text-center bg-gradient-to-b from-white to-white">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-red-900 truncate">{delegate.name}</h3>
                   </div>
 
                   {/* Subtle Accent */}

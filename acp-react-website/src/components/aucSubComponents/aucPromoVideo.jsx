@@ -21,7 +21,7 @@ const PromoVideoSection = () => {
   };
 
   return (
-    <section className="w-full py-12 sm:py-16 bg-gray-800 text-white overflow-hidden relative">
+    <section className="w-full py-12 sm:py-16 bg-white text-red-800 overflow-hidden relative">
       {/* Section Header */}
       <motion.div
         className="text-center mb-10 sm:mb-12"
@@ -30,10 +30,10 @@ const PromoVideoSection = () => {
         variants={textVariants}
         viewport={{ once: true }}
       >
-        <h2 className="text-3xl md:text-5xl font-bold">
+        <h2 className="text-2xl md:text-4xl font-bold">
           Experience AUC in Motion
         </h2>
-        <p className="mt-2 text-base sm:text-lg max-w-2xl mx-auto opacity-80">
+        <p className="mt-2 text-base sm:text-xl text-black max-w-3xl mx-auto">
           Watch our promo video to see the spirit of the Aalmi Urdu Conference.
         </p>
       </motion.div>
@@ -68,7 +68,7 @@ const PromoVideoSection = () => {
 
         {/* Description */}
         <motion.p
-          className="mt-6 text-sm sm:text-base md:text-lg text-center max-w-3xl mx-auto opacity-90"
+          className="mt-5 text-base sm:text-xl text-black max-w-3xl mx-auto opacity-90"
           initial="hidden"
           whileInView="visible"
           variants={textVariants}

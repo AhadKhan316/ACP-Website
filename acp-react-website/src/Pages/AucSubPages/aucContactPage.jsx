@@ -12,7 +12,7 @@ const AucContactUs = () => {
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-4xl sm:text-5xl md:text-6xl font-bold text-red-800 mb-4"
+            className="text-2xl sm:text-4xl md:text-4xl font-bold text-red-800 mb-4"
           >
             Contact Us
           </motion.h1>
@@ -20,7 +20,7 @@ const AucContactUs = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto"
+            className="text-lg sm:text-xl text-black max-w-2xl mx-auto"
           >
             We’d love to hear from you. Get in touch with the All Urdu Conference team.
           </motion.p>
