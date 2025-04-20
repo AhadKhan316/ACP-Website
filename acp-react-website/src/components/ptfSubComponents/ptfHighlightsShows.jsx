@@ -54,7 +54,7 @@ const shows = [
 const NextArrow = ({ className, style, onClick }) => (
   <div
     className={`${className} rounded-full transition duration-300 w-8 h-8 sm:w-12 sm:h-12 z-10`}
-    style={{ ...style, display: "block", right: "15px", backgroundColor: "transparent" }} 
+    style={{ ...style, display: "block", right: "15px", backgroundColor: "transparent" }}
     onClick={onClick}
   >
     <svg className="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
@@ -66,7 +66,7 @@ const NextArrow = ({ className, style, onClick }) => (
 const PrevArrow = ({ className, style, onClick }) => (
   <div
     className={`${className} rounded-full transition duration-300 w-8 h-8 sm:w-12 sm:h-12 z-10`}
-    style={{ ...style, display: "block", left: "35px", backgroundColor: "transparent" }} 
+    style={{ ...style, display: "block", left: "35px", backgroundColor: "transparent" }}
     onClick={onClick}
   >
     <svg className="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
@@ -158,21 +158,21 @@ const PtfHighlightedTheatre = () => {
     prevArrow: <PrevArrow />,
     responsive: [
       {
-        breakpoint: 1280, 
+        breakpoint: 1280,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 1024, 
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 640, 
+        breakpoint: 640,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -182,16 +182,16 @@ const PtfHighlightedTheatre = () => {
   };
 
   return (
-    <section className="py-12 bg-gradient-to-b from-white to-red-50">
+    <section className="py-6 bg-wgite">
       <div className="mx-4 px-4">
         <motion.h2
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12 md:mb-16 text-red-700 tracking-tight"
+          className="text-2xl sm:text-4xl md:text-4xl lg:text-4xl font-bold text-center mb-12 md:mb-16 tracking-tight"
         >
-          Highlighted Shows
+          Highlighted <span className="text-red-700">Shows</span>
         </motion.h2>
 
         <motion.div

@@ -63,7 +63,7 @@ const PtfAbout = () => {
 
   return (
     <>
-      <section className="relative min-h-[90vh] flex items-center justify-center py-16 sm:py-20 lg:py-24">
+      <section className="relative min-h-[60vh] flex items-center justify-center py-8 sm:py-6 lg:py-8">
         {/* Background with Parallax */}
         <motion.div
           className="absolute inset-0 bg-cover bg-center"
@@ -90,7 +90,7 @@ const PtfAbout = () => {
           ></motion.div>
 
           <motion.div variants={contentVariants}>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+            <h2 className="text-2xl sm:text-4xl lg:text-4xl font-bold tracking-tight mb-6">
               <span className="text-gray-900">Pakistan </span>
               <span className="text-red-700">Theatre Festival</span>
             </h2>
@@ -105,7 +105,7 @@ const PtfAbout = () => {
               >
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="bg-red-700 text-white px-8 py-3 rounded-md font-semibold transition duration-300 text-base lg:text-lg"
+                  className="bg-red-700 text-white px-4 py-3 rounded-md font-semibold transition duration-300 text-base lg:text-lg"
                 >
                   Watch Promo
                 </button>
@@ -117,7 +117,7 @@ const PtfAbout = () => {
               >
                 <Link
                   to="/festival/ptf/tickets"
-                  className="bg-gray-700 text-white px-8 py-3 rounded-md font-semibold transition duration-300 text-base lg:text-lg hover:bg-gray-600"
+                  className="bg-gray-700 text-white px-4 py-3 rounded-md font-semibold transition duration-300 text-base lg:text-lg hover:bg-gray-600"
                 >
                   Ticket Closed
                 </Link>

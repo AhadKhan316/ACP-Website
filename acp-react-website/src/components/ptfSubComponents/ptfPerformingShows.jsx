@@ -51,7 +51,7 @@ const PrevArrow = ({ className, style, onClick }) => (
 );
 
 // Prime Shows Card Component
-const PtfPrimeShowsCard = ({ shows, title = "Prime Shows" }) => {
+const PtfPrimeShowsCard = ({ shows, title = "Prime" }) => {
   // Sample show data
   const sampleShows = [
     {
@@ -147,14 +147,14 @@ const PtfPrimeShowsCard = ({ shows, title = "Prime Shows" }) => {
   const fallbackImage = "https://placehold.co/150x150";
 
   return (
-    <section className="py-16 px-4 sm:px-6 md:px-8 bg-red-800 text-gray-900 relative overflow-hidden">
+    <section className="py-8 px-4 sm:px-6 md:px-8 bg-white text-black relative overflow-hidden">
       {/* Decorative Background Element */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
           <circle cx="50" cy="50" r="40" fill="url(#grad)" />
           <defs>
             <radialGradient id="grad" cx="0.5" cy="0.5" r="0.5">
-              <stop offset="0%" style={{ stopColor: "#b91c1c" }} /> {/* red-700 */}
+              <stop offset="0%" style={{ stopColor: "#b91c1c" }} />
               <stop offset="100%" style={{ stopColor: "transparent" }} />
             </radialGradient>
           </defs>
@@ -167,9 +167,9 @@ const PtfPrimeShowsCard = ({ shows, title = "Prime Shows" }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12 md:mb-16 text-white tracking-tight"
+          className="text-2xl sm:text-4xl md:text-4xl lg:text-4xl font-bold text-center mb-12 md:mb-16 text-black tracking-tight"
         >
-          {title}
+          {title} <span className="text-red-700">Shows</span>
         </motion.h2>
 
         <motion.div

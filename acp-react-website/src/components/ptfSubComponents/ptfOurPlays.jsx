@@ -44,7 +44,7 @@ const PtfOurPlaysSection = () => {
   };
 
   return (
-    <section className="relative py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-50 via-red-50 to-white overflow-hidden">
+    <section className="relative py-6 sm:py-6 lg:py-8 bg-white overflow-hidden">
       {/* Background Texture */}
       <div
         className="absolute inset-0 opacity-5 bg-repeat"
@@ -60,7 +60,7 @@ const PtfOurPlaysSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center mb-12 text-red-800 tracking-tight"
+          className="text-2xl sm:text-4xl lg:text-4xl font-bold text-center mb-12 text-black tracking-tight"
         >
           Our Plays
         </motion.h2>
@@ -88,11 +88,11 @@ const PtfOurPlaysSection = () => {
                 </div>
 
                 {/* Details */}
-                <div className="w-full md:w-1/2 bg-gradient-to-br from-red-700 to-red-900 text-white p-6 sm:p-8 flex flex-col justify-center">
+                <div className="w-full md:w-1/2 bg-white text-black p-6 sm:p-8 flex flex-col justify-center">
                   <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-3">{plays[currentIndex].title}</h3>
                   <p className="text-sm sm:text-base italic mb-2">{plays[currentIndex].date}</p>
                   <p className="text-sm sm:text-base">{plays[currentIndex].director}</p>
-                  <button className="mt-4 w-fit px-4 py-2 bg-white text-red-700 rounded-full font-semibold hover:bg-red-100 transition-colors">
+                  <button className="mt-4 w-fit px-4 py-2 bg-red-700 text-white rounded-xl font-semibold hover:bg-red-800 transition-colors">
                     Learn More
                   </button>
                 </div>

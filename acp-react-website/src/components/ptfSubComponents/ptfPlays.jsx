@@ -167,14 +167,14 @@ const PtfInternationalPlayers = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          arrows: true, 
+          arrows: true,
         },
       },
     ],
   };
 
   return (
-    <section className="bg-white py-12 sm:py-16 lg:py-20">
+    <section className="bg-white py-6 sm:py-6 lg:py-8">
       {styleTag}
       <motion.div
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
@@ -183,7 +183,7 @@ const PtfInternationalPlayers = () => {
         viewport={{ once: true }}
         variants={sectionVariants}
       >
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-black mb-8 sm:mb-12">
+        <h2 className="text-2xl sm:text-4xl lg:text-4xl font-bold text-center text-black mb-8 sm:mb-6">
           International <span className="text-red-700">Plays</span>
         </h2>
         <Slider {...settings}>
