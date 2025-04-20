@@ -203,7 +203,7 @@ const PlfSession = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 text-green-800 tracking-tight"
+          className="text-2xl sm:text-4xl md:text-4xl font-bold text-center mb-12 text-green-800 tracking-tight"
         >
           Upcoming Chapters
         </motion.h2>
@@ -267,7 +267,7 @@ const PlfSession = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mt-16 mb-12 text-green-800 tracking-tight"
+          className="text-2xl sm:text-4xl md:text-4xl font-bold text-center mt-16 mb-12 text-green-800 tracking-tight"
         >
           Previous Chapter
         </motion.h2>

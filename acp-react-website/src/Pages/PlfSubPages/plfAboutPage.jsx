@@ -10,7 +10,7 @@ const PlfAbout = () => {
   return (
     <div className="bg-green-800 min-h-screen">
       {/* Hero Section with Video */}
-      <section className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-br from-green-50 to-white">
+      <section className="relative py-8 md:py-8 overflow-hidden bg-gradient-to-br from-green-50 to-white">
         <div className="absolute inset-0 pointer-events-none">
           {/* Unique Overlapping Circles */}
           <svg className="w-full h-full opacity-10" viewBox="0 0 200 200" preserveAspectRatio="none">
@@ -24,7 +24,7 @@ const PlfAbout = () => {
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-4xl sm:text-5xl md:text-6xl font-bold text-center text-green-900 tracking-tight mb-6"
+            className="text-2xl sm:text-4xl md:text-4xl font-bold text-center text-green-900 tracking-tight mb-6"
           >
             About PLF
           </motion.h1>
@@ -59,7 +59,7 @@ const PlfAbout = () => {
       </section>
 
       {/* Our Mission Section */}
-      <section className="py-16 bg-white relative">
+      <section className="py-8 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -83,7 +83,7 @@ const PlfAbout = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="order-1 lg:order-2 flex flex-col justify-center"
             >
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-900 mb-6 relative">
+              <h2 className="text-2xl sm:text-4xl md:text-4xl font-bold text-green-900 mb-6 relative">
                 Our Mission
                 <span className="absolute -bottom-2 left-0 w-16 h-1 bg-green-800 rounded-full" />
               </h2>
@@ -103,7 +103,7 @@ const PlfAbout = () => {
       </section>
 
       {/* Our Vision Section */}
-      <section className="py-16 bg-gradient-to-r from-green-50 to-white relative overflow-hidden">
+      <section className="py-8 bg-gradient-to-r from-green-50 to-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-green-800 rounded-full opacity-20 blur-3xl pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -114,7 +114,7 @@ const PlfAbout = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="flex flex-col justify-center"
             >
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-900 mb-6 relative">
+              <h2 className="text-2xl sm:text-4xl md:text-4xl font-bold text-green-900 mb-6 relative">
                 Our Vision
                 <span className="absolute -bottom-2 left-0 w-16 h-1 bg-green-800 rounded-full" />
               </h2>
@@ -148,14 +148,14 @@ const PlfAbout = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-white">
+      <section className="py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2
             initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-green-900 mb-12"
+            className="text-2xl sm:text-4xl md:text-4xl font-bold text-center text-green-900 mb-12"
           >
             Our Impact
           </motion.h2>

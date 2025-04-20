@@ -64,7 +64,7 @@ const PlfDelegates = () => {
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-center text-green-900 tracking-tight mb-6"
+            className="text-2xl sm:text-4xl md:text-4xl font-bold text-center text-green-900 tracking-tight mb-6"
           >
             Meet Our Delegates
           </motion.h1>
@@ -72,7 +72,7 @@ const PlfDelegates = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="text-lg sm:text-xl md:text-2xl text-center text-gray-700 max-w-3xl mx-auto"
+            className="text-lg sm:text-xl md:text-xl text-center text-gray-700 max-w-3xl mx-auto"
           >
             A distinguished group of individuals shaping the future of Pakistani literature and culture.
           </motion.p>
@@ -80,7 +80,7 @@ const PlfDelegates = () => {
       </section>
 
       {/* Delegates Grid */}
-      <section className="py-16 bg-green-800 relative mt-10">
+      <section className="py-8 bg-green-800 relative mt-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0 }}
@@ -152,7 +152,7 @@ const PlfDelegates = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-3xl sm:text-4xl font-bold text-green-900 mb-6"
+            className="text-2xl sm:text-4xl font-bold text-green-900 mb-6"
           >
             Join the PLF Community
           </motion.h2>

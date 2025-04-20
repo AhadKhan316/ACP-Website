@@ -4,15 +4,15 @@ import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube, FaEnvelope, FaPhone, FaM
 
 const PlfContactUs = () => {
   return (
-    <div className="bg-green-50 min-h-screen text-gray-900 pt-24">
+    <div className="bg-green-50 min-h-screen text-gray-900 pt-12">
       {/* Hero Section */}
-      <section className="py-16 md:py-24 text-center">
+      <section className="py-8 md:py-8 text-center">
         <div className="mx-4 px-4 sm:px-6 lg:px-8">
           <motion.h1
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-4xl sm:text-5xl md:text-6xl font-bold text-green-900 mb-4"
+            className="text-2xl sm:text-4xl md:text-4xl font-bold text-green-900 mb-4"
           >
             Contact Us
           </motion.h1>

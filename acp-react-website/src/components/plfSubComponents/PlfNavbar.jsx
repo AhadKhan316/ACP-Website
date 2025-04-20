@@ -2,8 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes, FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 
-import PlfLogo from "/src/assets/plf-assets/plf-logo.png"
-
+import PlfLogo from "/src/assets/plf-assets/plf-logo.png";
 
 const PlfNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,13 +16,12 @@ const PlfNavbar = () => {
   // Toggle dropdown
   const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
-  // Close mobile menu on route change
+  // Close mobile menu and dropdown on route change and outside clicks
   useEffect(() => {
     setIsMenuOpen(false);
     setIsDropdownOpen(false);
   }, [location]);
 
-  // Close mobile menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navRef.current && !navRef.current.contains(event.target)) {
@@ -31,145 +29,110 @@ const PlfNavbar = () => {
         setIsDropdownOpen(false);
       }
     };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
-    if (isMenuOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
+  // Check if link is active
+  const isActiveLink = (path) => location.pathname === path;
 
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isMenuOpen]);
+  // NavLink component
+  const NavLink = ({ to, children }) => (
+    <Link
+      to={to}
+      className={`block py-2 px-4 text-white hover:text-white hover:bg-green-400 rounded-md transition-colors duration-200 ${isActiveLink(to) ? "text-white font-semibold bg-green-500" : "font-medium"
+        }`}
+    >
+      {children}
+    </Link>
+  );
+
+  // Menu items array
+  const menuItems = [
+    { to: "/festival/plf", label: "Home" },
+    { to: "/festival/plf/about", label: "About" },
+    { to: "/festival/plf/delegates", label: "Speakers" },
+    {
+      label: "Chapters",
+      dropdown: [
+        { to: "/chapters/lahore", label: "Lahore" },
+        { to: "/chapters/karachi", label: "Karachi" },
+        { to: "/chapters/islamabad", label: "Islamabad" },
+      ],
+    },
+    { to: "/festival/plf/contactUs", label: "Contact" },
+  ];
 
   return (
-    <div>
-      {/* Navbar */}
+    <header className="bg-gradient-to-r from-gray-900/90 to-gray-900 sticky top-0 z-50 shadow-md">
       <nav
+        className="h-[100px] max-w-screen-xl flex items-center justify-between mx-auto px-4 sm:px-6 lg:px-8"
         ref={navRef}
-        className="bg-gray-900 text-white shadow-lg sticky top-0 z-50"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            {/* Logo */}
-            <div className="flex-shrink-0">
-              <Link to="/festival/plf" className="flex items-center">
-                <img
-                  src={PlfLogo}
-                  alt="PLF Logo"
-                  className="h-20 w-17 mr-2 transform hover:scale-110 transition duration-300"
-                />
+        {/* Logo */}
+        <Link to="/festival/plf" className="flex items-center h-full">
+          <img
+            src={PlfLogo}
+            alt="PLF Logo"
+            className="object-contain w-auto max-h-[120px] max-w-[200px] sm:max-h-[120px] lg:max-h-[120px]"
+          />
+        </Link>
 
-              </Link>
-            </div>
+        {/* Hamburger Icon */}
+        <button onClick={toggleMenu} className="text-white lg:hidden">
+          {isMenuOpen ? <FaTimes className="w-6 h-6" /> : <FaBars className="w-6 h-6" />}
+        </button>
 
-            {/* Desktop Menu */}
-            <div className="hidden md:flex space-x-8 items-center">
-              {[
-                { to: "/festival/plf", label: "Home" },
-                { to: "/festival/plf/about", label: "About" },
-                { to: "/festival/plf/delegates", label: "Speakers" },
-              ].map((item) => (
-                <Link
-                  key={item.to}
-                  to={item.to}
-                  className={`hover:text-green-400  transition duration-300 font-bold ${location.pathname === item.to ? "text-green-400" : ""
-                    }`}
-                >
+        {/* Desktop Menu */}
+        <ul className="hidden lg:flex space-x-0.5 items-center ms-2">
+          {menuItems.map((item, index) =>
+            item.dropdown ? (
+              <li key={index} className="relative group">
+                <button className="block py-2 px-4 text-white hover:text-white hover:bg-green-400 rounded-md transition-colors duration-200 font-medium">
                   {item.label}
-                </Link>
-              ))}
-
-              {/* Chapters Dropdown */}
-              <div className="relative">
-                <button
-                  onClick={toggleDropdown}
-                  className="hover:text-green-400 transition duration-300 font-bold flex items-center"
-                >
-                  Chapters
-                  <svg
-                    className="w-4 h-4 ml-1 transform transition-transform duration-300"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
                 </button>
-                {isDropdownOpen && (
-                  <div className="absolute left-0 mt-2 w-48 bg-gray-900 text-white rounded-lg shadow-lg z-10 transform transition-all duration-300">
-                    {[
-                      { to: "/chapters/lahore", label: "Lahore" },
-                      { to: "/chapters/karachi", label: "Karachi" },
-                      { to: "/chapters/islamabad", label: "Islamabad" },
-                    ].map((item) => (
-                      <Link
-                        key={item.to}
-                        to={item.to}
-                        className="block px-4 py-2 hover:bg-green-400 transition duration-300"
-                        onClick={toggleMenu}
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+                <ul className="absolute left-0 mt-0 w-48 bg-gray-900 text-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 translate-y-2 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
+                  {item.dropdown.map((subItem) => (
+                    <li key={subItem.to}>
+                      <NavLink to={subItem.to}>{subItem.label}</NavLink>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ) : (
+              <li key={item.to}>
+                <NavLink to={item.to}>{item.label}</NavLink>
+              </li>
+            )
+          )}
+          <li>
+            <button className="bg-green-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-600 transition duration-300">
+              Register Now
+            </button>
+          </li>
+        </ul>
+      </nav>
 
-              <Link
-                to="/festival/plf/contactUs"
-                className={`hover:text-green-400 transition duration-300 font-bold ${location.pathname === "/contact" ? "text-green-400" : ""
-                  }`}
-              >
-                Contact
-              </Link>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <div className="md:hidden">
-              <button
-                onClick={toggleMenu}
-                className="text-white focus:outline-none"
-                aria-label="Toggle Menu"
-              >
-                {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-              </button>
-            </div>
-          </div>
+      {/* Mobile Menu */}
+      <div
+        className={`lg:hidden fixed top-0 right-0 w-4/5 max-w-xs h-full bg-gray-900/95 z-50 transition-transform duration-300 ease-in-out ${isMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+      >
+        <div className="flex justify-between items-center p-4 border-b border-gray-700">
+          <h2 className="text-white font-bold text-lg">Menu</h2>
+          <button onClick={toggleMenu} className="text-white">
+            <FaTimes />
+          </button>
         </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden bg-gray-900 transform transition-all duration-300 ease-in-out">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              {[
-                { to: "/", label: "Home" },
-                { to: "/about", label: "About" },
-                { to: "/speakers", label: "Speakers" },
-              ].map((item) => (
-                <Link
-                  key={item.to}
-                  to={item.to}
-                  className={`block px-3 py-2 text-white hover:bg-green-400 rounded-md ${location.pathname === item.to ? "bg-teal-700" : ""
-                    }`}
-                  onClick={toggleMenu}
-                >
-                  {item.label}
-                </Link>
-              ))}
-
-              {/* Chapters Dropdown in Mobile */}
-              <div>
+        <ul className="flex flex-col p-4 space-y-2 text-white">
+          {menuItems.map((item, index) =>
+            item.dropdown ? (
+              <li key={index}>
                 <button
                   onClick={toggleDropdown}
-                  className="w-full text-left px-3 py-2 text-white hover:bg-gray-900 rounded-md flex items-center justify-between"
+                  className="w-full text-left py-2 px-4 text-white hover:bg-green-400 rounded-md flex justify-between items-center"
                 >
-                  Chapters
+                  {item.label}
                   <svg
                     className={`w-4 h-4 transform transition-transform duration-300 ${isDropdownOpen ? "rotate-180" : ""
                       }`}
@@ -187,104 +150,63 @@ const PlfNavbar = () => {
                   </svg>
                 </button>
                 {isDropdownOpen && (
-                  <div className="pl-4 space-y-1">
-                    {[
-                      { to: "/chapters/lahore", label: "Lahore" },
-                      { to: "/chapters/karachi", label: "Karachi" },
-                      { to: "/chapters/islamabad", label: "Islamabad" },
-                    ].map((item) => (
-                      <Link
-                        key={item.to}
-                        to={item.to}
-                        className={`block px-3 py-2 text-white hover:bg-green-400 rounded-md ${location.pathname === item.to ? "bg-green-400" : ""
-                          }`}
-                        onClick={toggleMenu}
-                      >
-                        {item.label}
-                      </Link>
+                  <ul className="pl-4 space-y-1">
+                    {item.dropdown.map((subItem) => (
+                      <li key={subItem.to}>
+                        <NavLink to={subItem.to}>{subItem.label}</NavLink>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 )}
-              </div>
-
-              <Link
-                to="/contact"
-                className={`block px-3 py-2 text-white hover:bg-green-400 rounded-md ${location.pathname === "/contact" ? "bg-green-400" : ""
-                  }`}
-                onClick={toggleMenu}
-              >
-                Contact
-              </Link>
-
-              {/* Social Media Icons in Mobile Menu */}
-              <div className="flex justify-center space-x-4 mt-4">
-                {[
-                  {
-                    href: "#",
-                    icon: <FaInstagram className="h-6 w-6" />,
-                    alt: "Instagram",
-                  },
-                  {
-                    href: "#",
-                    icon: <FaFacebookF className="h-6 w-6" />,
-                    alt: "Facebook",
-                  },
-                  {
-                    href: "#",
-                    icon: <FaTiktok className="h-6 w-6" />,
-                    alt: "TikTok",
-                  },
-                  {
-                    href: "#",
-                    icon: <FaYoutube className="h-6 w-6" />,
-                    alt: "YouTube",
-                  },
-                ].map((item) => (
-                  <a
-                    key={item.alt}
-                    href={item.href}
-                    className="text-white hover:text-green-400 transition duration-300"
-                    aria-label={item.alt}
-                  >
-                    {item.icon}
-                  </a>
-                ))}
-              </div>
+              </li>
+            ) : (
+              <li key={item.to}>
+                <NavLink to={item.to}>{item.label}</NavLink>
+              </li>
+            )
+          )}
+          <li>
+            <button className="bg-green-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-600 transition duration-300 w-full">
+              Register Now
+            </button>
+          </li>
+          {/* Social Media Icons in Mobile Menu */}
+          <li>
+            <div className="flex justify-center space-x-4 mt-4">
+              {[
+                { href: "#", icon: <FaInstagram className="h-6 w-6" />, alt: "Instagram" },
+                { href: "#", icon: <FaFacebookF className="h-6 w-6" />, alt: "Facebook" },
+                { href: "#", icon: <FaTiktok className="h-6 w-6" />, alt: "TikTok" },
+                { href: "#", icon: <FaYoutube className="h-6 w-6" />, alt: "YouTube" },
+              ].map((item) => (
+                <a
+                  key={item.alt}
+                  href={item.href}
+                  className="text-white hover:text-green-400 transition duration-300"
+                  aria-label={item.alt}
+                >
+                  {item.icon}
+                </a>
+              ))}
             </div>
-          </div>
-        )}
-      </nav>
+          </li>
+        </ul>
+      </div>
 
       {/* Social Media Sidebar (Desktop Only) */}
       <div className="hidden md:block fixed top-1/2 transform -translate-y-1/2 right-0 z-50">
         <div className="bg-gray-800 text-white p-2 rounded-l-lg shadow-lg">
           <div className="space-y-4">
             {[
-              {
-                href: "#",
-                icon: <FaInstagram className="h-6 w-6" />,
-                alt: "Instagram",
-              },
-              {
-                href: "#",
-                icon: <FaFacebookF className="h-6 w-6" />,
-                alt: "Facebook",
-              },
-              {
-                href: "#",
-                icon: <FaTiktok className="h-6 w-6" />,
-                alt: "TikTok",
-              },
-              {
-                href: "#",
-                icon: <FaYoutube className="h-6 w-6" />,
-                alt: "YouTube",
-              },
+              { href: "#", icon: <FaInstagram className="h-6 w-6" />, alt: "Instagram" },
+              { href: "#", icon: <FaFacebookF className="h-6 w-6" />, alt: "Facebook" },
+              { href: "#", icon: <FaTiktok className="h-6 w-6" />, alt: "TikTok" },
+              { href: "#", icon: <FaYoutube className="h-6 w-6" />, alt: "YouTube" },
             ].map((item) => (
               <a
                 key={item.alt}
                 href={item.href}
-                className="block text-white hover:text-green-400 transition duration-900"
+                className="block text-white hover:text-green-400 transition duration-300"
                 aria-label={item.alt}
               >
                 {item.icon}
@@ -293,7 +215,7 @@ const PlfNavbar = () => {
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 
