@@ -141,7 +141,7 @@ const WcDelegateCard = ({ delegates, title = 'Delegates' }) => {
   const fallbackImage = "https://placehold.co/150x150";
 
   return (
-    <section className="py-16 px-4 sm:px-6 md:px-8 bg-pink-800 text-gray-900 relative overflow-hidden">
+    <section className="py-6 px-4 sm:px-6 md:px-8 bg-pink-800 text-gray-900 relative overflow-hidden">
       {/* Decorative Background Element */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -161,7 +161,7 @@ const WcDelegateCard = ({ delegates, title = 'Delegates' }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12 md:mb-16 text-white tracking-tight"
+          className="text-2xl sm:text-4xl md:text-4xl lg:text-4xl font-bold text-center mb-12 md:mb-16 text-white tracking-tight"
         >
           {title}
         </motion.h2>
@@ -182,7 +182,7 @@ const WcDelegateCard = ({ delegates, title = 'Delegates' }) => {
                     y: -5,
                   }}
                   transition={{ duration: 0.4, ease: "easeOut" }}
-                  className="relative bg-white rounded-xl overflow-hidden shadow-lg mx-auto max-w-[320px] h-[460px] flex flex-col group border border-gray-100"
+                  className="relative bg-white rounded-xl overflow-hidden shadow-lg mx-auto max-w-[320px] h-[380px] sm:h-[400px] md:h-[420px]  flex flex-col group border border-gray-100"
                 >
                   {/* Image Container */}
                   <div className="relative w-full aspect-[4/5] bg-gray-100 rounded-t-xl overflow-hidden">

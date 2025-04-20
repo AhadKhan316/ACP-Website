@@ -21,7 +21,7 @@ const WcVideo = () => {
   };
 
   return (
-    <section className="w-full py-12 sm:py-16 text-pink-900 overflow-hidden relative">
+    <section className="w-full py-6 sm:py-8 text-pink-900 overflow-hidden relative">
       {/* Section Header */}
       <motion.div
         className="text-center mb-10 sm:mb-12"
@@ -30,10 +30,10 @@ const WcVideo = () => {
         variants={textVariants}
         viewport={{ once: true }}
       >
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-pink-800 text-center mt-12 mb-8">
+        <h2 className="text-2xl sm:text-4xl md:text-4xl lg:text-4xl font-bold text-pink-800 text-center mt-12 mb-8">
           Women's Conference 2025 Highlights
         </h2>
-        <p className="mt-2 text-base sm:text-lg max-w-2xl mx-auto text-gray-600">
+        <p className="mt-2 text-base sm:text-lg max-w-xl mx-auto text-gray-600">
           Watch our promo video to experience the inspiration and empowerment of the Women's Conference.
         </p>
       </motion.div>

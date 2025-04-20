@@ -61,18 +61,18 @@ const CategoryCard = ({ image, title, paragraph, buttonText = "Explore" }) => {
     cardRef.current.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg)";
   };
 
-  const fallbackImage = "https://placehold.co/256x160"; 
+  const fallbackImage = "https://placehold.co/256x160";
 
   return (
     <motion.div
       ref={cardRef}
-      className="relative bg-white rounded-2xl overflow-hidden max-w-[340px] h-[540px] mx-auto flex flex-col shadow-lg border border-pink-200/50 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group"
+      className="relative bg-white rounded-2xl overflow-hidden max-w-[350px] h-[430px] mx-auto flex flex-col shadow-lg border border-pink-200/50 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 group"
       whileHover={{ scale: 1.03 }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
       {/* Holographic Image Container */}
-      <div className="relative w-64 h-40 mx-auto mt-6 rounded-lg overflow-hidden bg-pink-100">
+      <div className="relative w-74 h-60 mx-auto mt-6 rounded-lg overflow-hidden bg-pink-100">
         <div className="absolute inset-0 bg-gradient-to-br from-pink-400/20 via-transparent to-pink-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         <img
           src={image || fallbackImage}
@@ -195,7 +195,7 @@ const WcCategoriesCard = () => {
   };
 
   return (
-    <section className="py-16 px-4 sm:px-6 md:px-8 bg-gradient-to-b from-white to-pink-50 relative overflow-hidden">
+    <section className="py-12 px-4 sm:px-6 md:px-8 bg-gradient-to-b from-white to-pink-50 relative overflow-hidden">
       {/* Decorative Background */}
       <div className="absolute inset-0 opacity-5 pointer-events-none">
         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -215,7 +215,7 @@ const WcCategoriesCard = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12 md:mb-16 text-pink-800 tracking-tight"
+          className="text-2xl md:text-4xl lg:text-4xl font-bold text-center mb-6 md:mb-8 text-pink-800 tracking-tight"
         >
           Explore Categories
         </motion.h2>

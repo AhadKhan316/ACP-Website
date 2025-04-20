@@ -166,7 +166,7 @@ const WcHighlightedSessions = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12 md:mb-16 text-pink-800 tracking-tight"
+          className="text-2xl sm:text-4xl md:text-4xl lg:text-4xl font-bold text-center mb-12 md:mb-16 text-pink-800 tracking-tight"
         >
           Highlighted Sessions
         </motion.h2>

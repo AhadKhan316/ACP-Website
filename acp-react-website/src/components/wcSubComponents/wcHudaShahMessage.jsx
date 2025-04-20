@@ -7,7 +7,7 @@ const hudaShahMessage = "https://placehold.co/600x400";
 
 const WcHudaShahMessage = () => {
   return (
-    <section className="py-16 bg-gradient-to-r from-pink-50 to-white relative overflow-hidden">
+    <section className="py-12 px-4 bg-gradient-to-r from-pink-50 to-white relative overflow-hidden">
       {/* Decorative Blur Circle */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-pink-200 rounded-full opacity-20 blur-3xl pointer-events-none" />
 
@@ -38,12 +38,16 @@ const WcHudaShahMessage = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex flex-col justify-center"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-pink-800 mb-6 relative">
-              President's Message
+            <h2 className="text-5xl sm:text-5xl md:text-5xl font-bold text-pink-800 mb-6 relative">
+              Message By
+              <span className="absolute -bottom-2 left-0 w-16 h-1 bg-pink-600 rounded-full" />
+            </h2>
+            <h2 className="text-2xl sm:text-4xl md:text-4xl font-bold text-pink-800 mb-6 relative">
+              Noorul Huda Shah
               <span className="absolute -bottom-2 left-0 w-16 h-1 bg-pink-600 rounded-full" />
             </h2>
             <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-              Welcome to the Women's Conference, a platform dedicated to empowering and uplifting women worldwide. As President, I am honored to lead this inspiring gathering where we celebrate resilience, foster leadership, and build a community of change-makers. Join us to share your voice, connect with others, and shape a brighter future together.
+              I strongly believe that women's participation in conferences and other spaces of discussion is vital to creating a more just and equal society. Conferences that prioritize women's voices and experiences can facilitate meaningful conversations on cultural, socioeconomic, and political issues that affect women's lives. I have always been passionate about exploring these issues through my work and advocating for women's rights. I hope that women conference inspires and empowers women to continue speaking up and making their voices heard as women must be aware of their rights.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}

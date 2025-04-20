@@ -10,6 +10,7 @@ import WcDelegateCard from "../components/wcSubComponents/wcDelegateCard";
 import WcHighlightedSession from "../components/wcSubComponents/wcHighlightedSession";
 import WcCategoriesCard from "../components/wcSubComponents/wcCategoriesCard";
 import WcNewsletter from "../components/wcSubComponents/wcNewsletter";
+import WcSponsors from "../components/wcSubComponents/wcSponsors";
 import WcFooter from "../components/wcSubComponents/wcFooter";
 
 
@@ -38,6 +39,7 @@ const PlfMainPage = () => {
               <WcHighlightedSession />
               <WcCategoriesCard />
               <WcNewsletter />
+              <WcSponsors />
               {/* <PlfSponsors /> */}
             </>
           }
@@ -46,7 +48,7 @@ const PlfMainPage = () => {
         {/* <Route path="about" element={<PlfAboutPage />} /> */}
         {/* <Route path="delegates" element={<PlfDelegatePage />} /> */}
         {/* <Route path="contactUs" element={<PlfContactPage />} /> */}
-      </Routes>
+      </Routes >
       <WcFooter />
     </>
   );

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { FaFeatherAlt } from "react-icons/fa";
+import { ArrowRight } from "lucide-react";
 
 // Replace with your Women's Conference hero images
 import WcHeroImg1 from "/src/assets/wc-assets/wc-hero-img1.jpg";
@@ -11,11 +11,7 @@ import WcHeroImg3 from "/src/assets/wc-assets/wc-hero-img3.jpg";
 const WcHero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const slides = [
-    WcHeroImg1,
-    WcHeroImg2,
-    WcHeroImg3,
-  ];
+  const slides = [WcHeroImg1, WcHeroImg2, WcHeroImg3];
 
   // Auto-slider logic
   useEffect(() => {
@@ -62,21 +58,20 @@ const WcHero = () => {
       transition: { duration: 0.6, delay: 0.6, ease: "easeOut" },
     },
     hover: {
-      scale: 1.1,
-      boxShadow: "0px 0px 15px rgba(219, 39, 119, 0.7)",
-      transition: { duration: 0.3, yoyo: Infinity },
+      scale: 1.05,
+      transition: { duration: 0.3 },
     },
   };
 
   return (
-    <section className="relative w-full h-[80vh] sm:h-[70vh] md:h-[100vh] lg:h-[100vh] text-white flex items-center justify-center overflow-hidden">
+    <section className="relative w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[95vh] text-white flex items-center justify-center overflow-hidden">
       {/* Background Slider */}
       <div className="absolute inset-0 w-full h-full">
         {slides.map((slide, index) => (
           <img
             key={index}
             src={slide}
-            alt={`Slide ${index + 1}`}
+            alt={`Hero Slide ${index + 1}`}
             className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out ${index === currentSlide ? "opacity-100" : "opacity-0"
               }`}
           />
@@ -84,48 +79,71 @@ const WcHero = () => {
       </div>
 
       {/* Linear Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 via-gray-900/80 to-gray-900/70 pointer-events-none z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70 pointer-events-none z-10"></div>
 
       {/* Main Content */}
       <motion.div
-        className="relative z-30 text-center px-4 sm:px-6 lg:px-8 py-6 sm:py-8"
+        className="relative z-20 text-center px-4 sm:px-6 lg:px-8 py-4 sm:py-6 max-w-3xl mx-auto"
         initial="hidden"
         animate="visible"
         variants={contentVariants}
       >
         <motion.h1
-          className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold tracking-tight"
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4 tracking-tight drop-shadow-lg"
           variants={titleVariants}
         >
-          <span className="block">Welcome to</span>
-          <span className="text-pink-400 inline-block overflow-hidden whitespace-nowrap">
-            Women's Conference
-          </span>
+          Welcome to the
         </motion.h1>
-        <motion.h5
-          className="mt-2 sm:mt-3 text-xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-3xl tracking-tight opacity-90"
+        <motion.h1
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight drop-shadow-lg text-pink-400"
+          variants={titleVariants}
+        >
+          Women's Conference
+        </motion.h1>
+        <motion.p
+          className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 opacity-90 drop-shadow"
           variants={subtitleVariants}
         >
-          EMPOWERING THE FUTURE!
-        </motion.h5>
+          Empowering the future
+        </motion.p>
         <motion.button
-          className="mt-4 sm:mt-6 bg-pink-600 text-white px-10 sm:px-14 py-4 rounded-full font-semibold hover:bg-pink-500 transition duration-300 text-xs sm:text-sm md:text-base"
+          className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 border border-transparent text-sm sm:text-base font-medium rounded-md text-white bg-pink-400 hover:bg-pink-500 transition duration-150 ease-in-out"
           variants={buttonVariants}
-          whileHover="hover"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          aria-label="Join Us Now"
         >
           <Link to="/wc/register">Join Us Now</Link>
+          <ArrowRight className="ml-2 -mr-1 h-4 sm:h-5 w-4 sm:w-5" aria-hidden="true" />
         </motion.button>
       </motion.div>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
+      <div className="absolute bottom-12 sm:bottom-16 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
         {slides.map((_, index) => (
           <span
             key={index}
-            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${index === currentSlide ? "bg-pink-400" : "bg-gray-400"
+            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${index === currentSlide ? "bg-white" : "bg-pink-400"
               }`}
           />
         ))}
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-30">
+        <div className="animate-bounce">
+          <svg
+            className="w-6 h-6 text-white"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </div>
       </div>
     </section>
   );
